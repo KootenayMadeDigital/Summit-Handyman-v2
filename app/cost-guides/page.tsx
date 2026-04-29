@@ -1,12 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Clock, ArrowUpRight, ArrowRight, FileText } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BookOpenText,
+  CheckCircle2,
+  Clock,
+  Compass,
+  FileText,
+  Hammer,
+  MapPinned,
+  Mountain,
+  Route,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section, SectionTitle } from "@/components/ui/section";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { guides, type Guide } from "@/lib/guides";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Cost Guides & Resources",
@@ -15,15 +30,23 @@ export const metadata: Metadata = {
   alternates: { canonical: "/cost-guides" },
 };
 
-/**
- * Curated audience tracks. Each guide can appear in multiple tracks (some do)
- * so visitors who self-identify can find what's most relevant to them.
- */
-const tracks: Array<{ label: string; description: string; slugs: string[] }> = [
+type Track = {
+  label: string;
+  kicker: string;
+  description: string;
+  slugs: string[];
+  Icon: typeof Compass;
+  accent: string;
+};
+
+const tracks: Track[] = [
   {
-    label: "Before you hire",
+    label: "Hiring smarter",
+    kicker: "Before the first email",
     description:
-      "How handyman pricing actually works, what to look for in a quote, and how to set the engagement up for success.",
+      "Know what drives cost, what a trustworthy quote looks like, and when a professional saves more than he costs.",
+    Icon: Compass,
+    accent: "from-amber-500/20 via-amber-500/5 to-transparent",
     slugs: [
       "red-flags-handyman-quote",
       "how-to-get-an-accurate-handyman-quote",
@@ -34,9 +57,12 @@ const tracks: Array<{ label: string; description: string; slugs: string[] }> = [
     ],
   },
   {
-    label: "For homeowners",
+    label: "Homeowner field notes",
+    kicker: "Protect the house",
     description:
-      "Practical guides for keeping your Lower Mainland home in good shape, season after season.",
+      "Seasonal maintenance, safety upgrades, smart installs, and the quiet repairs that prevent expensive damage later.",
+    Icon: ShieldCheck,
+    accent: "from-emerald-500/15 via-amber-500/5 to-transparent",
     slugs: [
       "small-repairs-that-save-thousands",
       "pre-winter-checklist-surrey-white-rock",
@@ -46,70 +72,151 @@ const tracks: Array<{ label: string; description: string; slugs: string[] }> = [
     ],
   },
   {
-    label: "For property managers",
+    label: "Property manager playbook",
+    kicker: "Turnovers without chaos",
     description:
-      "What property managers across Surrey, Langley, and Abbotsford should know about working with Summit Handyman.",
+      "The repair stack for portfolios, tenant requests, documentation, punch lists, and clean handoffs.",
+    Icon: FileText,
+    accent: "from-slate-400/15 via-amber-500/5 to-transparent",
     slugs: ["strata-property-management-repairs", "tenant-turnover-punch-list"],
   },
   {
-    label: "For sellers",
-    description: "Pre-listing repairs that actually move the needle on your sale price.",
-    slugs: ["pre-listing-repair-checklist-lower-mainland"],
-  },
-  {
-    label: "Specific services",
-    description: "Deep dives on common service categories.",
-    slugs: ["tv-mounting-done-right", "what-drives-drywall-repair-cost-langley"],
+    label: "Sale ready and specialty installs",
+    kicker: "Finish strong",
+    description:
+      "Pre-listing polish and high-visibility installs where straight, clean, and documented matters.",
+    Icon: Hammer,
+    accent: "from-orange-500/20 via-amber-500/5 to-transparent",
+    slugs: ["pre-listing-repair-checklist-lower-mainland", "tv-mounting-done-right"],
   },
 ];
 
-function GuideCard({ guide }: { guide: Guide }) {
+const guideMap = new Map(guides.map((guide) => [guide.slug, guide]));
+const totalMinutes = guides.reduce((sum, guide) => sum + guide.readingMinutes, 0);
+const latestGuide = [...guides].sort((a, b) => b.date.localeCompare(a.date))[0];
+const latestThree = [...guides].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+
+function GuideMeta({ guide }: { guide: Guide }) {
+  return (
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] uppercase tracking-[0.16em] text-accent font-semibold">
+      <span className="inline-flex items-center gap-1.5">
+        <Clock className="h-3.5 w-3.5" />
+        {guide.readingMinutes} min read
+      </span>
+      {guide.area && (
+        <span className="inline-flex items-center gap-1.5 text-fg-muted">
+          <MapPinned className="h-3.5 w-3.5 text-accent" />
+          {guide.area}
+        </span>
+      )}
+    </div>
+  );
+}
+
+function GuideCard({ guide, featured = false }: { guide: Guide; featured?: boolean }) {
   return (
     <Link
       href={`/cost-guides/${guide.slug}`}
-      className="group block h-full rounded-2xl bg-surface-panel border border-divider-strong hover:border-accent-soft hover:bg-surface-elevated transition-all duration-300 hover:-translate-y-0.5 hover:shadow-gold overflow-hidden"
+      className={cn(
+        "group relative block h-full overflow-hidden rounded-3xl border border-divider-strong bg-surface-panel transition-all duration-500 ease-editorial",
+        "hover:-translate-y-1 hover:border-accent-soft hover:shadow-gold-lg focus-visible:ring-accent",
+        featured && "lg:grid lg:grid-cols-[1.08fr_0.92fr]",
+      )}
     >
-      <div className="relative aspect-[16/10] overflow-hidden">
+      <div className={cn("photo-grade relative overflow-hidden", featured ? "min-h-[22rem] lg:min-h-full" : "aspect-[16/10]") }>
         <Image
           src={guide.hero}
           alt=""
           fill
-          sizes="(max-width: 1024px) 100vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          sizes={featured ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 1024px) 100vw, 33vw"}
+          className="object-cover transition-transform duration-1000 ease-editorial group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-summit-black via-summit-black/40 to-transparent" />
-      </div>
-      <div className="p-5 sm:p-6">
-        <div className="flex items-center gap-3 text-xs uppercase tracking-wider text-accent font-semibold">
-          <Clock className="h-3.5 w-3.5" />
-          {guide.readingMinutes} min read
-          {guide.area && (
-            <>
-              <span className="text-fg-faint/50">·</span>
-              <span>{guide.area}</span>
-            </>
-          )}
+        <div className="absolute inset-0 bg-gradient-to-t from-summit-black via-summit-black/35 to-transparent" />
+        <div className="absolute left-4 top-4 rounded-full border border-accent/35 bg-summit-black/65 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-accent backdrop-blur">
+          Field note
         </div>
-        <h2 className="mt-3 font-display text-lg sm:text-xl font-bold text-fg-strong group-hover:text-accent transition-colors text-balance leading-snug">
+      </div>
+
+      <div className={cn("relative p-5 sm:p-6", featured && "sm:p-8 lg:p-10 flex flex-col justify-center") }>
+        <div className="absolute right-5 top-5 h-10 w-10 rounded-full border border-divider-strong bg-surface-elevated/80 flex items-center justify-center text-fg-muted transition-all duration-300 group-hover:border-accent-soft group-hover:text-accent group-hover:rotate-6">
+          <ArrowUpRight className="h-4 w-4" />
+        </div>
+        <GuideMeta guide={guide} />
+        <h2 className={cn(
+          "mt-4 max-w-[34rem] font-display font-extrabold leading-tight text-fg-strong text-balance transition-colors group-hover:text-accent",
+          featured ? "text-3xl sm:text-4xl" : "text-xl sm:text-2xl",
+        )}>
           {guide.title}
         </h2>
-        <p className="mt-2 text-sm text-fg-muted leading-relaxed line-clamp-3">
+        <p className={cn("mt-3 text-fg-muted leading-relaxed text-pretty", featured ? "text-base sm:text-lg" : "text-sm line-clamp-3")}>
           {guide.excerpt}
         </p>
-        <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent">
-          Read guide
-          <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        <span className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-accent-soft bg-accent-soft px-4 py-2 text-sm font-semibold text-accent transition-colors group-hover:bg-accent group-hover:text-summit-black">
+          Read the guide
+          <ArrowRight className="h-4 w-4" />
         </span>
       </div>
     </Link>
   );
 }
 
+function TrackSection({ track, index }: { track: Track; index: number }) {
+  const trackGuides = track.slugs
+    .map((slug) => guideMap.get(slug))
+    .filter((guide): guide is Guide => Boolean(guide));
+
+  return (
+    <Reveal>
+      <section className="relative overflow-hidden rounded-[2rem] border border-divider-strong bg-surface-panel shadow-panel-lg">
+        <div className={cn("absolute inset-0 bg-gradient-to-br opacity-100", track.accent)} />
+        <div className="absolute -right-24 -top-24 h-56 w-56 rounded-full bg-accent/10 blur-3xl" />
+        <div className="relative grid lg:grid-cols-[0.42fr_1fr]">
+          <aside className="border-b border-divider-strong p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-9">
+            <div className="flex items-center gap-3">
+              <div className="h-12 w-12 rounded-2xl border border-accent/40 bg-accent-soft flex items-center justify-center">
+                <track.Icon className="h-5 w-5 text-accent" strokeWidth={1.7} />
+              </div>
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold">
+                  Route {String(index + 1).padStart(2, "0")}
+                </p>
+                <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-fg-strong leading-tight">
+                  {track.label}
+                </h3>
+              </div>
+            </div>
+            <p className="mt-6 text-sm uppercase tracking-[0.16em] text-fg-muted font-semibold">
+              {track.kicker}
+            </p>
+            <p className="mt-3 text-base text-fg/85 leading-relaxed text-pretty">
+              {track.description}
+            </p>
+            <div className="mt-7 flex flex-wrap gap-2 text-xs text-fg-muted">
+              <span className="rounded-full border border-divider-strong bg-surface/60 px-3 py-1.5">
+                {trackGuides.length} guides
+              </span>
+              <span className="rounded-full border border-divider-strong bg-surface/60 px-3 py-1.5">
+                {trackGuides.reduce((sum, guide) => sum + guide.readingMinutes, 0)} min total
+              </span>
+            </div>
+          </aside>
+
+          <div className="p-4 sm:p-6 lg:p-8">
+            <RevealStagger className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5" staggerDelay={0.05}>
+              {trackGuides.map((guide) => (
+                <RevealItem key={`${track.label}-${guide.slug}`}>
+                  <GuideCard guide={guide} />
+                </RevealItem>
+              ))}
+            </RevealStagger>
+          </div>
+        </div>
+      </section>
+    </Reveal>
+  );
+}
+
 export default function CostGuidesPage() {
-  // Featured = most-recently-published 3 guides
-  const featured = [...guides]
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 3);
   return (
     <>
       <PageHero
@@ -117,126 +224,161 @@ export default function CostGuidesPage() {
         eyebrow="Resources"
         title={
           <>
-            Real costs, real homes,{" "}
+            Field notes for the home repairs that{" "}
             <span className="font-serif italic font-normal text-gradient-gold">
-              Lower Mainland honest.
+              actually matter.
             </span>
           </>
         }
-        description="Educational guides for Lower Mainland homeowners, property managers, and sellers. What drives handyman costs, how to spot a bad quote, when to DIY versus hire, and which repairs save thousands later. Written by a working pro, not an SEO farm."
+        description="No fake price tables. No SEO-farm fluff. Just clear, local guidance from an owner-operated handyman who knows what fails, what lasts, and what is worth hiring out."
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href="/quote" size="lg">
-            Get a Quote
+            Get a written estimate
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
           <span className="text-sm text-fg-muted">
-            $150 minimum per job · Free written estimates · 24-hour reply
+            $150 minimum per job · free written estimates · 24-hour reply
           </span>
         </div>
       </PageHero>
 
-      {/* === FEATURED (latest 3) === */}
-      <Section size="lg" className="bg-surface">
+      <Section size="lg" className="relative overflow-hidden bg-surface">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" />
+        <div className="absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
         <Container>
-          <SectionTitle
-            eyebrow="Most recent"
-            title={
-              <>
-                The latest from{" "}
-                <span className="font-serif italic font-normal text-gradient-gold">
-                  Brody's notebook.
-                </span>
-              </>
-            }
-            className="mb-10 sm:mb-12"
-          />
-          <RevealStagger className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-            {featured.map((g) => (
-              <RevealItem key={g.slug}>
-                <GuideCard guide={g} />
-              </RevealItem>
-            ))}
-          </RevealStagger>
-        </Container>
-      </Section>
+          <div className="grid gap-6 lg:grid-cols-[1fr_0.36fr] lg:items-stretch">
+            <Reveal>
+              <GuideCard guide={latestGuide} featured />
+            </Reveal>
 
-      {/* === AUDIENCE TRACKS === */}
-      <Section size="lg" className="bg-surface-panel border-y border-divider">
-        <Container>
-          <SectionTitle
-            eyebrow="Pick your track"
-            title={
-              <>
-                Find the guide{" "}
-                <span className="font-serif italic font-normal text-gradient-gold">
-                  for your situation.
-                </span>
-              </>
-            }
-            description="Whether you're hiring for the first time, managing a portfolio, or selling your home, there's a focused stack of reads here for you."
-            className="mb-10 sm:mb-12"
-          />
-
-          <div className="space-y-12 sm:space-y-14">
-            {tracks.map((track) => {
-              const trackGuides = track.slugs
-                .map((s) => guides.find((g) => g.slug === s))
-                .filter((g): g is Guide => Boolean(g));
-              if (trackGuides.length === 0) return null;
-              return (
-                <div key={track.label}>
-                  <Reveal>
-                    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 md:gap-6 mb-6 sm:mb-8 pb-4 border-b border-divider-strong">
-                      <div className="min-w-0">
-                        <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-1.5">
-                          Track
-                        </p>
-                        <h3 className="font-display text-2xl md:text-3xl font-bold text-fg-strong leading-tight">
-                          {track.label}
-                        </h3>
-                      </div>
-                      <p className="text-sm text-fg-muted max-w-md md:text-right">
-                        {track.description}
-                      </p>
-                    </div>
-                  </Reveal>
-                  <RevealStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-                    {trackGuides.map((g) => (
-                      <RevealItem key={`${track.label}-${g.slug}`}>
-                        <GuideCard guide={g} />
-                      </RevealItem>
-                    ))}
-                  </RevealStagger>
+            <Reveal delay={0.1}>
+              <div className="h-full rounded-[2rem] border border-divider-strong bg-surface-panel p-6 sm:p-7 shadow-panel-lg">
+                <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold">
+                  Guide command deck
+                </p>
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  <div className="rounded-2xl border border-divider-strong bg-surface p-4">
+                    <BookOpenText className="h-5 w-5 text-accent" />
+                    <p className="mt-4 font-display text-4xl font-extrabold text-fg-strong leading-none">
+                      {guides.length}
+                    </p>
+                    <p className="mt-2 text-xs uppercase tracking-[0.14em] text-fg-muted">Guides</p>
+                  </div>
+                  <div className="rounded-2xl border border-divider-strong bg-surface p-4">
+                    <Clock className="h-5 w-5 text-accent" />
+                    <p className="mt-4 font-display text-4xl font-extrabold text-fg-strong leading-none">
+                      {totalMinutes}
+                    </p>
+                    <p className="mt-2 text-xs uppercase tracking-[0.14em] text-fg-muted">Minutes</p>
+                  </div>
                 </div>
-              );
-            })}
+                <div className="mt-5 rounded-2xl border border-accent/35 bg-accent-soft p-5">
+                  <Mountain className="h-5 w-5 text-accent" />
+                  <p className="mt-4 font-display text-xl font-bold text-fg-strong">
+                    The Summit rule
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-fg-muted">
+                    If a guide cannot help a real homeowner make a better decision, it does not belong here.
+                  </p>
+                </div>
+                <div className="mt-5 space-y-3">
+                  {latestThree.map((guide) => (
+                    <Link
+                      key={guide.slug}
+                      href={`/cost-guides/${guide.slug}`}
+                      className="group flex items-center gap-3 rounded-2xl border border-divider-strong bg-surface/70 p-3 transition-colors hover:border-accent-soft"
+                    >
+                      <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-xl">
+                        <Image src={guide.hero} alt="" fill sizes="56px" className="object-cover" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="line-clamp-2 text-sm font-semibold leading-snug text-fg-strong group-hover:text-accent">
+                          {guide.title}
+                        </p>
+                        <p className="mt-1 text-xs text-fg-muted">Latest note</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
           </div>
         </Container>
       </Section>
 
-
-      {/* === FINAL CTA === */}
-      <Section size="lg" className="grainient-promise relative overflow-hidden">
-        <Container size="narrow">
-          <Reveal>
-            <div className="text-center space-y-6 sm:space-y-7">
-              <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-accent font-semibold">
-                Ready to act on what you read?
-              </p>
-              <h2 className="font-display text-display-xl font-extrabold tracking-tightest text-fg-strong text-balance leading-[1.05]">
-                Submit your quote.{" "}
+      <Section size="lg" className="relative overflow-hidden bg-surface-panel border-y border-divider">
+        <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(var(--border)_1px,transparent_1px),linear-gradient(90deg,var(--border)_1px,transparent_1px)] [background-size:64px_64px]" />
+        <Container className="relative">
+          <SectionTitle
+            eyebrow="Pick your route"
+            title={
+              <>
+                Every guide has a job. Every route has a{" "}
                 <span className="font-serif italic font-normal text-gradient-gold">
-                  Brody handles the rest.
+                  purpose.
                 </span>
-              </h2>
-              <p className="text-base sm:text-lg text-fg/85 max-w-xl mx-auto leading-relaxed">
-                Tell Brody what's going on, attach a few photos, and a written estimate lands in your inbox within 24 hours. $150 minimum per visit, no surprises after.
-              </p>
-              <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
+              </>
+            }
+            description="The library is organized around the decision you are trying to make, not a lazy pile of articles. Start with the route that matches your situation."
+            className="mb-10 sm:mb-12"
+          />
+
+          <div className="space-y-7 sm:space-y-8">
+            {tracks.map((track, index) => (
+              <TrackSection key={track.label} track={track} index={index} />
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section size="lg" className="grainient-promise relative overflow-hidden">
+        <Container>
+          <Reveal>
+            <div className="grid gap-8 rounded-[2rem] border border-accent/35 bg-surface-panel/75 p-6 shadow-panel-lg backdrop-blur sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-10 lg:items-center">
+              <div className="relative min-h-[18rem] overflow-hidden rounded-3xl border border-divider-strong photo-grade">
+                <Image
+                  src="/images/guide-accurate-quote.webp"
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-summit-black/75 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-summit-black/65 p-4 backdrop-blur">
+                  <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
+                    Fastest path
+                  </p>
+                  <p className="mt-1 font-display text-xl font-bold text-summit-mist">
+                    Photos plus scope equals a better quote.
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 rounded-full border border-accent/35 bg-accent-soft px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                  <Route className="h-4 w-4" />
+                  Ready to act
+                </div>
+                <h2 className="font-display text-display-lg font-extrabold tracking-tightest text-fg-strong text-balance leading-[1.05]">
+                  Reading is useful. A written estimate is better.
+                </h2>
+                <p className="text-base sm:text-lg text-fg/85 max-w-2xl leading-relaxed text-pretty">
+                  Send the photos, the city, and the timing. Brody reviews the scope before replying, so the first answer is practical instead of vague.
+                </p>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {[
+                    "Photos help",
+                    "24-hour reply",
+                    "No hourly games",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-2 rounded-xl border border-divider-strong bg-surface/60 p-3 text-sm text-fg-strong">
+                      <CheckCircle2 className="h-4 w-4 text-accent" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
                 <MagneticCTA href="/quote" size="lg">
-                  <FileText className="h-5 w-5" />
-                  Get a Quote
+                  Start the quote
                   <ArrowRight className="h-5 w-5" />
                 </MagneticCTA>
               </div>
