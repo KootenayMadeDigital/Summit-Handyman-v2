@@ -3,7 +3,7 @@ import type { Project } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 
 /**
- * Static project card. Photo only — no caption, no chip, no overlay text.
+ * Static project card. Photo only. no caption, no chip, no overlay text.
  * The "Recent Summits" section title above the grid provides all the context
  * needed; per-tile labels would just repeat themselves.
  */

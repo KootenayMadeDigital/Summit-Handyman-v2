@@ -10,7 +10,7 @@ import { guides } from "@/lib/guides";
 export const metadata: Metadata = {
   title: "Cost Guides & Resources",
   description:
-    "Real handyman costs and homeowner guidance for Lower Mainland BC homes. Drywall, painting, decks, gutters, smart home — practical advice from a working pro.",
+    "Real handyman costs and homeowner guidance for Lower Mainland BC homes. Drywall, painting, decks, gutters, smart home. practical advice from a working pro.",
   alternates: { canonical: "/cost-guides" },
 };
 
@@ -29,7 +29,7 @@ export default function CostGuidesPage() {
             Lower Mainland.
           </>
         }
-        description="Practical guidance from a working handyman — what jobs really cost, how to spot when a quote is too low, and which repairs save thousands later."
+        description="Practical guidance from a working handyman. what jobs really cost, how to spot when a quote is too low, and which repairs save thousands later."
       />
 
       <Section size="lg" className="bg-surface">

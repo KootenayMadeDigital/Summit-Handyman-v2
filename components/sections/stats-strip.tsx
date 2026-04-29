@@ -3,7 +3,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { Container, Section } from "@/components/ui/section";
 
 /**
- * STATS STRIP — answers "What's the deal here, in one glance?"
+ * STATS STRIP. answers "What's the deal here, in one glance?"
  * Four concrete, verifiable claims directly under the hero so cold visitors
  * absorb the proposition without scrolling further.
  */

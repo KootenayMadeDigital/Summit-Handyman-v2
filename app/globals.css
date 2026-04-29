@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 /* === FONTSHARE FONTS === */
-/* Loaded via @import in <head> — see app/layout.tsx for the preconnect/link tags */
+/* Loaded via @import in <head>. see app/layout.tsx for the preconnect/link tags */
 
 /* === CSS CUSTOM PROPERTIES === */
 /*
- * Source of truth for color tokens — matches summit-handyman.ca V1 verbatim.
+ * Source of truth for color tokens. matches summit-handyman.ca V1 verbatim.
  * Both [data-theme="dark"] (default) and [data-theme="light"] override the
  * same semantic vars (--bg, --fg, --border, --accent) so every component
  * adapts automatically.
@@ -68,7 +68,7 @@
   --fg-faint: #6b7280;
   --border: rgba(15, 17, 21, 0.08);
   --border-strong: rgba(15, 17, 21, 0.16);
-  --accent: #b45309;          /* gold-deep — better contrast on cream */
+  --accent: #b45309;          /* gold-deep. better contrast on cream */
   --accent-hot: #d97706;
   --accent-deep: #9a4d09;
 
@@ -227,7 +227,7 @@ body {
 }
 
 /*
- * Italic Gambarino has aggressive right side-bearing — the final letter
+ * Italic Gambarino has aggressive right side-bearing. the final letter
  * (especially y, f, t) can clip when the parent has overflow-hidden or
  * exactly fits the line. Reserve a sliver of inline padding on every
  * .font-serif element so the rightmost glyph never gets cut.
@@ -237,7 +237,7 @@ body {
 }
 
 /*
- * Display headings — same defensive padding so the final glyph never clips
+ * Display headings. same defensive padding so the final glyph never clips
  * inside flex children, grid cells with min-w-0, or overflow-hidden parents.
  */
 .font-display {

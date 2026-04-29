@@ -25,7 +25,7 @@ export default function ReviewsPage() {
             from real homes, every time.
           </>
         }
-        description={`${aggregateRating.rating.toFixed(1)} on Google. Verified by Trustindex. Read every word — no edits, no cherry-picking.`}
+        description={`${aggregateRating.rating.toFixed(1)} on Google. Verified by Trustindex. Read every word. no edits, no cherry-picking.`}
       >
         <div className="flex flex-wrap items-center gap-3 pt-3">
           <a

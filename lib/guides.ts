@@ -8,7 +8,7 @@ export type Guide = {
   readingMinutes: number;
   hero: string;
   /**
-   * Body sections — each block becomes a page section. Keeps content portable
+   * Body sections. each block becomes a page section. Keeps content portable
    * and avoids MDX setup. Move to MDX in a future iteration if needed.
    */
   body: Array<
@@ -26,7 +26,7 @@ export const guides: Guide[] = [
     slug: "drywall-repair-cost-langley-2026",
     title: "How Much Does Drywall Repair Cost in Langley? (2026 Guide)",
     excerpt:
-      "What you should expect to pay for drywall patches, holes, ceiling repair, and full skim coats in Langley and the Lower Mainland — with real 2026 numbers.",
+      "What you should expect to pay for drywall patches, holes, ceiling repair, and full skim coats in Langley and the Lower Mainland. with real 2026 numbers.",
     area: "Langley",
     service: "drywall-repair",
     date: "2026-02-01",
@@ -35,7 +35,7 @@ export const guides: Guide[] = [
     body: [
       {
         type: "p",
-        text: "If you've Googled 'drywall repair cost in Langley' you've probably seen wildly different numbers. The truth is the cost depends on a few specific things — and most homeowners overpay because they don't know what to ask. Here's the straightforward breakdown.",
+        text: "If you've Googled 'drywall repair cost in Langley' you've probably seen wildly different numbers. The truth is the cost depends on a few specific things. and most homeowners overpay because they don't know what to ask. Here's the straightforward breakdown.",
       },
       { type: "h2", text: "What drives drywall repair cost in 2026" },
       {
@@ -45,7 +45,7 @@ export const guides: Guide[] = [
           "Whether the texture needs matching (knockdown is harder than smooth)",
           "Ceiling vs wall (ceilings are slower and harder)",
           "Access and prep (move furniture, dust control, paint after?)",
-          "Number of coats (a fast 1-coat patch will telegraph through paint — always)",
+          "Number of coats (a fast 1-coat patch will telegraph through paint. always)",
         ],
       },
       { type: "h2", text: "Typical 2026 prices in the Lower Mainland" },
@@ -63,17 +63,17 @@ export const guides: Guide[] = [
       {
         type: "callout",
         title: "Summit Handyman: $150 minimum per job",
-        text: "If you only need a single small patch, expect the $150 minimum to apply. If you have a list of small things, bundle them — same trip, same minimum, more value.",
+        text: "If you only need a single small patch, expect the $150 minimum to apply. If you have a list of small things, bundle them. same trip, same minimum, more value.",
       },
       { type: "h2", text: "Why one-coat patches always come back" },
       {
         type: "p",
-        text: "A common mistake — including some handymen — is using one coat of mud, sanding, and painting. The patch will look fine for 2–4 weeks. Then humidity changes, the wood frame moves slightly, and a halo appears around the patch. That halo is permanent until you re-do it. Three coats, sanded between each, is the only way.",
+        text: "A common mistake. including some handymen. is using one coat of mud, sanding, and painting. The patch will look fine for 2–4 weeks. Then humidity changes, the wood frame moves slightly, and a halo appears around the patch. That halo is permanent until you re-do it. Three coats, sanded between each, is the only way.",
       },
       { type: "h2", text: "Texture matching: the make-or-break detail" },
       {
         type: "p",
-        text: "Most older Langley homes have knockdown or stipple ceilings. Matching this texture is more art than science. Brody uses spray-on knockdown for ceilings and a sponge-stipple roller for walls — done right, you can't see the patch. Done wrong, you'll always see it.",
+        text: "Most older Langley homes have knockdown or stipple ceilings. Matching this texture is more art than science. Brody uses spray-on knockdown for ceilings and a sponge-stipple roller for walls. done right, you can't see the patch. Done wrong, you'll always see it.",
       },
       { type: "h2", text: "How to get an accurate quote" },
       {
@@ -98,7 +98,7 @@ export const guides: Guide[] = [
     body: [
       {
         type: "p",
-        text: "BC has plenty of DIYers. That's part of the culture. But there are jobs where 'I'll just do it myself' costs more than hiring a pro — once you count the second trip to Home Depot, the wrong size of fittings, and the paint touch-up the next weekend.",
+        text: "BC has plenty of DIYers. That's part of the culture. But there are jobs where 'I'll just do it myself' costs more than hiring a pro. once you count the second trip to Home Depot, the wrong size of fittings, and the paint touch-up the next weekend.",
       },
       { type: "h2", text: "Worth DIYing" },
       {
@@ -115,7 +115,7 @@ export const guides: Guide[] = [
       {
         type: "ul",
         items: [
-          "Drywall patches that need texture matching — the look will give it away",
+          "Drywall patches that need texture matching. the look will give it away",
           "TV mounting (heavy, awkward, easy to drop or miss the studs)",
           "Tile repair where matching grout matters",
           "Anything involving subfloor repair",
@@ -131,7 +131,7 @@ export const guides: Guide[] = [
       { type: "h2", text: "The hidden cost of DIY" },
       {
         type: "p",
-        text: "The real cost of DIY isn't the materials — it's the time and the do-overs. A weekend spent painting one room (with fixing drips and roller marks) can become two weekends. A handyman who does it daily moves ~3x faster and finishes cleaner. For one wall, DIY makes sense. For a whole room? Usually not worth it.",
+        text: "The real cost of DIY isn't the materials. it's the time and the do-overs. A weekend spent painting one room (with fixing drips and roller marks) can become two weekends. A handyman who does it daily moves ~3x faster and finishes cleaner. For one wall, DIY makes sense. For a whole room? Usually not worth it.",
       },
     ],
   },
@@ -183,14 +183,14 @@ export const guides: Guide[] = [
     slug: "strata-property-management-repairs",
     title: "Strata-Friendly Repairs: What Property Managers Need to Know",
     excerpt:
-      "How Summit Handyman works with property managers across the Lower Mainland — turnovers, tenant requests, emergency repairs, and detailed invoicing.",
+      "How Summit Handyman works with property managers across the Lower Mainland. turnovers, tenant requests, emergency repairs, and detailed invoicing.",
     date: "2026-02-22",
     readingMinutes: 5,
     hero: "/images/project-5.webp",
     body: [
       {
         type: "p",
-        text: "Property managers don't have time to chase contractors who don't pick up the phone. This is the gap Summit Handyman was built to fill — owner-operated, email-first, and detailed enough that strata accounting doesn't have to chase you for a breakdown.",
+        text: "Property managers don't have time to chase contractors who don't pick up the phone. This is the gap Summit Handyman was built to fill. owner-operated, email-first, and detailed enough that strata accounting doesn't have to chase you for a breakdown.",
       },
       { type: "h2", text: "What I handle for property managers" },
       {
@@ -207,7 +207,7 @@ export const guides: Guide[] = [
       { type: "h2", text: "How invoicing works" },
       {
         type: "p",
-        text: "Every job comes with a clear, itemized invoice — labor, materials, GST broken out. If you need photo documentation for the strata council or owner, just say the word. I include before/after shots on every job by default.",
+        text: "Every job comes with a clear, itemized invoice. labor, materials, GST broken out. If you need photo documentation for the strata council or owner, just say the word. I include before/after shots on every job by default.",
       },
       {
         type: "callout",
@@ -229,7 +229,7 @@ export const guides: Guide[] = [
     body: [
       {
         type: "p",
-        text: "A 'cheap paint job' usually shows it within six months — drips, rolls, ceilings cut sloppy, trim with brush marks. The difference is almost entirely in the prep. Here's what a real job looks like in 2026, and what it costs.",
+        text: "A 'cheap paint job' usually shows it within six months. drips, rolls, ceilings cut sloppy, trim with brush marks. The difference is almost entirely in the prep. Here's what a real job looks like in 2026, and what it costs.",
       },
       { type: "h2", text: "What a proper paint job includes" },
       {
@@ -307,7 +307,7 @@ export const guides: Guide[] = [
     slug: "smart-home-setup-bc",
     title: "Smart Home Setup for BC Homes: Detectors, Locks & Lighting",
     excerpt:
-      "What's actually worth installing in 2026 — and what to skip. Practical recommendations from real installs across the Lower Mainland.",
+      "What's actually worth installing in 2026. and what to skip. Practical recommendations from real installs across the Lower Mainland.",
     service: "electrical",
     date: "2026-03-15",
     readingMinutes: 6,
@@ -318,9 +318,9 @@ export const guides: Guide[] = [
         type: "ul",
         items: [
           "Hardwired smoke + CO detectors (interlinked, code-compliant)",
-          "Smart thermostat (Ecobee or Nest — 10–15% energy savings)",
-          "Smart deadbolt (Schlage Encode, Yale Assure) — lets you give one-time codes",
-          "Doorbell camera (Ring, Nest) — for package + visitor monitoring",
+          "Smart thermostat (Ecobee or Nest. 10–15% energy savings)",
+          "Smart deadbolt (Schlage Encode, Yale Assure). lets you give one-time codes",
+          "Doorbell camera (Ring, Nest). for package + visitor monitoring",
           "Smart light switches at high-traffic locations (entry, hallway, kitchen)",
         ],
       },
@@ -328,16 +328,16 @@ export const guides: Guide[] = [
       {
         type: "ul",
         items: [
-          "Smart bulbs in every fixture — overcomplicated, expensive at scale",
-          "Smart blinds — most still feel beta; wait another year",
-          "Voice-controlled everything — battery-powered ones drain fast",
-          "Cheap no-name brand smart switches — they break in 18 months",
+          "Smart bulbs in every fixture. overcomplicated, expensive at scale",
+          "Smart blinds. most still feel beta; wait another year",
+          "Voice-controlled everything. battery-powered ones drain fast",
+          "Cheap no-name brand smart switches. they break in 18 months",
         ],
       },
       {
         type: "callout",
         title: "Permitting note",
-        text: "Most smart device swaps stay within homeowner-allowed scope (replacing existing fixtures with same-power fixtures). Anything new beyond that goes to a licensed electrician — Brody refers out when needed.",
+        text: "Most smart device swaps stay within homeowner-allowed scope (replacing existing fixtures with same-power fixtures). Anything new beyond that goes to a licensed electrician. Brody refers out when needed.",
       },
     ],
   },
@@ -345,7 +345,7 @@ export const guides: Guide[] = [
     slug: "spring-deck-refinishing-pacific-northwest",
     title: "Spring Deck Refinishing: Pacific Northwest Edition",
     excerpt:
-      "How to bring a Lower Mainland deck back to life after a wet winter — what to expect, what it costs, and how to time the work for BC weather.",
+      "How to bring a Lower Mainland deck back to life after a wet winter. what to expect, what it costs, and how to time the work for BC weather.",
     service: "fence-deck",
     date: "2026-03-22",
     readingMinutes: 6,
@@ -353,15 +353,15 @@ export const guides: Guide[] = [
     body: [
       {
         type: "p",
-        text: "Spring is the only sane time to refinish a deck in BC. Late April to early June is the sweet spot — dry enough to stain, warm enough to cure, and far enough from summer that it'll be ready for the first BBQ.",
+        text: "Spring is the only sane time to refinish a deck in BC. Late April to early June is the sweet spot. dry enough to stain, warm enough to cure, and far enough from summer that it'll be ready for the first BBQ.",
       },
       { type: "h2", text: "What deck refinishing involves" },
       {
         type: "ul",
         items: [
           "Pressure wash to strip mildew and old finish",
-          "Sand rough boards (especially railings — splinters)",
-          "Replace any rotten boards before staining (don't paint over them — it never lasts)",
+          "Sand rough boards (especially railings. splinters)",
+          "Replace any rotten boards before staining (don't paint over them. it never lasts)",
           "Two coats of premium semi-transparent stain (Sansin, Behr Premium)",
           "Allow 24hr cure between coats and 48hr before furniture",
         ],

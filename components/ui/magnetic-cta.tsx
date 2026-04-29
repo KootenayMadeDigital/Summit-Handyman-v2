@@ -4,7 +4,7 @@ import * as React from "react";
 import { Button, type ButtonProps } from "./button";
 
 /**
- * Magnetic CTA — primary button that subtly attracts the cursor on desktop.
+ * Magnetic CTA. primary button that subtly attracts the cursor on desktop.
  * Disabled on touch devices and when prefers-reduced-motion is set.
  */
 export function MagneticCTA(props: ButtonProps) {

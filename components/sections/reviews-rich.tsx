@@ -243,7 +243,7 @@ export function ReviewsRichPage() {
         </Section>
       )}
 
-      {/* === THEMES — WHAT REVIEWERS CONSISTENTLY MENTION === */}
+      {/* === THEMES. WHAT REVIEWERS CONSISTENTLY MENTION === */}
       <Section size="lg" className="bg-surface-panel border-y border-divider">
         <Container>
           <SectionTitle
@@ -315,7 +315,7 @@ export function ReviewsRichPage() {
                 <ul className="space-y-2.5 text-sm text-fg-muted">
                   <ListCheck>One trusted pro for the entire to-do list</ListCheck>
                   <ListCheck>Clean job sites, careful in your home</ListCheck>
-                  <ListCheck>Honest pricing — $150 minimum, no hourly</ListCheck>
+                  <ListCheck>Honest pricing. $150 minimum, no hourly</ListCheck>
                   <ListCheck>Free written estimates before any work starts</ListCheck>
                 </ul>
               </article>
@@ -330,14 +330,14 @@ export function ReviewsRichPage() {
                   Property managers
                 </h3>
                 <p className="text-fg/85 leading-relaxed mb-5">
-                  A property manager's mindset on every visit — clear documentation,
+                  A property manager's mindset on every visit. clear documentation,
                   fast turnover, dedicated email threads per property.
                 </p>
                 <ul className="space-y-2.5 text-sm text-fg-muted">
                   <ListCheck>Tenant turnovers, punch-lists, emergencies</ListCheck>
                   <ListCheck>Itemized invoicing with before/after photos</ListCheck>
                   <ListCheck>Standing rates available for 5+ unit portfolios</ListCheck>
-                  <ListCheck>Direct line to Brody — no dispatcher in between</ListCheck>
+                  <ListCheck>Direct line to Brody. no dispatcher in between</ListCheck>
                 </ul>
               </article>
             </Reveal>
@@ -401,7 +401,7 @@ export function ReviewsRichPage() {
               </h2>
               <p className="text-base sm:text-lg text-fg/80 max-w-xl mx-auto leading-relaxed">
                 Send Brody a few details. He'll reply with a clear, written estimate
-                — usually same-day. The fixes that have been on your list for months
+               . usually same-day. The fixes that have been on your list for months
                 start with one email.
               </p>
               <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">

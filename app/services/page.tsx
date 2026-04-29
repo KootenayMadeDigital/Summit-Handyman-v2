@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "All Services",
   description:
-    "Full handyman service capabilities — interior repairs, exterior maintenance, and home safety installs across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale.",
+    "Full handyman service capabilities. interior repairs, exterior maintenance, and home safety installs across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale.",
   alternates: { canonical: "/services" },
 };
 
@@ -31,7 +31,7 @@ export default function ServicesPage() {
             </span>
           </>
         }
-        description="From a leaky faucet to a deck refinish, every service below is handled by Brody himself — never subbed out. $150 minimum per job, no hourly games."
+        description="From a leaky faucet to a deck refinish, every service below is handled by Brody himself. never subbed out. $150 minimum per job, no hourly games."
       />
 
       <Section size="lg" className="bg-surface">

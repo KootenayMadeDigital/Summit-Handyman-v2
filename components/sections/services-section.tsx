@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const categoryOrder: ServiceCategory[] = ["interior", "exterior", "safety"];
 
 /**
- * SERVICES — answers "Do they do MY job?"
+ * SERVICES. answers "Do they do MY job?"
  * Three categories, each clearly delineated, with a hover-rich card grid.
  */
 export function ServicesSection() {
@@ -26,7 +26,7 @@ export function ServicesSection() {
               </span>
             </>
           }
-          description="Welcome to Summit Handyman, where quality craftsmanship meets exceptional service. From everyday fixes to weekend overhauls — one trusted pro for the whole list."
+          description="Welcome to Summit Handyman, where quality craftsmanship meets exceptional service. From everyday fixes to weekend overhauls. one trusted pro for the whole list."
           className="mb-14 sm:mb-16"
         />
 

@@ -21,7 +21,7 @@ export function FinalCTA() {
               </span>
             </h2>
             <p className="text-base sm:text-lg text-fg/80 max-w-xl mx-auto leading-relaxed">
-              Most quotes come back within 24 hours. Need it faster? Text or message — Brody
+              Most quotes come back within 24 hours. Need it faster? Text or message. Brody
               checks all three throughout the day.
             </p>
             <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">

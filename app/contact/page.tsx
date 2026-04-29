@@ -9,13 +9,13 @@ import { areas } from "@/lib/areas";
 export const metadata: Metadata = {
   title: "Contact Brody",
   description:
-    "Email, text, or message Brody at Summit Handyman. Email is the fastest way to reach him — most quotes back within 24 hours.",
+    "Email, text, or message Brody at Summit Handyman. Email is the fastest way to reach him. most quotes back within 24 hours.",
   alternates: { canonical: "/contact" },
 };
 
 const channels = [
   {
-    label: "Email — preferred",
+    label: "Email. preferred",
     value: site.contact.email,
     href: `mailto:${site.contact.email}`,
     Icon: Mail,

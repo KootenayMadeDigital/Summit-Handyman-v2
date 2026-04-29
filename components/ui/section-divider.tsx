@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Section divider — visually separates sections without being heavy-handed.
+ * Section divider. visually separates sections without being heavy-handed.
  * Variants:
  *  - line: a centered gold-accent line (default)
  *  - dot: a centered gold dot with hairlines

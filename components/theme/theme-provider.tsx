@@ -19,7 +19,7 @@ const ThemeContext = React.createContext<{
 
 function readInitialTheme(): Theme {
   if (typeof document === "undefined") return DEFAULT_THEME;
-  // Trust the inline script that ran in <head> — it already set data-theme.
+  // Trust the inline script that ran in <head>. it already set data-theme.
   const attr = document.documentElement.getAttribute("data-theme");
   return attr === "light" ? "light" : "dark";
 }

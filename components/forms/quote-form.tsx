@@ -44,7 +44,7 @@ const STEPS = ["Service", "Timing & Area", "Details", "Contact"] as const;
 function humanizeTiming(t: string) {
   return (
     {
-      urgent: "Urgent — today or tomorrow",
+      urgent: "Urgent. today or tomorrow",
       "this-week": "This week",
       "two-weeks": "Within 2 weeks",
       "no-rush": "No rush",
@@ -56,7 +56,7 @@ function buildMailto(state: FormState): string {
   const serviceObj = services.find((s) => s.slug === state.service);
   const areaObj = areas.find((a) => a.slug === state.area);
 
-  const subject = `Quote request — ${state.name}${serviceObj ? ` · ${serviceObj.name}` : ""}`;
+  const subject = `Quote request. ${state.name}${serviceObj ? ` · ${serviceObj.name}` : ""}`;
 
   const body = [
     `Hi Brody,`,
@@ -168,7 +168,7 @@ export function QuoteForm() {
           .
         </p>
         <p className="mt-4 text-xs text-fg-muted">
-          Reply to that email and attach photos if you have any — Brody can quote more accurately
+          Reply to that email and attach photos if you have any. Brody can quote more accurately
           with a few pictures.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
@@ -230,14 +230,14 @@ export function QuoteForm() {
       </div>
 
       <div className="min-h-[420px]">
-        {/* STEP 0 — Service */}
+        {/* STEP 0. Service */}
         {step === 0 && (
           <div>
             <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-fg-strong mb-2 text-balance">
               What needs doing?
             </h2>
             <p className="text-sm sm:text-base text-fg-muted mb-6">
-              Pick the closest match — we can refine later.
+              Pick the closest match. we can refine later.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3">
               {services.map((s) => (
@@ -279,7 +279,7 @@ export function QuoteForm() {
           </div>
         )}
 
-        {/* STEP 1 — Timing & Area */}
+        {/* STEP 1. Timing & Area */}
         {step === 1 && (
           <div className="space-y-6 sm:space-y-8">
             <div>
@@ -350,7 +350,7 @@ export function QuoteForm() {
           </div>
         )}
 
-        {/* STEP 2 — Description */}
+        {/* STEP 2. Description */}
         {step === 2 && (
           <div className="space-y-6">
             <div>
@@ -364,7 +364,7 @@ export function QuoteForm() {
                 value={state.description}
                 onChange={(e) => update("description", e.target.value)}
                 rows={6}
-                placeholder="Describe the project — size, scope, anything Brody should know."
+                placeholder="Describe the project. size, scope, anything Brody should know."
                 className="w-full px-4 py-3 rounded-xl bg-surface-elevated/80 border border-divider-strong text-fg-strong placeholder:text-fg-muted/60 focus-visible:border-accent focus-visible:outline-none resize-none"
               />
               <p className="mt-1 text-xs text-fg-muted">
@@ -384,7 +384,7 @@ export function QuoteForm() {
           </div>
         )}
 
-        {/* STEP 3 — Contact */}
+        {/* STEP 3. Contact */}
         {step === 3 && (
           <div className="space-y-5">
             <div>

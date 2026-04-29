@@ -10,22 +10,38 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s · ${site.name}`,
+    default: `${site.name} | Handyman in Langley, Surrey & Lower Mainland BC`,
+    template: `%s | ${site.name}`,
   },
-  description: site.description,
+  description:
+    "Top-rated handyman in Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. 5.0 on Google. Licensed and insured. $150 minimum per job. Email Brody for a 24-hour reply.",
   keywords: [
-    "Handyman Langley",
-    "Handyman Surrey",
-    "Handyman White Rock",
-    "Handyman Abbotsford",
-    "Handyman Aldergrove",
-    "Handyman Cloverdale",
-    "Property maintenance Lower Mainland",
-    "Drywall repair BC",
-    "Painting handyman BC",
-    "Brody Robertson",
-    "Summit Handyman",
+    "handyman Langley",
+    "handyman Surrey",
+    "handyman White Rock",
+    "handyman Abbotsford",
+    "handyman Aldergrove",
+    "handyman Cloverdale",
+    "handyman near me Langley",
+    "handyman near me Surrey",
+    "Lower Mainland handyman",
+    "drywall repair Langley",
+    "drywall repair Surrey",
+    "painting Langley",
+    "painting Surrey",
+    "TV mounting Langley",
+    "TV mounting Surrey",
+    "deck refinishing BC",
+    "gutter cleaning Langley",
+    "gutter cleaning Surrey",
+    "fence repair BC",
+    "tile install Langley",
+    "kitchen backsplash install Surrey",
+    "property management handyman BC",
+    "tenant turnover repairs Surrey",
+    "Brody Robertson handyman",
+    "Summit Handyman BC",
+    "Summit Handyman Brody",
   ],
   authors: [{ name: site.owner }],
   creator: site.owner,
@@ -37,13 +53,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_CA",
     url: site.url,
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name}. ${site.tagline}`,
     description: site.description,
     siteName: site.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name}. ${site.tagline}`,
     description: site.description,
   },
   robots: {
@@ -73,9 +89,9 @@ export const viewport: Viewport = {
 };
 
 /**
- * Inline theme init — runs before paint to avoid flash. Default = dark.
+ * Inline theme init. runs before paint to avoid flash. Default = dark.
  * Reads explicit user preference from localStorage; if absent, defaults to dark
- * (NOT system preference — Brody's brand identity is dark-first).
+ * (NOT system preference. Brody's brand identity is dark-first).
  */
 const themeInitScript = `
 (function() {

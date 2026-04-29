@@ -26,7 +26,7 @@ export default function AreasPage() {
             <span className="font-serif italic font-normal text-gradient-gold">Lower Mainland.</span>
           </>
         }
-        description="From Langley home base to White Rock bluffs to Abbotsford acreages — same handyman, same standard, same direct line."
+        description="From Langley home base to White Rock bluffs to Abbotsford acreages. same handyman, same standard, same direct line."
       />
 
       <Section size="lg">

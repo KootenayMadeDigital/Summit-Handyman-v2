@@ -10,7 +10,7 @@ import { FinalCTA } from "@/components/sections/final-cta";
 import { SectionDivider } from "@/components/ui/section-divider";
 
 /**
- * HOME — single-page conversion arc, no redundancy.
+ * HOME. single-page conversion arc, no redundancy.
  *  1. Hero ........... "Can I trust this person?"
  *  2. Services ....... "Do they do MY job?"
  *  3. Projects ....... "Have they done it well before?"

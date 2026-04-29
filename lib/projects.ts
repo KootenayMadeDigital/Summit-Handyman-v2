@@ -3,7 +3,7 @@ export type Project = {
   title: string;
   category: "interior" | "exterior" | "drywall" | "tile" | "painting" | "exterior-deck" | "safety";
   serviceSlug: string;
-  /** Optional — left empty until Brody confirms per-job locations. */
+  /** Optional. left empty until Brody confirms per-job locations. */
   area: string;
   shortStory: string;
   longStory: string;
@@ -15,7 +15,7 @@ export type Project = {
 };
 
 /**
- * Recent Summits — generic portfolio cards.
+ * Recent Summits. generic portfolio cards.
  *
  * Captions are intentionally non-specific: no fabricated city, no
  * fabricated job-specific story. Titles match the photo's general nature

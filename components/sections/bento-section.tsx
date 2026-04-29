@@ -13,7 +13,7 @@ import { areas } from "@/lib/areas";
 import { site } from "@/lib/site";
 
 /**
- * BENTO — answers "Why pick THIS handyman over the next ad?"
+ * BENTO. answers "Why pick THIS handyman over the next ad?"
  * One unifying answer (reliability) backed by 6 supporting tiles.
  * Asymmetric grid creates visual interest while tiles stay scannable.
  */
@@ -32,13 +32,13 @@ export function BentoSection() {
               for one reason.
             </>
           }
-          description="Reliability. Everything else — the pricing, the response time, the warranty — flows from that."
+          description="Reliability. Everything else. the pricing, the response time, the warranty. flows from that."
           align="center"
           className="mb-12 sm:mb-14"
         />
 
         <RevealStagger className="grid grid-cols-2 lg:grid-cols-4 grid-flow-row-dense gap-4 md:gap-5 auto-rows-[minmax(11rem,auto)] md:auto-rows-[minmax(13rem,auto)]">
-          {/* PROMISE — 2x2 */}
+          {/* PROMISE. 2x2 */}
           <RevealItem className="col-span-2 row-span-2 relative overflow-hidden rounded-2xl border border-accent/40 bg-surface-panel group min-w-0 min-h-[22rem]">
             <Image
               src="/images/about-brody.webp"
@@ -56,7 +56,7 @@ export function BentoSection() {
                 "{site.promise}"
               </p>
               <p className="mt-3 sm:mt-4 text-sm text-summit-mist/70">
-                — {site.owner}, founder
+               . {site.owner}, founder
               </p>
             </div>
           </RevealItem>
@@ -113,12 +113,12 @@ export function BentoSection() {
                 Fast<br />response
               </p>
               <p className="mt-1 text-xs sm:text-sm text-fg-muted">
-                Email or text — same day on most days.
+                Email or text. same day on most days.
               </p>
             </div>
           </BentoTile>
 
-          {/* AREAS — 2 cols */}
+          {/* AREAS. 2 cols */}
           <BentoTile className="col-span-2">
             <MapPin className="h-7 w-7 text-accent" strokeWidth={1.5} />
             <div>
@@ -136,7 +136,7 @@ export function BentoSection() {
             </div>
           </BentoTile>
 
-          {/* EMAIL — 2 cols, accent-bordered */}
+          {/* EMAIL. 2 cols, accent-bordered */}
           <RevealItem className="col-span-2 relative overflow-hidden rounded-2xl border border-accent bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_14%,var(--bg-panel))] p-5 sm:p-6 md:p-7 flex flex-col justify-between group hover:border-accent-hot transition-colors min-w-0">
             <Mail className="h-7 w-7 text-accent" strokeWidth={1.5} />
             <div className="min-w-0">

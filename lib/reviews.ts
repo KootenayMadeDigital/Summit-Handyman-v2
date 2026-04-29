@@ -1,5 +1,5 @@
 /**
- * Reviews — placeholders matching the live summit-handyman.ca V1 site verbatim.
+ * Reviews. placeholders matching the live summit-handyman.ca V1 site verbatim.
  * These are kept until a real Google / Trustindex feed is wired in.
  */
 
@@ -42,7 +42,7 @@ export const placeholderReviews: Review[] = [
 
 /**
  * Aggregate rating shown on home + reviews page. Soft until live Trustindex feed
- * provides a real number — keep the rating qualitative (5.0 is from V1) and avoid
+ * provides a real number. keep the rating qualitative (5.0 is from V1) and avoid
  * fabricating a count.
  */
 export const aggregateRating = {

@@ -28,7 +28,7 @@ const principles = [
   },
   {
     title: "Property-manager mindset",
-    body: "I think about turnover, tenant satisfaction, and detailed invoicing — even on residential jobs. Documentation included.",
+    body: "I think about turnover, tenant satisfaction, and detailed invoicing. even on residential jobs. Documentation included.",
   },
 ];
 
@@ -117,7 +117,7 @@ export default function AboutPage() {
               <div className="space-y-6 text-fg-strong/85 leading-relaxed text-lg">
                 <p>
                   Summit Handyman is owner-operated. That means when you email or text, you're
-                  reaching me directly — not a dispatcher, not a call center, not a "service
+                  reaching me directly. not a dispatcher, not a call center, not a "service
                   manager" who hands the work to whoever's available.
                 </p>
                 <p>
@@ -131,7 +131,7 @@ export default function AboutPage() {
                   <span className="text-accent font-semibold italic font-serif">
                     "{site.promise}"
                   </span>{" "}
-                  promise. Because reputation in this industry is built one job at a time — and
+                  promise. Because reputation in this industry is built one job at a time. and
                   I'd rather come back free than leave anyone wondering whether they should call me
                   again.
                 </p>

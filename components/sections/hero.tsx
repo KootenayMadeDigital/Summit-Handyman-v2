@@ -9,7 +9,7 @@ import { Parallax } from "@/components/ui/parallax";
 import { site } from "@/lib/site";
 
 /**
- * HERO — answers the buyer's first question: "Can I trust this person to do it right?"
+ * HERO. answers the buyer's first question: "Can I trust this person to do it right?"
  * Anchors:
  *  - Owner photo (face = trust)
  *  - Specific tagline (no generic "we do everything")

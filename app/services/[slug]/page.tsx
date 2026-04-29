@@ -10,6 +10,7 @@ import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { ServiceIcon } from "@/components/ui/service-icon";
 import { ProjectCard } from "@/components/ui/project-card";
 import { services, getService } from "@/lib/services";
+import { areas } from "@/lib/areas";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 
@@ -23,10 +24,16 @@ export async function generateMetadata(
   const { slug } = await params;
   const service = getService(slug);
   if (!service) return {};
+  const cityList = "Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale";
   return {
-    title: service.name,
-    description: service.longDescription,
+    title: `${service.name} in Langley, Surrey & Lower Mainland BC`,
+    description: `${service.name}: ${service.tagline} Serving ${cityList}. ${site.pricing.minimumDisplay}. Licensed and insured. Email Brody for a 24-hour reply.`,
     alternates: { canonical: `/services/${service.slug}` },
+    openGraph: {
+      title: `${service.name} | ${site.name}`,
+      description: service.longDescription.slice(0, 200),
+      type: "website",
+    },
   };
 }
 
@@ -40,8 +47,60 @@ export default async function ServicePage(
   const related = services.filter((s) => s.slug !== service.slug && s.category === service.category).slice(0, 3);
   const relevantProjects = projects.filter((p) => p.serviceSlug === service.slug);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${site.url}/services` },
+      { "@type": "ListItem", position: 3, name: service.name, item: `${site.url}/services/${service.slug}` },
+    ],
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${site.url}/services/${service.slug}#service`,
+    name: service.name,
+    description: service.longDescription,
+    provider: { "@type": "HomeAndConstructionBusiness", name: site.name, "@id": `${site.url}/#business` },
+    serviceType: service.name,
+    areaServed: areas.map((a) => ({ "@type": "City", name: a.name })),
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "5" },
+    offers: service.priceExamples?.map((p) => ({
+      "@type": "Offer",
+      name: p.label,
+      priceSpecification: { "@type": "PriceSpecification", priceCurrency: "CAD", price: p.value },
+    })),
+  };
+
+  const faqSchema = service.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: service.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  } : null;
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
       <PageHero
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -109,7 +168,7 @@ export default async function ServicePage(
         </Container>
       </Section>
 
-      {/* Recent work + inline related — combined section */}
+      {/* Recent work + inline related. combined section */}
       <Section size="lg" className="bg-surface-panel border-y border-divider">
         <Container>
           {relevantProjects.length > 0 && (
@@ -151,6 +210,37 @@ export default async function ServicePage(
               </p>
             </Reveal>
           )}
+        </Container>
+      </Section>
+
+      {/* Per-city links for SEO */}
+      <Section size="md" className="bg-surface">
+        <Container>
+          <SectionTitle
+            eyebrow={`${service.name} by city`}
+            title={
+              <>
+                {service.name}{" "}
+                <span className="font-serif italic font-normal text-gradient-gold">
+                  near you.
+                </span>
+              </>
+            }
+            description={`Click your city for ${service.name.toLowerCase()} pricing, response times, and local job examples.`}
+          />
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            {areas.map((a) => (
+              <Link
+                key={a.slug}
+                href={`/services/${service.slug}/in/${a.slug}`}
+                className="group flex items-center justify-between gap-2 p-4 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-all"
+              >
+                <span className="text-sm font-semibold text-fg-strong group-hover:text-accent transition-colors">
+                  {a.name}
+                </span>
+              </Link>
+            ))}
+          </div>
         </Container>
       </Section>
     </>

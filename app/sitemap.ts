@@ -30,22 +30,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}/services/${s.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: 0.85,
   }));
 
   const areaRoutes = areas.map((a) => ({
     url: `${base}/areas/${a.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: 0.85,
   }));
+
+  // Service x area combo pages — top SEO priority for "[service] in [city]" intent.
+  const comboRoutes = services.flatMap((s) =>
+    areas.map((a) => ({
+      url: `${base}/services/${s.slug}/in/${a.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    })),
+  );
 
   const guideRoutes = guides.map((g) => ({
     url: `${base}/cost-guides/${g.slug}`,
     lastModified: new Date(g.date),
     changeFrequency: "yearly" as const,
-    priority: 0.6,
+    priority: 0.7,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...areaRoutes, ...guideRoutes];
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...areaRoutes,
+    ...comboRoutes,
+    ...guideRoutes,
+  ];
 }

@@ -66,14 +66,14 @@ export function Footer() {
                     href={`/areas/${a.slug}`}
                     className="text-fg/80 hover:text-accent transition-colors"
                   >
-                    {a.name}
+                    Handyman in {a.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact column — compressed */}
+          {/* Contact column. compressed */}
           <div className="col-span-2 md:col-span-3 space-y-4">
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
               Reach Brody
