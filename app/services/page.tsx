@@ -34,7 +34,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Handyman Services in Langley, Surrey & Lower Mainland BC",
   description:
-    "Owner-operated handyman services across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. 11 repair categories, $150 minimum per job, licensed and insured.",
+    "Brody-led handyman services across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. 11 repair categories, $150 minimum per job, licensed and insured.",
   alternates: { canonical: "/services" },
 };
 
@@ -181,7 +181,7 @@ export default function ServicesPage() {
       {/* === HERO === */}
       <PageHero
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
-        eyebrow="Repair list, meet owner"
+        eyebrow="Repair list, meet Brody"
         title={
           <>
             One handyman.{" "}
@@ -286,7 +286,7 @@ export default function ServicesPage() {
               <>
                 {services.length} service categories.{" "}
                 <span className="font-serif italic font-normal text-gradient-gold">
-                  One accountable owner.
+                  One accountable handyman.
                 </span>
               </>
             }
@@ -592,7 +592,7 @@ export default function ServicesPage() {
                 },
                 {
                   q: "Is this safe? I've never hired a handyman before.",
-                  a: "Brody is licensed (Business # 79853 7957) and carries comprehensive liability insurance. He is owner-operated, so the same person reviewing the quote is the person responsible for the work. The workmanship promise means he comes back free if the repair fails due to his work.",
+                  a: "Brody is licensed (Business # 79853 7957) and carries comprehensive liability insurance. He is the only handyman on every job, so the person reviewing your quote is the person doing the work. The workmanship promise means he comes back free if the repair fails due to his work.",
                 },
                 {
                   q: "Do you work with property managers?",
@@ -657,7 +657,7 @@ export default function ServicesPage() {
                   "{site.promise}"
                 </p>
                 <p className="mt-4 text-sm text-fg-muted">
-                  {site.owner}, owner & operator
+                  {site.owner}, handyman & founder
                 </p>
               </div>
               <div className="pt-3">

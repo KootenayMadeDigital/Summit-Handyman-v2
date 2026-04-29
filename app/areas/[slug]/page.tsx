@@ -43,7 +43,7 @@ const cityProfiles: Record<string, CityProfile> = {
   langley: {
     intro: "Township acreage, Willoughby townhomes, Walnut Grove family houses, and Langley City repair lists all need the same thing: one careful person who actually finishes the job.",
     texture: "Langley mixes new construction, established subdivisions, strata complexes, and rural properties. That makes it a strong fit for bundled repair lists, drywall touch-ups, mounting, doors, trim, exterior maintenance, and property-manager follow-through.",
-    serviceFit: "Best fit for homeowners and managers who want clear scope, documented work, and one owner-operated standard across mixed property types.",
+    serviceFit: "Best fit for homeowners and managers who want clear scope, documented work, and one handyman, one standard across mixed property types.",
     commonJobs: ["Drywall repair and paint touch-ups", "Door, trim, and hardware fixes", "Mounting, assembly, and fixture installs", "Fence, deck, gutter, and exterior upkeep"],
     trustAngle: "Langley jobs often involve mixed lists. Brody reviews the whole scope first so the estimate matches the actual home, not a generic hourly guess.",
     accent: "Township homes, strata units, and acreages",
@@ -303,7 +303,7 @@ export default async function AreaPage(
             eyebrow={`Common work in ${area.name}`}
             title={
               <>
-                The jobs that fit Summit's owner-operated model in {area.name}.
+                The jobs that fit Summit's one-handyman model in {area.name}.
                 <span className="block font-serif italic font-normal text-gradient-gold">
                   Practical repairs, handled cleanly.
                 </span>

@@ -185,7 +185,7 @@ export const guides: Guide[] = [
     body: [
       {
         type: "p",
-        text: "Property managers don't have time to chase contractors who don't pick up the phone. This is the gap Summit Handyman was built to fill: owner-operated, email-first, and detailed enough that strata accounting doesn't have to chase you for a breakdown.",
+        text: "Property managers don't have time to chase contractors who don't pick up the phone. This is the gap Summit Handyman was built to fill: one accountable handyman, email-first, and detailed enough that strata accounting doesn't have to chase you for a breakdown.",
       },
       { type: "h2", text: "What Brody handles for property managers" },
       {
@@ -449,7 +449,7 @@ export const guides: Guide[] = [
         items: [
           "Free written estimate by email after photos and details are reviewed",
           "Business # 79853 7957 and GST # 79853 7957 RT0001 on every invoice",
-          "Liability insurance, owner-operated by Brody",
+          "Liability insurance, every job handled by Brody",
           "$150 minimum per job, no hourly meter games",
           "Itemized invoice with materials and labor broken out",
           "Come-back-free workmanship promise attached to the repair",

@@ -142,7 +142,7 @@ export default async function ServiceInAreaPage(
     "@id": `${site.url}/services/${service.slug}/in/${area.slug}#webpage`,
     url: `${site.url}/services/${service.slug}/in/${area.slug}`,
     name: `${service.name} in ${area.name}, BC`,
-    description: `${service.name} for ${area.name} homeowners and property managers, with written estimates and owner-operated service from ${site.owner}.`,
+    description: `${service.name} for ${area.name} homeowners and property managers, with written estimates and service handled directly by ${site.owner}.`,
     isPartOf: { "@id": `${site.url}/#website` },
     about: { "@id": `${site.url}/services/${service.slug}/in/${area.slug}#service` },
     mainEntity: { "@id": `${site.url}/services/${service.slug}/in/${area.slug}#service` },
@@ -220,7 +220,7 @@ export default async function ServiceInAreaPage(
             <Stat Icon={HandCoins} label="$150 minimum" sub="No hourly games" />
             <Stat Icon={ShieldCheck} label="Licensed & insured" sub="Comprehensive liability" />
             <Stat Icon={Clock} label={area.responseTime} sub={`Quote reply in ${area.name}`} />
-            <Stat Icon={MapPin} label={`${area.name} local`} sub="Owner-operated" />
+            <Stat Icon={MapPin} label={`${area.name} local`} sub="Brody on every job" />
           </div>
         </Container>
       </Section>

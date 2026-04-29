@@ -59,7 +59,7 @@ export default function QuotePage() {
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
           <span className="text-sm text-fg-muted">
-            Owner-reviewed · written estimate · no hourly games
+            Reviewed by Brody · written estimate · no hourly games
           </span>
         </div>
       </PageHero>

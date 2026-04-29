@@ -48,7 +48,7 @@ const trustSignals = [
   },
   {
     Icon: Sparkles,
-    label: "Owner-operated",
+    label: "Brody on every job",
     sub: "Brody handles the job personally. No rotating crew surprise.",
   },
 ];
@@ -73,7 +73,7 @@ const decisionLenses = [
     Icon: ShieldCheck,
     label: "Trust",
     question: "Can I trust him inside my home?",
-    answer: "The pattern is clear communication, clean work, and owner accountability. That lowers the risk quickly.",
+    answer: "The pattern is clear communication, clean work, and personal accountability from Brody. That lowers the risk quickly.",
   },
   {
     key: "property",

@@ -17,7 +17,7 @@ export function ServicesSection() {
     <Section id="services" size="lg" className="bg-surface relative">
       <Container>
         <SectionTitle
-          eyebrow="Repair list, meet owner"
+          eyebrow="Repair list, meet Brody"
           title={
             <>
               The list stops{" "}

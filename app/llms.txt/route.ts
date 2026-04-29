@@ -23,10 +23,10 @@ export async function GET() {
 
 > ${site.description}
 
-Summit Handyman is an owner-operated handyman business based in Langley, BC, serving Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. Owner: ${site.owner}. Email: ${site.contact.email}. Phone (text preferred): ${site.contact.phone}.
+Summit Handyman is a one-handyman business based in Langley, BC, serving Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. Handyman and founder: ${site.owner}. Email: ${site.contact.email}. Phone (text preferred): ${site.contact.phone}.
 
 Key facts:
-- Owner-operator: ${site.owner} handles every job personally (no dispatcher, no subcontractors)
+- One handyman on every job: ${site.owner} handles every job personally (no dispatcher, no subcontractors)
 - Pricing: ${site.pricing.minimumDisplay}, no hourly rates
 - Coverage: ${areas.map((a) => a.name).join(", ")}, all in British Columbia, Canada
 - Trust: Licensed and insured, 5.0 stars on Google, ${site.business.numberDisplay}, ${site.business.gstDisplay}
@@ -37,7 +37,7 @@ Key facts:
 
 - [Homepage](${url}/): Overview, services, projects, reviews, FAQ
 - [Start My Quote (preferred contact path)](${url}/quote): 4-step quote request form with photo upload (up to 5 attachments). The recommended way to get an accurate written estimate from Brody.
-- [About Brody Robertson](${url}/about): Owner story, four-principle workmanship promise
+- [About Brody Robertson](${url}/about): Brody's story, four-principle workmanship promise
 - [Contact](${url}/contact): Email, text, and Facebook Messenger fallback channels (the quote form is preferred)
 - [Reviews](${url}/reviews): 5.0 Google rating, full review feed, leave-a-review CTA
 

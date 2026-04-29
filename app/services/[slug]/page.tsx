@@ -283,7 +283,7 @@ export default async function ServicePage(
                   Pick this service if it is close. The quote form gives Brody enough context to confirm the right scope, catch missing details, and reply with a written estimate.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-fg-muted">
-                  <span className="rounded-full border border-divider-strong bg-surface/70 px-3 py-1.5">Owner reviewed</span>
+                  <span className="rounded-full border border-divider-strong bg-surface/70 px-3 py-1.5">Reviewed by Brody</span>
                   <span className="rounded-full border border-divider-strong bg-surface/70 px-3 py-1.5">Written estimate first</span>
                   <span className="rounded-full border border-divider-strong bg-surface/70 px-3 py-1.5">{site.pricing.minimumDisplay}</span>
                 </div>

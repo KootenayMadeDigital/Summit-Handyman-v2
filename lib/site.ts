@@ -10,7 +10,7 @@ export const site = {
   tagline: "Reliability Reaching New Heights",
   taglineAlt: "Life gets lighter when the house works.",
   description:
-    "Owner-operated handyman repairs for families and property managers across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale.",
+    "One handyman, on every job, for families and property managers across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale.",
   url: "https://summit-handyman.ca",
 
   contact: {

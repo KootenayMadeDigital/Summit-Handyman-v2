@@ -264,7 +264,7 @@ export default function RepairGuidesPage() {
             </span>
           </>
         }
-        description="No fake price tables. No contractor filler. Just local guidance from an owner-operated handyman who knows what fails, what lasts, and what is worth hiring out."
+        description="No fake price tables. No contractor filler. Just local guidance from a working handyman who knows what fails, what lasts, and what is worth hiring out."
         image={{ src: "/images/page-header-repair-guides.webp" }}
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">

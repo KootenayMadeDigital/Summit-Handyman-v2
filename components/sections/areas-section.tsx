@@ -14,11 +14,11 @@ export function AreasSection() {
             <>
               Six cities. One{" "}
               <span className="font-serif italic font-normal text-gradient-gold">
-                known owner.
+                known handyman.
               </span>
             </>
           }
-          description="Serving the Lower Mainland with one owner-operated standard. Click any city for local coverage, neighborhoods, and quote details."
+          description="Serving the Lower Mainland with one handyman, one standard. Click any city for local coverage, neighborhoods, and quote details."
           className="mb-12 sm:mb-14"
         />
 

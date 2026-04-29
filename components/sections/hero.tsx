@@ -11,7 +11,7 @@ import { site } from "@/lib/site";
 /**
  * HERO. answers the buyer's first question: "Can I trust this person to do it right?"
  * Anchors:
- *  - Owner photo (face = trust)
+ *  - Brody photo (face = trust)
  *  - Specific tagline (no generic "we do everything")
  *  - 3 trust signals immediately under headline
  *  - Single primary CTA + low-commitment alternate
@@ -135,7 +135,7 @@ export function Hero() {
             <div className="summit-photo-motion photo-grade relative aspect-[4/5] w-full lg:max-w-[22rem] xl:max-w-[25rem] 2xl:max-w-[27rem] ml-auto summit-scan-accent rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg group">
               <Image
                 src="/images/about-brody.webp"
-                alt={`${site.owner}, owner of ${site.name}`}
+                alt={`${site.owner}, the handyman behind ${site.name}`}
                 fill
                 priority
                 sizes="(max-width: 1024px) 0px, (max-width: 1280px) 352px, (max-width: 1536px) 400px, 432px"
@@ -143,12 +143,12 @@ export function Hero() {
               />
               <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-summit-black via-summit-black/85 to-transparent">
                 <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
-                  Owner-operated
+                  Brody on every job
                 </p>
                 <p className="mt-1 font-display text-xl font-bold text-summit-mist">
                   {site.owner}
                 </p>
-                <p className="text-sm text-summit-mist/70 mt-0.5">Langley, BC · Owner on the tools</p>
+                <p className="text-sm text-summit-mist/70 mt-0.5">Langley, BC · Hands on the tools</p>
               </div>
             </div>
           </Parallax>

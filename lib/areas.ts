@@ -21,7 +21,7 @@ export const areas: Area[] = [
     province: "BC",
     postalCodePrefixes: ["V1M", "V2Y", "V2Z", "V3A", "V4W"],
     description:
-      "Serving Langley City and Langley Township with owner-operated repairs, clear estimates, and documented work.",
+      "Serving Langley City and Langley Township with Brody-led repairs, clear estimates, and documented work.",
     longDescription:
       "Summit Handyman serves both Langley City and Langley Township, from older Walnut Grove single-family homes to newer Willoughby townhouse complexes, established Murrayville bungalows, and the rural acreages around Fort Langley and Brookswood. Whether you are a homeowner with a list of small fixes or a property manager needing tenant turnover work, the quote process is clear, the work is documented, and the same Brody Robertson handles every job.",
     neighborhoods: [
@@ -56,7 +56,7 @@ export const areas: Area[] = [
     description:
       "Full service across Surrey, from South Surrey townhomes to Cloverdale family homes and Guildford strata properties.",
     longDescription:
-      "Surrey is one of Summit Handyman's core service areas. Summit covers South Surrey townhomes near Crescent Beach, Cloverdale family homes, Fleetwood older builds, Guildford strata towers, Newton, North Surrey, and the growing Panorama Ridge neighborhood. Property managers across Surrey can use Summit Handyman for tenant turnovers, common-area repairs, and documented unit work, with the same quote process and owner-operated standard as every other city served.",
+      "Surrey is one of Summit Handyman's core service areas. Summit covers South Surrey townhomes near Crescent Beach, Cloverdale family homes, Fleetwood older builds, Guildford strata towers, Newton, North Surrey, and the growing Panorama Ridge neighborhood. Property managers across Surrey can use Summit Handyman for tenant turnovers, common-area repairs, and documented unit work, with the same quote process and the same Brody-handled standard as every other city served.",
     neighborhoods: [
       "South Surrey",
       "Cloverdale",

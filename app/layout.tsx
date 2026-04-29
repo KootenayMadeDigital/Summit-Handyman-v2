@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Owner-operated handyman service for Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. Licensed and insured. $150 minimum per job. Written estimates within 24 hours.",
+    "One-handyman service from Brody Robertson for Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. Licensed and insured. $150 minimum per job. Written estimates within 24 hours.",
   keywords: [
     "handyman Langley",
     "handyman Surrey",

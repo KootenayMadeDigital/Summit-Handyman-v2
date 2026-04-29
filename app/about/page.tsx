@@ -24,12 +24,12 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About Brody",
   description:
-    "Meet Brody Robertson, the owner-operated handyman behind Summit Handyman. Reliable repairs, clear communication, clean work, and a come-back-free promise across the Lower Mainland.",
+    "Meet Brody Robertson, the handyman behind Summit Handyman. Reliable repairs, clear communication, clean work, and a come-back-free promise across the Lower Mainland.",
   alternates: { canonical: "/about" },
 };
 
 const proofStats = [
-  { label: "Owner-operated", value: "1", detail: "The same person quotes, shows up, and stands behind the work." },
+  { label: "Handyman on every job", value: "1", detail: "The same person quotes, shows up, and stands behind the work." },
   { label: "Google rating", value: "5.0", detail: "Local trust earned one finished repair at a time." },
   { label: "Minimum", value: "$150", detail: "Clear starting point. Written estimate before work begins." },
 ];
@@ -67,7 +67,7 @@ const friction = [
 const antidote = [
   "Direct email or text with Brody",
   "Free written estimate after scope review",
-  "Owner-operated visits, not rotating crews",
+  "Brody on every visit, not rotating crews",
   "Come-back-free workmanship promise",
 ];
 
@@ -111,7 +111,7 @@ export default function AboutPage() {
     "@type": "Person",
     "@id": `${site.url}/about#brody`,
     name: site.owner,
-    jobTitle: "Owner and operator",
+    jobTitle: "Handyman and founder",
     image: `${site.url}/images/about-brody.webp`,
     worksFor: { "@id": `${site.url}/#business` },
     url: `${site.url}/about`,
@@ -153,7 +153,7 @@ export default function AboutPage() {
             </span>
           </>
         }
-        description="Summit Handyman is owner-operated by Brody Robertson for homeowners and property managers who want small repairs handled with clear scope, clean work, and one accountable person."
+        description="Summit Handyman is run end-to-end by Brody Robertson for homeowners and property managers who want small repairs handled with clear scope, clean work, and one accountable person."
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href="/quote" size="lg">
@@ -180,7 +180,7 @@ export default function AboutPage() {
                 <div className="photo-grade relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-divider-strong shadow-panel-lg group">
                   <Image
                     src="/images/about-brody.webp"
-                    alt={`${site.owner}, owner of ${site.name}`}
+                    alt={`${site.owner}, the handyman behind ${site.name}`}
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 40vw"
@@ -188,7 +188,7 @@ export default function AboutPage() {
                   />
                   <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-summit-black via-summit-black/85 to-transparent">
                     <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
-                      Owner & Founder
+                      Handyman & Founder
                     </p>
                     <p className="mt-1 font-display text-2xl font-bold text-summit-mist">
                       {site.owner}
