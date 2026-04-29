@@ -78,7 +78,7 @@ export default function ContactPage() {
       </PageHero>
 
       {/* PRIMARY: contact and quote form */}
-      <Section id="contact-form" size="lg" className="bg-surface scroll-mt-28 !pt-12 sm:!pt-14 md:!pt-16">
+      <Section id="contact-form" size="sm" className="bg-surface scroll-mt-28 !pt-8 sm:!pt-10 md:!pt-12 !pb-10 sm:!pb-12 md:!pb-16">
         <Container size="narrow">
           <Reveal>
             <div className="mb-8 text-center">

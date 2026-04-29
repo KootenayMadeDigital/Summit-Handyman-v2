@@ -85,7 +85,7 @@ export default function QuotePage() {
         </Container>
       </Section>
 
-      <Section id="quote-form" size="lg" className="relative overflow-hidden bg-surface !pt-4 sm:!pt-6 md:!pt-8 !pb-16 sm:!pb-20 md:!pb-section-lg">
+      <Section id="quote-form" size="sm" className="relative overflow-hidden bg-surface !pt-6 sm:!pt-8 md:!pt-10 !pb-10 sm:!pb-12 md:!pb-16">
         <div className="absolute left-1/2 -top-16 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
         <Container>
           <div className="grid lg:grid-cols-[0.35fr_0.65fr] gap-6 lg:gap-8 items-start">
