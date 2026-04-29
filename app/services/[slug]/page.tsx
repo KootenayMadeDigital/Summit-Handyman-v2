@@ -64,11 +64,6 @@ export default async function ServicePage(
     serviceType: service.name,
     areaServed: areas.map((a) => ({ "@type": "City", name: a.name })),
     aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "5" },
-    offers: service.priceExamples?.map((p) => ({
-      "@type": "Offer",
-      name: p.label,
-      priceSpecification: { "@type": "PriceSpecification", priceCurrency: "CAD", price: p.value },
-    })),
   };
 
   const faqSchema = service.faqs.length > 0 ? {

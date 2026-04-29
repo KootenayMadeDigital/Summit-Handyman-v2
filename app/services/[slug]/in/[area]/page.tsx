@@ -122,15 +122,6 @@ export default async function ServiceInAreaPage(
       ratingValue: "5.0",
       reviewCount: "5",
     },
-    offers: service.priceExamples?.map((p) => ({
-      "@type": "Offer",
-      name: p.label,
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        priceCurrency: "CAD",
-        price: p.value,
-      },
-    })),
   };
 
   const localBusinessSchema = {
@@ -282,47 +273,54 @@ export default async function ServiceInAreaPage(
         </Container>
       </Section>
 
-      {/* Pricing in this city */}
-      {service.priceExamples && service.priceExamples.length > 0 && (
-        <Section size="lg" className="bg-surface-panel border-y border-divider">
-          <Container size="narrow">
-            <SectionTitle
-              eyebrow={`${service.name} pricing in ${area.name}`}
-              title={
-                <>
-                  Honest pricing,{" "}
-                  <span className="font-serif italic font-normal text-gradient-gold">
-                    no surprises.
+      {/* How pricing works */}
+      <Section size="lg" className="bg-surface-panel border-y border-divider">
+        <Container size="narrow">
+          <SectionTitle
+            eyebrow={`${service.name} pricing in ${area.name}`}
+            title={
+              <>
+                Honest pricing,{" "}
+                <span className="font-serif italic font-normal text-gradient-gold">
+                  by quote.
+                </span>
+              </>
+            }
+            description={`Every ${service.name.toLowerCase()} job in ${area.name} is quoted in writing after Brody reviews your photos and details. ${site.pricing.minimumDisplay}. No hourly games, no surprise charges.`}
+            className="mb-8"
+          />
+          <Reveal>
+            <div className="rounded-2xl bg-surface border border-divider-strong p-6 sm:p-8">
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                  <span className="text-fg/85 text-sm sm:text-base">
+                    <strong className="text-fg-strong">Submit photos and details</strong> through the quote form so scope is clear before pricing.
                   </span>
-                </>
-              }
-              description={`Typical 2026 ranges for ${service.name.toLowerCase()} in ${area.name} and the Lower Mainland. Final pricing depends on scope, materials, and access. ${site.pricing.minimumDisplay}.`}
-              className="mb-10"
-            />
-            <Reveal>
-              <div className="rounded-2xl bg-surface border border-divider-strong overflow-hidden">
-                <table className="w-full">
-                  <tbody>
-                    {service.priceExamples.map((p, j) => (
-                      <tr
-                        key={j}
-                        className="border-b border-divider last:border-0"
-                      >
-                        <td className="px-5 py-4 text-fg/85 text-sm md:text-base">
-                          {p.label}
-                        </td>
-                        <td className="px-5 py-4 text-right font-display font-bold text-accent">
-                          {p.value}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </Reveal>
-          </Container>
-        </Section>
-      )}
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                  <span className="text-fg/85 text-sm sm:text-base">
+                    <strong className="text-fg-strong">Get a written estimate within 24 hours</strong>, often the same day.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                  <span className="text-fg/85 text-sm sm:text-base">
+                    <strong className="text-fg-strong">{site.pricing.minimumDisplay}</strong> covers tools, insurance, travel, and craftsmanship time.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                  <span className="text-fg/85 text-sm sm:text-base">
+                    <strong className="text-fg-strong">The estimate is the price you pay</strong>, barring scope changes you approve in writing.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </Reveal>
+        </Container>
+      </Section>
 
       {/* FAQ */}
       {service.faqs.length > 0 && (

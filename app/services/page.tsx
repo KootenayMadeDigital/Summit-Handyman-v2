@@ -248,11 +248,11 @@ export default function ServicesPage() {
               <>
                 Eleven services.{" "}
                 <span className="font-serif italic font-normal text-gradient-gold">
-                  Honest pricing.
+                  One trusted pro.
                 </span>
               </>
             }
-            description="Every service Brody offers, with typical 2026 pricing ranges. Final estimates are always written, free, and based on the photos and details you submit through the quote form."
+            description="Every service Brody offers, all handled personally. Pricing is by quote on every job, with a $150 minimum per visit. Submit photos and a description through the quote form and Brody emails a written estimate within 24 hours."
             className="mb-12 sm:mb-14"
           />
 
@@ -279,69 +279,63 @@ export default function ServicesPage() {
                   </Reveal>
 
                   <RevealStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-                    {list.map((s) => {
-                      const startingAt = s.priceExamples?.[0];
-                      return (
-                        <RevealItem key={s.slug}>
-                          <Link
-                            href={`/services/${s.slug}`}
-                            className={cn(
-                              "group relative flex h-full flex-col p-6 rounded-2xl",
-                              "bg-surface-panel border border-divider-strong",
-                              "hover:border-accent-soft hover:bg-surface-elevated",
-                              "transition-all duration-300 ease-editorial",
-                              "hover:shadow-gold hover:-translate-y-0.5",
-                            )}
-                          >
-                            <div className="flex items-start justify-between gap-4 mb-5">
-                              <div className="h-12 w-12 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center flex-shrink-0">
-                                <ServiceIcon name={s.icon} className="h-6 w-6" />
-                              </div>
-                              <ArrowUpRight className="h-5 w-5 text-fg-faint group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    {list.map((s) => (
+                      <RevealItem key={s.slug}>
+                        <Link
+                          href={`/services/${s.slug}`}
+                          className={cn(
+                            "group relative flex h-full flex-col p-6 rounded-2xl",
+                            "bg-surface-panel border border-divider-strong",
+                            "hover:border-accent-soft hover:bg-surface-elevated",
+                            "transition-all duration-300 ease-editorial",
+                            "hover:shadow-gold hover:-translate-y-0.5",
+                          )}
+                        >
+                          <div className="flex items-start justify-between gap-4 mb-5">
+                            <div className="h-12 w-12 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center flex-shrink-0">
+                              <ServiceIcon name={s.icon} className="h-6 w-6" />
                             </div>
+                            <ArrowUpRight className="h-5 w-5 text-fg-faint group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                          </div>
 
-                            <h4 className="font-display text-xl font-bold text-fg-strong leading-tight">
-                              {s.name}
-                            </h4>
-                            <p className="mt-2 text-sm text-fg-muted leading-relaxed">
-                              {s.shortDescription}
-                            </p>
+                          <h4 className="font-display text-xl font-bold text-fg-strong leading-tight">
+                            {s.name}
+                          </h4>
+                          <p className="mt-2 text-sm text-fg-muted leading-relaxed">
+                            {s.shortDescription}
+                          </p>
 
-                            {/* What's included preview */}
-                            <ul className="mt-4 space-y-1.5 flex-1">
-                              {s.includes.slice(0, 3).map((inc) => (
-                                <li
-                                  key={inc}
-                                  className="flex items-start gap-2 text-xs text-fg/75"
-                                >
-                                  <Check
-                                    className="h-3 w-3 text-accent mt-1 flex-shrink-0"
-                                    strokeWidth={2.5}
-                                  />
-                                  <span className="leading-snug">{inc}</span>
-                                </li>
-                              ))}
-                              {s.includes.length > 3 && (
-                                <li className="text-xs text-fg-faint italic pt-1">
-                                  +{s.includes.length - 3} more included
-                                </li>
-                              )}
-                            </ul>
-
-                            {startingAt && (
-                              <div className="mt-5 pt-4 border-t border-divider flex items-center justify-between gap-3">
-                                <span className="text-[11px] uppercase tracking-wider text-fg-muted font-semibold">
-                                  Starting at
-                                </span>
-                                <span className="font-display text-base font-bold text-accent">
-                                  {startingAt.value}
-                                </span>
-                              </div>
+                          <ul className="mt-4 space-y-1.5 flex-1">
+                            {s.includes.slice(0, 3).map((inc) => (
+                              <li
+                                key={inc}
+                                className="flex items-start gap-2 text-xs text-fg/75"
+                              >
+                                <Check
+                                  className="h-3 w-3 text-accent mt-1 flex-shrink-0"
+                                  strokeWidth={2.5}
+                                />
+                                <span className="leading-snug">{inc}</span>
+                              </li>
+                            ))}
+                            {s.includes.length > 3 && (
+                              <li className="text-xs text-fg-faint italic pt-1">
+                                +{s.includes.length - 3} more included
+                              </li>
                             )}
-                          </Link>
-                        </RevealItem>
-                      );
-                    })}
+                          </ul>
+
+                          <div className="mt-5 pt-4 border-t border-divider flex items-center justify-between gap-3">
+                            <span className="text-[11px] uppercase tracking-wider text-fg-muted font-semibold">
+                              Pricing
+                            </span>
+                            <span className="text-xs font-semibold text-accent">
+                              By quote · $150 minimum
+                            </span>
+                          </div>
+                        </Link>
+                      </RevealItem>
+                    ))}
                   </RevealStagger>
                 </div>
               );

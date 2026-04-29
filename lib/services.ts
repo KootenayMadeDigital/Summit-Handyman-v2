@@ -1,8 +1,11 @@
 /**
  * Service catalog. Source of truth for all handyman offerings.
- * Long descriptions are written for both human readability AND local SEO.
- * Each service mentions Lower Mainland cities naturally so combo pages and
- * service pages rank for "[service] [city]" queries.
+ *
+ * RULE: NEVER fabricate prices. The only confirmed price is the
+ * $150 minimum charge per job (site.pricing.minimumDisplay). Every
+ * other price is by quote. Do not add "starting at" or estimated
+ * ranges to this file. Pricing is communicated via the quote form,
+ * not the website.
  */
 
 export type ServiceCategory = "interior" | "exterior" | "safety";
@@ -21,8 +24,6 @@ export type Service = {
   faqs: Array<{ q: string; a: string }>;
   icon: string;
   hero: string;
-  /** Sequence of "starting at" pricing examples (for SEO + buyer signals). */
-  priceExamples?: Array<{ label: string; value: string }>;
 };
 
 export const serviceCategories: Record<ServiceCategory, { name: string; description: string }> = {
@@ -66,18 +67,13 @@ export const services: Service[] = [
         a: "Anything that takes under an hour of focused work, like a single faucet swap, a door realignment, or a few cabinet hinges. Bundle several small repairs into one visit and the $150 minimum covers the whole list.",
       },
       {
-        q: "Do you charge per repair or per visit?",
-        a: "Per visit, with a $150 minimum. The longer the list, the better the value, since travel and setup time are already covered.",
+        q: "How is pricing handled?",
+        a: "Every job gets a free written estimate after Brody reviews your quote submission. The $150 minimum applies to all visits to cover tools, insurance, travel, and craftsmanship. Final pricing is always quoted in writing before any work starts.",
       },
       {
         q: "Can you handle a tenant turnover punch list?",
         a: "Yes. Brody works with property managers across Surrey, Langley, and Abbotsford on tenant turnovers, including detailed itemized invoicing and before/after photo documentation.",
       },
-    ],
-    priceExamples: [
-      { label: "Single faucet swap", value: "$150" },
-      { label: "Door realignment + hinge replace", value: "$150 to $220" },
-      { label: "Bundle of 3 to 5 small repairs", value: "$220 to $400" },
     ],
     icon: "Wrench",
     hero: "/images/project-1.webp",
@@ -90,7 +86,7 @@ export const services: Service[] = [
     tagline: "High-quality paints for a durable finish.",
     shortDescription: "High-quality paints for a durable finish.",
     longDescription:
-      "Clean lines, no drips on the trim, no roller marks on the ceiling. Brody uses premium paints (Benjamin Moore Regal, Sherwin-Williams Emerald) and the right prep work, including caulking, sanding, and priming, so the finish lasts five years instead of fading or yellowing in two. Painting service available across the Lower Mainland for single rooms, full home interiors, trim refreshes, and cabinet refinishes.",
+      "Clean lines, no drips on the trim, no roller marks on the ceiling. Brody uses premium paints (Benjamin Moore Regal, Sherwin-Williams Emerald) and the right prep work, including caulking, sanding, and priming, so the finish lasts. Painting service available across the Lower Mainland for single rooms, full home interiors, trim refreshes, and cabinet refinishes.",
     includes: [
       "Interior wall and ceiling painting",
       "Trim, baseboards, and doors",
@@ -104,21 +100,16 @@ export const services: Service[] = [
     faqs: [
       {
         q: "How long does a single room take?",
-        a: "A standard 12 by 12 bedroom takes about a day with prep, two coats, and dry time. Larger rooms or vaulted ceilings take 1.5 to 2 days.",
+        a: "A standard 12 by 12 bedroom usually takes about a day with prep, two coats, and dry time. Larger rooms or vaulted ceilings take longer. Brody confirms timing in your written estimate.",
       },
       {
         q: "Do you supply the paint?",
         a: "Brody can pick up paint at cost plus a small handling fee, or you can supply your own. Either way the prep and finish quality is the same.",
       },
       {
-        q: "What's the typical cost to paint a room in Langley or Surrey?",
-        a: "A medium 12 by 14 bedroom typically falls between $650 and $950 including paint and prep. See the cost guide for a full breakdown.",
+        q: "How is the price determined?",
+        a: "Submit your quote request with photos of the space and Brody will email a written estimate within 24 hours. The $150 minimum applies to every visit.",
       },
-    ],
-    priceExamples: [
-      { label: "Small bedroom (10 by 10)", value: "$420 to $680" },
-      { label: "Medium room (12 by 14)", value: "$650 to $950" },
-      { label: "Trim only (per 100 ft)", value: "$280 to $420" },
     ],
     icon: "Paintbrush",
     hero: "/images/project-2.webp",
@@ -152,14 +143,9 @@ export const services: Service[] = [
         a: "Yes. Most older Lower Mainland homes have knockdown or stipple ceilings. Brody uses spray-on knockdown and sponge-stipple rolling to match. Done right, you can't see the patch.",
       },
       {
-        q: "How much does drywall repair cost?",
-        a: "Small patches start at the $150 minimum. Medium patches run $220 to $380. Full ceiling skim coats $650 to $1,200. See the Langley drywall cost guide for the full breakdown.",
+        q: "How is pricing handled?",
+        a: "Submit photos and a quick description through the quote form. Brody reviews and emails a written estimate within 24 hours. The $150 minimum covers a single visit.",
       },
-    ],
-    priceExamples: [
-      { label: "Small patch (under 4 in)", value: "$150 to $220" },
-      { label: "Medium patch (4 to 12 in)", value: "$220 to $380" },
-      { label: "Skim-coat textured ceiling (10 by 12 room)", value: "$650 to $1,200" },
     ],
     icon: "Hammer",
     hero: "/images/project-3.webp",
@@ -193,14 +179,9 @@ export const services: Service[] = [
         a: "Most modern smart switches need a neutral wire. Brody confirms your wiring before quoting. Older Lower Mainland homes sometimes need a small workaround (battery switch or hub).",
       },
       {
-        q: "How much for a typical fan or fixture install?",
-        a: "Single fixture or fan installs start at the $150 minimum. Bundled installs (3 fixtures + 2 fans, for example) run $400 to $700.",
+        q: "How is pricing handled?",
+        a: "Every install gets a free written estimate after the quote review. The $150 minimum applies to every visit.",
       },
-    ],
-    priceExamples: [
-      { label: "Single light fixture replacement", value: "$150" },
-      { label: "Ceiling fan install (existing box)", value: "$220 to $320" },
-      { label: "Smart switch (with existing neutral)", value: "$150 to $200" },
     ],
     icon: "Zap",
     hero: "/images/project-4.webp",
@@ -226,8 +207,8 @@ export const services: Service[] = [
     ],
     faqs: [
       {
-        q: "How much does a kitchen backsplash cost?",
-        a: "A standard subway tile backsplash runs $650 to $1,400 depending on size, tile choice, and outlet/window cuts. Premium tile or mosaic patterns cost more.",
+        q: "How is the price determined?",
+        a: "Submit photos of the space and a description through the quote form. Brody reviews scope, materials, and access before sending a written estimate, usually same day, always within 24 hours.",
       },
       {
         q: "Do you handle bathroom tile from scratch?",
@@ -237,11 +218,6 @@ export const services: Service[] = [
         q: "What flooring brands do you install?",
         a: "Most major brands are fine: Mohawk, Shaw, Pergo, Vidaplank. Bring your own materials or Brody picks them up at cost plus handling.",
       },
-    ],
-    priceExamples: [
-      { label: "Kitchen backsplash (standard subway)", value: "$650 to $1,400" },
-      { label: "Laminate flooring (per 100 sq ft)", value: "$280 to $480" },
-      { label: "Bathroom floor tile (5 by 8 bathroom)", value: "$650 to $1,100" },
     ],
     icon: "Square",
     hero: "/images/project-5.webp",
@@ -279,11 +255,6 @@ export const services: Service[] = [
         a: "Yes, with the right mount and a heat shield consideration. Brody confirms the install location is safe before drilling.",
       },
     ],
-    priceExamples: [
-      { label: "Standard TV wall mount", value: "$150 to $220" },
-      { label: "TV mount with in-wall cable hide", value: "$250 to $380" },
-      { label: "IKEA wardrobe assembly (PAX)", value: "$220 to $480" },
-    ],
     icon: "Package",
     hero: "/images/project-6.webp",
   },
@@ -316,14 +287,9 @@ export const services: Service[] = [
         a: "Most Lower Mainland driveways benefit from an annual wash, typically before sealing in spring or after fall leaf drop. Moss-heavy properties may need it twice a year.",
       },
       {
-        q: "Can you remove moss from my roof?",
-        a: "Brody can soft-wash and remove surface moss from accessible roofs, but full roof cleaning on steep pitches is referred to a roofing specialist.",
+        q: "How is pricing handled?",
+        a: "Submit a few photos and the rough scope through the quote form. Brody emails a written estimate within 24 hours. The $150 minimum applies to every visit.",
       },
-    ],
-    priceExamples: [
-      { label: "Standard driveway wash", value: "$220 to $380" },
-      { label: "Deck pressure wash (under 200 sq ft)", value: "$220 to $320" },
-      { label: "Full siding wash (single family home)", value: "$480 to $850" },
     ],
     icon: "Droplets",
     hero: "/images/project-1.webp",
@@ -361,11 +327,6 @@ export const services: Service[] = [
         a: "Brody checks every bracket and re-secures or replaces failed ones. Sagging gutters dump water against the foundation, which causes far more expensive damage than the repair.",
       },
     ],
-    priceExamples: [
-      { label: "Standard single-family gutter clean", value: "$220 to $380" },
-      { label: "Gutter clean + bracket re-secure", value: "$320 to $480" },
-      { label: "Mesh gutter guards (per 100 ft)", value: "$420 to $680" },
-    ],
     icon: "CloudRain",
     hero: "/images/project-2.webp",
   },
@@ -395,17 +356,12 @@ export const services: Service[] = [
       },
       {
         q: "Will you replace rotten deck boards before staining?",
-        a: "Always. Staining over rotten boards just wastes the stain. Brody scopes board replacement up front and includes it in the quote.",
+        a: "Always. Staining over rotten boards just wastes the stain. Brody scopes board replacement up front and includes it in the written estimate.",
       },
       {
         q: "How long does deck stain last?",
-        a: "Premium semi-transparent stain lasts 4 to 6 years on most Lower Mainland decks. South or west-facing decks fade faster (3 to 4 years) due to UV exposure.",
+        a: "Premium semi-transparent stain typically lasts a few years on most Lower Mainland decks. South or west-facing decks fade faster due to UV exposure.",
       },
-    ],
-    priceExamples: [
-      { label: "Small deck refinish (8 by 12)", value: "$650 to $950" },
-      { label: "Medium deck refinish + board replace", value: "$950 to $1,800" },
-      { label: "Fence stain (per 50 ft)", value: "$420 to $680" },
     ],
     icon: "Fence",
     hero: "/images/project-3.webp",
@@ -436,17 +392,12 @@ export const services: Service[] = [
       },
       {
         q: "When should I seal my driveway?",
-        a: "Asphalt driveways benefit from sealing every 3 to 5 years in BC, depending on sun exposure. Crack-fill any time you see them widening; freeze cycles double crack size each winter.",
+        a: "Asphalt driveways benefit from sealing every few years in BC, depending on sun exposure. Crack-fill any time you see them widening; freeze cycles double crack size each winter.",
       },
       {
         q: "Can you do this work in winter?",
         a: "Driveway sealing requires above 10C and dry conditions, so it's a spring through fall job. Roof shingle work can be done year-round if the roof is safely accessible.",
       },
-    ],
-    priceExamples: [
-      { label: "Driveway crack-fill + seal (small)", value: "$280 to $480" },
-      { label: "Cracked shingle replacement (under 10)", value: "$220 to $420" },
-      { label: "Vent boot replacement", value: "$220 to $320" },
     ],
     icon: "Home",
     hero: "/images/project-4.webp",
@@ -483,11 +434,6 @@ export const services: Service[] = [
         q: "Are anti-tip anchors really necessary?",
         a: "Yes, especially for any furniture over 30 inches with a child in the home. Several preventable child deaths every year in Canada come from tipped furniture. Five-minute install, life-changing protection.",
       },
-    ],
-    priceExamples: [
-      { label: "Full smoke + CO detector swap (typical home)", value: "$220 to $420" },
-      { label: "Childproofing package (kitchen + outlets + 1 gate)", value: "$220 to $380" },
-      { label: "Bathroom grab bar install (per bar)", value: "$150 to $200" },
     ],
     icon: "Shield",
     hero: "/images/project-5.webp",

@@ -161,29 +161,6 @@ export default async function GuidePage(
                     </aside>
                   );
                 }
-                if (block.type === "pricing") {
-                  return (
-                    <div key={i} className="my-10 rounded-2xl bg-surface-panel border border-divider-strong overflow-hidden">
-                      <table className="w-full">
-                        <tbody>
-                          {block.rows.map((r, j) => (
-                            <tr
-                              key={j}
-                              className="border-b border-divider-strong/30 last:border-0"
-                            >
-                              <td className="px-5 py-4 text-fg-strong/85 text-sm md:text-base">
-                                {r.label}
-                              </td>
-                              <td className="px-5 py-4 text-right font-display font-bold text-accent">
-                                {r.value}
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  );
-                }
                 return null;
               })}
             </Reveal>

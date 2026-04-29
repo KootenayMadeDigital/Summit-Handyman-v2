@@ -30,13 +30,6 @@ function renderGuideBody(body: typeof guides[number]["body"]): string {
       if (block.type === "h3") return `### ${block.text}`;
       if (block.type === "ul") return block.items.map((i) => `- ${i}`).join("\n");
       if (block.type === "callout") return `> **${block.title}**: ${block.text}`;
-      if (block.type === "pricing") {
-        return [
-          "| Item | Typical 2026 price |",
-          "| --- | --- |",
-          ...block.rows.map((r) => `| ${r.label} | ${r.value} |`),
-        ].join("\n");
-      }
       return "";
     })
     .join("\n\n");
@@ -97,8 +90,7 @@ ${s.longDescription}
 **What's included:**
 ${s.includes.map((i) => `- ${i}`).join("\n")}
 
-**Typical pricing (2026):**
-${s.priceExamples ? s.priceExamples.map((p) => `- ${p.label}: ${p.value}`).join("\n") : "Quote required."}
+**Pricing:** All work is quoted in writing after Brody reviews photos and details submitted through the quote form at ${site.url}/quote. ${site.pricing.minimumLong}
 
 **Common questions:**
 ${s.faqs.map((f) => `- **Q: ${f.q}**\n  A: ${f.a}`).join("\n")}
