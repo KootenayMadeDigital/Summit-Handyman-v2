@@ -5,6 +5,7 @@ import { ArrowRight, Mail, Star } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
+import { Parallax } from "@/components/ui/parallax";
 import { site } from "@/lib/site";
 
 export function Hero() {
@@ -118,7 +119,8 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="hidden lg:block lg:col-span-4"
         >
-          <div className="relative aspect-[4/5] w-full max-w-sm ml-auto rounded-2xl overflow-hidden border border-summit-slate/60 shadow-panel-lg group">
+          <Parallax strength={0.06}>
+          <div className="photo-grade relative aspect-[4/5] w-full max-w-sm ml-auto rounded-2xl overflow-hidden border border-summit-slate/60 shadow-panel-lg group">
             <Image
               src="/images/about-brody.webp"
               alt={`${site.owner}, owner of ${site.name}`}
@@ -138,6 +140,7 @@ export function Hero() {
               </p>
             </div>
           </div>
+          </Parallax>
         </motion.div>
       </div>
     </section>

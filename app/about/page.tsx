@@ -55,7 +55,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <Reveal className="lg:col-span-5">
               <div className="lg:sticky lg:top-32 space-y-6">
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-summit-slate/60 shadow-panel-lg">
+                <div className="photo-grade relative aspect-[4/5] rounded-2xl overflow-hidden border border-summit-slate/60 shadow-panel-lg">
                   <Image
                     src="/images/about-brody.webp"
                     alt={`${site.owner}, owner of ${site.name}`}

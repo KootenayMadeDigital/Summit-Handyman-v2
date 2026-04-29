@@ -1,50 +1,17 @@
 "use client";
 
-import {
-  Wrench,
-  Paintbrush,
-  Hammer,
-  Zap,
-  Square,
-  Package,
-  Droplets,
-  CloudRain,
-  Fence,
-  Home,
-  Shield,
-  type LucideIcon,
-} from "lucide-react";
+import { AnimatedIcon } from "./animated-icon";
 import { cn } from "@/lib/utils";
-
-const iconMap: Record<string, LucideIcon> = {
-  Wrench,
-  Paintbrush,
-  Hammer,
-  Zap,
-  Square,
-  Package,
-  Droplets,
-  CloudRain,
-  Fence,
-  Home,
-  Shield,
-};
 
 export function ServiceIcon({
   name,
   className,
-  strokeWidth = 1.5,
+  trigger = "hover",
 }: {
   name: string;
   className?: string;
   strokeWidth?: number;
+  trigger?: "hover" | "in-view" | "always";
 }) {
-  const Icon = iconMap[name] ?? Wrench;
-  return (
-    <Icon
-      className={cn("text-summit-gold", className)}
-      strokeWidth={strokeWidth}
-      aria-hidden
-    />
-  );
+  return <AnimatedIcon name={name} className={cn("text-summit-gold", className)} trigger={trigger} />;
 }

@@ -62,7 +62,7 @@ export function BeforeAfterSlider({
     <div
       ref={containerRef}
       className={cn(
-        "relative overflow-hidden rounded-2xl border border-summit-slate/60 select-none touch-none cursor-ew-resize",
+        "photo-grade relative overflow-hidden rounded-2xl border border-summit-slate/60 select-none touch-none cursor-ew-resize",
         className,
       )}
       style={{ aspectRatio }}

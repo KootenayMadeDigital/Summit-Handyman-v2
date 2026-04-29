@@ -185,6 +185,45 @@ body {
   max-width: 80%;
 }
 
+/* === PHOTO GRADE === */
+/*
+ * Warm, slightly de-saturated cinematic grade applied to project photography.
+ * Adds a subtle gold tint, ~5% contrast boost, and film grain via SVG noise.
+ */
+.photo-grade {
+  position: relative;
+  overflow: hidden;
+}
+.photo-grade > img,
+.photo-grade > picture > img,
+.photo-grade > video {
+  filter: saturate(0.92) contrast(1.05) brightness(0.98);
+}
+.photo-grade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 162, 76, 0.04) 0%,
+    rgba(31, 58, 46, 0.02) 50%,
+    rgba(10, 12, 16, 0.06) 100%
+  );
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+.photo-grade::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 2;
+}
+
 /* === GOLD GRADIENT TEXT === */
 .text-gradient-gold {
   background: linear-gradient(135deg, #d4a24c 0%, #f4c97b 50%, #d4a24c 100%);
@@ -282,6 +321,129 @@ body {
   .marquee__inner,
   .grainient-hero::after,
   .grainient-promise::after {
+    animation: none;
+  }
+}
+
+/* === ANIMATED ICONS (Lordicon-style) === */
+.ai-root {
+  transition: color 200ms var(--ease-editorial);
+}
+
+/* Hover-triggered animations on parent .group */
+.group:hover .ai-wrench {
+  animation: ai-wrench 0.7s var(--ease-editorial) both;
+  transform-origin: 16px 16px;
+}
+.group:hover .ai-paint {
+  animation: ai-paint 0.7s var(--ease-editorial) both;
+  transform-origin: 16px 16px;
+}
+.group:hover .ai-hammer {
+  animation: ai-hammer 0.65s var(--ease-snappy) both;
+  transform-origin: 12px 22px;
+}
+.group:hover .ai-zap {
+  animation: ai-zap 0.6s var(--ease-snappy) both;
+}
+.group:hover .ai-tile rect {
+  animation: ai-tile 0.7s var(--ease-editorial) both;
+}
+.group:hover .ai-tile rect:nth-child(2) { animation-delay: 0.05s; }
+.group:hover .ai-tile rect:nth-child(3) { animation-delay: 0.1s; }
+.group:hover .ai-tile rect:nth-child(4) { animation-delay: 0.15s; }
+.group:hover .ai-package {
+  animation: ai-package 0.7s var(--ease-editorial) both;
+  transform-origin: 16px 16px;
+}
+.group:hover .ai-droplets path {
+  animation: ai-drop 0.8s var(--ease-editorial) both;
+  transform-origin: center bottom;
+}
+.group:hover .ai-droplets path:nth-child(2) { animation-delay: 0.1s; }
+.group:hover .ai-rain path:nth-child(2) {
+  animation: ai-rain-drop 0.8s ease-in-out infinite;
+}
+.group:hover .ai-fence path {
+  animation: ai-fence 0.7s var(--ease-editorial) both;
+  transform-origin: center bottom;
+}
+.group:hover .ai-house {
+  animation: ai-house 0.7s var(--ease-editorial) both;
+  transform-origin: 16px 30px;
+}
+.group:hover .ai-shield {
+  animation: ai-shield 0.7s var(--ease-snappy) both;
+  transform-origin: 16px 16px;
+}
+
+@keyframes ai-wrench {
+  0% { transform: rotate(0); }
+  30% { transform: rotate(-15deg); }
+  70% { transform: rotate(8deg); }
+  100% { transform: rotate(0); }
+}
+@keyframes ai-paint {
+  0% { transform: translate(0, 0) rotate(0); }
+  50% { transform: translate(2px, -2px) rotate(8deg); }
+  100% { transform: translate(0, 0) rotate(0); }
+}
+@keyframes ai-hammer {
+  0% { transform: rotate(0); }
+  40% { transform: rotate(-25deg); }
+  70% { transform: rotate(5deg); }
+  100% { transform: rotate(0); }
+}
+@keyframes ai-zap {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  40% { opacity: 0.4; transform: scale(0.9); }
+  60% { opacity: 1; transform: scale(1.1); }
+}
+@keyframes ai-tile {
+  0% { transform: scale(0.9); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes ai-package {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+@keyframes ai-drop {
+  0% { transform: translateY(-2px); }
+  50% { transform: translateY(1px); }
+  100% { transform: translateY(0); }
+}
+@keyframes ai-rain-drop {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(2px); opacity: 0.7; }
+}
+@keyframes ai-fence {
+  0% { transform: translateY(2px); opacity: 0.6; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes ai-house {
+  0% { transform: scale(0.96); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+@keyframes ai-shield {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .group:hover .ai-wrench,
+  .group:hover .ai-paint,
+  .group:hover .ai-hammer,
+  .group:hover .ai-zap,
+  .group:hover .ai-tile rect,
+  .group:hover .ai-package,
+  .group:hover .ai-droplets path,
+  .group:hover .ai-rain path,
+  .group:hover .ai-fence path,
+  .group:hover .ai-house,
+  .group:hover .ai-shield {
     animation: none;
   }
 }
