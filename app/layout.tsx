@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { site } from "@/lib/site";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -6,6 +7,13 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { MobileStickyBar } from "@/components/layout/mobile-sticky-bar";
 import "./globals.css";
+
+/**
+ * Google Analytics 4 measurement ID.
+ * Loaded via next/script with strategy="afterInteractive" so the gtag
+ * snippet never blocks the initial render or LCP.
+ */
+const GA_MEASUREMENT_ID = "G-0R09QF283Y";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -152,6 +160,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <MobileStickyBar />
         </ThemeProvider>
         <JsonLd />
+        {/*
+          Google Analytics 4 (gtag.js).
+          afterInteractive defers loading until the page is hydrated, so it
+          never competes with LCP or first-paint resources. The same script
+          contents the user provided, just wired through next/script for
+          proper deferral and Next's own optimizations.
+        */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
