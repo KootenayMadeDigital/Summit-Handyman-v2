@@ -64,20 +64,20 @@ export default function QuotePage() {
         </div>
       </PageHero>
 
-      <Section size="sm" className="relative overflow-hidden bg-surface-panel border-y border-divider">
+      <Section size="sm" className="relative overflow-hidden bg-surface-panel border-y border-divider !py-8 sm:!py-10 md:!py-12">
         <div className="absolute inset-0 opacity-[0.14] [background-image:linear-gradient(var(--border)_1px,transparent_1px),linear-gradient(90deg,var(--border)_1px,transparent_1px)] [background-size:56px_56px]" />
         <Container className="relative">
-          <RevealStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" staggerDelay={0.05}>
+          <RevealStagger className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" staggerDelay={0.05}>
             {prep.map((item) => (
               <RevealItem key={item.title}>
-                <div className="summit-card-motion motion-trust h-full rounded-2xl border border-divider-strong bg-surface/70 p-5 shadow-panel backdrop-blur">
-                  <div className="summit-icon-box h-11 w-11 rounded-xl border border-accent/40 bg-accent-soft flex items-center justify-center">
+                <div className="summit-card-motion motion-trust h-full rounded-2xl border border-divider-strong bg-surface/70 p-4 sm:p-5 shadow-panel backdrop-blur">
+                  <div className="summit-icon-box h-10 w-10 sm:h-11 sm:w-11 rounded-xl border border-accent/40 bg-accent-soft flex items-center justify-center">
                     <item.Icon className="h-5 w-5 text-accent" strokeWidth={1.7} />
                   </div>
-                  <h2 className="mt-4 font-display text-lg font-bold text-fg-strong">
+                  <h2 className="mt-3 sm:mt-4 font-display text-base sm:text-lg font-bold leading-tight text-fg-strong">
                     {item.title}
                   </h2>
-                  <p className="mt-2 text-sm leading-relaxed text-fg-muted">{item.body}</p>
+                  <p className="mt-2 hidden sm:block text-sm leading-relaxed text-fg-muted">{item.body}</p>
                 </div>
               </RevealItem>
             ))}
@@ -85,12 +85,12 @@ export default function QuotePage() {
         </Container>
       </Section>
 
-      <Section id="quote-form" size="lg" className="relative overflow-hidden bg-surface">
+      <Section id="quote-form" size="lg" className="relative overflow-hidden bg-surface !pt-8 sm:!pt-10 md:!pt-14 !pb-16 sm:!pb-20 md:!pb-section-lg">
         <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
         <Container>
           <div className="grid lg:grid-cols-[0.35fr_0.65fr] gap-6 lg:gap-8 items-start">
             <Reveal>
-              <aside className="summit-card-motion motion-trust lg:sticky lg:top-28 rounded-[2rem] border border-accent/35 bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] p-6 sm:p-7 shadow-panel-lg">
+              <aside className="summit-card-motion motion-trust hidden lg:block lg:sticky lg:top-28 rounded-[2rem] border border-accent/35 bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] p-6 sm:p-7 shadow-panel-lg">
                 <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
                   Before you start
                 </p>

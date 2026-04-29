@@ -243,8 +243,8 @@ export function QuoteForm() {
         />
       </div>
       <div className="absolute -right-28 -top-28 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
-      <div className="relative p-5 sm:p-6 md:p-8 lg:p-10">
-        <div className="mb-7 grid gap-5 lg:grid-cols-[1fr_0.34fr] lg:items-end">
+      <div className="relative p-4 sm:p-6 md:p-8 lg:p-10">
+        <div className="mb-5 sm:mb-7 grid gap-5 lg:grid-cols-[1fr_0.34fr] lg:items-end">
           <div>
             <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold">
               Step {step + 1} of {STEPS.length}
@@ -253,7 +253,7 @@ export function QuoteForm() {
               {STEPS[step]}
             </h2>
           </div>
-          <div className="summit-card-motion motion-trust rounded-2xl border border-divider-strong bg-surface/70 p-4">
+          <div className="summit-card-motion motion-trust hidden sm:block rounded-2xl border border-divider-strong bg-surface/70 p-4">
             <p className="text-[11px] uppercase tracking-[0.16em] text-fg-muted font-semibold">
               Current scope
             </p>
@@ -266,7 +266,7 @@ export function QuoteForm() {
           </div>
         </div>
 
-        <div className="mb-8 grid grid-cols-4 gap-2 sm:gap-3" role="group" aria-label="Quote form progress">
+        <div className="mb-5 sm:mb-8 grid grid-cols-4 gap-2 sm:gap-3" role="group" aria-label="Quote form progress">
           {STEPS.map((s, i) => (
             <div key={s} className="min-w-0">
               <div
@@ -280,16 +280,16 @@ export function QuoteForm() {
           ))}
         </div>
 
-        <div className="min-h-[420px]">
+        <div className="min-h-0 sm:min-h-[420px]">
         {step === 0 && (
           <div>
             <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-fg-strong mb-2 text-balance">
               What needs doing?
             </h2>
-            <p className="text-sm sm:text-base text-fg-muted mb-6">
+            <p className="text-sm sm:text-base text-fg-muted mb-4 sm:mb-6">
               Pick the closest match. We can refine later.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-2.5 sm:gap-3">
               {services.map((s) => (
                 <button
                   key={s.slug}
@@ -297,7 +297,7 @@ export function QuoteForm() {
                   onClick={() => update("service", s.slug)}
                   aria-pressed={state.service === s.slug}
                   className={cn(
-                    "summit-card-motion motion-service group relative overflow-hidden p-4 rounded-2xl border text-left transition-all duration-300 min-w-0",
+                    "summit-card-motion motion-service group relative overflow-hidden p-3 sm:p-4 rounded-2xl border text-left transition-all duration-300 min-w-0",
                     state.service === s.slug
                       ? "border-accent bg-accent-soft text-fg-strong shadow-gold"
                       : "border-divider-strong bg-surface-elevated/60 text-fg/85 hover:border-accent-soft hover:bg-surface-elevated",
@@ -306,10 +306,10 @@ export function QuoteForm() {
                   <span className="absolute right-3 top-3 opacity-0 transition-opacity group-hover:opacity-100">
                     <CheckCircle2 className="h-4 w-4 text-accent" />
                   </span>
-                  <span className="block pr-5 font-display font-bold text-base leading-tight text-balance">
+                  <span className="block pr-4 font-display font-bold text-sm sm:text-base leading-tight text-balance">
                     {s.name}
                   </span>
-                  <span className="block text-xs text-fg-muted mt-2 leading-snug">
+                  <span className="hidden sm:block text-xs text-fg-muted mt-2 leading-snug">
                     {s.shortDescription}
                   </span>
                 </button>
@@ -319,7 +319,7 @@ export function QuoteForm() {
                 onClick={() => update("service", "other")}
                 aria-pressed={state.service === "other"}
                 className={cn(
-                  "summit-card-motion motion-service p-4 rounded-2xl border text-left transition-all duration-300",
+                  "summit-card-motion motion-service p-3 sm:p-4 rounded-2xl border text-left transition-all duration-300",
                   state.service === "other"
                     ? "border-accent bg-accent-soft text-fg-strong"
                     : "border-divider-strong bg-surface-elevated/60 text-fg/85 hover:border-accent-soft hover:bg-surface-elevated",
@@ -328,7 +328,7 @@ export function QuoteForm() {
                 <span className="block font-display font-bold text-sm sm:text-base">
                   Something else
                 </span>
-                <span className="block text-[11px] sm:text-xs text-fg-muted mt-1">
+                <span className="hidden sm:block text-[11px] sm:text-xs text-fg-muted mt-1">
                   Tell us in step 3.
                 </span>
               </button>
@@ -587,7 +587,7 @@ export function QuoteForm() {
         )}
       </div>
 
-        <div className="mt-8 flex items-center justify-between gap-3 sm:gap-4 border-t border-divider pt-6">
+        <div className="mt-6 sm:mt-8 flex items-center justify-between gap-3 sm:gap-4 border-t border-divider pt-5 sm:pt-6">
         <button
           type="button"
           onClick={back}
