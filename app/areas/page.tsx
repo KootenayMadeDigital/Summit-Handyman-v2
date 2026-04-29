@@ -295,18 +295,13 @@ function AreaCard({ area, index }: { area: Area; index: number }) {
       className="summit-card-motion motion-area group block h-full rounded-[2rem] border border-divider-strong bg-surface-panel p-6 shadow-panel transition-all duration-300 hover:border-accent hover:shadow-gold"
     >
       <div className="mb-5 flex items-start justify-between gap-4">
-        <div className="flex items-center gap-3">
+        <div className="flex min-w-0 items-center gap-3">
           <div className="summit-icon-box flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/35 bg-accent-soft font-display text-lg font-bold text-accent">
             {String(index + 1).padStart(2, "0")}
           </div>
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-fg-muted">
-              {area.postalCodePrefixes.join(" · ")}
-            </p>
-            <h2 className="mt-1 font-display text-2xl font-bold leading-tight text-fg-strong">
-              {area.name}, {area.province}
-            </h2>
-          </div>
+          <h2 className="min-w-0 font-display text-2xl font-bold leading-tight text-fg-strong">
+            {area.name}, {area.province}
+          </h2>
         </div>
         <ArrowUpRight className="summit-arrow h-5 w-5 flex-shrink-0 text-fg-muted transition-all duration-300 group-hover:text-accent" />
       </div>
