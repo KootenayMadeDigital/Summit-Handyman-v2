@@ -156,7 +156,7 @@ export function ReviewsRichPage() {
         <Container>
           <div className="grid gap-6 lg:grid-cols-[0.58fr_0.42fr] lg:items-stretch">
             <Reveal>
-              <div className="summit-card-motion relative h-full overflow-hidden rounded-[2rem] border border-accent/40 bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_13%,var(--bg-panel))] p-6 sm:p-8 md:p-10 shadow-panel-lg">
+              <div className="summit-card-motion motion-trust relative h-full overflow-hidden rounded-[2rem] border border-accent/40 bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_13%,var(--bg-panel))] p-6 sm:p-8 md:p-10 shadow-panel-lg">
                 <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
                 <div className="relative">
                   <div className="flex flex-wrap items-center justify-between gap-4">
@@ -183,13 +183,13 @@ export function ReviewsRichPage() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="summit-card-motion h-full rounded-[2rem] border border-divider-strong bg-surface-panel p-5 sm:p-6 shadow-panel-lg">
+              <div className="summit-card-motion motion-trust h-full rounded-[2rem] border border-divider-strong bg-surface-panel p-5 sm:p-6 shadow-panel-lg">
                 <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
                   Trust checklist
                 </p>
                 <div className="mt-5 grid gap-3">
                   {trustSignals.map((signal) => (
-                    <div key={signal.label} className="summit-card-motion flex gap-3 rounded-2xl border border-divider-strong bg-surface/70 p-4">
+                    <div key={signal.label} className="summit-card-motion motion-trust flex gap-3 rounded-2xl border border-divider-strong bg-surface/70 p-4">
                       <div className="summit-icon-box h-11 w-11 rounded-xl bg-accent-soft border border-accent/35 flex items-center justify-center flex-shrink-0">
                         <signal.Icon className="h-5 w-5 text-accent" strokeWidth={1.6} />
                       </div>
@@ -259,7 +259,7 @@ export function ReviewsRichPage() {
                     type="button"
                     onClick={() => setActiveLens(lens.key)}
                     className={cn(
-                      "summit-card-motion flex items-center gap-3 rounded-2xl border p-4 text-left transition-all duration-300",
+                      "summit-card-motion motion-trust flex items-center gap-3 rounded-2xl border p-4 text-left transition-all duration-300",
                       activeLens === lens.key
                         ? "border-accent bg-accent-soft text-fg-strong shadow-gold"
                         : "border-divider-strong bg-surface hover:border-accent-soft text-fg-muted",
@@ -275,7 +275,7 @@ export function ReviewsRichPage() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="summit-card-motion h-full rounded-[2rem] border border-accent/35 bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] p-6 sm:p-8 md:p-10 shadow-panel-lg">
+              <div className="summit-card-motion motion-trust h-full rounded-[2rem] border border-accent/35 bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] p-6 sm:p-8 md:p-10 shadow-panel-lg">
                 <selectedLens.Icon className="h-9 w-9 text-accent" strokeWidth={1.5} />
                 <p className="mt-6 text-xs uppercase tracking-[0.18em] text-accent font-semibold">
                   Buyer doubt
@@ -311,7 +311,7 @@ export function ReviewsRichPage() {
           <RevealStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5" staggerDelay={0.05}>
             {proofPattern.map((item) => (
               <RevealItem key={item.title}>
-                <div className="summit-card-motion h-full p-6 rounded-[1.5rem] bg-surface-panel border border-divider-strong hover:border-accent-soft transition-all duration-300">
+                <div className="summit-card-motion motion-trust h-full p-6 rounded-[1.5rem] bg-surface-panel border border-divider-strong hover:border-accent-soft transition-all duration-300">
                   <div className="h-11 w-11 rounded-xl bg-accent-soft border border-accent-soft flex items-center justify-center mb-5">
                     <item.Icon className="h-5 w-5 text-accent" strokeWidth={1.6} aria-hidden />
                   </div>
@@ -376,7 +376,7 @@ export function ReviewsRichPage() {
       <Section size="md" className="bg-surface">
         <Container size="narrow">
           <Reveal>
-            <div className="summit-card-motion text-center space-y-5 rounded-[2rem] border border-divider-strong bg-surface-panel p-7 sm:p-9 shadow-panel-lg">
+            <div className="summit-card-motion motion-cta text-center space-y-5 rounded-[2rem] border border-divider-strong bg-surface-panel p-7 sm:p-9 shadow-panel-lg">
               <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-accent font-semibold">
                 Worked with Brody?
               </p>
@@ -404,7 +404,7 @@ export function ReviewsRichPage() {
       <Section size="lg" className="grainient-promise relative overflow-hidden">
         <Container>
           <Reveal>
-            <div className="summit-card-motion grid gap-8 rounded-[2rem] border border-accent/35 bg-surface-panel/75 p-6 sm:p-8 md:p-10 shadow-panel-lg backdrop-blur lg:grid-cols-[1fr_0.42fr] lg:items-center">
+            <div className="summit-card-motion motion-cta grid gap-8 rounded-[2rem] border border-accent/35 bg-surface-panel/75 p-6 sm:p-8 md:p-10 shadow-panel-lg backdrop-blur lg:grid-cols-[1fr_0.42fr] lg:items-center">
               <div className="space-y-5">
                 <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-accent font-semibold">
                   Ready to be next?
@@ -449,7 +449,7 @@ function ReviewCard({
   index: number;
 }) {
   return (
-    <article className="summit-card-motion group w-full rounded-[1.5rem] border border-divider-strong bg-surface-panel p-5 text-left shadow-panel transition-all duration-300 hover:border-accent-soft hover:shadow-panel-lg">
+    <article className="summit-card-motion motion-review group w-full rounded-[1.5rem] border border-divider-strong bg-surface-panel p-5 text-left shadow-panel transition-all duration-300 hover:border-accent-soft hover:shadow-panel-lg">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="font-display text-lg font-bold text-fg-strong leading-tight">

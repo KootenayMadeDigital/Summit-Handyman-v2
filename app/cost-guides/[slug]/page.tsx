@@ -218,7 +218,7 @@ export default async function GuidePage(
                 <Link
                   key={r.slug}
                   href={`/cost-guides/${r.slug}`}
-                  className="group p-5 rounded-2xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-colors"
+                  className="summit-card-motion motion-service group p-5 rounded-2xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-colors"
                 >
                   <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-2">
                     {r.readingMinutes} min · {r.area ?? "Lower Mainland"}

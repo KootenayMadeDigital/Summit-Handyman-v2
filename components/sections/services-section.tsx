@@ -58,7 +58,7 @@ export function ServicesSection() {
                       <Link
                         href={`/services/${s.slug}`}
                         className={cn(
-                          "summit-card-motion group relative block h-full p-6 rounded-2xl",
+                          "summit-card-motion motion-service group relative block h-full p-6 rounded-2xl",
                           "bg-surface-panel border border-divider",
                           "hover:border-accent-soft hover:bg-surface-elevated",
                           "transition-all duration-300 ease-editorial",

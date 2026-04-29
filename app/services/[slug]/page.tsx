@@ -155,7 +155,7 @@ export default async function ServicePage(
                 {service.includes.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-4 p-5 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent/50 transition-colors"
+                    className="summit-card-motion motion-trust flex items-start gap-4 p-5 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent/50 transition-colors"
                   >
                     <span className="mt-0.5 h-6 w-6 rounded-full bg-accent-soft border border-accent/40 flex items-center justify-center flex-shrink-0">
                       <Check className="h-3.5 w-3.5 text-accent" strokeWidth={3} />
@@ -213,7 +213,7 @@ export default async function ServicePage(
               <Link
                 key={a.slug}
                 href={`/services/${service.slug}/in/${a.slug}`}
-                className="group flex items-center justify-between gap-2 p-4 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-all"
+                className="summit-card-motion motion-service group flex items-center justify-between gap-2 p-4 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-all"
               >
                 <span className="text-sm font-semibold text-fg-strong group-hover:text-accent transition-colors">
                   {a.name}

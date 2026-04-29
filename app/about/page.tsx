@@ -223,7 +223,7 @@ export default function AboutPage() {
                 {proofStats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="rounded-2xl border border-divider-strong bg-surface-panel p-5 transition-colors hover:border-accent-soft"
+                    className="summit-card-motion motion-trust rounded-2xl border border-divider-strong bg-surface-panel p-5 transition-colors hover:border-accent-soft"
                   >
                     <p className="font-display text-4xl font-extrabold text-fg-strong leading-none">
                       {stat.value}
@@ -289,7 +289,7 @@ export default function AboutPage() {
           <RevealStagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerDelay={0.05}>
             {principles.map((p) => (
               <RevealItem key={p.title}>
-                <div className="h-full p-5 sm:p-6 rounded-[1.5rem] bg-surface border border-divider-strong hover:border-accent-soft hover:-translate-y-0.5 transition-all duration-300">
+                <div className="summit-card-motion motion-trust h-full p-5 sm:p-6 rounded-[1.5rem] bg-surface border border-divider-strong hover:border-accent-soft transition-all duration-300">
                   <div className="h-11 w-11 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center mb-5">
                     <p.Icon className="h-5 w-5 text-accent" strokeWidth={1.6} aria-hidden />
                   </div>
@@ -346,7 +346,7 @@ export default function AboutPage() {
                 {experience.map((item) => (
                   <article
                     key={item.step}
-                    className="group grid grid-cols-[4rem_1fr] gap-4 rounded-2xl border border-divider-strong bg-surface-panel p-5 transition-all duration-300 hover:border-accent-soft hover:-translate-y-0.5"
+                    className="summit-card-motion motion-process group grid grid-cols-[4rem_1fr] gap-4 rounded-2xl border border-divider-strong bg-surface-panel p-5 transition-all duration-300 hover:border-accent-soft"
                   >
                     <p className="font-display text-3xl font-extrabold text-accent/70 leading-none">
                       {item.step}

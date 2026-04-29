@@ -119,7 +119,7 @@ function GuideCard({ guide, featured = false }: { guide: Guide; featured?: boole
       href={`/cost-guides/${guide.slug}`}
       className={cn(
         "group relative block h-full overflow-hidden rounded-3xl border border-divider-strong bg-surface-panel transition-all duration-500 ease-editorial",
-        "hover:-translate-y-1 hover:border-accent-soft hover:shadow-gold-lg focus-visible:ring-accent",
+        "summit-card-motion motion-service hover:border-accent-soft hover:shadow-gold-lg focus-visible:ring-accent",
         featured && "lg:grid lg:grid-cols-[1.08fr_0.92fr]",
       )}
     >
@@ -284,7 +284,7 @@ export default function CostGuidesPage() {
                     <Link
                       key={guide.slug}
                       href={`/cost-guides/${guide.slug}`}
-                      className="group flex items-center gap-3 rounded-2xl border border-divider-strong bg-surface/70 p-3 transition-colors hover:border-accent-soft"
+                      className="summit-card-motion motion-service group flex items-center gap-3 rounded-2xl border border-divider-strong bg-surface/70 p-3 transition-colors hover:border-accent-soft"
                     >
                       <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-xl">
                         <Image src={guide.hero} alt="" fill sizes="56px" className="object-cover" />

@@ -26,21 +26,21 @@ export function FinalCTA() {
 
             {/* Why the form */}
             <ul className="grid sm:grid-cols-3 gap-3 sm:gap-4 pt-2 max-w-2xl mx-auto text-left">
-              <li className="summit-card-motion flex items-start gap-3 p-4 rounded-xl bg-surface-panel border border-divider">
+              <li className="summit-card-motion motion-trust flex items-start gap-3 p-4 rounded-xl bg-surface-panel border border-divider">
                 <FileText className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
                 <div>
                   <p className="font-display font-bold text-sm text-fg-strong leading-tight">Documented</p>
                   <p className="text-xs text-fg-muted mt-0.5">Brody has all the details on hand for the call.</p>
                 </div>
               </li>
-              <li className="summit-card-motion flex items-start gap-3 p-4 rounded-xl bg-surface-panel border border-divider">
+              <li className="summit-card-motion motion-trust flex items-start gap-3 p-4 rounded-xl bg-surface-panel border border-divider">
                 <Camera className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
                 <div>
                   <p className="font-display font-bold text-sm text-fg-strong leading-tight">Photos help</p>
                   <p className="text-xs text-fg-muted mt-0.5">Attach up to 5 for a more accurate estimate.</p>
                 </div>
               </li>
-              <li className="summit-card-motion flex items-start gap-3 p-4 rounded-xl bg-surface-panel border border-divider">
+              <li className="summit-card-motion motion-trust flex items-start gap-3 p-4 rounded-xl bg-surface-panel border border-divider">
                 <Clock className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
                 <div>
                   <p className="font-display font-bold text-sm text-fg-strong leading-tight">24-hour reply</p>

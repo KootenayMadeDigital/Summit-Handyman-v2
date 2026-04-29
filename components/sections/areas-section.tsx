@@ -27,7 +27,7 @@ export function AreasSection() {
             <RevealItem key={a.slug}>
               <Link
                 href={`/areas/${a.slug}`}
-                className="summit-card-motion group block h-full p-5 sm:p-6 md:p-7 rounded-2xl bg-surface-panel border border-divider hover:border-accent-soft hover:bg-surface-elevated transition-all duration-300 ease-editorial hover:-translate-y-0.5 hover:shadow-gold min-w-0"
+                className="summit-card-motion motion-area group block h-full p-5 sm:p-6 md:p-7 rounded-2xl bg-surface-panel border border-divider hover:border-accent-soft hover:bg-surface-elevated transition-all duration-300 ease-editorial hover:-translate-y-0.5 hover:shadow-gold min-w-0"
               >
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <MapPin className="h-6 w-6 text-accent" strokeWidth={1.5} />

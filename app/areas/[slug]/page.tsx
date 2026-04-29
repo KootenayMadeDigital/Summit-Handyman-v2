@@ -308,7 +308,7 @@ export default async function AreaPage(
           <RevealStagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.05}>
             {profile.commonJobs.map((job) => (
               <RevealItem key={job}>
-                <div className="h-full rounded-[1.5rem] border border-divider-strong bg-surface p-6 shadow-panel transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-soft">
+                <div className="summit-card-motion motion-service h-full rounded-[1.5rem] border border-divider-strong bg-surface p-6 shadow-panel transition-all duration-300 hover:border-accent-soft">
                   <CheckCircle2 className="mb-5 h-6 w-6 text-accent" strokeWidth={1.7} />
                   <h3 className="font-display text-lg font-bold leading-tight text-fg-strong">{job}</h3>
                 </div>
@@ -375,7 +375,7 @@ export default async function AreaPage(
               <RevealItem key={service.slug}>
                 <Link
                   href={`/services/${service.slug}/in/${area.slug}`}
-                  className="group flex min-w-0 items-center justify-between gap-4 rounded-2xl border border-divider-strong bg-surface p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-soft hover:shadow-panel"
+                  className="summit-card-motion motion-service group flex min-w-0 items-center justify-between gap-4 rounded-2xl border border-divider-strong bg-surface p-4 transition-all duration-300 hover:border-accent-soft hover:shadow-panel"
                 >
                   <span className="flex min-w-0 items-center gap-3">
                     <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-accent/25 bg-accent-soft">
@@ -385,7 +385,7 @@ export default async function AreaPage(
                       {service.name} in {area.name}
                     </span>
                   </span>
-                  <ArrowUpRight className="h-4 w-4 flex-shrink-0 text-fg-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
+                  <ArrowUpRight className="summit-arrow h-4 w-4 flex-shrink-0 text-fg-muted transition-all duration-300 group-hover:text-accent" />
                 </Link>
               </RevealItem>
             ))}
