@@ -11,6 +11,7 @@ import {
   Clock3,
   Flame,
   Leaf,
+  Loader2,
   MapPin,
   Upload,
   X,
@@ -62,6 +63,7 @@ export function QuoteForm() {
   const [state, setState] = React.useState<FormState>(initialState);
   const [photos, setPhotos] = React.useState<File[]>([]);
   const [photoPreviews, setPhotoPreviews] = React.useState<string[]>([]);
+  const [submitting, setSubmitting] = React.useState(false);
   const [submitted, setSubmitted] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const fileInputRef = React.useRef<HTMLInputElement>(null);
@@ -176,12 +178,31 @@ export function QuoteForm() {
     return `mailto:${site.contact.email}?subject=${encodeURIComponent(`Quote request from ${subjectName}`)}&body=${encodeURIComponent(body)}`;
   }, [photos.length, selectedArea?.name, selectedService?.name, selectedTiming?.label, state]);
 
-  const submit = () => {
+  const submit = async () => {
+    setSubmitting(true);
     setError(null);
 
     try {
-      if (typeof window !== "undefined") {
-        window.location.href = mailtoHref;
+      const fd = new FormData();
+      fd.append("service", state.service);
+      fd.append("timing", state.timing);
+      fd.append("area", state.area);
+      fd.append("description", state.description);
+      fd.append("name", state.name);
+      fd.append("contact", state.contact);
+      fd.append("preferredContact", state.preferredContact);
+      fd.append("postalCode", state.postalCode);
+      fd.append("website", "");
+      photos.forEach((p) => fd.append("photos", p));
+
+      const res = await fetch("/api/quote", { method: "POST", body: fd });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(
+          data?.error ??
+            "Submission failed. Please try again or email Brody at " + site.contact.email,
+        );
       }
 
       setSubmitted(true);
@@ -192,8 +213,10 @@ export function QuoteForm() {
       setError(
         e instanceof Error
           ? e.message
-          : "Could not open your email app. Use the email link below instead.",
+          : "Submission failed. Please try again or email Brody directly.",
       );
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -206,10 +229,10 @@ export function QuoteForm() {
             <Check className="h-10 w-10 text-accent" strokeWidth={2.5} />
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-fg-strong mb-4 text-balance">
-            Your email is ready for Brody.
+            Got it. Brody will be in touch.
           </h2>
           <p className="text-fg/85 max-w-lg mx-auto leading-relaxed text-sm sm:text-base">
-            Your email app should now have the quote details addressed to {site.contact.email}. Review it, attach any selected photos, then send it to Brody.
+            Your details {photos.length > 0 ? `and ${photos.length} photo${photos.length > 1 ? "s" : ""} ` : ""}have been sent to Brody. He'll review the job and reply within 24 hours with questions or a written estimate.
           </p>
         <p className="mt-4 text-xs text-fg-muted">
           Need to add context? Text{" "}
@@ -581,7 +604,7 @@ export function QuoteForm() {
             />
 
             <p className="text-xs text-fg-muted pt-2">
-              By emailing Brody, you agree to be contacted by Summit Handyman regarding your project. Your info is never shared.
+              By submitting, you agree to be contacted by Brody at Summit Handyman regarding your project. Your info is never shared.
             </p>
 
             <div className="rounded-xl border border-divider-strong bg-surface-elevated/60 px-4 py-3 text-sm text-fg-muted">
@@ -617,7 +640,7 @@ export function QuoteForm() {
         <button
           type="button"
           onClick={back}
-          disabled={step === 0}
+          disabled={step === 0 || submitting}
           className="inline-flex min-h-11 items-center gap-1 sm:gap-2 rounded-xl px-3 text-xs sm:text-sm text-fg-muted hover:text-accent transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
         >
           <ArrowLeft className="h-4 w-4" />
@@ -629,7 +652,7 @@ export function QuoteForm() {
         {step < STEPS.length - 1 ? (
           <Button
             onClick={next}
-            disabled={!canAdvance()}
+            disabled={!canAdvance() || submitting}
             size="md"
             className="disabled:opacity-50 disabled:cursor-not-allowed"
           >
@@ -639,12 +662,21 @@ export function QuoteForm() {
         ) : (
           <Button
             onClick={submit}
-            disabled={!canAdvance()}
+            disabled={!canAdvance() || submitting}
             size="md"
             className="disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Open email to Brody
-            <ArrowRight className="h-4 w-4" />
+            {submitting ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Sending...
+              </>
+            ) : (
+              <>
+                Send to Brody
+                <ArrowRight className="h-4 w-4" />
+              </>
+            )}
           </Button>
         )}
         </div>
