@@ -56,8 +56,8 @@ export default function AboutPage() {
               <div className="lg:sticky lg:top-32 space-y-6">
                 <div className="photo-grade relative aspect-[4/5] rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg">
                   <Image
-                    src="/images/about-brody.webp"
-                    alt={`${site.owner}, owner of ${site.name}`}
+                    src="/images/page-hero-fallback.webp"
+                    alt="Craftsmanship tools laid out on a wood workbench"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover"

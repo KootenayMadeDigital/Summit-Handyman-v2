@@ -132,20 +132,22 @@ export function Hero() {
           className="hidden lg:block lg:col-span-4"
         >
           <Parallax strength={0.06}>
-            <div className="relative w-full max-w-sm ml-auto rounded-2xl overflow-hidden border border-divider-strong bg-surface-panel/80 p-6 shadow-panel-lg backdrop-blur">
-              <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
-                Owner-operated
-              </p>
-              <p className="mt-3 font-display text-3xl font-extrabold leading-tight text-summit-mist">
-                One pro. One standard.
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-summit-mist/75">
-                {site.owner} handles every job personally across the Lower Mainland. No dispatcher, no rotating crew, no mystery subcontractor.
-              </p>
-              <div className="mt-6 rounded-xl border border-accent/35 bg-accent-soft p-4">
-                <p className="font-serif text-lg italic leading-snug text-summit-mist">
-                  “{site.promise}”
+            <div className="photo-grade relative aspect-[4/5] w-full max-w-sm ml-auto rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg group">
+              <Image
+                src="/images/about-brody.webp"
+                alt={`${site.owner}, owner of ${site.name}`}
+                fill
+                sizes="(max-width: 1024px) 0px, 384px"
+                className="object-cover transition-transform duration-1000 ease-editorial group-hover:scale-105"
+              />
+              <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-summit-black via-summit-black/85 to-transparent">
+                <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
+                  Owner-operated
                 </p>
+                <p className="mt-1 font-display text-xl font-bold text-summit-mist">
+                  {site.owner}
+                </p>
+                <p className="text-sm text-summit-mist/70 mt-0.5">Langley, BC · Founder</p>
               </div>
             </div>
           </Parallax>
