@@ -110,8 +110,6 @@ export default function CostGuidesPage() {
   const featured = [...guides]
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 3);
-  const featuredSlugs = new Set(featured.map((g) => g.slug));
-
   return (
     <>
       <PageHero
@@ -217,34 +215,6 @@ export default function CostGuidesPage() {
         </Container>
       </Section>
 
-      {/* === FULL LIBRARY (every guide, sorted newest first, dedupe-friendly) === */}
-      <Section size="lg" className="bg-surface">
-        <Container>
-          <SectionTitle
-            eyebrow="The full library"
-            title={
-              <>
-                Every guide,{" "}
-                <span className="font-serif italic font-normal text-gradient-gold">
-                  one place.
-                </span>
-              </>
-            }
-            description={`${guides.length} guides covering pricing, decisions, seasonal maintenance, property management, selling, and specific services.`}
-            className="mb-10 sm:mb-12"
-          />
-          <RevealStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {[...guides]
-              .sort((a, b) => b.date.localeCompare(a.date))
-              .filter((g) => !featuredSlugs.has(g.slug))
-              .map((g) => (
-                <RevealItem key={g.slug}>
-                  <GuideCard guide={g} />
-                </RevealItem>
-              ))}
-          </RevealStagger>
-        </Container>
-      </Section>
 
       {/* === FINAL CTA === */}
       <Section size="lg" className="grainient-promise relative overflow-hidden">
