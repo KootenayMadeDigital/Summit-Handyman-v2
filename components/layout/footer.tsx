@@ -115,13 +115,13 @@ export function Footer() {
               <div className="mt-5 pt-5 border-t border-divider grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs sm:text-sm">
                 <a
                   href={`mailto:${site.contact.email}`}
-                  className="inline-flex min-h-11 items-center text-fg/85 hover:text-accent transition-colors break-all"
+                  className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 text-fg/85 hover:text-accent transition-colors break-all"
                 >
                   {site.contact.email}
                 </a>
                 <a
                   href={`sms:${site.contact.phoneTel}`}
-                  className="inline-flex min-h-11 items-center text-fg/85 hover:text-accent transition-colors"
+                  className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 text-fg/85 hover:text-accent transition-colors"
                 >
                   {site.contact.phone}
                 </a>
@@ -145,7 +145,7 @@ export function Footer() {
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="inline-flex min-h-11 items-center text-fg/80 hover:text-accent transition-colors"
+                    className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 text-fg/80 hover:text-accent transition-colors"
                   >
                     {s.name}
                   </Link>
@@ -164,7 +164,7 @@ export function Footer() {
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="inline-flex min-h-11 items-center text-fg/80 hover:text-accent transition-colors"
+                    className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 text-fg/80 hover:text-accent transition-colors"
                   >
                     {s.name}
                   </Link>
@@ -173,7 +173,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="inline-flex min-h-11 items-center gap-1 text-accent hover:text-accent-hot font-semibold transition-colors"
+                  className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 gap-1 text-accent hover:text-accent-hot font-semibold transition-colors"
                 >
                   All services
                   <ArrowRight className="h-3 w-3" />
@@ -192,7 +192,7 @@ export function Footer() {
                 <li key={a.slug}>
                   <Link
                     href={`/areas/${a.slug}`}
-                    className="inline-flex min-h-11 items-center text-fg/80 hover:text-accent transition-colors"
+                    className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 text-fg/80 hover:text-accent transition-colors"
                   >
                     Handyman in {a.name}
                   </Link>
@@ -208,27 +208,27 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/about" className="inline-flex min-h-11 items-center text-fg/80 hover:text-accent transition-colors">
+                <Link href="/about" className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 text-fg/80 hover:text-accent transition-colors">
                   About Brody
                 </Link>
               </li>
               <li>
-                <Link href="/reviews" className="inline-flex min-h-11 items-center text-fg/80 hover:text-accent transition-colors">
+                <Link href="/reviews" className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 text-fg/80 hover:text-accent transition-colors">
                   Reviews
                 </Link>
               </li>
               <li>
-                <Link href="/repair-guides" className="inline-flex min-h-11 items-center text-fg/80 hover:text-accent transition-colors">
+                <Link href="/repair-guides" className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 text-fg/80 hover:text-accent transition-colors">
                   Repair Guides
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="inline-flex min-h-11 items-center text-fg/80 hover:text-accent transition-colors">
+                <Link href="/contact" className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 text-fg/80 hover:text-accent transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/quote" className="inline-flex min-h-11 items-center text-fg/80 hover:text-accent transition-colors">
+                <Link href="/quote" className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 text-fg/80 hover:text-accent transition-colors">
                   Start My Quote
                 </Link>
               </li>
@@ -270,13 +270,13 @@ export function Footer() {
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-xs text-fg-muted">
             <span className="text-fg-muted/80">© {year} {site.legalName}</span>
-            <Link href="/legal/privacy" className="inline-flex min-h-11 items-center hover:text-accent transition-colors">
+            <Link href="/legal/privacy" className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 hover:text-accent transition-colors">
               Privacy
             </Link>
-            <Link href="/legal/terms" className="inline-flex min-h-11 items-center hover:text-accent transition-colors">
+            <Link href="/legal/terms" className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 hover:text-accent transition-colors">
               Terms
             </Link>
-            <Link href="/sitemap.xml" className="inline-flex min-h-11 items-center hover:text-accent transition-colors">
+            <Link href="/sitemap.xml" className="inline-flex min-h-11 items-center md:min-h-0 md:py-1 hover:text-accent transition-colors">
               Sitemap
             </Link>
           </div>
