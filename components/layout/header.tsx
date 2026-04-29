@@ -71,9 +71,11 @@ export function Header() {
                 priority
                 className="rounded-md flex-shrink-0 h-11 w-11 sm:h-14 sm:w-14 md:h-16 md:w-16"
               />
-              <span className="font-display text-base sm:text-xl md:text-2xl font-extrabold tracking-tight text-fg-strong leading-none truncate">
-                Summit Handyman
-                <span className="text-accent">.</span>
+              <span className="font-display text-[15px] sm:text-xl md:text-2xl font-extrabold tracking-tight text-fg-strong leading-[0.95] sm:leading-none whitespace-normal sm:whitespace-nowrap">
+                <span className="block sm:inline">Summit</span>{" "}
+                <span className="block sm:inline">
+                  Handyman<span className="text-accent">.</span>
+                </span>
               </span>
             </Link>
 
