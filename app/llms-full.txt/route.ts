@@ -63,7 +63,6 @@ This is the complete public content of ${site.url} formatted for LLM ingestion. 
 - **Founder promise:** "${site.promise}"
 - **About (in Brody's words):** ${site.about}
 - **Social:**
-  - Instagram: ${site.social.instagram.url}
   - Facebook: ${site.social.facebook.url}
 
 ---

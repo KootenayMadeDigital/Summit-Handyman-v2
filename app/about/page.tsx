@@ -8,7 +8,6 @@ import {
   Facebook,
   FileText,
   Home,
-  Instagram,
   Mail,
   MessageSquare,
   ShieldCheck,
@@ -225,15 +224,6 @@ export default function AboutPage() {
                     >
                       <Facebook className="h-4 w-4 text-accent" />
                       facebook.com/{site.social.facebook.handle}
-                    </a>
-                    <a
-                      href={site.social.instagram.url}
-                      target="_blank"
-                      rel="noopener"
-                      className="flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-strong hover:text-accent transition-colors"
-                    >
-                      <Instagram className="h-4 w-4 text-accent" />
-                      @{site.social.instagram.handle}
                     </a>
                   </div>
                 </div>

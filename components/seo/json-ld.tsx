@@ -32,7 +32,7 @@ export function JsonLd() {
           name: a.name,
           containedInPlace: { "@type": "AdministrativeArea", name: "British Columbia" },
         })),
-        sameAs: [site.social.facebook.url, site.social.instagram.url],
+        sameAs: [site.social.facebook.url],
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: aggregateRating.rating.toFixed(1),

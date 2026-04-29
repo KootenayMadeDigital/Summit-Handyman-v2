@@ -18,7 +18,6 @@ export const site = {
     phone: "604-989-5032",
     phoneTel: "+16049895032",
     facebook: "https://facebook.com/brodythehandyman",
-    instagram: "https://instagram.com/brodythehandyman",
     messenger: "https://m.me/brodythehandyman",
   },
 
@@ -62,7 +61,6 @@ export const site = {
 
   social: {
     facebook: { handle: "brodythehandyman", url: "https://facebook.com/brodythehandyman" },
-    instagram: { handle: "brodythehandyman", url: "https://instagram.com/brodythehandyman" },
   },
 } as const;
 

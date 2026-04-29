@@ -3,7 +3,6 @@ import Image from "next/image";
 import {
   Mail,
   Facebook,
-  Instagram,
   FileText,
   ArrowRight,
   ShieldCheck,
@@ -243,15 +242,6 @@ export function Footer() {
                 className="grid h-11 w-11 place-items-center rounded-full border border-divider-strong text-fg/85 hover:border-accent hover:text-accent transition-colors"
               >
                 <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href={site.social.instagram.url}
-                target="_blank"
-                rel="noopener"
-                aria-label="Summit Handyman on Instagram"
-                className="grid h-11 w-11 place-items-center rounded-full border border-divider-strong text-fg/85 hover:border-accent hover:text-accent transition-colors"
-              >
-                <Instagram className="h-4 w-4" />
               </a>
             </div>
           </div>

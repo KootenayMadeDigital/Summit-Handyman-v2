@@ -1,4 +1,4 @@
-import { Instagram, ArrowUpRight } from "lucide-react";
+import { Facebook, ArrowUpRight } from "lucide-react";
 import { Container, Section, SectionTitle } from "@/components/ui/section";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
@@ -25,9 +25,9 @@ export function ProjectsSection() {
             className="mx-auto md:mx-0"
           />
           <Reveal>
-            <Button href={site.social.instagram.url} variant="secondary" size="md" withArrow>
-              <Instagram className="h-4 w-4" />
-              Follow on Instagram
+            <Button href={site.social.facebook.url} variant="secondary" size="md" withArrow>
+              <Facebook className="h-4 w-4" />
+              Follow on Facebook
             </Button>
           </Reveal>
         </div>
@@ -42,13 +42,13 @@ export function ProjectsSection() {
 
         <Reveal>
           <a
-            href={site.social.instagram.url}
+            href={site.social.facebook.url}
             target="_blank"
             rel="noopener"
             className="mt-12 inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors group"
           >
-            <Instagram className="h-4 w-4" />
-            More on Instagram
+            <Facebook className="h-4 w-4" />
+            More on Facebook
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </Reveal>

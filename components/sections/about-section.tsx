@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Facebook, Instagram } from "lucide-react";
+import { Facebook } from "lucide-react";
 import { Container, Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
@@ -55,15 +55,6 @@ export function AboutSection() {
               >
                 <Facebook className="h-4 w-4" />
                 Facebook
-              </a>
-              <a
-                href={site.social.instagram.url}
-                target="_blank"
-                rel="noopener"
-                className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
-              >
-                <Instagram className="h-4 w-4" />
-                Instagram
               </a>
             </div>
           </Reveal>
