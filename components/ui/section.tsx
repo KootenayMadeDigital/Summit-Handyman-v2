@@ -67,12 +67,12 @@ export function Eyebrow({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em]",
-        "text-summit-gold",
+        "inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em]",
+        "text-accent",
         className,
       )}
     >
-      <span aria-hidden className="h-px w-6 bg-summit-gold/60" />
+      <span aria-hidden className="h-px w-6 bg-accent opacity-60" />
       {children}
     </span>
   );
@@ -94,17 +94,17 @@ export function SectionTitle({
   return (
     <div
       className={cn(
-        "max-w-3xl space-y-5",
+        "max-w-3xl space-y-4 sm:space-y-5",
         align === "center" && "mx-auto text-center",
         className,
       )}
     >
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2 className="font-display font-extrabold text-display-lg text-balance text-summit-mist">
+      <h2 className="font-display font-extrabold text-display-lg text-balance text-fg-strong">
         {title}
       </h2>
       {description && (
-        <p className="text-lg text-summit-stone leading-relaxed text-pretty max-w-2xl">
+        <p className="text-base sm:text-lg text-fg-muted leading-relaxed text-pretty max-w-2xl">
           {description}
         </p>
       )}

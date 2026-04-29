@@ -10,17 +10,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Summit brand palette — refined for V2
+        // Summit brand palette — sourced verbatim from summit-handyman.ca V1
         summit: {
-          black: "#0A0C10",
-          panel: "#161A21",
+          black: "#0F1115",      // V1 --summit-dark
+          panel: "#181B21",      // V1 --summit-panel
+          elevated: "#1F232B",   // panel-on-panel
           slate: "#2A2F3A",
           stone: "#6B7280",
           mist: "#E5E7EB",
-          cream: "#F8F6F2",
-          gold: "#D4A24C",
-          "gold-hot": "#F4C97B",
-          "gold-deep": "#9A7530",
+          cream: "#F8F5EE",
+          gold: "#D97706",       // V1 --summit-gold (amber-600)
+          "gold-hot": "#F59E0B", // amber-500
+          "gold-deep": "#B45309",// V1 --summit-gold-hover
+          "gold-soft": "#FCD34D",// amber-300 — for light-mode accents
           forest: "#1F3A2E",
         },
       },
@@ -53,8 +55,8 @@ const config: Config = {
         prose: "65ch",
       },
       boxShadow: {
-        gold: "0 0 0 1px rgba(212, 162, 76, 0.4), 0 8px 24px -8px rgba(212, 162, 76, 0.25)",
-        "gold-lg": "0 0 0 1px rgba(212, 162, 76, 0.5), 0 20px 40px -12px rgba(212, 162, 76, 0.35)",
+        gold: "0 0 0 1px rgba(217, 119, 6, 0.4), 0 8px 24px -8px rgba(217, 119, 6, 0.28)",
+        "gold-lg": "0 0 0 1px rgba(217, 119, 6, 0.55), 0 20px 40px -12px rgba(217, 119, 6, 0.38)",
         panel: "0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 8px 24px -12px rgba(0, 0, 0, 0.6)",
         "panel-lg": "0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 32px 64px -24px rgba(0, 0, 0, 0.7)",
       },
@@ -89,9 +91,9 @@ const config: Config = {
       },
       backgroundImage: {
         "grain-dark": "url('/textures/grain-dark.png')",
-        "gradient-summit": "linear-gradient(135deg, #0A0C10 0%, #161A21 50%, #0A0C10 100%)",
-        "gradient-gold": "linear-gradient(135deg, #D4A24C 0%, #F4C97B 50%, #D4A24C 100%)",
-        "radial-gold": "radial-gradient(ellipse at 70% 100%, rgba(212, 162, 76, 0.18) 0%, transparent 60%)",
+        "gradient-summit": "linear-gradient(135deg, #0F1115 0%, #181B21 50%, #0F1115 100%)",
+        "gradient-gold": "linear-gradient(135deg, #D97706 0%, #F59E0B 50%, #D97706 100%)",
+        "radial-gold": "radial-gradient(ellipse at 70% 100%, rgba(217, 119, 6, 0.18) 0%, transparent 60%)",
       },
       transitionTimingFunction: {
         editorial: "cubic-bezier(0.22, 1, 0.36, 1)",

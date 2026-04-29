@@ -69,10 +69,10 @@ export default async function ProjectPage(
         <Container>
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <Reveal className="lg:col-span-7 space-y-6">
-              <p className="text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold">
+              <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
                 The Story
               </p>
-              <p className="text-xl text-summit-mist/85 leading-relaxed font-serif text-pretty">
+              <p className="text-xl text-fg-strong/85 leading-relaxed font-serif text-pretty">
                 {project.longStory}
               </p>
               <div className="flex flex-wrap items-center gap-3 pt-3">
@@ -92,42 +92,42 @@ export default async function ProjectPage(
             </Reveal>
 
             <Reveal className="lg:col-span-5" delay={0.1}>
-              <dl className="rounded-2xl bg-summit-panel border border-summit-slate/60 divide-y divide-summit-slate/40">
+              <dl className="rounded-2xl bg-surface-panel border border-divider-strong divide-y divide-[var(--border)]">
                 <div className="flex items-center justify-between gap-3 p-5">
-                  <dt className="flex items-center gap-2 text-sm text-summit-stone flex-shrink-0">
-                    <MapPin className="h-4 w-4 text-summit-gold" />
+                  <dt className="flex items-center gap-2 text-sm text-fg-muted flex-shrink-0">
+                    <MapPin className="h-4 w-4 text-accent" />
                     Location
                   </dt>
                   <dd>
                     <Link
                       href={`/areas/${project.area.toLowerCase().replace(/\s+/g, "-")}`}
-                      className="text-summit-mist font-semibold hover:text-summit-gold transition-colors"
+                      className="text-fg-strong font-semibold hover:text-accent transition-colors"
                     >
                       {project.area}
                     </Link>
                   </dd>
                 </div>
                 <div className="flex items-center justify-between gap-3 p-5">
-                  <dt className="flex items-center gap-2 text-sm text-summit-stone flex-shrink-0">
-                    <Clock className="h-4 w-4 text-summit-gold" />
+                  <dt className="flex items-center gap-2 text-sm text-fg-muted flex-shrink-0">
+                    <Clock className="h-4 w-4 text-accent" />
                     Duration
                   </dt>
-                  <dd className="text-summit-mist font-semibold">{project.duration}</dd>
+                  <dd className="text-fg-strong font-semibold">{project.duration}</dd>
                 </div>
                 <div className="flex items-center justify-between gap-3 p-5">
-                  <dt className="flex items-center gap-2 text-sm text-summit-stone flex-shrink-0">
-                    <Calendar className="h-4 w-4 text-summit-gold" />
+                  <dt className="flex items-center gap-2 text-sm text-fg-muted flex-shrink-0">
+                    <Calendar className="h-4 w-4 text-accent" />
                     Completed
                   </dt>
-                  <dd className="text-summit-mist font-semibold">{project.date}</dd>
+                  <dd className="text-fg-strong font-semibold">{project.date}</dd>
                 </div>
                 {service && (
                   <div className="flex items-center justify-between p-5">
-                    <dt className="text-sm text-summit-stone">Service</dt>
+                    <dt className="text-sm text-fg-muted">Service</dt>
                     <dd>
                       <Link
                         href={`/services/${service.slug}`}
-                        className="text-summit-gold font-semibold hover:text-summit-gold-hot transition-colors"
+                        className="text-accent font-semibold hover:text-accent-hot transition-colors"
                       >
                         {service.name}
                       </Link>
@@ -145,7 +145,7 @@ export default async function ProjectPage(
           <Reveal>
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 text-summit-stone hover:text-summit-gold transition-colors"
+              className="inline-flex items-center gap-2 text-fg-muted hover:text-accent transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to all projects

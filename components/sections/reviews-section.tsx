@@ -27,9 +27,7 @@ export function ReviewsSection() {
       .then((d: ApiPayload) => {
         if (!cancelled && d?.reviews?.length) setData(d);
       })
-      .catch(() => {
-        // Silently fall back to placeholder
-      });
+      .catch(() => {});
     return () => {
       cancelled = true;
     };
@@ -39,9 +37,9 @@ export function ReviewsSection() {
   const isLive = data.source === "trustindex";
 
   return (
-    <Section id="reviews" size="lg" className="relative">
+    <Section id="reviews" size="lg" className="bg-surface-panel relative border-y border-divider">
       <Container>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 sm:mb-14">
           <SectionTitle
             eyebrow="What Locals Say"
             title={
@@ -58,18 +56,18 @@ export function ReviewsSection() {
           <Reveal>
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2">
-                <span className="flex items-center gap-0.5 text-summit-gold" aria-hidden>
+                <span className="flex items-center gap-0.5 text-accent" aria-hidden>
                   {[0, 1, 2, 3, 4].map((i) => (
-                    <Star key={i} className="h-5 w-5 fill-summit-gold" strokeWidth={0} />
+                    <Star key={i} className="h-5 w-5 fill-current" strokeWidth={0} />
                   ))}
                 </span>
-                <span className="font-display text-2xl font-bold text-summit-mist">
+                <span className="font-display text-2xl font-bold text-fg-strong">
                   {data.aggregate.rating.toFixed(1)}
                 </span>
-                <span className="text-sm text-summit-stone">/ 5.0</span>
+                <span className="text-sm text-fg-muted">/ 5.0</span>
                 {isLive && (
-                  <span className="ml-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-summit-gold/15 text-[10px] font-semibold uppercase tracking-wider text-summit-gold">
-                    <span className="h-1.5 w-1.5 rounded-full bg-summit-gold animate-pulse" />
+                  <span className="ml-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-accent-soft text-[10px] font-semibold uppercase tracking-wider text-accent">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
                     Live
                   </span>
                 )}
@@ -81,35 +79,35 @@ export function ReviewsSection() {
           </Reveal>
         </div>
 
-        <RevealStagger className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <RevealStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {featured.map((r) => (
             <RevealItem key={r.author + r.date}>
-              <article className="h-full p-5 sm:p-6 md:p-7 rounded-2xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 transition-colors duration-300 flex flex-col min-w-0">
+              <article className="h-full p-5 sm:p-6 md:p-7 rounded-2xl bg-surface border border-divider hover:border-accent-soft transition-colors duration-300 flex flex-col min-w-0">
                 <div
-                  className="flex items-center gap-1 text-summit-gold mb-4"
+                  className="flex items-center gap-1 text-accent mb-4"
                   aria-label={`${r.rating} out of 5 stars`}
                 >
                   {[0, 1, 2, 3, 4].map((i) => (
                     <Star
                       key={i}
-                      className={i < r.rating ? "h-4 w-4 fill-summit-gold" : "h-4 w-4 opacity-20"}
+                      className={i < r.rating ? "h-4 w-4 fill-current" : "h-4 w-4 opacity-20"}
                       strokeWidth={0}
                       aria-hidden
                     />
                   ))}
                 </div>
-                <p className="text-summit-mist leading-relaxed font-serif text-base sm:text-lg flex-1 text-pretty">
+                <p className="text-fg leading-relaxed font-serif text-base sm:text-lg flex-1 text-pretty">
                   "{r.body}"
                 </p>
-                <div className="mt-6 pt-5 border-t border-summit-slate/40 flex items-center justify-between gap-3">
+                <div className="mt-6 pt-5 border-t border-divider flex items-center justify-between gap-3">
                   <div className="min-w-0 flex-1">
-                    <p className="font-semibold text-summit-mist text-sm truncate">{r.author}</p>
-                    <p className="text-xs text-summit-stone truncate">
+                    <p className="font-semibold text-fg-strong text-sm truncate">{r.author}</p>
+                    <p className="text-xs text-fg-muted truncate">
                       {r.city}
                       {r.service ? ` · ${r.service}` : ""}
                     </p>
                   </div>
-                  <span className="text-[10px] uppercase tracking-wider font-semibold text-summit-stone/60 flex-shrink-0">
+                  <span className="text-[10px] uppercase tracking-wider font-semibold text-fg-faint flex-shrink-0">
                     {r.source}
                   </span>
                 </div>
@@ -119,22 +117,22 @@ export function ReviewsSection() {
         </RevealStagger>
 
         <Reveal>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-summit-stone">
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-fg-muted">
             <a
               href="https://www.google.com/search?q=summit+handyman+reviews"
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-2 hover:text-summit-gold transition-colors"
+              className="inline-flex items-center gap-2 hover:text-accent transition-colors"
             >
               Google Reviews
               <ArrowUpRight className="h-4 w-4" />
             </a>
-            <span className="text-summit-stone/40">·</span>
+            <span className="text-fg-faint">·</span>
             <a
               href="https://www.trustindex.io/reviews/summit-handyman.ca"
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-2 hover:text-summit-gold transition-colors"
+              className="inline-flex items-center gap-2 hover:text-accent transition-colors"
             >
               Trustindex Reviews
               <ArrowUpRight className="h-4 w-4" />

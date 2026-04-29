@@ -42,7 +42,7 @@ export function Header() {
         className={cn(
           "fixed top-0 inset-x-0 z-40 transition-all duration-300",
           scrolled
-            ? "bg-summit-black/85 backdrop-blur-lg border-b border-summit-slate/60"
+            ? "header-scrolled border-b border-divider"
             : "bg-transparent border-b border-transparent",
         )}
       >
@@ -61,9 +61,9 @@ export function Header() {
                 priority
                 className="rounded-md flex-shrink-0 h-9 w-9 sm:h-10 sm:w-10"
               />
-              <span className="font-display text-base sm:text-lg font-bold tracking-tight text-summit-mist truncate">
+              <span className="font-display text-base sm:text-lg font-bold tracking-tight text-fg-strong truncate">
                 Summit
-                <span className="text-summit-gold">.</span>
+                <span className="text-accent">.</span>
               </span>
             </Link>
 
@@ -75,7 +75,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-summit-mist/80 hover:text-summit-gold transition-colors duration-200"
+                  className="text-fg/85 hover:text-accent transition-colors duration-200"
                 >
                   {item.label}
                 </Link>
@@ -85,7 +85,7 @@ export function Header() {
             <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
               <a
                 href={`mailto:${site.contact.email}`}
-                className="hidden lg:inline-flex items-center gap-2 text-sm text-summit-mist/80 hover:text-summit-gold transition-colors"
+                className="hidden lg:inline-flex items-center gap-2 text-sm text-fg/85 hover:text-accent transition-colors"
                 aria-label={`Email Brody at ${site.contact.email}`}
               >
                 <Mail className="h-4 w-4" />
@@ -98,7 +98,7 @@ export function Header() {
               </Button>
               <button
                 type="button"
-                className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-summit-slate/60 text-summit-mist hover:border-summit-gold hover:text-summit-gold transition-colors"
+                className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-divider-strong text-fg hover:border-accent hover:text-accent transition-colors"
                 aria-label={open ? "Close menu" : "Open menu"}
                 aria-expanded={open}
                 onClick={() => setOpen((v) => !v)}
@@ -118,13 +118,13 @@ export function Header() {
         )}
       >
         <div
-          className="absolute inset-0 bg-summit-black/80 backdrop-blur-md"
+          className="absolute inset-0 mobile-menu-veil backdrop-blur-md"
           onClick={() => setOpen(false)}
           aria-hidden
         />
         <div
           className={cn(
-            "relative ml-auto h-full w-full max-w-sm bg-summit-panel border-l border-summit-slate/60 px-6 pt-24 pb-8 overflow-y-auto",
+            "relative ml-auto h-full w-full max-w-sm bg-surface-panel border-l border-divider px-6 pt-24 pb-8 overflow-y-auto",
             "transition-transform duration-300",
             open ? "translate-x-0" : "translate-x-full",
           )}
@@ -135,7 +135,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="text-2xl font-display font-bold text-summit-mist hover:text-summit-gold py-3 border-b border-summit-slate/40 transition-colors"
+                className="text-2xl font-display font-bold text-fg-strong hover:text-accent py-3 border-b border-divider transition-colors"
               >
                 {item.label}
               </Link>

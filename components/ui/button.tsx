@@ -10,13 +10,13 @@ type Size = "sm" | "md" | "lg";
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-summit-gold text-summit-black hover:bg-summit-gold-hot shadow-gold hover:shadow-gold-lg",
+    "bg-accent text-white hover:bg-accent-hot shadow-gold hover:shadow-gold-lg",
   secondary:
-    "bg-summit-panel text-summit-mist border border-summit-slate hover:border-summit-gold hover:text-summit-gold",
+    "bg-surface-panel text-fg-strong border border-divider-strong hover:border-accent hover:text-accent",
   ghost:
-    "text-summit-mist hover:text-summit-gold hover:bg-summit-panel/40",
+    "text-fg hover:text-accent hover:bg-surface-panel/60",
   outline:
-    "border border-summit-gold text-summit-gold hover:bg-summit-gold hover:text-summit-black",
+    "border border-accent text-accent hover:bg-accent hover:text-white",
 };
 
 const sizeStyles: Record<Size, string> = {

@@ -10,10 +10,10 @@ export function Card({
   variant?: "default" | "elevated" | "outline" | "gold";
 }) {
   const variantStyles = {
-    default: "bg-summit-panel border border-summit-slate/60",
-    elevated: "bg-summit-panel border border-summit-slate/60 shadow-panel",
-    outline: "bg-transparent border border-summit-slate/60",
-    gold: "bg-summit-panel border border-summit-gold/40 shadow-gold",
+    default: "bg-surface-panel border border-divider",
+    elevated: "bg-surface-panel border border-divider shadow-panel",
+    outline: "bg-transparent border border-divider",
+    gold: "bg-surface-panel border border-accent-soft shadow-gold",
   } as const;
 
   return (

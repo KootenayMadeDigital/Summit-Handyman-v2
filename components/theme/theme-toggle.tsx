@@ -13,11 +13,12 @@ export function ThemeToggle({ className }: { className?: string }) {
       type="button"
       onClick={toggle}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
       className={cn(
-        "relative h-9 w-9 rounded-full border border-summit-slate/60 bg-summit-panel/60 backdrop-blur",
-        "flex items-center justify-center text-summit-mist transition-all",
-        "hover:border-summit-gold hover:text-summit-gold hover:shadow-gold",
-        "focus-visible:outline-2 focus-visible:outline-summit-gold",
+        "relative h-9 w-9 rounded-full border border-divider-strong bg-surface-panel/60 backdrop-blur",
+        "flex items-center justify-center text-fg transition-all",
+        "hover:border-accent hover:text-accent hover:shadow-gold",
+        "focus-visible:outline-2 focus-visible:outline-accent",
         className,
       )}
     >

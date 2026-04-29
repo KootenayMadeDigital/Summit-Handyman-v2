@@ -83,17 +83,17 @@ export default async function ServicePage(
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <div className="lg:sticky lg:top-32">
-                <div className="h-14 w-14 rounded-xl bg-summit-gold/10 border border-summit-gold/30 flex items-center justify-center mb-6">
+                <div className="h-14 w-14 rounded-xl bg-summit-gold/10 border border-accent/40 flex items-center justify-center mb-6">
                   <ServiceIcon name={service.icon} className="h-7 w-7" />
                 </div>
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-summit-mist mb-5 text-balance">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-fg-strong mb-5 text-balance">
                   What's included
                 </h2>
-                <p className="text-summit-mist/80 leading-relaxed font-serif text-lg text-pretty">
+                <p className="text-fg-strong/80 leading-relaxed font-serif text-lg text-pretty">
                   {service.longDescription}
                 </p>
-                <p className="mt-6 text-sm text-summit-stone">
-                  <span className="text-summit-gold font-semibold">{site.pricing.minimumDisplay}.</span>{" "}
+                <p className="mt-6 text-sm text-fg-muted">
+                  <span className="text-accent font-semibold">{site.pricing.minimumDisplay}.</span>{" "}
                   Free written estimates. Licensed & insured.
                 </p>
               </div>
@@ -104,12 +104,12 @@ export default async function ServicePage(
                 {service.includes.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-4 p-5 rounded-xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/40 transition-colors"
+                    className="flex items-start gap-4 p-5 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent/50 transition-colors"
                   >
-                    <span className="mt-0.5 h-6 w-6 rounded-full bg-summit-gold/15 border border-summit-gold/30 flex items-center justify-center flex-shrink-0">
-                      <Check className="h-3.5 w-3.5 text-summit-gold" strokeWidth={3} />
+                    <span className="mt-0.5 h-6 w-6 rounded-full bg-summit-gold/15 border border-accent/40 flex items-center justify-center flex-shrink-0">
+                      <Check className="h-3.5 w-3.5 text-accent" strokeWidth={3} />
                     </span>
-                    <span className="text-summit-mist leading-snug">{item}</span>
+                    <span className="text-fg-strong leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -119,7 +119,7 @@ export default async function ServicePage(
       </Section>
 
       {/* Process */}
-      <Section size="lg" className="bg-summit-panel/40 border-y border-summit-slate/40">
+      <Section size="lg" className="bg-surface-panel border-y border-divider">
         <Container>
           <SectionTitle
             eyebrow="How it works"
@@ -135,12 +135,12 @@ export default async function ServicePage(
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {process.map((p, i) => (
               <Reveal key={p.step} delay={i * 0.05}>
-                <div className="relative p-6 rounded-2xl bg-summit-panel border border-summit-slate/60 h-full">
+                <div className="relative p-6 rounded-2xl bg-surface-panel border border-divider-strong h-full">
                   <p className="font-display text-5xl font-extrabold text-gradient-gold mb-3">
                     {p.step}
                   </p>
-                  <h3 className="font-display text-xl font-bold text-summit-mist mb-2">{p.title}</h3>
-                  <p className="text-sm text-summit-stone leading-relaxed">{p.body}</p>
+                  <h3 className="font-display text-xl font-bold text-fg-strong mb-2">{p.title}</h3>
+                  <p className="text-sm text-fg-muted leading-relaxed">{p.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -173,10 +173,10 @@ export default async function ServicePage(
                       className="aspect-[4/3]"
                     />
                     <Link href={`/projects/${p.slug}`} className="mt-4 block group">
-                      <p className="text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold">
+                      <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
                         {p.area} · {p.duration}
                       </p>
-                      <h3 className="mt-1 font-display text-lg font-bold text-summit-mist group-hover:text-summit-gold transition-colors">
+                      <h3 className="mt-1 font-display text-lg font-bold text-fg-strong group-hover:text-accent transition-colors">
                         {p.title}
                       </h3>
                     </Link>
@@ -190,7 +190,7 @@ export default async function ServicePage(
 
       {/* Related services */}
       {related.length > 0 && (
-        <Section size="md" className="bg-summit-panel/40 border-y border-summit-slate/40">
+        <Section size="md" className="bg-surface-panel border-y border-divider">
           <Container>
             <SectionTitle
               eyebrow="Related"
@@ -201,15 +201,15 @@ export default async function ServicePage(
                 <Link
                   key={r.slug}
                   href={`/services/${r.slug}`}
-                  className="group flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 hover:bg-summit-panel/80 transition-all min-w-0"
+                  className="group flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent-soft hover:bg-surface-elevated transition-all min-w-0"
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <ServiceIcon name={r.icon} className="h-5 w-5 flex-shrink-0" />
-                    <span className="font-display font-bold text-summit-mist group-hover:text-summit-gold transition-colors truncate">
+                    <span className="font-display font-bold text-fg-strong group-hover:text-accent transition-colors truncate">
                       {r.name}
                     </span>
                   </div>
-                  <ArrowUpRight className="h-4 w-4 text-summit-stone group-hover:text-summit-gold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0" />
+                  <ArrowUpRight className="h-4 w-4 text-fg-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0" />
                 </Link>
               ))}
             </div>

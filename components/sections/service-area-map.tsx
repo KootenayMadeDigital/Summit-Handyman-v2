@@ -9,9 +9,9 @@ import { areas } from "@/lib/areas";
 const InteractiveMap = dynamic(() => import("./service-area-map.client"), {
   ssr: false,
   loading: () => (
-    <div className="aspect-[16/10] w-full rounded-2xl bg-summit-panel border border-summit-slate/60 flex items-center justify-center">
-      <div className="flex flex-col items-center gap-3 text-summit-stone">
-        <div className="h-8 w-8 rounded-full border-2 border-summit-gold/30 border-t-summit-gold animate-spin" />
+    <div className="aspect-[16/10] w-full rounded-2xl bg-surface-elevated border border-divider flex items-center justify-center">
+      <div className="flex flex-col items-center gap-3 text-fg-muted">
+        <div className="h-8 w-8 rounded-full border-2 border-accent-soft border-t-accent animate-spin" />
         <span className="text-sm">Loading map…</span>
       </div>
     </div>
@@ -20,7 +20,7 @@ const InteractiveMap = dynamic(() => import("./service-area-map.client"), {
 
 export function ServiceAreaMapSection() {
   return (
-    <Section id="map" size="lg" className="relative bg-summit-panel/30 border-y border-summit-slate/40">
+    <Section id="map" size="lg" className="relative bg-surface-panel border-y border-divider">
       <Container>
         <SectionTitle
           eyebrow="Coverage Map"
@@ -37,7 +37,7 @@ export function ServiceAreaMapSection() {
           className="mb-12"
         />
         <Reveal>
-          <div className="rounded-2xl overflow-hidden border border-summit-slate/60 shadow-panel-lg">
+          <div className="rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg">
             <InteractiveMap />
           </div>
         </Reveal>

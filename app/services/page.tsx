@@ -44,16 +44,16 @@ export default function ServicesPage() {
               return (
                 <div key={cat}>
                   <Reveal>
-                    <div className="flex items-end justify-between gap-4 mb-8 border-b border-summit-slate/40 pb-4">
+                    <div className="flex items-end justify-between gap-4 mb-8 border-b border-divider pb-4">
                       <div>
-                        <p className="text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold mb-1">
+                        <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-1">
                           {cat}
                         </p>
-                        <h2 className="font-display text-3xl md:text-4xl font-bold text-summit-mist">
+                        <h2 className="font-display text-3xl md:text-4xl font-bold text-fg-strong">
                           {meta.name}
                         </h2>
                       </div>
-                      <p className="hidden md:block text-sm text-summit-stone max-w-md text-right">
+                      <p className="hidden md:block text-sm text-fg-muted max-w-md text-right">
                         {meta.description}
                       </p>
                     </div>
@@ -66,22 +66,22 @@ export default function ServicesPage() {
                           href={`/services/${s.slug}`}
                           className={cn(
                             "group relative block h-full p-6 rounded-2xl",
-                            "bg-summit-panel border border-summit-slate/60",
-                            "hover:border-summit-gold/60 hover:bg-summit-panel/80",
+                            "bg-surface-panel border border-divider-strong",
+                            "hover:border-accent-soft hover:bg-surface-elevated",
                             "transition-all duration-300 ease-editorial",
                             "hover:shadow-gold hover:-translate-y-0.5",
                           )}
                         >
                           <div className="flex items-start justify-between gap-4">
-                            <div className="h-12 w-12 rounded-xl bg-summit-gold/10 border border-summit-gold/20 flex items-center justify-center group-hover:bg-summit-gold/20 transition-colors">
+                            <div className="h-12 w-12 rounded-xl bg-summit-gold/10 border border-accent/20 flex items-center justify-center group-hover:bg-summit-gold/20 transition-colors">
                               <ServiceIcon name={s.icon} className="h-6 w-6" />
                             </div>
-                            <ArrowUpRight className="h-5 w-5 text-summit-stone group-hover:text-summit-gold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                            <ArrowUpRight className="h-5 w-5 text-fg-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                           </div>
-                          <h3 className="mt-5 font-display text-xl font-bold text-summit-mist">
+                          <h3 className="mt-5 font-display text-xl font-bold text-fg-strong">
                             {s.name}
                           </h3>
-                          <p className="mt-2 text-sm text-summit-stone leading-relaxed">
+                          <p className="mt-2 text-sm text-fg-muted leading-relaxed">
                             {s.shortDescription}
                           </p>
                         </Link>

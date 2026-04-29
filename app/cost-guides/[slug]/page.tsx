@@ -75,13 +75,13 @@ export default async function GuidePage(
         title={g.title}
         description={g.excerpt}
       >
-        <div className="flex items-center gap-4 text-xs uppercase tracking-wider text-summit-stone pt-4">
+        <div className="flex items-center gap-4 text-xs uppercase tracking-wider text-fg-muted pt-4">
           <span className="inline-flex items-center gap-1.5">
-            <Clock className="h-3.5 w-3.5 text-summit-gold" />
+            <Clock className="h-3.5 w-3.5 text-accent" />
             {g.readingMinutes} min read
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <Calendar className="h-3.5 w-3.5 text-summit-gold" />
+            <Calendar className="h-3.5 w-3.5 text-accent" />
             {g.date}
           </span>
           {g.area && <span>· {g.area}</span>}
@@ -90,7 +90,7 @@ export default async function GuidePage(
 
       <Section size="md">
         <Container size="narrow">
-          <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-summit-slate/60 mb-12 shadow-panel-lg">
+          <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-divider-strong mb-12 shadow-panel-lg">
             <Image
               src={g.hero}
               alt=""
@@ -108,7 +108,7 @@ export default async function GuidePage(
                   return (
                     <p
                       key={i}
-                      className="text-lg text-summit-mist/85 leading-relaxed mb-6 text-pretty font-serif"
+                      className="text-lg text-fg-strong/85 leading-relaxed mb-6 text-pretty font-serif"
                     >
                       {block.text}
                     </p>
@@ -118,7 +118,7 @@ export default async function GuidePage(
                   return (
                     <h2
                       key={i}
-                      className="font-display text-3xl font-bold text-summit-mist mt-12 mb-5 text-balance"
+                      className="font-display text-3xl font-bold text-fg-strong mt-12 mb-5 text-balance"
                     >
                       {block.text}
                     </h2>
@@ -128,7 +128,7 @@ export default async function GuidePage(
                   return (
                     <h3
                       key={i}
-                      className="font-display text-xl font-bold text-summit-mist mt-8 mb-3"
+                      className="font-display text-xl font-bold text-fg-strong mt-8 mb-3"
                     >
                       {block.text}
                     </h3>
@@ -140,7 +140,7 @@ export default async function GuidePage(
                       {block.items.map((item, j) => (
                         <li
                           key={j}
-                          className="flex items-start gap-3 text-summit-mist/85 leading-relaxed"
+                          className="flex items-start gap-3 text-fg-strong/85 leading-relaxed"
                         >
                           <span className="mt-2 h-1.5 w-1.5 rounded-full bg-summit-gold flex-shrink-0" />
                           <span>{item}</span>
@@ -153,29 +153,29 @@ export default async function GuidePage(
                   return (
                     <aside
                       key={i}
-                      className="my-10 p-6 md:p-7 rounded-2xl bg-gradient-to-br from-summit-panel via-summit-panel to-summit-gold/5 border border-summit-gold/30"
+                      className="my-10 p-6 md:p-7 rounded-2xl bg-gradient-to-br from-summit-panel via-summit-panel to-summit-gold/5 border border-accent/40"
                     >
-                      <p className="text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold mb-2">
+                      <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-2">
                         {block.title}
                       </p>
-                      <p className="text-summit-mist leading-relaxed">{block.text}</p>
+                      <p className="text-fg-strong leading-relaxed">{block.text}</p>
                     </aside>
                   );
                 }
                 if (block.type === "pricing") {
                   return (
-                    <div key={i} className="my-10 rounded-2xl bg-summit-panel border border-summit-slate/60 overflow-hidden">
+                    <div key={i} className="my-10 rounded-2xl bg-surface-panel border border-divider-strong overflow-hidden">
                       <table className="w-full">
                         <tbody>
                           {block.rows.map((r, j) => (
                             <tr
                               key={j}
-                              className="border-b border-summit-slate/30 last:border-0"
+                              className="border-b border-divider-strong/30 last:border-0"
                             >
-                              <td className="px-5 py-4 text-summit-mist/85 text-sm md:text-base">
+                              <td className="px-5 py-4 text-fg-strong/85 text-sm md:text-base">
                                 {r.label}
                               </td>
-                              <td className="px-5 py-4 text-right font-display font-bold text-summit-gold">
+                              <td className="px-5 py-4 text-right font-display font-bold text-accent">
                                 {r.value}
                               </td>
                             </tr>
@@ -191,11 +191,11 @@ export default async function GuidePage(
           </article>
 
           {/* Mid/end CTA */}
-          <div className="mt-14 rounded-2xl bg-summit-panel border border-summit-gold/30 p-7 md:p-8 text-center">
-            <p className="text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold mb-2">
+          <div className="mt-14 rounded-2xl bg-surface-panel border border-accent/40 p-7 md:p-8 text-center">
+            <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-2">
               Need this done?
             </p>
-            <p className="font-display text-2xl md:text-3xl font-bold text-summit-mist mb-5 text-balance">
+            <p className="font-display text-2xl md:text-3xl font-bold text-fg-strong mb-5 text-balance">
               Get a free, written estimate from Brody.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -217,10 +217,10 @@ export default async function GuidePage(
             </div>
           </div>
 
-          <div className="mt-14 pt-8 border-t border-summit-slate/40">
+          <div className="mt-14 pt-8 border-t border-divider">
             <Link
               href="/cost-guides"
-              className="inline-flex items-center gap-2 text-summit-stone hover:text-summit-gold transition-colors"
+              className="inline-flex items-center gap-2 text-fg-muted hover:text-accent transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All cost guides
@@ -231,9 +231,9 @@ export default async function GuidePage(
 
       {/* Related */}
       {related.length > 0 && (
-        <Section size="md" className="bg-summit-panel/40 border-y border-summit-slate/40">
+        <Section size="md" className="bg-surface-panel border-y border-divider">
           <Container>
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-summit-mist mb-8">
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-fg-strong mb-8">
               Related guides
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -241,12 +241,12 @@ export default async function GuidePage(
                 <Link
                   key={r.slug}
                   href={`/cost-guides/${r.slug}`}
-                  className="group p-5 rounded-2xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 transition-colors"
+                  className="group p-5 rounded-2xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-colors"
                 >
-                  <p className="text-xs text-summit-gold font-semibold uppercase tracking-wider mb-2">
+                  <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-2">
                     {r.readingMinutes} min · {r.area ?? "Lower Mainland"}
                   </p>
-                  <h3 className="font-display text-lg font-bold text-summit-mist group-hover:text-summit-gold transition-colors text-balance">
+                  <h3 className="font-display text-lg font-bold text-fg-strong group-hover:text-accent transition-colors text-balance">
                     {r.title}
                   </h3>
                 </Link>

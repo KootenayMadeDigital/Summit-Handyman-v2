@@ -33,15 +33,15 @@ export function PageHero({
         <div className={cn("max-w-4xl space-y-5 sm:space-y-6 min-w-0", align === "center" && "mx-auto text-center")}>
           {breadcrumbs && breadcrumbs.length > 0 && (
             <nav aria-label="Breadcrumb" className="overflow-x-auto -mx-1 px-1">
-              <ol className="flex items-center gap-1.5 text-[10px] sm:text-xs uppercase tracking-wider text-summit-stone whitespace-nowrap">
+              <ol className="flex items-center gap-1.5 text-[10px] sm:text-xs uppercase tracking-wider text-fg-muted whitespace-nowrap">
                 {breadcrumbs.map((c, i) => (
                   <li key={i} className="flex items-center gap-1.5 flex-shrink-0">
                     {c.href ? (
-                      <Link href={c.href} className="hover:text-summit-gold transition-colors">
+                      <Link href={c.href} className="hover:text-accent transition-colors">
                         {c.label}
                       </Link>
                     ) : (
-                      <span className="text-summit-mist truncate max-w-[160px] sm:max-w-none">{c.label}</span>
+                      <span className="text-fg-strong truncate max-w-[160px] sm:max-w-none">{c.label}</span>
                     )}
                     {i < breadcrumbs.length - 1 && <ChevronRight className="h-3 w-3 flex-shrink-0" />}
                   </li>
@@ -50,15 +50,15 @@ export function PageHero({
             </nav>
           )}
           {eyebrow && (
-            <p className="text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold">
+            <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-accent font-semibold">
               {eyebrow}
             </p>
           )}
-          <h1 className="font-display text-display-xl font-extrabold tracking-tightest text-summit-mist text-balance leading-[1.05] hyphens-none">
+          <h1 className="font-display text-display-xl font-extrabold tracking-tightest text-fg-strong text-balance leading-[1.05] hyphens-none">
             {title}
           </h1>
           {description && (
-            <p className="text-lg md:text-xl text-summit-mist/80 leading-relaxed text-pretty max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl text-fg/85 leading-relaxed text-pretty max-w-2xl">
               {description}
             </p>
           )}

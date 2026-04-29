@@ -114,30 +114,30 @@ export default async function AreaPage(
       <Section size="md">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="p-6 rounded-2xl bg-summit-panel border border-summit-slate/60">
-              <Clock className="h-6 w-6 text-summit-gold mb-3" strokeWidth={1.5} />
-              <p className="text-xs uppercase tracking-wider text-summit-stone font-semibold mb-1">
+            <div className="p-6 rounded-2xl bg-surface-panel border border-divider-strong">
+              <Clock className="h-6 w-6 text-accent mb-3" strokeWidth={1.5} />
+              <p className="text-xs uppercase tracking-wider text-fg-muted font-semibold mb-1">
                 Response time
               </p>
-              <p className="font-display text-xl font-bold text-summit-mist">{area.responseTime}</p>
+              <p className="font-display text-xl font-bold text-fg-strong">{area.responseTime}</p>
             </div>
-            <div className="p-6 rounded-2xl bg-summit-panel border border-summit-slate/60">
-              <MapPin className="h-6 w-6 text-summit-gold mb-3" strokeWidth={1.5} />
-              <p className="text-xs uppercase tracking-wider text-summit-stone font-semibold mb-1">
+            <div className="p-6 rounded-2xl bg-surface-panel border border-divider-strong">
+              <MapPin className="h-6 w-6 text-accent mb-3" strokeWidth={1.5} />
+              <p className="text-xs uppercase tracking-wider text-fg-muted font-semibold mb-1">
                 Postal codes
               </p>
-              <p className="font-display text-xl font-bold text-summit-mist">
+              <p className="font-display text-xl font-bold text-fg-strong">
                 {area.postalCodePrefixes.join(" · ")}
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-summit-panel border border-summit-gold/30">
-              <Mail className="h-6 w-6 text-summit-gold mb-3" strokeWidth={1.5} />
-              <p className="text-xs uppercase tracking-wider text-summit-gold font-semibold mb-1">
+            <div className="p-6 rounded-2xl bg-surface-panel border border-accent/40">
+              <Mail className="h-6 w-6 text-accent mb-3" strokeWidth={1.5} />
+              <p className="text-xs uppercase tracking-wider text-accent font-semibold mb-1">
                 Email-first contact
               </p>
               <a
                 href={`mailto:${site.contact.email}`}
-                className="font-display text-lg font-bold text-summit-mist hover:text-summit-gold transition-colors"
+                className="font-display text-lg font-bold text-fg-strong hover:text-accent transition-colors"
               >
                 {site.contact.email}
               </a>
@@ -147,7 +147,7 @@ export default async function AreaPage(
       </Section>
 
       {/* Neighborhoods */}
-      <Section size="md" className="bg-summit-panel/40 border-y border-summit-slate/40">
+      <Section size="md" className="bg-surface-panel border-y border-divider">
         <Container>
           <SectionTitle
             eyebrow="Neighborhoods"
@@ -159,7 +159,7 @@ export default async function AreaPage(
               {area.neighborhoods.map((n) => (
                 <li
                   key={n}
-                  className="px-4 py-2 rounded-full bg-summit-panel border border-summit-slate/60 text-sm text-summit-mist hover:border-summit-gold/60 transition-colors"
+                  className="px-4 py-2 rounded-full bg-surface-panel border border-divider-strong text-sm text-fg-strong hover:border-accent-soft transition-colors"
                 >
                   {n}
                 </li>
@@ -196,10 +196,10 @@ export default async function AreaPage(
                       className="aspect-[4/3]"
                     />
                     <Link href={`/projects/${p.slug}`} className="mt-4 block group">
-                      <p className="text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold">
+                      <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
                         {p.area} · {p.duration}
                       </p>
-                      <h3 className="mt-1 font-display text-lg font-bold text-summit-mist group-hover:text-summit-gold transition-colors">
+                      <h3 className="mt-1 font-display text-lg font-bold text-fg-strong group-hover:text-accent transition-colors">
                         {p.title}
                       </h3>
                     </Link>
@@ -212,7 +212,7 @@ export default async function AreaPage(
       )}
 
       {/* All services available in this area */}
-      <Section size="lg" className="bg-summit-panel/40 border-y border-summit-slate/40">
+      <Section size="lg" className="bg-surface-panel border-y border-divider">
         <Container>
           <SectionTitle
             eyebrow="Available in this area"
@@ -230,10 +230,10 @@ export default async function AreaPage(
               <RevealItem key={s.slug}>
                 <Link
                   href={`/services/${s.slug}`}
-                  className="group flex items-center gap-3 p-4 rounded-xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 transition-all"
+                  className="group flex items-center gap-3 p-4 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-all"
                 >
                   <ServiceIcon name={s.icon} className="h-5 w-5 flex-shrink-0" />
-                  <span className="text-sm font-semibold text-summit-mist group-hover:text-summit-gold transition-colors">
+                  <span className="text-sm font-semibold text-fg-strong group-hover:text-accent transition-colors">
                     {s.name}
                   </span>
                 </Link>
@@ -252,12 +252,12 @@ export default async function AreaPage(
               <Link
                 key={a.slug}
                 href={`/areas/${a.slug}`}
-                className="group flex items-center justify-between gap-2 p-4 rounded-xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 transition-all"
+                className="group flex items-center justify-between gap-2 p-4 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-all"
               >
-                <span className="text-sm font-semibold text-summit-mist group-hover:text-summit-gold transition-colors">
+                <span className="text-sm font-semibold text-fg-strong group-hover:text-accent transition-colors">
                   {a.name}
                 </span>
-                <ArrowUpRight className="h-4 w-4 text-summit-stone group-hover:text-summit-gold transition-colors" />
+                <ArrowUpRight className="h-4 w-4 text-fg-muted group-hover:text-accent transition-colors" />
               </Link>
             ))}
           </div>

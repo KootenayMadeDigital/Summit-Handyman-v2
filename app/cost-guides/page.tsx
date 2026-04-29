@@ -40,7 +40,7 @@ export default function CostGuidesPage() {
               <RevealItem key={g.slug}>
                 <Link
                   href={`/cost-guides/${g.slug}`}
-                  className="group block h-full rounded-2xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 hover:bg-summit-panel/80 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-gold overflow-hidden"
+                  className="group block h-full rounded-2xl bg-surface-panel border border-divider-strong hover:border-accent-soft hover:bg-surface-elevated transition-all duration-300 hover:-translate-y-0.5 hover:shadow-gold overflow-hidden"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
@@ -53,23 +53,23 @@ export default function CostGuidesPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-summit-black via-summit-black/40 to-transparent" />
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center gap-3 text-xs uppercase tracking-wider text-summit-gold font-semibold">
+                    <div className="flex items-center gap-3 text-xs uppercase tracking-wider text-accent font-semibold">
                       <Clock className="h-3.5 w-3.5" />
                       {g.readingMinutes} min read
                       {g.area && (
                         <>
-                          <span className="text-summit-stone/40">·</span>
+                          <span className="text-fg-muted/40">·</span>
                           <span>{g.area}</span>
                         </>
                       )}
                     </div>
-                    <h2 className="mt-3 font-display text-xl font-bold text-summit-mist group-hover:text-summit-gold transition-colors text-balance leading-snug">
+                    <h2 className="mt-3 font-display text-xl font-bold text-fg-strong group-hover:text-accent transition-colors text-balance leading-snug">
                       {g.title}
                     </h2>
-                    <p className="mt-2 text-sm text-summit-stone leading-relaxed line-clamp-3">
+                    <p className="mt-2 text-sm text-fg-muted leading-relaxed line-clamp-3">
                       {g.excerpt}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-summit-gold">
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent">
                       Read guide
                       <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </span>

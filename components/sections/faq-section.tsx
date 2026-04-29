@@ -11,7 +11,7 @@ export function FAQSection() {
   const [open, setOpen] = React.useState<number | null>(0);
 
   return (
-    <Section id="faq" size="lg">
+    <Section id="faq" size="lg" className="bg-surface-panel border-y border-divider">
       <Container size="narrow">
         <SectionTitle
           eyebrow="Common Questions"
@@ -24,11 +24,11 @@ export function FAQSection() {
             </>
           }
           align="center"
-          className="mb-14"
+          className="mb-12 sm:mb-14"
         />
 
         <Reveal>
-          <ul className="divide-y divide-summit-slate/40 border-y border-summit-slate/40">
+          <ul className="divide-y divide-[var(--border)] border-y border-divider">
             {faqs.map((f, i) => {
               const isOpen = open === i;
               return (
@@ -40,15 +40,15 @@ export function FAQSection() {
                     aria-controls={`faq-${i}`}
                     className="w-full text-left py-5 sm:py-6 flex items-center justify-between gap-4 sm:gap-6 group"
                   >
-                    <span className="font-display text-base sm:text-lg md:text-xl font-bold text-summit-mist group-hover:text-summit-gold transition-colors text-balance min-w-0 flex-1">
+                    <span className="font-display text-base sm:text-lg md:text-xl font-bold text-fg-strong group-hover:text-accent transition-colors text-balance min-w-0 flex-1">
                       {f.q}
                     </span>
                     <span
                       className={cn(
-                        "flex-shrink-0 h-9 w-9 rounded-full border border-summit-slate/60 flex items-center justify-center transition-all duration-300",
+                        "flex-shrink-0 h-9 w-9 rounded-full border border-divider-strong flex items-center justify-center transition-all duration-300",
                         isOpen
-                          ? "bg-summit-gold border-summit-gold rotate-45 text-summit-black"
-                          : "text-summit-mist group-hover:border-summit-gold group-hover:text-summit-gold",
+                          ? "bg-accent border-accent rotate-45 text-summit-black"
+                          : "text-fg group-hover:border-accent group-hover:text-accent",
                       )}
                     >
                       <Plus className="h-4 w-4" strokeWidth={2.5} />
@@ -62,7 +62,7 @@ export function FAQSection() {
                     )}
                   >
                     <div className="overflow-hidden">
-                      <p className="text-summit-mist/80 leading-relaxed text-pretty max-w-2xl">
+                      <p className="text-fg/85 leading-relaxed text-pretty max-w-2xl">
                         {f.a}
                       </p>
                     </div>

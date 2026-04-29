@@ -72,14 +72,20 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
+/**
+ * Inline theme init — runs before paint to avoid flash. Default = dark.
+ * Reads explicit user preference from localStorage; if absent, defaults to dark
+ * (NOT system preference — Brody's brand identity is dark-first).
+ */
 const themeInitScript = `
 (function() {
   try {
     var stored = localStorage.getItem('summit-theme');
-    var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
     document.documentElement.setAttribute('data-theme', theme);
-    document.documentElement.style.colorScheme = theme;
-  } catch (e) {}
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
 })();
 `;
 
@@ -100,7 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="bg-summit-black text-summit-mist antialiased">
+      <body className="antialiased">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-summit-gold focus:px-4 focus:py-2 focus:font-semibold focus:text-summit-black"
