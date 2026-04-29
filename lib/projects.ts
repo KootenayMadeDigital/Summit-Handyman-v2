@@ -3,6 +3,7 @@ export type Project = {
   title: string;
   category: "interior" | "exterior" | "drywall" | "tile" | "painting" | "exterior-deck" | "safety";
   serviceSlug: string;
+  /** Optional — left empty until Brody confirms per-job locations. */
   area: string;
   shortStory: string;
   longStory: string;
@@ -11,110 +12,94 @@ export type Project = {
   galleryImages?: string[];
   duration: string;
   date: string;
-  /** True when the photo + caption pair is a curated representative sample, not a job-specific case study. */
-  isSample?: boolean;
 };
 
 /**
- * Recent Summits — sample project cards.
+ * Recent Summits — generic portfolio cards.
  *
- * Until Brody supplies job-specific photo + caption pairs, these tiles are
- * intentionally generic: a photo from his V1 portfolio, paired with the
- * service category and city, with no fabricated job-specific story.
- *
- * The detail page surfaces an honest "sample" disclosure so visitors aren't
- * misled about specifics that haven't been verified.
+ * Captions are intentionally non-specific: no fabricated city, no
+ * fabricated job-specific story. Titles match the photo's general nature
+ * only. When Brody supplies real before/after photos with stories +
+ * locations, replace these entries.
  */
 export const projects: Project[] = [
   {
-    slug: "langley-interior-sample",
-    title: "Interior Repair · Langley",
+    slug: "summit-1",
+    title: "Recent project",
     category: "interior",
     serviceSlug: "general-repairs",
-    area: "Langley",
-    shortStory: "Interior repair work — sample from Brody's portfolio.",
-    longStory:
-      "A representative interior repair completed in Langley. Real captions and full project details will be added as Brody documents new jobs.",
+    area: "",
+    shortStory: "From Brody's portfolio.",
+    longStory: "A representative project from Brody's portfolio.",
     beforeImage: "/images/project-1.webp",
     afterImage: "/images/project-1.webp",
-    duration: "Same day",
-    date: "2026-01",
-    isSample: true,
+    duration: "",
+    date: "2026",
   },
   {
-    slug: "surrey-fixture-sample",
-    title: "Fixture & Hardware · Surrey",
+    slug: "summit-2",
+    title: "Recent project",
     category: "interior",
     serviceSlug: "general-repairs",
-    area: "Surrey",
-    shortStory: "Fixture and hardware update — sample from Brody's portfolio.",
-    longStory:
-      "Sample fixture and hardware work completed in Surrey. Real job-specific details will be added as Brody documents new visits.",
+    area: "",
+    shortStory: "From Brody's portfolio.",
+    longStory: "A representative project from Brody's portfolio.",
     beforeImage: "/images/project-2.webp",
     afterImage: "/images/project-2.webp",
-    duration: "Half day",
-    date: "2026-01",
-    isSample: true,
+    duration: "",
+    date: "2026",
   },
   {
-    slug: "white-rock-tile-sample",
-    title: "Tile Work · White Rock",
+    slug: "summit-3",
+    title: "Recent project",
     category: "tile",
     serviceSlug: "tile-flooring",
-    area: "White Rock",
-    shortStory: "Tile installation — sample from Brody's portfolio.",
-    longStory:
-      "A representative tile job completed in White Rock. Real captions and full project details will be added as Brody documents new work.",
+    area: "",
+    shortStory: "From Brody's portfolio.",
+    longStory: "A representative project from Brody's portfolio.",
     beforeImage: "/images/project-3.webp",
     afterImage: "/images/project-3.webp",
-    duration: "1–2 days",
-    date: "2026-01",
-    isSample: true,
+    duration: "",
+    date: "2026",
   },
   {
-    slug: "abbotsford-exterior-sample",
-    title: "Exterior Work · Abbotsford",
+    slug: "summit-4",
+    title: "Recent project",
     category: "exterior-deck",
     serviceSlug: "fence-deck",
-    area: "Abbotsford",
-    shortStory: "Exterior maintenance — sample from Brody's portfolio.",
-    longStory:
-      "Representative exterior maintenance completed in Abbotsford. Real captions and full project details will be added as Brody documents new jobs.",
+    area: "",
+    shortStory: "From Brody's portfolio.",
+    longStory: "A representative project from Brody's portfolio.",
     beforeImage: "/images/project-4.webp",
     afterImage: "/images/project-4.webp",
-    duration: "1 day",
-    date: "2026-01",
-    isSample: true,
+    duration: "",
+    date: "2026",
   },
   {
-    slug: "cloverdale-paint-sample",
-    title: "Painting · Cloverdale",
+    slug: "summit-5",
+    title: "Recent project",
     category: "painting",
     serviceSlug: "painting",
-    area: "Cloverdale",
-    shortStory: "Painting work — sample from Brody's portfolio.",
-    longStory:
-      "A representative painting job completed in Cloverdale. Real captions and full project details will be added as Brody documents new work.",
+    area: "",
+    shortStory: "From Brody's portfolio.",
+    longStory: "A representative project from Brody's portfolio.",
     beforeImage: "/images/project-5.webp",
     afterImage: "/images/project-5.webp",
-    duration: "1–2 days",
-    date: "2026-01",
-    isSample: true,
+    duration: "",
+    date: "2026",
   },
   {
-    slug: "langley-mounting-sample",
-    title: "Mounting & Assembly · Langley",
+    slug: "summit-6",
+    title: "Recent project",
     category: "interior",
     serviceSlug: "assembly-mounting",
-    area: "Langley",
-    shortStory: "Mounting and assembly — sample from Brody's portfolio.",
-    longStory:
-      "Representative mounting and assembly work completed in Langley. Real captions and full project details will be added as Brody documents new jobs.",
+    area: "",
+    shortStory: "From Brody's portfolio.",
+    longStory: "A representative project from Brody's portfolio.",
     beforeImage: "/images/project-6.webp",
     afterImage: "/images/project-6.webp",
-    duration: "Half day",
-    date: "2026-01",
-    isSample: true,
+    duration: "",
+    date: "2026",
   },
 ];
 

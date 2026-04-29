@@ -188,8 +188,29 @@ body {
   font-feature-settings: "ss01";
 }
 
+/*
+ * Italic Gambarino has aggressive right side-bearing — the final letter
+ * (especially y, f, t) can clip when the parent has overflow-hidden or
+ * exactly fits the line. Reserve a sliver of inline padding on every
+ * .font-serif element so the rightmost glyph never gets cut.
+ */
+.font-serif {
+  padding-inline-end: 0.06em;
+}
+
+/*
+ * Display headings — same defensive padding so the final glyph never clips
+ * inside flex children, grid cells with min-w-0, or overflow-hidden parents.
+ */
+.font-display {
+  padding-inline-end: 0.04em;
+}
+
 .text-balance {
   text-wrap: balance;
+  /* Reserve a tiny right sliver so a balanced last line never clips the
+     rightmost descender / italic right-bearing. */
+  padding-inline-end: 1px;
 }
 
 .text-pretty {
