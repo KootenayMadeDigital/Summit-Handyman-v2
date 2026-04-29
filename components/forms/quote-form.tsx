@@ -1,7 +1,21 @@
 "use client";
 
 import * as React from "react";
-import { ArrowRight, ArrowLeft, Check, Loader2, Upload, X, Camera } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  CalendarClock,
+  Camera,
+  Check,
+  CheckCircle2,
+  Clock3,
+  Flame,
+  Leaf,
+  Loader2,
+  MapPin,
+  Upload,
+  X,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/lib/services";
 import { areas } from "@/lib/areas";
@@ -32,11 +46,11 @@ const initialState: FormState = {
   postalCode: "",
 };
 
-const timingOptions: { value: Timing; label: string; description: string; emoji: string }[] = [
-  { value: "urgent", label: "Urgent", description: "Today or tomorrow", emoji: "🔥" },
-  { value: "this-week", label: "This week", description: "Within 7 days", emoji: "📅" },
-  { value: "two-weeks", label: "Within 2 weeks", description: "Some flexibility", emoji: "🗓️" },
-  { value: "no-rush", label: "No rush", description: "Whenever works", emoji: "🌿" },
+const timingOptions: { value: Timing; label: string; description: string; Icon: typeof Flame }[] = [
+  { value: "urgent", label: "Urgent", description: "Today or tomorrow", Icon: Flame },
+  { value: "this-week", label: "This week", description: "Within 7 days", Icon: CalendarClock },
+  { value: "two-weeks", label: "Within 2 weeks", description: "Some flexibility", Icon: Clock3 },
+  { value: "no-rush", label: "No rush", description: "Whenever works", Icon: Leaf },
 ];
 
 const STEPS = ["Service", "Timing & Area", "Details + Photos", "Contact"] as const;
@@ -131,6 +145,11 @@ export function QuoteForm() {
   };
   const back = () => step > 0 && setStep(step - 1);
 
+  const selectedService = services.find((s) => s.slug === state.service);
+  const selectedArea = areas.find((a) => a.slug === state.area);
+  const selectedTiming = timingOptions.find((t) => t.value === state.timing);
+  const progress = ((step + 1) / STEPS.length) * 100;
+
   const submit = async () => {
     setSubmitting(true);
     setError(null);
@@ -171,16 +190,18 @@ export function QuoteForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl bg-surface-panel border border-accent/40 p-8 md:p-14 text-center shadow-gold-lg">
-        <div className="mx-auto h-16 w-16 rounded-full bg-accent-soft border border-accent/50 flex items-center justify-center mb-6">
-          <Check className="h-8 w-8 text-accent" strokeWidth={2.5} />
-        </div>
-        <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-fg-strong mb-4 text-balance">
-          Got it. Brody will be in touch.
-        </h2>
-        <p className="text-fg/85 max-w-lg mx-auto leading-relaxed text-sm sm:text-base">
-          Your details {photos.length > 0 ? `and ${photos.length} photo${photos.length > 1 ? "s" : ""} ` : ""}have been sent to Brody. He'll review the job and reply within 24 hours with questions or a written estimate.
-        </p>
+      <div className="relative overflow-hidden rounded-[2rem] bg-surface-panel border border-accent/40 p-8 md:p-14 text-center shadow-gold-lg">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,color-mix(in_srgb,var(--accent)_18%,transparent),transparent_55%)]" />
+        <div className="relative">
+          <div className="mx-auto h-20 w-20 rounded-full bg-accent-soft border border-accent/50 flex items-center justify-center mb-6 shadow-gold">
+            <Check className="h-10 w-10 text-accent" strokeWidth={2.5} />
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-fg-strong mb-4 text-balance">
+            Got it. Brody will be in touch.
+          </h2>
+          <p className="text-fg/85 max-w-lg mx-auto leading-relaxed text-sm sm:text-base">
+            Your details {photos.length > 0 ? `and ${photos.length} photo${photos.length > 1 ? "s" : ""} ` : ""}have been sent to Brody. He'll review the job and reply within 24 hours with questions or a written estimate.
+          </p>
         <p className="mt-4 text-xs text-fg-muted">
           Need it faster? Text{" "}
           <a
@@ -191,65 +212,75 @@ export function QuoteForm() {
           </a>
           .
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-          <Button href="/" variant="secondary" size="md">
-            Back to home
-          </Button>
-          <Button
-            onClick={() => {
-              setSubmitted(false);
-              setStep(0);
-              setState(initialState);
-              setPhotos([]);
-            }}
-            variant="ghost"
-            size="md"
-          >
-            Submit another
-          </Button>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <Button href="/" variant="secondary" size="md">
+              Back to home
+            </Button>
+            <Button
+              onClick={() => {
+                setSubmitted(false);
+                setStep(0);
+                setState(initialState);
+                setPhotos([]);
+              }}
+              variant="ghost"
+              size="md"
+            >
+              Submit another
+            </Button>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="rounded-2xl bg-surface-panel border border-divider-strong p-5 sm:p-6 md:p-10 shadow-panel-lg">
-      <div className="flex items-center justify-between gap-2 sm:gap-3 mb-6 sm:mb-8">
-        {STEPS.map((s, i) => (
-          <div key={s} className="flex-1 flex items-center gap-2 min-w-0">
-            <div
-              className={cn(
-                "flex-shrink-0 h-8 w-8 rounded-full grid place-items-center text-xs font-bold transition-colors",
-                i < step
-                  ? "bg-accent text-white"
-                  : i === step
-                    ? "bg-accent-soft border border-accent text-accent"
-                    : "bg-surface-elevated/80 border border-divider-strong text-fg-muted",
-              )}
-            >
-              {i < step ? <Check className="h-4 w-4" /> : i + 1}
-            </div>
-            <span
-              className={cn(
-                "hidden md:inline text-xs font-semibold uppercase tracking-wider truncate",
-                i === step ? "text-fg-strong" : "text-fg-muted",
-              )}
-            >
-              {s}
-            </span>
-            {i < STEPS.length - 1 && (
+    <div className="relative overflow-hidden rounded-[2rem] bg-surface-panel border border-divider-strong shadow-panel-lg">
+      <div className="absolute inset-x-0 top-0 h-1 bg-surface-elevated">
+        <div
+          className="h-full bg-gradient-to-r from-accent to-accent-hot transition-all duration-500 ease-editorial"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+      <div className="absolute -right-28 -top-28 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+      <div className="relative p-5 sm:p-6 md:p-8 lg:p-10">
+        <div className="mb-7 grid gap-5 lg:grid-cols-[1fr_0.34fr] lg:items-end">
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold">
+              Step {step + 1} of {STEPS.length}
+            </p>
+            <h2 className="mt-2 font-display text-2xl sm:text-3xl font-extrabold text-fg-strong leading-tight text-balance">
+              {STEPS[step]}
+            </h2>
+          </div>
+          <div className="rounded-2xl border border-divider-strong bg-surface/70 p-4">
+            <p className="text-[11px] uppercase tracking-[0.16em] text-fg-muted font-semibold">
+              Current scope
+            </p>
+            <p className="mt-2 text-sm text-fg-strong font-semibold leading-snug">
+              {selectedService?.name ?? "Service not picked"}
+            </p>
+            <p className="mt-1 text-xs text-fg-muted">
+              {[selectedArea?.name, selectedTiming?.label].filter(Boolean).join(" · ") || "Timing and area next"}
+            </p>
+          </div>
+        </div>
+
+        <div className="mb-8 grid grid-cols-4 gap-2 sm:gap-3">
+          {STEPS.map((s, i) => (
+            <div key={s} className="min-w-0">
               <div
                 className={cn(
-                  "flex-1 h-px transition-colors min-w-[8px]",
-                  i < step ? "bg-accent" : "bg-divider-strong",
+                  "h-2 rounded-full transition-colors",
+                  i <= step ? "bg-accent" : "bg-surface-elevated",
                 )}
               />
-            )}
-          </div>
-        ))}
-      </div>
+              <p className={cn("mt-2 hidden text-[10px] font-semibold uppercase tracking-[0.14em] sm:block", i === step ? "text-fg-strong" : "text-fg-muted")}>{s}</p>
+            </div>
+          ))}
+        </div>
 
-      <div className="min-h-[420px]">
+        <div className="min-h-[420px]">
         {step === 0 && (
           <div>
             <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-fg-strong mb-2 text-balance">
@@ -258,23 +289,26 @@ export function QuoteForm() {
             <p className="text-sm sm:text-base text-fg-muted mb-6">
               Pick the closest match. We can refine later.
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
               {services.map((s) => (
                 <button
                   key={s.slug}
                   type="button"
                   onClick={() => update("service", s.slug)}
                   className={cn(
-                    "p-3 sm:p-4 rounded-xl border text-left transition-all duration-200 min-w-0",
+                    "group relative overflow-hidden p-4 rounded-2xl border text-left transition-all duration-300 min-w-0 hover:-translate-y-0.5",
                     state.service === s.slug
-                      ? "border-accent bg-accent-soft text-fg-strong"
+                      ? "border-accent bg-accent-soft text-fg-strong shadow-gold"
                       : "border-divider-strong bg-surface-elevated/60 text-fg/85 hover:border-accent-soft hover:bg-surface-elevated",
                   )}
                 >
-                  <span className="block font-display font-bold text-sm sm:text-base leading-tight text-balance">
+                  <span className="absolute right-3 top-3 opacity-0 transition-opacity group-hover:opacity-100">
+                    <CheckCircle2 className="h-4 w-4 text-accent" />
+                  </span>
+                  <span className="block pr-5 font-display font-bold text-base leading-tight text-balance">
                     {s.name}
                   </span>
-                  <span className="block text-[11px] sm:text-xs text-fg-muted mt-1 leading-snug">
+                  <span className="block text-xs text-fg-muted mt-2 leading-snug">
                     {s.shortDescription}
                   </span>
                 </button>
@@ -283,7 +317,7 @@ export function QuoteForm() {
                 type="button"
                 onClick={() => update("service", "other")}
                 className={cn(
-                  "p-3 sm:p-4 rounded-xl border text-left transition-all duration-200",
+                  "p-4 rounded-2xl border text-left transition-all duration-300 hover:-translate-y-0.5",
                   state.service === "other"
                     ? "border-accent bg-accent-soft text-fg-strong"
                     : "border-divider-strong bg-surface-elevated/60 text-fg/85 hover:border-accent-soft hover:bg-surface-elevated",
@@ -322,8 +356,8 @@ export function QuoteForm() {
                         : "border-divider-strong bg-surface-elevated/60 hover:border-accent-soft",
                     )}
                   >
-                    <span className="block text-xl mb-1" aria-hidden>
-                      {t.emoji}
+                    <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl border border-accent/35 bg-accent-soft" aria-hidden>
+                      <t.Icon className="h-5 w-5 text-accent" strokeWidth={1.7} />
                     </span>
                     <span className="block font-display font-bold text-sm sm:text-base text-fg-strong leading-tight">
                       {t.label}
@@ -337,7 +371,10 @@ export function QuoteForm() {
             </div>
 
             <div>
-              <h3 className="font-display text-lg sm:text-xl font-bold text-fg-strong mb-2">Where?</h3>
+              <h3 className="font-display text-lg sm:text-xl font-bold text-fg-strong mb-3 flex items-center gap-2">
+                <MapPin className="h-5 w-5 text-accent" strokeWidth={1.7} />
+                Where?
+              </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3">
                 {areas.map((a) => (
                   <button
@@ -345,7 +382,7 @@ export function QuoteForm() {
                     type="button"
                     onClick={() => update("area", a.slug)}
                     className={cn(
-                      "p-2.5 sm:p-3 rounded-xl border text-sm font-semibold transition-all min-w-0 truncate",
+                      "p-3 rounded-xl border text-sm font-semibold transition-all min-w-0 truncate",
                       state.area === a.slug
                         ? "border-accent bg-accent-soft text-fg-strong"
                         : "border-divider-strong bg-surface-elevated/60 text-fg/85 hover:border-accent-soft",
@@ -545,7 +582,7 @@ export function QuoteForm() {
         )}
       </div>
 
-      <div className="mt-8 flex items-center justify-between gap-3 sm:gap-4 border-t border-divider pt-6">
+        <div className="mt-8 flex items-center justify-between gap-3 sm:gap-4 border-t border-divider pt-6">
         <button
           type="button"
           onClick={back}
@@ -588,6 +625,7 @@ export function QuoteForm() {
             )}
           </Button>
         )}
+        </div>
       </div>
     </div>
   );
