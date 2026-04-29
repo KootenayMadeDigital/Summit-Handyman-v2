@@ -7,7 +7,7 @@ import { aggregateRating } from "@/lib/reviews";
 export const metadata: Metadata = {
   title: "Reviews",
   description:
-    "Real reviews from Lower Mainland homeowners and property managers. 5.0 stars on Google + Trustindex. Verified, never cherry-picked.",
+    "Read Summit Handyman reviews from homeowners and property managers. See the trust signals, service patterns, and proof points that help customers choose Brody.",
   alternates: { canonical: "/reviews" },
 };
 
@@ -16,16 +16,16 @@ export default function ReviewsPage() {
     <>
       <PageHero
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Reviews" }]}
-        eyebrow="What Locals Say"
+        eyebrow="Real customer proof"
         title={
           <>
             <span className="font-serif italic font-normal text-gradient-gold">
               5.0 stars
             </span>{" "}
-            from real homes, every time.
+            from homes that needed the job done right.
           </>
         }
-        description={`${aggregateRating.rating.toFixed(1)} on Google. Verified by Trustindex. Read every word. no edits, no cherry-picking.`}
+        description={`${aggregateRating.rating.toFixed(1)} on Google, verified through Trustindex. Browse the patterns, pressure-test the trust signals, and see why homeowners and property managers choose Brody.`}
       >
         <div className="flex flex-wrap items-center gap-3 pt-3">
           <a
