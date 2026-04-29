@@ -89,7 +89,7 @@ export const guides: Guide[] = [
       "Common home repairs and a clear-eyed take on which ones are worth tackling yourself, and which usually cost more in time and rework if you DIY.",
     date: "2026-02-08",
     readingMinutes: 6,
-    hero: "/images/hands-workmanship.webp",
+    hero: "/images/guide-diy-vs-handyman.webp",
     body: [
       {
         type: "p",
@@ -181,7 +181,7 @@ export const guides: Guide[] = [
       "How Summit Handyman works with property managers across the Lower Mainland on turnovers, tenant requests, emergency repairs, and detailed invoicing.",
     date: "2026-02-22",
     readingMinutes: 5,
-    hero: "/images/page-hero-fallback.webp",
+    hero: "/images/guide-strata-property-management.webp",
     body: [
       {
         type: "p",
@@ -270,7 +270,7 @@ export const guides: Guide[] = [
       "The minor home repairs that, if ignored, turn into expensive damage. Here's the short list every Lower Mainland homeowner should know about.",
     date: "2026-03-08",
     readingMinutes: 5,
-    hero: "/images/page-hero-fallback.webp",
+    hero: "/images/guide-small-repairs.webp",
     body: [
       {
         type: "p",
@@ -316,7 +316,7 @@ export const guides: Guide[] = [
     service: "electrical",
     date: "2026-03-15",
     readingMinutes: 6,
-    hero: "/images/project-6.webp",
+    hero: "/images/guide-smart-home.webp",
     body: [
       { type: "h2", text: "Worth installing" },
       {
@@ -407,7 +407,7 @@ export const guides: Guide[] = [
       "How to spot a quote that's about to go sideways. The five warning signs of overpriced, underprepared, or scammy handyman estimates. Trust your gut, but check these first.",
     date: "2026-04-05",
     readingMinutes: 6,
-    hero: "/images/page-hero-fallback.webp",
+    hero: "/images/guide-red-flags-quote.webp",
     body: [
       {
         type: "p",
@@ -470,7 +470,7 @@ export const guides: Guide[] = [
       "What information actually helps a handyman quote your job accurately. Skip the back-and-forth and get a real number on the first reply.",
     date: "2026-04-12",
     readingMinutes: 4,
-    hero: "/images/hands-workmanship.webp",
+    hero: "/images/guide-accurate-quote.webp",
     body: [
       {
         type: "p",
@@ -516,7 +516,7 @@ export const guides: Guide[] = [
       "A property manager's guide to the standard turnover punch list. What gets fixed, what gets photographed, what gets billed. Save the back-and-forth.",
     date: "2026-04-19",
     readingMinutes: 6,
-    hero: "/images/project-4.webp",
+    hero: "/images/guide-tenant-turnover.webp",
     body: [
       {
         type: "p",
@@ -584,7 +584,7 @@ export const guides: Guide[] = [
     service: "assembly-mounting",
     date: "2026-04-26",
     readingMinutes: 5,
-    hero: "/images/project-5.webp",
+    hero: "/images/guide-tv-mounting.webp",
     body: [
       {
         type: "p",
@@ -640,7 +640,7 @@ export const guides: Guide[] = [
       "The repairs that move the needle on listing photos and inspection reports. What to fix, what to skip, and how to maximize your sale price without overspending.",
     date: "2026-05-03",
     readingMinutes: 7,
-    hero: "/images/project-1.webp",
+    hero: "/images/guide-pre-listing-repairs.webp",
     body: [
       {
         type: "p",
@@ -706,7 +706,7 @@ export const guides: Guide[] = [
     service: "home-safety",
     date: "2026-05-10",
     readingMinutes: 5,
-    hero: "/images/category-safety.webp",
+    hero: "/images/guide-aging-bathroom-safety.webp",
     body: [
       {
         type: "p",
@@ -758,7 +758,7 @@ export const guides: Guide[] = [
     service: "painting",
     date: "2026-05-17",
     readingMinutes: 5,
-    hero: "/images/guide-painting.webp",
+    hero: "/images/guide-premium-paint.webp",
     body: [
       {
         type: "p",
