@@ -109,9 +109,9 @@ export default function AreasPage() {
           <div className="grid gap-5 lg:grid-cols-3">
             {serviceSignals.map((signal) => (
               <Reveal key={signal.label}>
-                <div className="h-full rounded-[2rem] border border-divider-strong bg-surface-panel p-6 shadow-panel transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-soft hover:shadow-panel-lg">
+                <div className="summit-card-motion h-full rounded-[2rem] border border-divider-strong bg-surface-panel p-6 shadow-panel transition-all duration-300 hover:border-accent-soft hover:shadow-panel-lg">
                   <div className="mb-6 flex items-center justify-between gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/35 bg-accent-soft">
+                    <div className="summit-icon-box flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/35 bg-accent-soft">
                       <signal.Icon className="h-5 w-5 text-accent" strokeWidth={1.6} />
                     </div>
                     <span className="rounded-full border border-divider bg-surface px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-fg-muted">
@@ -146,7 +146,7 @@ export default function AreasPage() {
               className="mb-0"
             />
             <Reveal delay={0.1}>
-              <div className="rounded-[2rem] border border-accent/35 bg-surface-panel/80 p-5 shadow-panel-lg backdrop-blur">
+              <div className="summit-card-motion rounded-[2rem] border border-accent/35 bg-surface-panel/80 p-5 shadow-panel-lg backdrop-blur">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl border border-accent/35 bg-accent-soft">
                     <Wrench className="h-5 w-5 text-accent" strokeWidth={1.6} />
@@ -194,7 +194,7 @@ export default function AreasPage() {
           <RevealStagger className="grid gap-5 md:grid-cols-3" staggerDelay={0.05}>
             {areaFit.map((item) => (
               <RevealItem key={item.title}>
-                <div className="h-full rounded-[2rem] border border-divider-strong bg-surface p-6 shadow-panel transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-soft">
+                <div className="summit-card-motion h-full rounded-[2rem] border border-divider-strong bg-surface p-6 shadow-panel transition-all duration-300 hover:border-accent-soft">
                   <item.Icon className="mb-5 h-8 w-8 text-accent" strokeWidth={1.5} />
                   <h3 className="font-display text-2xl font-bold text-fg-strong">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-fg-muted">{item.body}</p>
@@ -210,7 +210,7 @@ export default function AreasPage() {
       <Section size="lg" className="bg-surface">
         <Container>
           <Reveal>
-            <div className="grid gap-8 rounded-[2rem] border border-accent/35 bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] p-6 shadow-panel-lg sm:p-8 md:p-10 lg:grid-cols-[0.58fr_0.42fr] lg:items-center">
+            <div className="summit-card-motion grid gap-8 rounded-[2rem] border border-accent/35 bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] p-6 shadow-panel-lg sm:p-8 md:p-10 lg:grid-cols-[0.58fr_0.42fr] lg:items-center">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
                   Service area promise
@@ -256,11 +256,11 @@ function AreaCard({ area, index }: { area: Area; index: number }) {
   return (
     <Link
       href={`/areas/${area.slug}`}
-      className="group block h-full rounded-[2rem] border border-divider-strong bg-surface-panel p-6 shadow-panel transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-gold"
+      className="summit-card-motion group block h-full rounded-[2rem] border border-divider-strong bg-surface-panel p-6 shadow-panel transition-all duration-300 hover:border-accent hover:shadow-gold"
     >
       <div className="mb-5 flex items-start justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/35 bg-accent-soft font-display text-lg font-bold text-accent">
+          <div className="summit-icon-box flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/35 bg-accent-soft font-display text-lg font-bold text-accent">
             {String(index + 1).padStart(2, "0")}
           </div>
           <div>
@@ -272,7 +272,7 @@ function AreaCard({ area, index }: { area: Area; index: number }) {
             </h2>
           </div>
         </div>
-        <ArrowUpRight className="h-5 w-5 flex-shrink-0 text-fg-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
+        <ArrowUpRight className="summit-arrow h-5 w-5 flex-shrink-0 text-fg-muted transition-all duration-300 group-hover:text-accent" />
       </div>
 
       <p className="text-sm leading-relaxed text-fg-muted">{area.description}</p>
@@ -327,7 +327,7 @@ function AreaCard({ area, index }: { area: Area; index: number }) {
 
       <div className="mt-6 flex items-center justify-between border-t border-divider pt-5 text-sm font-semibold text-accent">
         <span>View {area.name} details</span>
-        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        <ArrowRight className="summit-arrow h-4 w-4" />
       </div>
     </Link>
   );
