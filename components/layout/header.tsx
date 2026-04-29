@@ -60,7 +60,7 @@ export function Header() {
                 priority
                 className="rounded-md flex-shrink-0 h-10 w-10 sm:h-14 sm:w-14 md:h-16 md:w-16"
               />
-              <span className="font-display text-[15px] sm:text-xl md:text-2xl font-extrabold tracking-tight text-fg-strong leading-none truncate">
+              <span className="font-display text-base sm:text-xl md:text-2xl font-extrabold tracking-tight text-fg-strong leading-none truncate">
                 Summit Handyman
                 <span className="text-accent">.</span>
               </span>
@@ -91,13 +91,13 @@ export function Header() {
                 <span className="hidden 2xl:inline">{site.contact.email}</span>
                 <span className="2xl:hidden">Email</span>
               </a>
-              <ThemeToggle />
+              <ThemeToggle className="hidden lg:inline-flex" />
               <Button href="/quote" size="sm" className="hidden lg:inline-flex">
                 Get a Quote
               </Button>
               <button
                 type="button"
-                className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-divider-strong text-fg hover:border-accent hover:text-accent transition-colors"
+                className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-divider-strong text-fg hover:border-accent hover:text-accent transition-colors flex-shrink-0"
                 aria-label={open ? "Close menu" : "Open menu"}
                 aria-expanded={open}
                 onClick={() => setOpen((v) => !v)}
@@ -128,6 +128,15 @@ export function Header() {
             open ? "translate-x-0" : "translate-x-full",
           )}
         >
+          {/* Theme toggle row — moved here from the main header bar so the
+              brand wordmark has space at small viewports. */}
+          <div className="flex items-center justify-between gap-3 mb-6 pb-5 border-b border-divider">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
+              Appearance
+            </span>
+            <ThemeToggle />
+          </div>
+
           <nav className="flex flex-col gap-2" aria-label="Mobile primary">
             {nav.map((item) => (
               <Link
