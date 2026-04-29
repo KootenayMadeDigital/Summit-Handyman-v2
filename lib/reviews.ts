@@ -61,15 +61,6 @@ export const placeholderReviews: Review[] = [
     source: "trustindex",
   },
   {
-    author: "Corrie Nichols",
-    city: "Lower Mainland, BC",
-    rating: 5,
-    date: "2025-07-13",
-    body: "Brody replaced the roofs on both of our sheds and built a new door. The work is excellent quality and he kept us up to date regarding timelines and pricing. Would definitely hire him again.",
-    service: "Shed roofs and door build",
-    source: "trustindex",
-  },
-  {
     author: "Fred Taheri",
     city: "Lower Mainland, BC",
     rating: 5,

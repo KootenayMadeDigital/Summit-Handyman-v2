@@ -102,8 +102,8 @@ export const guides: Guide[] = [
           "Hanging picture frames into drywall (with proper anchors)",
           "Replacing standard outlet covers and switch plates",
           "Caulking around tubs and showers",
-          "Cleaning gutters from a stable ladder (one storey)",
           "Replacing weather stripping on doors",
+          "Tightening loose cabinet handles and hinges",
         ],
       },
       { type: "h2", text: "Hire it out" },
@@ -138,7 +138,7 @@ export const guides: Guide[] = [
     area: "Surrey",
     date: "2026-02-15",
     readingMinutes: 5,
-    hero: "/images/guide-gutters.webp",
+    hero: "/images/guide-small-repairs.webp",
     body: [
       {
         type: "p",
@@ -148,12 +148,12 @@ export const guides: Guide[] = [
       {
         type: "ul",
         items: [
-          "Clear gutters and check downspouts route water at least 1m from foundation",
           "Disconnect garden hoses and shut off exterior taps from inside",
           "Check window and door weather stripping (replace if compressed)",
-          "Trim branches that overhang the roof",
+          "Inspect exterior caulking on trim, windows, and door frames",
           "Drain and store outdoor furniture cushions",
-          "Re-seal driveway cracks before they freeze and widen",
+          "Tighten loose deck boards and railing fasteners before frost",
+          "Confirm exterior light fixtures are sealed and functional",
         ],
       },
       { type: "h2", text: "Inside the house" },
@@ -286,10 +286,10 @@ export const guides: Guide[] = [
         type: "p",
         text: "A constant drip is often a worn cartridge or seal. Left alone, it can stain the basin, damage a vanity, or hide a larger supply-line issue until it becomes harder to control.",
       },
-      { type: "h2", text: "3. Gutter blockages" },
+      { type: "h2", text: "3. Loose deck or stair railings" },
       {
         type: "p",
-        text: "Lower Mainland rain does not forgive blocked gutters. Water can pool near the foundation, soak fascia, and freeze into winter ice buildup. Regular cleaning is cheap compared with repairing water damage later.",
+        text: "A railing that flexes is a fall waiting to happen. Tightening lag bolts and replacing rotted ledger boards is a small job that prevents a much larger liability, especially on older Lower Mainland decks that have weathered through several wet winters.",
       },
       { type: "h2", text: "4. Loose toilet base" },
       {
@@ -665,7 +665,7 @@ export const guides: Guide[] = [
         items: [
           "Cabinet refinishing or hardware swap (cheap kitchen refresh)",
           "Refinish or restain the deck, especially before spring or summer photos",
-          "Gutter clean + repair (matters for inspection reports)",
+          "Re-caulk exterior trim and re-seal weather stripping (matters for inspection reports)",
           "Smart thermostat install (small detail, signals 'modern home')",
           "Touch up exterior paint on trim and front door",
         ],

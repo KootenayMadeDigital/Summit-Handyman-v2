@@ -295,42 +295,6 @@ export const services: Service[] = [
     hero: "/images/service-pressure-washing.webp",
   },
   {
-    slug: "gutter-maintenance",
-    name: "Gutter Maintenance",
-    category: "exterior",
-    keywords: ["gutter cleaning", "gutter repair", "downspout flush", "gutter guards"],
-    tagline: "Water goes where it should.",
-    shortDescription: "Cleanouts, downspout flushing, loose brackets, seams, and guard installs.",
-    longDescription:
-      "Lower Mainland rain doesn't forgive blocked gutters. Brody clears debris, flushes downspouts, checks for sealant failures, and re-secures loose brackets so water goes where it should: 1 metre away from the foundation, not pooling against the house. Gutter cleaning and repair across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale, with annual fall service the most common booking.",
-    includes: [
-      "Full gutter cleanout",
-      "Downspout flushing",
-      "Bracket and hanger re-securing",
-      "Sealant repair on seams",
-      "Gutter guard install",
-      "Minor gutter section replacement",
-      "Roof valley debris check",
-      "Splash block placement",
-    ],
-    faqs: [
-      {
-        q: "How often should I clean my gutters in BC?",
-        a: "Twice a year is a practical rhythm for many Lower Mainland homes: once after fall leaf drop and once in spring. Properties with overhanging trees may need more frequent cleanouts.",
-      },
-      {
-        q: "Can you install gutter guards?",
-        a: "Yes. Mesh-style gutter guards can reduce how often gutters need attention in BC. Brody recommends and installs them after the first cleaning when they fit the roofline.",
-      },
-      {
-        q: "What if my gutters are sagging?",
-        a: "Brody checks brackets and re-secures or replaces failed ones. Sagging gutters can dump water against the foundation, so it is worth fixing before the next heavy rain.",
-      },
-    ],
-    icon: "CloudRain",
-    hero: "/images/service-gutter-maintenance.webp",
-  },
-  {
     slug: "fence-deck",
     name: "Fence & Deck",
     category: "exterior",
@@ -365,42 +329,6 @@ export const services: Service[] = [
     ],
     icon: "Fence",
     hero: "/images/service-fence-deck.webp",
-  },
-  {
-    slug: "roof-driveway",
-    name: "Roof & Driveway",
-    category: "exterior",
-    keywords: ["roof repair", "shingle replace", "driveway sealing", "asphalt repair", "flashing repair"],
-    tagline: "Small exterior fixes before they become big ones.",
-    shortDescription: "Minor shingles, flashing, driveway sealing, crack filling, and surface repairs.",
-    longDescription:
-      "Replace cracked shingles. Re-seal a flashing. Crack-fill and seal a driveway. Smaller-scope work that doesn't need a full roofing or paving crew. Roof and driveway service for accessible homes in Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. Anything beyond minor scope is referred to a specialist.",
-    includes: [
-      "Shingle replacement",
-      "Flashing re-sealing",
-      "Vent boot repair",
-      "Driveway crack filling",
-      "Asphalt sealing",
-      "Skylight seal touch-up",
-      "Gutter-roof junction inspection",
-      "Concrete walkway crack repair",
-    ],
-    faqs: [
-      {
-        q: "Do you do full roof replacements?",
-        a: "No. Brody handles minor roof repairs (a handful of shingles, a flashing seal, a vent boot). Full re-roofs go to a dedicated roofing crew.",
-      },
-      {
-        q: "When should I seal my driveway?",
-        a: "Asphalt driveways often benefit from sealing every few years in BC, depending on sun exposure and surface condition. Crack-fill when you see gaps widening, especially before freeze-thaw season.",
-      },
-      {
-        q: "Can you do this work in winter?",
-        a: "Driveway sealing requires above 10C and dry conditions, so it's a spring through fall job. Roof shingle work can be done year-round if the roof is safely accessible.",
-      },
-    ],
-    icon: "Home",
-    hero: "/images/service-roof-driveway.webp",
   },
   {
     slug: "home-safety",

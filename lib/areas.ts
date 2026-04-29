@@ -90,7 +90,7 @@ export const areas: Area[] = [
     description:
       "Bluff-side homes, ocean-air weathering, and the maintenance needs of White Rock and South Surrey waterfront properties.",
     longDescription:
-      "Summit Handyman serves White Rock from East Beach through West Beach, Hillside, Five Corners, Centennial Park, and along Marine Drive. White Rock homes often bring exterior maintenance, gutter work, fence and deck upkeep, pressure washing, and small repair lists shaped by coastal weather and older hillside properties.",
+      "Summit Handyman serves White Rock from East Beach through West Beach, Hillside, Five Corners, Centennial Park, and along Marine Drive. White Rock homes often bring exterior maintenance, fence and deck upkeep, pressure washing, and small repair lists shaped by coastal weather and older hillside properties.",
     neighborhoods: [
       "East Beach",
       "West Beach",
@@ -122,7 +122,7 @@ export const areas: Area[] = [
     description:
       "Acreage, country properties, and family homes across Aldergrove and the Township of Langley's east side.",
     longDescription:
-      "Aldergrove sits on the east side of Langley Township and includes everything from suburban family homes around the town centre to working acreages and country properties stretching toward the County Line. Acreage owners commonly book gutter maintenance, fence and deck staining, and pressure washing, while family homes near Aldergrove Town Centre lean toward interior repairs and painting.",
+      "Aldergrove sits on the east side of Langley Township and includes everything from suburban family homes around the town centre to working acreages and country properties stretching toward the County Line. Acreage owners commonly book fence and deck staining, pressure washing, and exterior touch-up work, while family homes near Aldergrove Town Centre lean toward interior repairs and painting.",
     neighborhoods: ["Aldergrove Town Centre", "Otter District", "County Line"],
     homeTypes: [
       "Working acreages",

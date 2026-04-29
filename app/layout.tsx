@@ -35,8 +35,6 @@ export const metadata: Metadata = {
     "TV mounting Langley",
     "TV mounting Surrey",
     "deck refinishing BC",
-    "gutter cleaning Langley",
-    "gutter cleaning Surrey",
     "fence repair BC",
     "tile install Langley",
     "kitchen backsplash install Surrey",

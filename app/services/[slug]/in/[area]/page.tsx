@@ -20,7 +20,7 @@ import { site } from "@/lib/site";
  * targeting "[service] in [city]" search intent. Examples:
  *   /services/drywall-repair/in/langley
  *   /services/painting/in/surrey
- *   /services/gutter-maintenance/in/abbotsford
+ *   /services/fence-deck/in/abbotsford
  *
  * Each page is a unique 600+ word landing experience with:
  *  - City-targeted title and meta description
