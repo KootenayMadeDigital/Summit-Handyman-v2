@@ -77,7 +77,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg sm:text-xl text-fg/85 leading-relaxed text-pretty max-w-2xl"
           >
-            One owner-operated handyman for families and property managers across{" "}
+            One handyman, on every job, for families and property managers across{" "}
             <span className="text-fg-strong font-semibold">
               Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale
             </span>

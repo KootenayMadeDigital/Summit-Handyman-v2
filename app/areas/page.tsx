@@ -25,7 +25,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Service Areas",
   description:
-    "Summit Handyman serves Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale with owner-operated repairs, written estimates, and clear communication.",
+    "Summit Handyman serves Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale with Brody-led repairs, written estimates, and clear communication.",
   alternates: { canonical: "/areas" },
 };
 
@@ -44,14 +44,14 @@ const serviceSignals = [
   },
   {
     label: "Service model",
-    value: "Owner-operated work",
+    value: "Brody on every job",
     detail: "The location changes. The standard does not. Brody is still the person responsible for the estimate and the repair.",
     Icon: ShieldCheck,
   },
 ];
 
 const localPromises = [
-  "One owner-operated standard across every city",
+  "One handyman, one standard, across every city",
   "Written estimate before work begins",
   "Photos and documentation when the job needs proof",
   "Clean work inside real homes, rentals, and strata units",
@@ -140,8 +140,8 @@ export default function AreasPage() {
         </div>
       </PageHero>
 
-      <Section size="lg" className="relative overflow-hidden bg-surface">
-        <div className="absolute left-1/2 top-12 h-80 w-80 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
+      <Section size="sm" className="relative overflow-hidden bg-surface !pt-12 sm:!pt-14 md:!pt-16">
+        <div className="absolute left-1/2 top-4 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
         <Container className="relative">
           <div className="grid gap-5 lg:grid-cols-3">
             {serviceSignals.map((signal) => (
