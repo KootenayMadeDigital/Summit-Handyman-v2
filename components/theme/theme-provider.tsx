@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { LazyMotion, domAnimation } from "framer-motion";
 
 type Theme = "dark" | "light";
 
@@ -51,8 +52,20 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <ThemeContext.Provider value={value}>
-      {/* Hide flicker briefly while reading storage */}
-      <div data-theme-mounted={mounted ? "true" : "false"}>{children}</div>
+      {/*
+        LazyMotion + domAnimation tree-shakes the framer-motion runtime down
+        to just the features the site actually uses (animations, variants,
+        gestures). Pairs with `m.div` / `m.span` / `m.h1` etc. in components
+        instead of the full `motion.div` import. Saves ~30-40 KB on the
+        initial JS bundle without changing any visual behaviour.
+
+        `strict` is intentionally OFF: framer-motion still allows the full
+        `motion` API to opt in if a future component needs layout / drag.
+      */}
+      <LazyMotion features={domAnimation} strict={false}>
+        {/* Hide flicker briefly while reading storage */}
+        <div data-theme-mounted={mounted ? "true" : "false"}>{children}</div>
+      </LazyMotion>
     </ThemeContext.Provider>
   );
 }

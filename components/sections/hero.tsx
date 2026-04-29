@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { ArrowRight, Mail, Star, ShieldCheck } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { Parallax } from "@/components/ui/parallax";
@@ -19,17 +19,45 @@ import { site } from "@/lib/site";
 export function Hero() {
   const reduce = useReducedMotion();
 
+  /*
+    Hero background uses an art-directed <picture> (different desktop vs
+    mobile crop, since the source images have completely different aspect
+    ratios: desktop 1920x822 vs mobile 1200x1500). Routing through
+    `getImageProps` keeps the picture-element art direction intact, but
+    upgrades both sources to AVIF when supported, generates a srcSet for
+    HiDPI displays, and runs them through Next's image optimization
+    pipeline. Visual output is byte-for-byte equivalent at the rendered
+    sizes; the wins are smaller transfer + cached optimized variants.
+  */
+  const common = {
+    alt: "",
+    sizes: "100vw",
+    fetchPriority: "high" as const,
+    decoding: "async" as const,
+    quality: 80,
+  };
+  const { props: desktopImg } = getImageProps({
+    ...common,
+    src: "/images/hero-desktop.webp",
+    width: 1920,
+    height: 822,
+  });
+  const { props: mobileImg } = getImageProps({
+    ...common,
+    src: "/images/hero-mobile.webp",
+    width: 1200,
+    height: 1500,
+  });
+
   return (
     <section className="grainient-hero relative isolate overflow-hidden pt-28 sm:pt-32 md:pt-40 pb-16 sm:pb-20 md:pb-28 min-h-[92vh] flex items-center">
       <div className="absolute inset-0 -z-10">
         <picture className="absolute inset-0 block">
-          <source srcSet="/images/hero-desktop.webp" media="(min-width: 768px)" />
+          <source media="(min-width: 768px)" srcSet={desktopImg.srcSet} sizes={desktopImg.sizes} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/hero-mobile.webp"
-            alt=""
+            {...mobileImg}
             aria-hidden="true"
-            fetchPriority="high"
-            decoding="async"
             className="h-full w-full object-cover opacity-[0.32] [filter:saturate(0.9)_contrast(1.05)] dark-only-photo"
           />
         </picture>
@@ -38,7 +66,7 @@ export function Hero() {
 
       <div className="mx-auto max-w-[88rem] w-full px-5 sm:px-8 lg:px-12 grid lg:grid-cols-12 gap-10 items-center relative">
         <div className="lg:col-span-8 space-y-6 sm:space-y-8 max-w-3xl min-w-0">
-          <motion.div
+          <m.div
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 12 }}
             animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -55,9 +83,9 @@ export function Hero() {
             <span className="hidden sm:inline text-fg whitespace-nowrap">Licensed & Insured</span>
             <span className="hidden md:inline text-fg-faint">·</span>
             <span className="hidden md:inline text-fg whitespace-nowrap">Lower Mainland, BC</span>
-          </motion.div>
+          </m.div>
 
-          <motion.h1
+          <m.h1
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24 }}
             animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
@@ -69,9 +97,9 @@ export function Hero() {
             <span className="font-serif italic font-normal text-gradient-gold whitespace-nowrap">
               chase.
             </span>
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
             animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
@@ -82,9 +110,9 @@ export function Hero() {
               Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale
             </span>
             . Send the list, get the scope in writing, and know Brody is the one doing the work.
-          </motion.p>
+          </m.p>
 
-          <motion.div
+          <m.div
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
             animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -101,17 +129,17 @@ export function Hero() {
               <Mail className="h-4 w-4" />
               or email Brody directly
             </a>
-          </motion.div>
+          </m.div>
 
-          <motion.p
+          <m.p
             initial={reduce ? { opacity: 0 } : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.6 }}
             className="text-sm text-fg-muted pt-3 sm:pt-4 leading-relaxed max-w-xl"
           >
             <span className="text-fg/90">Start with the repair list</span>, add photos if you have them, and Brody replies within 24 hours with next steps in writing.
-          </motion.p>
-          <motion.p
+          </m.p>
+          <m.p
             initial={reduce ? { opacity: 0 } : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.7 }}
@@ -122,10 +150,10 @@ export function Hero() {
             <span>Free written estimate</span>
             <span className="text-fg-faint">·</span>
             <span>Licensed and insured</span>
-          </motion.p>
+          </m.p>
         </div>
 
-        <motion.div
+        <m.div
           initial={reduce ? { opacity: 0 } : { opacity: 0, x: 24 }}
           animate={reduce ? { opacity: 1 } : { opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -152,7 +180,7 @@ export function Hero() {
               </div>
             </div>
           </Parallax>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

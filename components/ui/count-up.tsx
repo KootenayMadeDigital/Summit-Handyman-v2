@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { useInView, useReducedMotion } from "framer-motion";
 
 type Props = {
   end: number;
@@ -46,10 +46,10 @@ export function CountUp({
   }, [inView, end, start, duration, reduce]);
 
   return (
-    <motion.span ref={ref} className={className}>
+    <span ref={ref} className={className}>
       {prefix}
       {value.toFixed(decimals)}
       {suffix}
-    </motion.span>
+    </span>
   );
 }

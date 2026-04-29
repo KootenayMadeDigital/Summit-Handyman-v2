@@ -1,14 +1,13 @@
 "use client";
 
 import * as React from "react";
-import { motion, useReducedMotion, type HTMLMotionProps } from "framer-motion";
+import { m, useReducedMotion, type HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type RevealProps = HTMLMotionProps<"div"> & {
   delay?: number;
   y?: number;
   once?: boolean;
-  as?: keyof typeof motion;
 };
 
 export function Reveal({
@@ -21,7 +20,7 @@ export function Reveal({
 }: RevealProps) {
   const reduce = useReducedMotion();
   return (
-    <motion.div
+    <m.div
       initial={reduce ? { opacity: 1 } : { opacity: 0, y }}
       whileInView={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
       viewport={{ once, margin: "-80px" }}
@@ -34,7 +33,7 @@ export function Reveal({
       {...rest}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -46,7 +45,7 @@ export function RevealStagger({
 }: HTMLMotionProps<"div"> & { staggerDelay?: number }) {
   const reduce = useReducedMotion();
   return (
-    <motion.div
+    <m.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
@@ -62,7 +61,7 @@ export function RevealStagger({
       {...rest}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -74,7 +73,7 @@ export function RevealItem({
 }: HTMLMotionProps<"div"> & { y?: number }) {
   const reduce = useReducedMotion();
   return (
-    <motion.div
+    <m.div
       variants={{
         hidden: reduce ? { opacity: 1 } : { opacity: 0, y },
         visible: reduce
@@ -89,6 +88,6 @@ export function RevealItem({
       {...rest}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
