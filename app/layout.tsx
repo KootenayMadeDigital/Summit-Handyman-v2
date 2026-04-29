@@ -129,11 +129,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link
           rel="preload"
           as="style"
-          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800,900&f[]=switzer@300,400,500,600,700&f[]=gambarino@400&display=swap"
+          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800,900&f[]=switzer@300,400,500,600,700&f[]=sentient@400,500,700&display=swap"
         />
         <link
           rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800,900&f[]=switzer@300,400,500,600,700&f[]=gambarino@400&display=swap"
+          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800,900&f[]=switzer@300,400,500,600,700&f[]=sentient@400,500,700&display=swap"
         />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>

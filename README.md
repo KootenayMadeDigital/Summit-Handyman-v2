@@ -9,7 +9,7 @@ V2 rebuild of [summit-handyman.ca](https://summit-handyman.ca/), built by [Koote
 - **Framework:** Next.js 15 (App Router) + TypeScript
 - **Styling:** Tailwind CSS v4
 - **Hosting:** Vercel
-- **Fonts:** Inter + (display TBD: Fraunces / Editorial New candidate)
+- **Fonts:** Cabinet Grotesk display + Switzer body + Sentient editorial accent
 - **Icons:** Lucide React
 
 ## Local Development

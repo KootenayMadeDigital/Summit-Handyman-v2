@@ -222,12 +222,12 @@ body {
 }
 
 .font-serif {
-  font-family: "Gambarino", ui-serif, Georgia, serif;
+  font-family: "Sentient", ui-serif, Georgia, serif;
   font-feature-settings: "ss01";
 }
 
 /*
- * Italic Gambarino has aggressive right side-bearing. the final letter
+ * Italic accent serif glyphs can have aggressive right side-bearing. the final letter
  * (especially y, f, t) can clip when the parent has overflow-hidden or
  * exactly fits the line. Reserve a sliver of inline padding on every
  * .font-serif element so the rightmost glyph never gets cut.
