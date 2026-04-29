@@ -1055,3 +1055,19 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Mobile viewport guard. Decorative layers and generated art should never widen
+   the layout viewport or make Android Chrome load zoomed out. Keep this off
+   html/body so sticky and fixed UI keep their browser semantics. */
+main,
+footer {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  main,
+  footer {
+    overflow-x: hidden;
+  }
+}
