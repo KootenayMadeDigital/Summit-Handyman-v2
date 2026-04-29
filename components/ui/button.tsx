@@ -74,15 +74,18 @@ export function Button(props: ButtonProps) {
       props.href.startsWith("mailto:") ||
       props.href.startsWith("tel:") ||
       props.href.startsWith("sms:");
+    // Auto-tag any internal link to /quote so the mobile sticky bar can
+    // intersect-observe these CTAs and hide itself when one is in view.
+    const ctaAttr = props.href.startsWith("/quote") ? { "data-quote-cta": "true" } : {};
     if (isExternal) {
       return (
-        <a {...linkRest} href={props.href} className={cn("group", classes)}>
+        <a {...linkRest} {...ctaAttr} href={props.href} className={cn("group", classes)}>
           {content}
         </a>
       );
     }
     return (
-      <Link href={props.href} className={cn("group", classes)}>
+      <Link href={props.href} {...ctaAttr} className={cn("group", classes)}>
         {content}
       </Link>
     );

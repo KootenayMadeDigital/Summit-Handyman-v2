@@ -93,7 +93,7 @@ export function Header() {
                 <span className="2xl:hidden">Email</span>
               </a>
               <ThemeToggle />
-              <Button href="/quote" size="sm" className="hidden sm:inline-flex">
+              <Button href="/quote" size="sm" className="hidden lg:inline-flex">
                 Get a Quote
               </Button>
               <button
