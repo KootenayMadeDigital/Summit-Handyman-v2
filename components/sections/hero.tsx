@@ -88,29 +88,40 @@ export function Hero() {
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
             animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2"
+            className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-2"
           >
             <MagneticCTA href="/quote" size="lg">
-              Get a Free Quote
+              Submit a Quote Request
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
             </MagneticCTA>
-            <Button href={`mailto:${site.contact.email}`} variant="secondary" size="lg">
-              <Mail className="h-5 w-5" />
-              Email Brody
-            </Button>
+            <a
+              href={`mailto:${site.contact.email}`}
+              className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent transition-colors"
+            >
+              <Mail className="h-4 w-4" />
+              or email Brody directly
+            </a>
           </motion.div>
 
           <motion.p
             initial={reduce ? { opacity: 0 } : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="text-sm text-fg-muted pt-3 sm:pt-4 flex flex-wrap items-center gap-x-3 gap-y-1"
+            className="text-sm text-fg-muted pt-3 sm:pt-4 leading-relaxed max-w-xl"
+          >
+            <span className="text-fg/90">The quote form takes about 90 seconds</span> and lets Brody review the job (with photos) before reaching out. He replies within 24 hours.
+          </motion.p>
+          <motion.p
+            initial={reduce ? { opacity: 0 } : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.7 }}
+            className="text-xs text-fg-muted flex flex-wrap items-center gap-x-3 gap-y-1"
           >
             <span className="text-accent font-semibold">$150 minimum per job</span>
             <span className="text-fg-faint">·</span>
             <span>Free written estimate</span>
             <span className="text-fg-faint">·</span>
-            <span>Reply within 24 hours</span>
+            <span>Licensed and insured</span>
           </motion.p>
         </div>
 

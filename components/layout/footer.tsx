@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, MessageSquare, Facebook, Instagram } from "lucide-react";
+import { Mail, MessageSquare, Facebook, Instagram, FileText } from "lucide-react";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 import { areas } from "@/lib/areas";
@@ -78,9 +78,19 @@ export function Footer() {
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
               Reach Brody
             </h3>
+            <Link
+              href="/quote"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-accent text-white font-semibold text-sm hover:bg-accent-hot transition-colors w-fit"
+            >
+              <FileText className="h-4 w-4" />
+              Submit a Quote
+            </Link>
+            <p className="text-xs text-fg-muted -mt-1">
+              The fastest way to a written estimate.
+            </p>
             <a
               href={`mailto:${site.contact.email}`}
-              className="flex items-start gap-2 text-fg/85 hover:text-accent transition-colors break-all text-sm"
+              className="flex items-start gap-2 text-fg/85 hover:text-accent transition-colors break-all text-sm pt-1"
             >
               <Mail className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
               <span>{site.contact.email}</span>

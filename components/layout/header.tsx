@@ -94,7 +94,7 @@ export function Header() {
               </a>
               <ThemeToggle />
               <Button href="/quote" size="sm" className="hidden sm:inline-flex">
-                Get a Quote
+                Submit a Quote
               </Button>
               <button
                 type="button"
@@ -143,8 +143,11 @@ export function Header() {
           </nav>
           <div className="mt-8 space-y-3">
             <Button href="/quote" size="lg" className="w-full">
-              Get a Free Quote
+              Submit a Quote Request
             </Button>
+            <p className="text-xs text-fg-muted -mt-1 text-center">
+              The fastest way for Brody to give an accurate estimate.
+            </p>
             <Button
               href={`mailto:${site.contact.email}`}
               variant="secondary"

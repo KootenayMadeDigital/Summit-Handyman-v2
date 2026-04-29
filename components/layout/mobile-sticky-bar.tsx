@@ -1,8 +1,13 @@
 "use client";
 
-import { Mail, MessageSquare, MessageCircle } from "lucide-react";
+import Link from "next/link";
+import { Mail, MessageSquare, FileText } from "lucide-react";
 import { site } from "@/lib/site";
 
+/**
+ * Mobile sticky bar. Quote form is the primary action (gold-filled),
+ * email and text remain as one-tap fallbacks.
+ */
 export function MobileStickyBar() {
   return (
     <div
@@ -10,32 +15,30 @@ export function MobileStickyBar() {
       role="navigation"
       aria-label="Quick contact"
     >
-      <div className="grid grid-cols-3 divide-x divide-[var(--border)]">
+      <div className="grid grid-cols-5 gap-1 p-2">
+        <Link
+          href="/quote"
+          className="col-span-3 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-accent text-white font-display font-bold text-sm transition-colors active:bg-accent-hot shadow-gold"
+          aria-label="Submit a quote request"
+        >
+          <FileText className="h-4 w-4" />
+          Submit a Quote
+        </Link>
         <a
           href={`mailto:${site.contact.email}`}
-          className="flex flex-col items-center gap-1 py-3 text-fg active:bg-surface-elevated transition-colors"
+          className="col-span-1 flex flex-col items-center gap-0.5 py-2 rounded-xl text-fg active:bg-surface-elevated transition-colors"
           aria-label="Email Brody"
         >
-          <Mail className="h-5 w-5 text-accent" />
-          <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider">Email</span>
+          <Mail className="h-4 w-4 text-accent" />
+          <span className="text-[10px] font-semibold uppercase tracking-wider">Email</span>
         </a>
         <a
           href={`sms:${site.contact.phoneTel}`}
-          className="flex flex-col items-center gap-1 py-3 text-fg active:bg-surface-elevated transition-colors"
+          className="col-span-1 flex flex-col items-center gap-0.5 py-2 rounded-xl text-fg active:bg-surface-elevated transition-colors"
           aria-label="Text Brody"
         >
-          <MessageSquare className="h-5 w-5 text-accent" />
-          <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider">Text</span>
-        </a>
-        <a
-          href={site.contact.messenger}
-          target="_blank"
-          rel="noopener"
-          className="flex flex-col items-center gap-1 py-3 text-fg active:bg-surface-elevated transition-colors"
-          aria-label="Message Brody on Facebook"
-        >
-          <MessageCircle className="h-5 w-5 text-accent" />
-          <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider">Message</span>
+          <MessageSquare className="h-4 w-4 text-accent" />
+          <span className="text-[10px] font-semibold uppercase tracking-wider">Text</span>
         </a>
       </div>
     </div>

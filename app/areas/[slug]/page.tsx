@@ -140,19 +140,18 @@ export default async function AreaPage(
         }
         description={area.description}
       >
-        <div className="flex flex-wrap items-center gap-3 pt-3">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href={`/quote?area=${area.slug}`} size="lg">
-            Get a {area.name} Quote
+            Submit a Quote Request
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
-          <Button
+          <a
             href={`mailto:${site.contact.email}?subject=${encodeURIComponent(`Quote in ${area.name}`)}`}
-            variant="secondary"
-            size="lg"
+            className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent transition-colors"
           >
-            <Mail className="h-5 w-5" />
-            Email Brody
-          </Button>
+            <Mail className="h-4 w-4" />
+            or email Brody directly
+          </a>
         </div>
       </PageHero>
 

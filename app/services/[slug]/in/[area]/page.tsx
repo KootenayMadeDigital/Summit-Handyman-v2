@@ -209,22 +209,21 @@ export default async function ServiceInAreaPage(
         }
         description={`${service.tagline} Serving ${area.name} from ${area.neighborhoods.slice(0, 3).join(", ")} and beyond. ${site.pricing.minimumDisplay}, free written estimates, licensed and insured.`}
       >
-        <div className="flex flex-wrap items-center gap-3 pt-3">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA
             href={`/quote?service=${service.slug}&area=${area.slug}`}
             size="lg"
           >
-            Get a {area.name} Quote
+            Submit a Quote Request
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
-          <Button
+          <a
             href={`mailto:${site.contact.email}?subject=${encodeURIComponent(`${service.name} quote in ${area.name}`)}`}
-            variant="secondary"
-            size="lg"
+            className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent transition-colors"
           >
-            <Mail className="h-5 w-5" />
-            Email Brody
-          </Button>
+            <Mail className="h-4 w-4" />
+            or email Brody directly
+          </a>
         </div>
       </PageHero>
 
@@ -441,18 +440,20 @@ export default async function ServiceInAreaPage(
                   href={`/quote?service=${service.slug}&area=${area.slug}`}
                   size="lg"
                 >
-                  Start your quote
+                  Submit a quote request
                   <ArrowRight className="h-5 w-5" />
                 </MagneticCTA>
-                <Button
-                  href={`mailto:${site.contact.email}?subject=${encodeURIComponent(`${service.name} in ${area.name}`)}`}
-                  variant="secondary"
-                  size="lg"
-                >
-                  <Mail className="h-5 w-5" />
-                  Email Brody
-                </Button>
               </div>
+              <p className="pt-2 text-sm text-fg-muted">
+                Prefer to skip the form?{" "}
+                <a
+                  href={`mailto:${site.contact.email}?subject=${encodeURIComponent(`${service.name} in ${area.name}`)}`}
+                  className="text-accent font-semibold underline-offset-4 hover:underline"
+                >
+                  Email Brody directly
+                </a>
+                .
+              </p>
             </div>
           </Reveal>
         </Container>

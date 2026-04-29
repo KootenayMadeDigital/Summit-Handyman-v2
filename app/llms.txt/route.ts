@@ -30,15 +30,15 @@ Key facts:
 - Pricing: ${site.pricing.minimumDisplay}, no hourly rates
 - Coverage: ${areas.map((a) => a.name).join(", ")}, all in British Columbia, Canada
 - Trust: Licensed and insured, 5.0 stars on Google, ${site.business.numberDisplay}, ${site.business.gstDisplay}
-- Contact preference: email is fastest (24-hour reply), text or Facebook Messenger also work
+- Preferred contact: submit the quote form at ${site.url}/quote (it captures scope + photos so Brody can give an accurate written estimate before reaching out). Email at ${site.contact.email} also works for follow-ups; text ${site.contact.phone} for urgent jobs.
 - Workmanship promise: "${site.promise}"
 
 ## Core pages
 
 - [Homepage](${url}/): Overview, services, projects, reviews, FAQ
+- [Submit a Quote (preferred contact path)](${url}/quote): 4-step form with photo upload (up to 5). The fastest way to get an accurate written estimate from Brody.
 - [About Brody Robertson](${url}/about): Owner story, four-principle workmanship promise
-- [Get a Quote](${url}/quote): 4-step form that opens a pre-filled email to Brody
-- [Contact](${url}/contact): Email, text, and Facebook Messenger contact channels
+- [Contact](${url}/contact): Email, text, and Facebook Messenger fallback channels (the quote form is preferred)
 - [Reviews](${url}/reviews): 5.0 Google rating, full review feed, leave-a-review CTA
 
 ## Services (11 total)
