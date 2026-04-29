@@ -45,11 +45,11 @@ export function Header() {
             : "bg-transparent border-b border-transparent",
         )}
       >
-        <div className="mx-auto max-w-[88rem] px-4 sm:px-6 lg:px-12">
-          <div className="flex h-20 md:h-24 items-center justify-between gap-3 sm:gap-6 min-w-0">
+        <div className="mx-auto max-w-[88rem] px-3 sm:px-6 lg:px-12">
+          <div className="flex h-16 sm:h-20 md:h-24 items-center justify-between gap-2 sm:gap-6 min-w-0">
             <Link
               href="/"
-              className="flex items-center gap-3 sm:gap-4 group min-w-0"
+              className="flex items-center gap-2 sm:gap-3 md:gap-4 group min-w-0 flex-1"
               aria-label="Summit Handyman home"
             >
               <Image
@@ -58,11 +58,10 @@ export function Header() {
                 width={64}
                 height={64}
                 priority
-                className="rounded-md flex-shrink-0 h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16"
+                className="rounded-md flex-shrink-0 h-10 w-10 sm:h-14 sm:w-14 md:h-16 md:w-16"
               />
-              <span className="font-display text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight text-fg-strong leading-none truncate">
-                Summit{" "}
-                <span className="hidden sm:inline">Handyman</span>
+              <span className="font-display text-[15px] sm:text-xl md:text-2xl font-extrabold tracking-tight text-fg-strong leading-none truncate">
+                Summit Handyman
                 <span className="text-accent">.</span>
               </span>
             </Link>
