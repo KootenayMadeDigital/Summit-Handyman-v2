@@ -1,15 +1,32 @@
-import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 import { getArea } from "@/lib/areas";
 import { getService } from "@/lib/services";
 import { site } from "@/lib/site";
+
+/**
+ * POST /api/quote
+ *
+ * Receives the multi-step quote form (FormData with photos), validates the
+ * payload, and sends a formatted lead email to brody@summit-handyman.ca via
+ * Resend. Reply-To is set to the customer's email when they provided one,
+ * so Brody can hit Reply in his existing inbox and the message goes back to
+ * the customer with no Resend interception.
+ *
+ * Required env vars:
+ *   - RESEND_API_KEY        Resend API key (set in Vercel project env)
+ *
+ * Optional env vars (sensible defaults if absent):
+ *   - RESEND_FROM_EMAIL     Defaults to "Summit Handyman Quote <quotes@summit-handyman.ca>"
+ *   - CONTACT_TO_EMAIL      Defaults to site.contact.email (brody@summit-handyman.ca)
+ */
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const MAX_PHOTOS = 5;
-const MAX_PHOTO_SIZE = 5 * 1024 * 1024;
-const MAX_TOTAL_SIZE = 20 * 1024 * 1024;
+const MAX_PHOTO_SIZE = 5 * 1024 * 1024; // 5 MB per photo
+const MAX_TOTAL_SIZE = 20 * 1024 * 1024; // 20 MB total (Resend caps at 40 MB)
 const ALLOWED_MIME = new Set([
   "image/jpeg",
   "image/jpg",
@@ -18,6 +35,8 @@ const ALLOWED_MIME = new Set([
   "image/heic",
   "image/heif",
 ]);
+
+const DEFAULT_FROM = "Summit Handyman Quote <quotes@summit-handyman.ca>";
 
 function humanizeTiming(t: string): string {
   return (
@@ -39,27 +58,11 @@ function escapeHtml(s: string): string {
     .replace(/'/g, "&#039;");
 }
 
-function smtpConfig() {
-  const host = process.env.SMTP_HOST;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const port = Number(process.env.SMTP_PORT ?? 465);
-
-  if (!host || !user || !pass || !Number.isFinite(port)) return null;
-
-  return {
-    host,
-    port,
-    secure: port === 465,
-    auth: { user, pass },
-  };
-}
-
 export async function POST(req: NextRequest) {
   try {
-    const config = smtpConfig();
-    if (!config) {
-      console.error("Summit quote email is missing SMTP_HOST, SMTP_PORT, SMTP_USER, or SMTP_PASS.");
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("Summit quote: RESEND_API_KEY is not configured.");
       return NextResponse.json(
         { error: "Email delivery is not configured. Please email Brody directly at " + site.contact.email },
         { status: 503 },
@@ -67,8 +70,11 @@ export async function POST(req: NextRequest) {
     }
 
     const formData = await req.formData();
+
+    // Honeypot. Bots fill the hidden "website" field; real users do not.
     const honeypot = formData.get("website");
     if (typeof honeypot === "string" && honeypot.length > 0) {
+      // Pretend success so the bot moves on. No email sent.
       return NextResponse.json({ ok: true });
     }
 
@@ -146,20 +152,31 @@ export async function POST(req: NextRequest) {
       photoCount: photoEntries.length,
     };
 
+    /*
+      Resend attachment format: { filename, content }
+      content can be a Buffer (Node) or base64 string. Buffer works in the
+      Node runtime which this route opts into via `export const runtime = "nodejs"`.
+    */
     const attachments = await Promise.all(
       photoEntries.map(async (p) => ({
         filename: p.name || `photo-${Date.now()}.jpg`,
         content: Buffer.from(await p.arrayBuffer()),
-        contentType: p.type || undefined,
       })),
     );
 
-    const transporter = nodemailer.createTransport(config);
-    const from = process.env.SMTP_FROM ?? `Summit Handyman <${config.auth.user}>`;
+    const resend = new Resend(apiKey);
+    const from = process.env.RESEND_FROM_EMAIL ?? DEFAULT_FROM;
     const to = process.env.CONTACT_TO_EMAIL ?? site.contact.email;
-    const subject = `New Quote: ${name} - ${serviceObj?.name ?? "General inquiry"}`;
+    const subject = `New Quote: ${name} - ${serviceObj?.name ?? "General inquiry"} (${areaObj?.name ?? area})`;
 
-    await transporter.sendMail({
+    /*
+      replyTo is the killer feature here. Brody opens the email in his
+      regular inbox, hits Reply, and the response goes straight back to
+      the customer's email instead of bouncing off our quotes@ address.
+      If the customer only left a phone number, replyTo is omitted and
+      Brody just texts them back from his phone.
+    */
+    const { error } = await resend.emails.send({
       from,
       to,
       replyTo: contact.includes("@") ? contact : undefined,
@@ -169,9 +186,17 @@ export async function POST(req: NextRequest) {
       attachments,
     });
 
+    if (error) {
+      console.error("Summit quote: Resend send failed", error);
+      return NextResponse.json(
+        { error: "Email delivery failed. Please call or text Brody at " + site.contact.phone },
+        { status: 502 },
+      );
+    }
+
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("Summit quote email failed", err);
+    console.error("Summit quote: unexpected error", err);
     return NextResponse.json(
       { error: "Email delivery failed. Please call or text Brody at " + site.contact.phone },
       { status: 502 },
