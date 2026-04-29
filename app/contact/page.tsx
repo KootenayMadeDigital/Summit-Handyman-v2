@@ -70,7 +70,7 @@ export default function ContactPage() {
           </MagneticCTA>
           <a
             href={`mailto:${site.contact.email}`}
-            className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent transition-colors"
+            className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
           >
             <Mail className="h-4 w-4" />
             email Brody directly

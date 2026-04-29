@@ -22,15 +22,15 @@ export function Hero() {
   return (
     <section className="grainient-hero relative isolate overflow-hidden pt-28 sm:pt-32 md:pt-40 pb-16 sm:pb-20 md:pb-28 min-h-[92vh] flex items-center">
       <div className="absolute inset-0 -z-10">
-        <picture>
+        <picture className="absolute inset-0 block">
           <source srcSet="/images/hero-desktop.webp" media="(min-width: 768px)" />
-          <Image
+          <img
             src="/images/hero-mobile.webp"
             alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover opacity-[0.32] [filter:saturate(0.9)_contrast(1.05)] dark-only-photo"
+            aria-hidden="true"
+            fetchPriority="high"
+            decoding="async"
+            className="h-full w-full object-cover opacity-[0.32] [filter:saturate(0.9)_contrast(1.05)] dark-only-photo"
           />
         </picture>
         <div className="absolute inset-0 hero-veil" />
@@ -96,7 +96,7 @@ export function Hero() {
             </MagneticCTA>
             <a
               href={`mailto:${site.contact.email}`}
-              className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent transition-colors"
+              className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
             >
               <Mail className="h-4 w-4" />
               or email Brody directly
@@ -137,6 +137,7 @@ export function Hero() {
                 src="/images/about-brody.webp"
                 alt={`${site.owner}, owner of ${site.name}`}
                 fill
+                priority
                 sizes="(max-width: 1024px) 0px, 384px"
                 className="object-cover transition-transform duration-1000 ease-editorial group-hover:scale-105"
               />

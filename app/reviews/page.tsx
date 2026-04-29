@@ -77,7 +77,7 @@ export default function ReviewsPage() {
             href="https://www.google.com/search?q=summit+handyman+reviews"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-divider-strong bg-surface-panel/80 text-fg-strong hover:border-accent hover:text-accent transition-colors text-sm"
+            className="inline-flex min-h-11 items-center gap-2 px-4 py-2 rounded-full border border-divider-strong bg-surface-panel/80 text-fg-strong hover:border-accent hover:text-accent transition-colors text-sm"
           >
             View on Google
             <ArrowUpRight className="h-4 w-4" />
@@ -86,7 +86,7 @@ export default function ReviewsPage() {
             href="https://www.trustindex.io/reviews/summit-handyman.ca"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-divider-strong bg-surface-panel/80 text-fg-strong hover:border-accent hover:text-accent transition-colors text-sm"
+            className="inline-flex min-h-11 items-center gap-2 px-4 py-2 rounded-full border border-divider-strong bg-surface-panel/80 text-fg-strong hover:border-accent hover:text-accent transition-colors text-sm"
           >
             View on Trustindex
             <ArrowUpRight className="h-4 w-4" />

@@ -205,7 +205,7 @@ export default async function ServiceInAreaPage(
           </MagneticCTA>
           <a
             href={`mailto:${site.contact.email}?subject=${encodeURIComponent(`${service.name} quote in ${area.name}`)}`}
-            className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent transition-colors"
+            className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
           >
             <Mail className="h-4 w-4" />
             or email Brody directly

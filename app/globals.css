@@ -258,6 +258,11 @@ body {
   text-wrap: pretty;
 }
 
+:where(a, button, [role="button"], [role="slider"], input, textarea, select):focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 4px;
+}
+
 /* === MOBILE STICKY BAR === */
 .mobile-bar {
   background-color: color-mix(in srgb, var(--bg) 92%, transparent);

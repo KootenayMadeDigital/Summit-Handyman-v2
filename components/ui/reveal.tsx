@@ -22,12 +22,12 @@ export function Reveal({
   const reduce = useReducedMotion();
   return (
     <motion.div
-      initial={reduce ? { opacity: 0 } : { opacity: 0, y }}
+      initial={reduce ? { opacity: 1 } : { opacity: 0, y }}
       whileInView={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
       viewport={{ once, margin: "-80px" }}
       transition={{
-        duration: 0.48,
-        delay,
+        duration: reduce ? 0.01 : 0.48,
+        delay: reduce ? 0 : delay,
         ease: [0.22, 1, 0.36, 1],
       }}
       className={cn(className)}
@@ -76,9 +76,9 @@ export function RevealItem({
   return (
     <motion.div
       variants={{
-        hidden: reduce ? { opacity: 0 } : { opacity: 0, y },
+        hidden: reduce ? { opacity: 1 } : { opacity: 0, y },
         visible: reduce
-          ? { opacity: 1 }
+          ? { opacity: 1, transition: { duration: 0.01 } }
           : {
               opacity: 1,
               y: 0,

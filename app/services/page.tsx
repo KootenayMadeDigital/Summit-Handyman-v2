@@ -199,7 +199,7 @@ export default function ServicesPage() {
           </MagneticCTA>
           <a
             href={`mailto:${site.contact.email}`}
-            className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent transition-colors"
+            className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
           >
             <Mail className="h-4 w-4" />
             or email Brody directly
@@ -523,7 +523,7 @@ export default function ServicesPage() {
                 </Button>
                 <Link
                   href="/quote"
-                  className="text-sm text-fg-muted hover:text-accent transition-colors inline-flex items-center gap-1"
+                  className="inline-flex min-h-11 items-center gap-1 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
                 >
                   or submit a quote request
                   <ArrowUpRight className="h-3.5 w-3.5" />
@@ -662,7 +662,7 @@ export default function ServicesPage() {
               <div className="pt-3">
                 <Link
                   href="/reviews"
-                  className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-hot transition-colors font-semibold underline-offset-4 hover:underline"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-accent hover:text-accent-hot transition-colors font-semibold underline-offset-4 hover:underline"
                 >
                   Read every review on the reviews page
                   <ArrowUpRight className="h-4 w-4" />
@@ -697,7 +697,7 @@ export default function ServicesPage() {
                 </MagneticCTA>
                 <a
                   href={`mailto:${site.contact.email}`}
-                  className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent transition-colors"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
                 >
                   <Mail className="h-4 w-4" />
                   or email Brody directly

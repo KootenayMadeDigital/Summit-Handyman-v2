@@ -20,7 +20,7 @@ const variantStyles: Record<Variant, string> = {
 };
 
 const sizeStyles: Record<Size, string> = {
-  sm: "h-9 px-4 text-sm rounded-full",
+  sm: "h-11 px-5 text-sm rounded-full",
   md: "h-12 px-6 text-base rounded-full",
   lg: "h-14 px-8 text-lg rounded-full",
 };

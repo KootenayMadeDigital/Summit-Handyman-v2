@@ -163,7 +163,7 @@ export default function AboutPage() {
           </MagneticCTA>
           <a
             href={`mailto:${site.contact.email}`}
-            className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent transition-colors"
+            className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
           >
             <Mail className="h-4 w-4" />
             email Brody directly
@@ -205,14 +205,14 @@ export default function AboutPage() {
                   <div className="mt-5 flex flex-col gap-3">
                     <a
                       href={`mailto:${site.contact.email}`}
-                      className="flex items-center gap-2 text-sm text-fg-strong hover:text-accent transition-colors"
+                      className="flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-strong hover:text-accent transition-colors"
                     >
                       <Mail className="h-4 w-4 text-accent" />
                       {site.contact.email}
                     </a>
                     <a
                       href={`sms:${site.contact.phoneTel}`}
-                      className="flex items-center gap-2 text-sm text-fg-strong hover:text-accent transition-colors"
+                      className="flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-strong hover:text-accent transition-colors"
                     >
                       <MessageSquare className="h-4 w-4 text-accent" />
                       Text {site.contact.phone}
@@ -221,7 +221,7 @@ export default function AboutPage() {
                       href={site.social.facebook.url}
                       target="_blank"
                       rel="noopener"
-                      className="flex items-center gap-2 text-sm text-fg-strong hover:text-accent transition-colors"
+                      className="flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-strong hover:text-accent transition-colors"
                     >
                       <Facebook className="h-4 w-4 text-accent" />
                       facebook.com/{site.social.facebook.handle}
@@ -230,7 +230,7 @@ export default function AboutPage() {
                       href={site.social.instagram.url}
                       target="_blank"
                       rel="noopener"
-                      className="flex items-center gap-2 text-sm text-fg-strong hover:text-accent transition-colors"
+                      className="flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-strong hover:text-accent transition-colors"
                     >
                       <Instagram className="h-4 w-4 text-accent" />
                       @{site.social.instagram.handle}

@@ -35,6 +35,17 @@ export function Header() {
     };
   }, [open]);
 
+  React.useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
     <>
       <header
@@ -49,7 +60,7 @@ export function Header() {
           <div className="flex h-16 sm:h-20 md:h-24 items-center justify-between gap-2 sm:gap-6 min-w-0">
             <Link
               href="/"
-              className="flex items-center gap-2 sm:gap-3 md:gap-4 group min-w-0 flex-1"
+              className="flex min-h-11 items-center gap-2 sm:gap-3 md:gap-4 group min-w-0 flex-1"
               aria-label="Summit Handyman home"
             >
               <Image
@@ -58,7 +69,7 @@ export function Header() {
                 width={64}
                 height={64}
                 priority
-                className="rounded-md flex-shrink-0 h-10 w-10 sm:h-14 sm:w-14 md:h-16 md:w-16"
+                className="rounded-md flex-shrink-0 h-11 w-11 sm:h-14 sm:w-14 md:h-16 md:w-16"
               />
               <span className="font-display text-base sm:text-xl md:text-2xl font-extrabold tracking-tight text-fg-strong leading-none truncate">
                 Summit Handyman
@@ -97,9 +108,10 @@ export function Header() {
               </Button>
               <button
                 type="button"
-                className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-divider-strong text-fg hover:border-accent hover:text-accent transition-colors flex-shrink-0"
+                className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-divider-strong text-fg hover:border-accent hover:text-accent transition-colors flex-shrink-0"
                 aria-label={open ? "Close menu" : "Open menu"}
                 aria-expanded={open}
+                aria-controls="mobile-menu"
                 onClick={() => setOpen((v) => !v)}
               >
                 {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -111,10 +123,13 @@ export function Header() {
 
       {/* Mobile menu drawer */}
       <div
+        id="mobile-menu"
         className={cn(
           "fixed inset-0 z-[990] lg:hidden transition-opacity duration-300",
           open ? "opacity-100" : "opacity-0 pointer-events-none",
         )}
+        aria-hidden={!open}
+        inert={!open ? true : undefined}
       >
         <div
           className="absolute inset-0 mobile-menu-veil backdrop-blur-md"
@@ -122,6 +137,9 @@ export function Header() {
           aria-hidden
         />
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile menu"
           className={cn(
             "relative ml-auto h-full w-full max-w-sm bg-surface-panel border-l border-divider px-6 pt-24 pb-8 overflow-y-auto",
             "transition-transform duration-300",

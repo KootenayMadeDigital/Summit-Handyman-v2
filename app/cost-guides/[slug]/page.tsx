@@ -220,7 +220,7 @@ export default async function GuidePage(
           <div className="mt-14 pt-8 border-t border-divider">
             <Link
               href="/cost-guides"
-              className="inline-flex items-center gap-2 text-fg-muted hover:text-accent transition-colors"
+              className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-fg-muted hover:text-accent transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All cost guides

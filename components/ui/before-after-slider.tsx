@@ -108,9 +108,10 @@ export function BeforeAfterSlider({
         aria-valuenow={Math.round(pos)}
         aria-valuemin={0}
         aria-valuemax={100}
+        aria-valuetext={`${Math.round(pos)} percent before image visible`}
         tabIndex={0}
         onKeyDown={onKey}
-        className="absolute top-0 bottom-0 z-20 -translate-x-1/2 cursor-ew-resize focus-visible:outline-none"
+        className="absolute top-0 bottom-0 z-20 -translate-x-1/2 cursor-ew-resize focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
         style={{ left: `${pos}%` }}
       >
         <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-summit-gold shadow-[0_0_12px_rgba(212,162,76,0.6)]" />

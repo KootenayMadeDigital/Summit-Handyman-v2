@@ -10,10 +10,10 @@ import { areas } from "@/lib/areas";
 const InteractiveMap = dynamic(() => import("./service-area-map.client"), {
   ssr: false,
   loading: () => (
-    <div className="aspect-[16/10] w-full rounded-2xl bg-surface-elevated border border-divider flex items-center justify-center">
+    <div className="aspect-[16/10] w-full rounded-2xl bg-surface-elevated border border-divider flex items-center justify-center" role="status" aria-live="polite">
       <div className="flex flex-col items-center gap-3 text-fg-muted">
-        <div className="h-8 w-8 rounded-full border-2 border-accent-soft border-t-accent animate-spin" />
-        <span className="text-sm">Loading map…</span>
+        <div className="h-8 w-8 rounded-full border-2 border-accent-soft border-t-accent animate-spin motion-reduce:animate-none" aria-hidden />
+        <span className="text-sm">Loading map...</span>
       </div>
     </div>
   ),
@@ -46,7 +46,7 @@ export function ServiceAreaMapSection() {
           className="mb-12"
         />
         <Reveal>
-          <div className="summit-service-map relative z-0 isolate rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg">
+          <div className="summit-service-map relative z-0 isolate rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg" role="region" aria-label="Interactive Summit Handyman service area map">
             <InteractiveMap />
           </div>
         </Reveal>

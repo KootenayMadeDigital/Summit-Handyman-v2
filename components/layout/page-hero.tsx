@@ -37,7 +37,7 @@ export function PageHero({
                 {breadcrumbs.map((c, i) => (
                   <li key={i} className="flex items-center gap-1.5 flex-shrink-0">
                     {c.href ? (
-                      <Link href={c.href} className="hover:text-accent transition-colors">
+                      <Link href={c.href} className="inline-flex min-h-11 items-center rounded-lg px-2 -mx-2 hover:text-accent transition-colors">
                         {c.label}
                       </Link>
                     ) : (

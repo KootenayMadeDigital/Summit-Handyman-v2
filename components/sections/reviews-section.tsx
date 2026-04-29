@@ -122,7 +122,7 @@ export function ReviewsSection() {
               href="https://www.google.com/search?q=summit+handyman+reviews"
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-2 hover:text-accent transition-colors"
+              className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 hover:text-accent transition-colors"
             >
               Google Reviews
               <ArrowUpRight className="h-4 w-4" />
@@ -132,7 +132,7 @@ export function ReviewsSection() {
               href="https://www.trustindex.io/reviews/summit-handyman.ca"
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-2 hover:text-accent transition-colors"
+              className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 hover:text-accent transition-colors"
             >
               Trustindex Reviews
               <ArrowUpRight className="h-4 w-4" />

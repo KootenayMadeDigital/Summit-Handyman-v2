@@ -14,17 +14,17 @@ const ZOOM = 10;
 // Custom gold pin SVG
 const goldPinIcon = L.divIcon({
   html: `
-    <div style="position: relative; width: 32px; height: 40px; transform: translate(-50%, -100%);">
-      <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div aria-hidden="true" style="position: relative; width: 44px; height: 54px; transform: translate(-50%, -100%);">
+      <svg width="44" height="54" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M16 0C7.16 0 0 7.16 0 16C0 27 16 40 16 40C16 40 32 27 32 16C32 7.16 24.84 0 16 0Z" fill="#D4A24C" stroke="#0A0C10" stroke-width="2"/>
         <circle cx="16" cy="15" r="6" fill="#0A0C10"/>
       </svg>
     </div>
   `,
   className: "summit-marker",
-  iconSize: [32, 40],
-  iconAnchor: [16, 40],
-  popupAnchor: [0, -36],
+  iconSize: [44, 54],
+  iconAnchor: [22, 54],
+  popupAnchor: [0, -48],
 });
 
 function MapBoundsFitter() {
@@ -69,7 +69,7 @@ export default function ServiceAreaMapClient() {
                 opacity: 0.6,
               }}
             />
-            <Marker position={[area.geo.lat, area.geo.lng]} icon={goldPinIcon}>
+            <Marker position={[area.geo.lat, area.geo.lng]} icon={goldPinIcon} title={`${area.name}, ${area.province}`}>
               <Popup>
                 <div style={{ minWidth: 200, fontFamily: "Switzer, system-ui, sans-serif" }}>
                   <div style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.12em", color: "#D4A24C", fontWeight: 600, marginBottom: 4 }}>
@@ -86,7 +86,7 @@ export default function ServiceAreaMapClient() {
                     href={`/areas/${area.slug}`}
                     style={{
                       display: "inline-block",
-                      padding: "6px 12px",
+                      padding: "10px 14px",
                       background: "#D4A24C",
                       color: "#0A0C10",
                       textDecoration: "none",
@@ -128,6 +128,9 @@ export default function ServiceAreaMapClient() {
           margin: 12px 14px;
         }
         .leaflet-control-zoom a {
+          width: 44px !important;
+          height: 44px !important;
+          line-height: 44px !important;
           background: #161a21 !important;
           color: #e5e7eb !important;
           border-color: #2a2f3a !important;

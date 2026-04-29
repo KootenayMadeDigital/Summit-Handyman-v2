@@ -84,17 +84,19 @@ export function MobileStickyBar() {
       className={cn(
         "lg:hidden fixed bottom-0 inset-x-0 z-30 border-t border-divider mobile-bar pb-[env(safe-area-inset-bottom)]",
         "transition-transform duration-300 ease-editorial",
-        hidden ? "translate-y-full" : "translate-y-0",
+        hidden ? "translate-y-full pointer-events-none" : "translate-y-0",
       )}
       role="navigation"
       aria-label="Quick contact"
       aria-hidden={hidden}
+      inert={hidden ? true : undefined}
     >
       <div className="grid grid-cols-5 gap-1 p-2">
         <Link
           href="/quote"
           className="col-span-3 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-accent text-white font-display font-bold text-sm transition-colors active:bg-accent-hot shadow-gold"
           aria-label="Start a quote"
+          tabIndex={hidden ? -1 : undefined}
         >
           <FileText className="h-4 w-4" />
           Start My Quote
@@ -103,6 +105,7 @@ export function MobileStickyBar() {
           href={`mailto:${site.contact.email}`}
           className="col-span-1 flex flex-col items-center gap-0.5 py-2 rounded-xl text-fg active:bg-surface-elevated transition-colors"
           aria-label="Email Brody"
+          tabIndex={hidden ? -1 : undefined}
         >
           <Mail className="h-4 w-4 text-accent" />
           <span className="text-[10px] font-semibold uppercase tracking-wider">Email</span>
@@ -111,6 +114,7 @@ export function MobileStickyBar() {
           href={`sms:${site.contact.phoneTel}`}
           className="col-span-1 flex flex-col items-center gap-0.5 py-2 rounded-xl text-fg active:bg-surface-elevated transition-colors"
           aria-label="Text Brody"
+          tabIndex={hidden ? -1 : undefined}
         >
           <MessageSquare className="h-4 w-4 text-accent" />
           <span className="text-[10px] font-semibold uppercase tracking-wider">Text</span>

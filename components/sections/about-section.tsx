@@ -51,7 +51,7 @@ export function AboutSection() {
                 href={site.social.facebook.url}
                 target="_blank"
                 rel="noopener"
-                className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent transition-colors"
+                className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
               >
                 <Facebook className="h-4 w-4" />
                 Facebook
@@ -60,7 +60,7 @@ export function AboutSection() {
                 href={site.social.instagram.url}
                 target="_blank"
                 rel="noopener"
-                className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent transition-colors"
+                className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
               >
                 <Instagram className="h-4 w-4" />
                 Instagram

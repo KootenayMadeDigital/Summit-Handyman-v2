@@ -266,7 +266,7 @@ export function QuoteForm() {
           </div>
         </div>
 
-        <div className="mb-8 grid grid-cols-4 gap-2 sm:gap-3">
+        <div className="mb-8 grid grid-cols-4 gap-2 sm:gap-3" role="group" aria-label="Quote form progress">
           {STEPS.map((s, i) => (
             <div key={s} className="min-w-0">
               <div
@@ -295,6 +295,7 @@ export function QuoteForm() {
                   key={s.slug}
                   type="button"
                   onClick={() => update("service", s.slug)}
+                  aria-pressed={state.service === s.slug}
                   className={cn(
                     "summit-card-motion motion-service group relative overflow-hidden p-4 rounded-2xl border text-left transition-all duration-300 min-w-0",
                     state.service === s.slug
@@ -316,6 +317,7 @@ export function QuoteForm() {
               <button
                 type="button"
                 onClick={() => update("service", "other")}
+                aria-pressed={state.service === "other"}
                 className={cn(
                   "summit-card-motion motion-service p-4 rounded-2xl border text-left transition-all duration-300",
                   state.service === "other"
@@ -349,6 +351,7 @@ export function QuoteForm() {
                     key={t.value}
                     type="button"
                     onClick={() => update("timing", t.value)}
+                    aria-pressed={state.timing === t.value}
                     className={cn(
                       "summit-card-motion motion-service p-3 sm:p-4 rounded-xl border text-left transition-all min-w-0",
                       state.timing === t.value
@@ -381,6 +384,7 @@ export function QuoteForm() {
                     key={a.slug}
                     type="button"
                     onClick={() => update("area", a.slug)}
+                    aria-pressed={state.area === a.slug}
                     className={cn(
                       "summit-card-motion motion-area p-3 rounded-xl border text-sm font-semibold transition-all min-w-0 truncate",
                       state.area === a.slug
@@ -486,9 +490,9 @@ export function QuoteForm() {
                         type="button"
                         onClick={() => removePhoto(i)}
                         aria-label="Remove photo"
-                        className="absolute top-1.5 right-1.5 grid place-items-center h-7 w-7 rounded-full bg-summit-black/85 border border-summit-mist/30 text-summit-mist hover:bg-summit-black hover:text-summit-gold transition-colors"
+                        className="absolute top-2 right-2 grid place-items-center h-11 w-11 rounded-full bg-summit-black/85 border border-summit-mist/30 text-summit-mist hover:bg-summit-black hover:text-summit-gold transition-colors"
                       >
-                        <X className="h-3.5 w-3.5" />
+                        <X className="h-4 w-4" />
                       </button>
                       <span className="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded-full bg-summit-black/70 text-[10px] font-semibold text-summit-mist backdrop-blur">
                         {(p.size / 1024).toFixed(0)} KB
@@ -544,6 +548,7 @@ export function QuoteForm() {
                     key={p}
                     type="button"
                     onClick={() => update("preferredContact", p)}
+                    aria-pressed={state.preferredContact === p}
                     className={cn(
                       "py-2.5 px-2 sm:px-3 rounded-xl border text-xs sm:text-sm font-semibold capitalize transition-all min-w-0 truncate",
                       state.preferredContact === p
@@ -587,7 +592,7 @@ export function QuoteForm() {
           type="button"
           onClick={back}
           disabled={step === 0 || submitting}
-          className="inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-fg-muted hover:text-accent transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="inline-flex min-h-11 items-center gap-1 sm:gap-2 rounded-xl px-3 text-xs sm:text-sm text-fg-muted hover:text-accent transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
         >
           <ArrowLeft className="h-4 w-4" />
           Back
