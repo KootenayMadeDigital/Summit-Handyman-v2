@@ -278,6 +278,31 @@ export function ReviewsRichPage() {
         </Container>
       </Section>
 
+      <Section size="lg" className="bg-surface border-y border-divider">
+        <Container>
+          <SectionTitle
+            eyebrow="Review wall"
+            title={
+              <>
+                Every review should be easy to skim, compare, and
+                <span className="font-serif italic font-normal text-gradient-gold"> believe.</span>
+              </>
+            }
+            description={`${reviews.length} public reviews loaded into the page, with the newest proof first. No tiny testimonial strip pretending to be a credibility page.`}
+            align="center"
+            className="mb-12 sm:mb-14"
+          />
+
+          <RevealStagger className="columns-1 md:columns-2 xl:columns-3 gap-5 [column-fill:_balance]" staggerDelay={0.035}>
+            {reviews.map((review, index) => (
+              <RevealItem key={`${review.author}-${review.date}-wall`} className="mb-5 break-inside-avoid">
+                <ReviewCard review={review} index={index} onSelect={() => setActiveReview(index)} />
+              </RevealItem>
+            ))}
+          </RevealStagger>
+        </Container>
+      </Section>
+
       <Section size="lg" className="relative overflow-hidden bg-surface-panel border-y border-divider">
         <div className="absolute inset-0 opacity-[0.16] [background-image:linear-gradient(var(--border)_1px,transparent_1px),linear-gradient(90deg,var(--border)_1px,transparent_1px)] [background-size:64px_64px]" />
         <Container className="relative">
@@ -483,6 +508,52 @@ export function ReviewsRichPage() {
         </Container>
       </Section>
     </>
+  );
+}
+
+function ReviewCard({
+  review,
+  index,
+  onSelect,
+}: {
+  review: Review;
+  index: number;
+  onSelect: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onSelect}
+      className="group w-full rounded-[1.5rem] border border-divider-strong bg-surface-panel p-5 text-left shadow-panel transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-soft hover:shadow-panel-lg"
+      aria-label={`Feature review from ${review.author}`}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="font-display text-lg font-bold text-fg-strong leading-tight">
+            {review.author}
+          </p>
+          <p className="mt-1 text-xs text-fg-muted">
+            {review.city}{review.service ? ` · ${review.service}` : ""}
+          </p>
+        </div>
+        <span className="rounded-full border border-accent/30 bg-accent-soft px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">
+          #{index + 1}
+        </span>
+      </div>
+      <div className="mt-4">
+        <Stars rating={review.rating} size="sm" />
+      </div>
+      <p className="mt-4 text-sm leading-relaxed text-fg/85 text-pretty">
+        “{review.body}”
+      </p>
+      <div className="mt-5 flex items-center justify-between gap-3 border-t border-divider pt-4 text-xs text-fg-muted">
+        <span>{new Date(`${review.date}T00:00:00`).toLocaleDateString("en-CA", { month: "short", year: "numeric" })}</span>
+        <span className="inline-flex items-center gap-1.5 font-semibold text-accent transition-transform duration-300 group-hover:translate-x-0.5">
+          Spotlight
+          <ArrowRight className="h-3.5 w-3.5" />
+        </span>
+      </div>
+    </button>
   );
 }
 
