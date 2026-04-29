@@ -132,9 +132,6 @@ function GuideCard({ guide, featured = false }: { guide: Guide; featured?: boole
           className="object-cover transition-transform duration-1000 ease-editorial group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-summit-black via-summit-black/35 to-transparent" />
-        <div className="absolute left-4 top-4 rounded-full border border-accent/35 bg-summit-black/65 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-accent backdrop-blur">
-          Field note
-        </div>
       </div>
 
       <div className={cn("relative p-5 sm:p-6", featured && "sm:p-8 lg:p-10 flex flex-col justify-center") }>
