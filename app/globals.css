@@ -84,6 +84,44 @@
   border-color: var(--border);
 }
 
+/* === PROSE THEME OVERRIDES ===
+ * Tailwind's `.prose` default sets a fixed color palette (gray-700-ish) that
+ * doesn't track our theme tokens. Force everything inside .prose to use our
+ * fg/accent vars so legal pages and articles are legible in BOTH themes.
+ */
+.prose,
+.prose p,
+.prose ul,
+.prose ol,
+.prose li,
+.prose strong,
+.prose em {
+  color: var(--fg);
+}
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: var(--fg-strong);
+}
+.prose a {
+  color: var(--accent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
+}
+.prose a:hover {
+  color: var(--accent-hot);
+}
+.prose blockquote {
+  color: var(--fg);
+  border-left-color: var(--accent);
+}
+.prose code {
+  color: var(--fg-strong);
+}
+.prose hr {
+  border-color: var(--border);
+}
+
 /* === SEMANTIC THEME-AWARE UTILITIES ===
  * These mirror the Tailwind summit-* tokens but read from CSS vars so they
  * automatically swap with the light/dark theme attribute on <html>.

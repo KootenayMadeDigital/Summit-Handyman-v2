@@ -23,8 +23,8 @@ export default function TermsPage() {
       />
       <Section size="md">
         <Container size="narrow">
-          <div className="prose prose-invert max-w-none space-y-6 text-summit-mist/85 leading-relaxed">
-            <h2 className="font-display text-2xl font-bold text-summit-mist">Quotes & estimates</h2>
+          <div className="prose max-w-none space-y-6 text-fg/90 leading-relaxed">
+            <h2 className="font-display text-2xl font-bold text-fg-strong">Quotes & estimates</h2>
             <p>
               Estimates are free and non-binding until both parties confirm scope and pricing in
               writing (email is fine). Final invoiced amounts may differ from initial estimates if
@@ -32,34 +32,34 @@ export default function TermsPage() {
               continuing.
             </p>
 
-            <h2 className="font-display text-2xl font-bold text-summit-mist mt-10">Minimum charge</h2>
+            <h2 className="font-display text-2xl font-bold text-fg-strong mt-10">Minimum charge</h2>
             <p>
               {site.pricing.minimumLong} The minimum applies regardless of job size and covers
               tools, insurance, travel, and craftsmanship.
             </p>
 
-            <h2 className="font-display text-2xl font-bold text-summit-mist mt-10">Workmanship</h2>
+            <h2 className="font-display text-2xl font-bold text-fg-strong mt-10">Workmanship</h2>
             <p>
               All work performed by {site.name} is backed by Brody's promise:{" "}
-              <em className="font-serif text-summit-gold">"{site.promise}"</em> Workmanship warranty
+              <em className="font-serif text-accent">"{site.promise}"</em> Workmanship warranty
               applies to repairs that fail due to installation defects, not damage from misuse,
               accidents, or natural wear.
             </p>
 
-            <h2 className="font-display text-2xl font-bold text-summit-mist mt-10">Materials</h2>
+            <h2 className="font-display text-2xl font-bold text-fg-strong mt-10">Materials</h2>
             <p>
               Materials supplied by {site.name} are billed at cost plus a small handling fee. You
               may also supply your own materials — quality and suitability of homeowner-supplied
               materials is the homeowner's responsibility.
             </p>
 
-            <h2 className="font-display text-2xl font-bold text-summit-mist mt-10">Cancellations</h2>
+            <h2 className="font-display text-2xl font-bold text-fg-strong mt-10">Cancellations</h2>
             <p>
               Please give 24 hours notice for cancellations or rescheduling. Same-day cancellations
               may incur a small fee to cover travel and lost time.
             </p>
 
-            <h2 className="font-display text-2xl font-bold text-summit-mist mt-10">Liability</h2>
+            <h2 className="font-display text-2xl font-bold text-fg-strong mt-10">Liability</h2>
             <p>
               {site.name} carries comprehensive liability insurance. For work that requires
               permitted electrical, plumbing, or structural changes, we refer to appropriately
