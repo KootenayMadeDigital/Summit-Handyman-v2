@@ -126,6 +126,7 @@ export default function AreasPage() {
           </>
         }
         description={`Summit Handyman serves ${areas.length} Lower Mainland cities from Langley to Abbotsford. The quote process is the same everywhere: send the scope, photos, and address, then Brody replies with a clear written estimate.`}
+        image={{ src: "/images/page-header-areas.webp" }}
       >
         <div className="flex flex-col gap-3 pt-3 sm:flex-row sm:flex-wrap">
           <MagneticCTA href="/quote" size="lg">

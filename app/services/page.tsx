@@ -191,6 +191,7 @@ export default function ServicesPage() {
           </>
         }
         description={`${services.length} service categories across the Lower Mainland, all handled personally by Brody Robertson. Licensed, insured, $150 minimum per job, and written estimates before work begins.`}
+        image={{ src: "/images/page-header-services.webp" }}
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href="/quote" size="lg">

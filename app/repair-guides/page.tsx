@@ -214,7 +214,7 @@ function TrackSection({ track, index }: { track: Track; index: number }) {
   );
 }
 
-export default function CostGuidesPage() {
+export default function RepairGuidesPage() {
   const guideCollectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -265,6 +265,7 @@ export default function CostGuidesPage() {
           </>
         }
         description="No fake price tables. No contractor filler. Just local guidance from an owner-operated handyman who knows what fails, what lasts, and what is worth hiring out."
+        image={{ src: "/images/page-header-repair-guides.webp" }}
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href="/quote" size="lg">

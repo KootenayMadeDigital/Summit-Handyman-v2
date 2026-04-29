@@ -51,6 +51,7 @@ export default function QuotePage() {
           </>
         }
         description="Tell Brody what needs fixing, where it is, when you need it, and what the photos show. The reply is clearer because the details are already in front of him."
+        image={{ src: "/images/page-header-quote.webp" }}
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href="#quote-form" size="lg">
