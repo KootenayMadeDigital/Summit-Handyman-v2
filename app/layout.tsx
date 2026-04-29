@@ -109,6 +109,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-CA" suppressHydrationWarning>
       <head>
+        {/* LLM-friendly site indexes (llmstxt.org spec) */}
+        <link
+          rel="alternate"
+          type="text/markdown"
+          title="LLM site index"
+          href="/llms.txt"
+        />
+        <link
+          rel="alternate"
+          type="text/markdown"
+          title="LLM full content"
+          href="/llms-full.txt"
+        />
         <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
         <link
