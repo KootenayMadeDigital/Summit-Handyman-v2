@@ -8,10 +8,8 @@ import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { ServiceIcon } from "@/components/ui/service-icon";
-import { ProjectCard } from "@/components/ui/project-card";
 import { services, getService } from "@/lib/services";
 import { areas } from "@/lib/areas";
-import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -45,7 +43,6 @@ export default async function ServicePage(
   if (!service) notFound();
 
   const related = services.filter((s) => s.slug !== service.slug && s.category === service.category).slice(0, 3);
-  const relevantProjects = projects.filter((p) => p.serviceSlug === service.slug);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -167,33 +164,12 @@ export default async function ServicePage(
         </Container>
       </Section>
 
-      {/* Recent work + inline related. combined section */}
-      <Section size="lg" className="bg-surface-panel border-y border-divider">
+      {/* Related services inline */}
+      <Section size="md" className="bg-surface-panel border-y border-divider">
         <Container>
-          {relevantProjects.length > 0 && (
-            <>
-              <SectionTitle
-                eyebrow="Recent work"
-                title={
-                  <>
-                    Recent {service.name.toLowerCase()}{" "}
-                    <span className="font-serif italic font-normal text-gradient-gold">jobs.</span>
-                  </>
-                }
-              />
-              <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {relevantProjects.slice(0, 3).map((p) => (
-                  <Reveal key={p.slug}>
-                    <ProjectCard project={p} />
-                  </Reveal>
-                ))}
-              </div>
-            </>
-          )}
-
           {related.length > 0 && (
             <Reveal>
-              <p className="mt-12 text-sm text-fg-muted">
+              <p className="text-sm text-fg-muted">
                 Related:{" "}
                 {related.map((r, i) => (
                   <span key={r.slug}>

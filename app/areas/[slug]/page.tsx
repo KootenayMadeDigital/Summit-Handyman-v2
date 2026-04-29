@@ -8,10 +8,8 @@ import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { ServiceIcon } from "@/components/ui/service-icon";
-import { ProjectCard } from "@/components/ui/project-card";
 import { areas, getArea } from "@/lib/areas";
 import { services } from "@/lib/services";
-import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -42,10 +40,6 @@ export default async function AreaPage(
   const { slug } = await params;
   const area = getArea(slug);
   if (!area) notFound();
-
-  const localProjects = projects.filter(
-    (p) => p.area.toLowerCase() === area.name.toLowerCase(),
-  );
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -210,31 +204,6 @@ export default async function AreaPage(
       </Section>
 
       {/* Local projects */}
-      {localProjects.length > 0 && (
-        <Section size="lg">
-          <Container>
-            <SectionTitle
-              eyebrow={`Recent work in ${area.name}`}
-              title={
-                <>
-                  Local jobs,{" "}
-                  <span className="font-serif italic font-normal text-gradient-gold">
-                    real homes.
-                  </span>
-                </>
-              }
-            />
-            <RevealStagger className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {localProjects.slice(0, 6).map((p) => (
-                <RevealItem key={p.slug}>
-                  <ProjectCard project={p} />
-                </RevealItem>
-              ))}
-            </RevealStagger>
-          </Container>
-        </Section>
-      )}
-
       {/* About this city — long-form rich content for SEO */}
       <Section size="lg" className="bg-surface">
         <Container size="narrow">
