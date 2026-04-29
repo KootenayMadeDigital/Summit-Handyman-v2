@@ -233,17 +233,20 @@ export function Footer() {
               </li>
             </ul>
 
-            <div className="pt-4 flex items-center gap-3">
-              <a
-                href={site.social.facebook.url}
-                target="_blank"
-                rel="noopener"
-                aria-label="Summit Handyman on Facebook"
-                className="grid h-11 w-11 place-items-center rounded-full border border-divider-strong text-fg/85 hover:border-accent hover:text-accent transition-colors"
-              >
+            <a
+              href={site.social.facebook.url}
+              target="_blank"
+              rel="noopener"
+              aria-label="Follow Summit Handyman on Facebook"
+              className="group mt-4 inline-flex items-center gap-3 rounded-full border border-divider-strong bg-surface-panel/60 pr-5 text-sm text-fg/85 hover:border-accent hover:text-accent transition-colors"
+            >
+              <span className="grid h-11 w-11 place-items-center rounded-full border border-divider-strong text-fg/85 group-hover:border-accent group-hover:text-accent transition-colors -ml-px">
                 <Facebook className="h-4 w-4" />
-              </a>
-            </div>
+              </span>
+              <span className="font-semibold whitespace-nowrap">
+                Follow on Facebook
+              </span>
+            </a>
           </div>
         </div>
 
