@@ -40,20 +40,11 @@ export const metadata: Metadata = {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
     siteName: site.name,
-    images: [
-      {
-        url: "/og/default.png",
-        width: 1200,
-        height: 630,
-        alt: site.name,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
-    images: ["/og/default.png"],
   },
   robots: {
     index: true,
@@ -67,8 +58,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/images/logo.webp",
   },
 };
 
