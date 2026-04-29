@@ -1,10 +1,43 @@
+"use client";
+
+import * as React from "react";
 import { Star, ArrowUpRight } from "lucide-react";
 import { Container, Section, SectionTitle } from "@/components/ui/section";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
-import { placeholderReviews, aggregateRating } from "@/lib/reviews";
+import { placeholderReviews, aggregateRating, type Review } from "@/lib/reviews";
+
+type ApiPayload = {
+  reviews: Review[];
+  aggregate: { rating: number; reviewCount: number };
+  source: string;
+};
 
 export function ReviewsSection() {
+  const [data, setData] = React.useState<ApiPayload>({
+    reviews: placeholderReviews,
+    aggregate: aggregateRating,
+    source: "initial",
+  });
+
+  React.useEffect(() => {
+    let cancelled = false;
+    fetch("/api/reviews")
+      .then((r) => r.json())
+      .then((d: ApiPayload) => {
+        if (!cancelled && d?.reviews?.length) setData(d);
+      })
+      .catch(() => {
+        // Silently fall back to placeholder
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const featured = data.reviews.slice(0, 3);
+  const isLive = data.source === "trustindex";
+
   return (
     <Section id="reviews" size="lg" className="relative">
       <Container>
@@ -20,7 +53,7 @@ export function ReviewsSection() {
                 in the Lower Mainland.
               </>
             }
-            description={`${aggregateRating.rating.toFixed(1)} stars across ${aggregateRating.reviewCount}+ verified reviews. We pull these live from Google and Trustindex — no cherry-picking.`}
+            description={`${data.aggregate.rating.toFixed(1)} stars across ${data.aggregate.reviewCount}+ verified reviews. ${isLive ? "Pulled live from Trustindex" : "Pulled from Google and Trustindex"} — no cherry-picking.`}
           />
           <Reveal>
             <div className="flex flex-col gap-3">
@@ -31,9 +64,15 @@ export function ReviewsSection() {
                   ))}
                 </span>
                 <span className="font-display text-2xl font-bold text-summit-mist">
-                  {aggregateRating.rating.toFixed(1)}
+                  {data.aggregate.rating.toFixed(1)}
                 </span>
                 <span className="text-sm text-summit-stone">/ 5.0</span>
+                {isLive && (
+                  <span className="ml-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-summit-gold/15 text-[10px] font-semibold uppercase tracking-wider text-summit-gold">
+                    <span className="h-1.5 w-1.5 rounded-full bg-summit-gold animate-pulse" />
+                    Live
+                  </span>
+                )}
               </div>
               <Button href="/reviews" variant="secondary" size="sm" withArrow>
                 Read all reviews
@@ -43,10 +82,13 @@ export function ReviewsSection() {
         </div>
 
         <RevealStagger className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {placeholderReviews.slice(0, 3).map((r) => (
+          {featured.map((r) => (
             <RevealItem key={r.author + r.date}>
               <article className="h-full p-7 rounded-2xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 transition-colors duration-300 flex flex-col">
-                <div className="flex items-center gap-1 text-summit-gold mb-4" aria-label={`${r.rating} out of 5 stars`}>
+                <div
+                  className="flex items-center gap-1 text-summit-gold mb-4"
+                  aria-label={`${r.rating} out of 5 stars`}
+                >
                   {[0, 1, 2, 3, 4].map((i) => (
                     <Star
                       key={i}
