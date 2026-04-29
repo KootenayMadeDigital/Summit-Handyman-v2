@@ -648,6 +648,7 @@ body {
   isolation: isolate;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition:
     transform 180ms var(--ease-editorial),
     border-color 180ms var(--ease-editorial),
@@ -662,50 +663,57 @@ body {
   pointer-events: none;
   opacity: 0;
   transition:
-    opacity 220ms var(--ease-editorial),
-    transform 420ms var(--ease-editorial);
+    opacity 180ms var(--ease-editorial),
+    transform 220ms var(--ease-editorial);
 }
 
 .summit-card-motion::before {
-  inset: -30% auto -30% -45%;
-  width: 42%;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 22%, transparent), transparent);
-  transform: translate3d(-60%, 0, 0) rotate(12deg);
-  z-index: 2;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 16%, transparent);
+  background:
+    radial-gradient(circle at 18% 12%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 34%),
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 4%, transparent), transparent 52%);
+  z-index: -1;
 }
 
 .summit-card-motion::after {
-  inset: auto 1rem 0 1rem;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  transform: scaleX(0.25);
+  left: 1rem;
+  right: auto;
+  top: 1rem;
+  width: 2.25rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
+  transform: scaleX(0.35);
+  transform-origin: left center;
   z-index: 2;
 }
 
 .summit-card-motion:hover,
 .summit-card-motion:focus-within {
-  transform: translate3d(0, -4px, 0);
+  transform: translate3d(0, -3px, 0);
+  box-shadow: 0 18px 48px -30px color-mix(in srgb, var(--accent) 34%, transparent);
 }
 
 .summit-card-motion:hover::before,
 .summit-card-motion:focus-within::before {
   opacity: 1;
-  transform: translate3d(420%, 0, 0) rotate(12deg);
 }
 
 .summit-card-motion:hover::after,
 .summit-card-motion:focus-within::after {
-  opacity: 0.85;
+  opacity: 0.8;
   transform: scaleX(1);
 }
 
 .summit-icon-box {
-  transition: transform 180ms var(--ease-snappy), opacity 180ms var(--ease-editorial);
+  transition: transform 180ms var(--ease-snappy), opacity 180ms var(--ease-editorial), border-color 180ms var(--ease-editorial);
 }
 
 .summit-card-motion:hover .summit-icon-box,
 .summit-card-motion:focus-within .summit-icon-box {
-  transform: translate3d(0, -2px, 0) rotate(-3deg) scale(1.05);
+  transform: translate3d(0, -2px, 0) rotate(-2deg);
 }
 
 .summit-arrow {
@@ -714,7 +722,7 @@ body {
 
 .summit-card-motion:hover .summit-arrow,
 .summit-card-motion:focus-within .summit-arrow {
-  transform: translate3d(3px, -3px, 0);
+  transform: translate3d(2px, -2px, 0);
   opacity: 1;
 }
 
@@ -727,7 +735,7 @@ body {
 .summit-photo-motion:focus-within img,
 .summit-photo-motion:hover video,
 .summit-photo-motion:focus-within video {
-  transform: scale(1.045);
+  transform: scale(1.035);
 }
 
 .summit-scan-accent {
@@ -741,16 +749,16 @@ body {
   inset: 0;
   pointer-events: none;
   opacity: 0;
-  background: linear-gradient(115deg, transparent 0%, color-mix(in srgb, var(--accent) 18%, transparent) 45%, transparent 60%);
-  transform: translate3d(-120%, 0, 0);
-  transition: opacity 200ms var(--ease-editorial), transform 650ms var(--ease-editorial);
+  background:
+    radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 28%),
+    linear-gradient(180deg, transparent 54%, rgba(0, 0, 0, 0.18));
+  transition: opacity 220ms var(--ease-editorial);
   z-index: 2;
 }
 
 .summit-scan-accent:hover::before,
 .summit-scan-accent:focus-within::before {
   opacity: 1;
-  transform: translate3d(120%, 0, 0);
 }
 
 .summit-soft-pulse {
@@ -764,7 +772,7 @@ body {
   border-radius: inherit;
   border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
   opacity: 0;
-  transform: scale(0.96);
+  transform: scale(0.97);
   pointer-events: none;
 }
 
