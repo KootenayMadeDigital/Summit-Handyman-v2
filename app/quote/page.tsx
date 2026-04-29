@@ -9,7 +9,7 @@ import { MagneticCTA } from "@/components/ui/magnetic-cta";
 export const metadata: Metadata = {
   title: "Submit a Quote Request",
   description:
-    "The fastest way to get a written estimate from Brody. Tell him what's going on, attach photos, and he'll review the job before reaching out within 24 hours.",
+    "The recommended way to get a written estimate from Brody. Tell him what's going on, attach photos, and he'll review the job before reaching out within 24 hours.",
   alternates: { canonical: "/quote" },
 };
 
@@ -44,7 +44,7 @@ export default function QuotePage() {
         eyebrow="Recommended way to reach Brody"
         title={
           <>
-            The fastest path to a clean, written{" "}
+            The cleanest path to a written{" "}
             <span className="font-serif italic font-normal text-gradient-gold">
               estimate.
             </span>

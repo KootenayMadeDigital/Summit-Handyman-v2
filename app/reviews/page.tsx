@@ -2,18 +2,63 @@ import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { ReviewsRichPage } from "@/components/sections/reviews-rich";
-import { aggregateRating } from "@/lib/reviews";
+import { aggregateRating, placeholderReviews } from "@/lib/reviews";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Reviews",
   description:
-    "Read Summit Handyman reviews from homeowners and property managers. See the trust signals, service patterns, and proof points that help customers choose Brody.",
+    "Read Summit Handyman reviews from homeowners, tenants, and property managers across the Lower Mainland. 5.0 rating, public review wall, and trust signals.",
   alternates: { canonical: "/reviews" },
 };
 
 export default function ReviewsPage() {
+  const reviewsPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${site.url}/reviews#webpage`,
+    url: `${site.url}/reviews`,
+    name: "Summit Handyman reviews",
+    description: metadata.description,
+    isPartOf: { "@id": `${site.url}/#website` },
+    about: { "@id": `${site.url}/#business` },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: placeholderReviews.map((review, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: `${review.author} review`,
+        item: {
+          "@type": "Review",
+          reviewRating: { "@type": "Rating", ratingValue: review.rating, bestRating: 5 },
+          author: { "@type": "Person", name: review.author },
+          datePublished: review.date,
+          reviewBody: review.body,
+          itemReviewed: { "@id": `${site.url}/#business` },
+        },
+      })),
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "Reviews", item: `${site.url}/reviews` },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Reviews" }]}
         eyebrow="Real customer proof"

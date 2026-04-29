@@ -32,7 +32,7 @@ export function BentoSection() {
               for one reason.
             </>
           }
-          description="Reliability. Everything else. the pricing, the response time, the warranty. flows from that."
+          description="Reliability. Pricing, quote clarity, clean work, and the warranty all flow from that."
           align="center"
           className="mb-12 sm:mb-14"
         />
@@ -150,7 +150,7 @@ export function BentoSection() {
                 {site.contact.email}
               </a>
               <p className="mt-1 text-xs text-fg-muted">
-                Or text {site.contact.phone} for urgent jobs.
+                Or text {site.contact.phone} for time-sensitive follow-ups.
               </p>
             </div>
           </RevealItem>

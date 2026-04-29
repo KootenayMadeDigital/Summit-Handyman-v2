@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: `${site.name} terms of service.`,
+  description: `Read ${site.name} terms for estimates, minimum charges, workmanship coverage, materials, cancellations, liability, and BC governing law.`,
   alternates: { canonical: "/legal/terms" },
 };
 
@@ -28,7 +28,7 @@ export default function TermsPage() {
             <p>
               Estimates are free and non-binding until both parties confirm scope and pricing in
               writing (email is fine). Final invoiced amounts may differ from initial estimates if
-              scope changes during the work. any changes will be communicated and approved before
+              scope changes during the work. Any changes will be communicated and approved before
               continuing.
             </p>
 
@@ -49,21 +49,21 @@ export default function TermsPage() {
             <h2 className="font-display text-2xl font-bold text-fg-strong mt-10">Materials</h2>
             <p>
               Materials supplied by {site.name} are billed at cost plus a small handling fee. You
-              may also supply your own materials. quality and suitability of homeowner-supplied
+              may also supply your own materials. Quality and suitability of homeowner-supplied
               materials is the homeowner's responsibility.
             </p>
 
             <h2 className="font-display text-2xl font-bold text-fg-strong mt-10">Cancellations</h2>
             <p>
-              Please give 24 hours notice for cancellations or rescheduling. Same-day cancellations
-              may incur a small fee to cover travel and lost time.
+              Please give 24 hours notice for cancellations or rescheduling. Cancellations made
+              the day of the appointment may incur a small fee to cover travel and lost time.
             </p>
 
             <h2 className="font-display text-2xl font-bold text-fg-strong mt-10">Liability</h2>
             <p>
               {site.name} carries comprehensive liability insurance. For work that requires
               permitted electrical, plumbing, or structural changes, we refer to appropriately
-              licensed trades. that work is governed by their separate contracts.
+              licensed trades. That work is governed by their separate contracts.
             </p>
 
             <h2 className="font-display text-2xl font-bold text-fg-strong mt-10">Governing law</h2>

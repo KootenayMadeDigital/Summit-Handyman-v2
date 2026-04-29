@@ -15,7 +15,7 @@ export const faqs: FAQ[] = [
   },
   {
     q: "Are you available for Strata or Property Management work?",
-    a: "Absolutely. I specialize in working with Property Managers to handle turnovers, tenant requests, and emergency repairs with detailed invoicing.",
+    a: "Yes. Summit Handyman works well for property managers who need turnovers, tenant requests, documented punch lists, and detailed invoicing.",
   },
   {
     q: "Are you licensed and insured?",
@@ -30,11 +30,11 @@ export const faqs: FAQ[] = [
     a: "It depends on your preference. I can pick up materials for you (and include them in the invoice), or I can work with materials you have already purchased.",
   },
   {
-    q: "How fast can you respond?",
+    q: "How quickly can you reply?",
     a: "Email and text are checked throughout the day. Most quotes are returned within 24 hours. Scheduling depends on the work required, access, materials, and Brody's current calendar.",
   },
   {
     q: "What's the best way to reach you?",
-    a: "Email is fastest: brody@summit-handyman.ca. Texting 604-989-5032 also works well, and Facebook Messenger is fine if that's how you prefer to chat.",
+    a: "Email is preferred: brody@summit-handyman.ca. Texting 604-989-5032 also works well, and Facebook Messenger is fine if that's how you prefer to chat.",
   },
 ];

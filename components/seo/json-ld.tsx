@@ -1,6 +1,7 @@
 import { site } from "@/lib/site";
 import { faqs } from "@/lib/faq";
 import { areas } from "@/lib/areas";
+import { aggregateRating } from "@/lib/reviews";
 
 export function JsonLd() {
   const data = {
@@ -34,8 +35,31 @@ export function JsonLd() {
         sameAs: [site.social.facebook.url, site.social.instagram.url],
         aggregateRating: {
           "@type": "AggregateRating",
-          ratingValue: "5.0",
-          reviewCount: "5",
+          ratingValue: aggregateRating.rating.toFixed(1),
+          reviewCount: String(aggregateRating.reviewCount),
+        },
+        knowsAbout: [
+          "handyman repairs",
+          "drywall repair",
+          "painting",
+          "TV mounting",
+          "gutter maintenance",
+          "deck and fence maintenance",
+          "tenant turnover repairs",
+          "property manager handyman work",
+        ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Summit Handyman services",
+          itemListElement: [
+            "General repairs",
+            "Painting",
+            "Drywall repair",
+            "TV mounting",
+            "Gutter maintenance",
+            "Fence and deck work",
+            "Tenant turnover repairs",
+          ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
         },
       },
       {

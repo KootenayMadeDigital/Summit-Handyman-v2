@@ -135,28 +135,36 @@ export default async function AreaPage(
   if (!area) notFound();
   const profile = cityProfiles[area.slug];
 
-  const localBusinessSchema = {
+  const cityServiceSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${site.url}/areas/${area.slug}#business`,
-    name: `${site.name} in ${area.name}`,
-    image: `${site.url}/images/logo.webp`,
-    url: `${site.url}/areas/${area.slug}`,
-    telephone: site.contact.phone,
-    email: site.contact.email,
-    priceRange: "$$",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: area.name,
-      addressRegion: area.province,
-      addressCountry: "CA",
+    "@type": "Service",
+    "@id": `${site.url}/areas/${area.slug}#handyman-service`,
+    name: `Handyman services in ${area.name}, BC`,
+    description: profile.serviceFit,
+    provider: { "@type": "HomeAndConstructionBusiness", "@id": `${site.url}/#business`, name: site.name },
+    serviceType: "Handyman services",
+    areaServed: {
+      "@type": "City",
+      name: area.name,
+      containedInPlace: { "@type": "AdministrativeArea", name: "British Columbia" },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: area.geo.lat,
+        longitude: area.geo.lng,
+      },
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: area.geo.lat,
-      longitude: area.geo.lng,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${area.name} handyman services`,
+      itemListElement: services.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: `${service.name} in ${area.name}`,
+          url: `${site.url}/services/${service.slug}/in/${area.slug}`,
+        },
+      })),
     },
-    areaServed: { "@type": "City", name: area.name },
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: aggregateRating.rating.toFixed(1),
@@ -205,7 +213,7 @@ export default async function AreaPage(
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(cityServiceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(areaFaqSchema) }} />
 

@@ -19,7 +19,7 @@ import { areas } from "@/lib/areas";
 export const metadata: Metadata = {
   title: "Contact Brody",
   description:
-    "The fastest way to reach Brody is to submit the quote form so he has the photos and details on hand before reaching out. Email, text, and Facebook Messenger also available.",
+    "The recommended way to reach Brody is to submit the quote form so he has the photos and details on hand before reaching out. Email, text, and Facebook Messenger also available.",
   alternates: { canonical: "/contact" },
 };
 
@@ -55,7 +55,7 @@ export default function ContactPage() {
         eyebrow="Get in Touch"
         title={
           <>
-            The fastest way to{" "}
+            The cleanest way to{" "}
             <span className="font-serif italic font-normal text-gradient-gold">
               reach Brody.
             </span>
@@ -123,7 +123,7 @@ export default function ContactPage() {
               Already have what Brody needs?
             </h2>
             <p className="mt-2 text-sm sm:text-base text-fg-muted">
-              These work too, especially for follow-ups, urgent jobs, or quick questions.
+              These work too for follow-ups, quick questions, or details that do not fit neatly into the form.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">

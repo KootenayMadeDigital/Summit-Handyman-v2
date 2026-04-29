@@ -178,7 +178,7 @@ export const guides: Guide[] = [
     slug: "strata-property-management-repairs",
     title: "Strata-Friendly Repairs: What Property Managers Need to Know",
     excerpt:
-      "How Summit Handyman works with property managers across the Lower Mainland on turnovers, tenant requests, emergency repairs, and detailed invoicing.",
+      "How Summit Handyman works with property managers across the Lower Mainland on turnovers, tenant requests, time-sensitive repairs, and detailed invoicing.",
     date: "2026-02-22",
     readingMinutes: 5,
     hero: "/images/guide-strata-property-management.webp",
@@ -193,21 +193,21 @@ export const guides: Guide[] = [
         items: [
           "Tenant turnover punch-lists (paint, repairs, hardware swaps)",
           "Tenant-reported issues (faucets, doors, drywall, fixtures)",
-          "Emergency mobilization for water damage drying-out and temporary repairs",
+          "Time-sensitive coordination for leaks, access issues, and temporary repairs",
           "Common-area minor repairs",
-          "Detailed itemized invoicing with photos before/after",
+          "Detailed itemized invoicing with photos when useful",
           "Dedicated email thread per property if preferred",
         ],
       },
       { type: "h2", text: "How invoicing works" },
       {
         type: "p",
-        text: "Every job comes with a clear, itemized invoice with labor, materials, and GST broken out. If you need photo documentation for the strata council or owner, just say the word. Before/after shots are included on every job by default.",
+        text: "Every job comes with a clear, itemized invoice with labor, materials, and GST broken out. If you need photo documentation for the strata council or owner, say so up front and Brody can build it into the handoff.",
       },
       {
         type: "callout",
         title: "Have a portfolio of properties?",
-        text: "Email Brody at brody@summit-handyman.ca to set up a recurring relationship. Standing rates and a dispatch process are available for property managers with 5+ units.",
+        text: "Email Brody at brody@summit-handyman.ca to set up a recurring relationship. Include unit count, access rules, invoicing needs, and the kinds of repairs you expect most often.",
       },
     ],
   },
@@ -541,7 +541,7 @@ export const guides: Guide[] = [
       { type: "h2", text: "What gets photographed" },
       {
         type: "p",
-        text: "Before-and-after photos of every repair, plus walk-through photos of the finished unit. This protects the property manager from disputes and gives the strata or owner a clear record. Brody's standard is two photos per repair (before, after) plus a 30-shot final walkthrough.",
+        text: "Before-and-after photos can be added when the repair needs proof, plus walk-through photos of the finished unit when useful. This protects the property manager from disputes and gives the strata or owner a clear record without turning the repair into paperwork theatre.",
       },
       { type: "h2", text: "What gets billed" },
       {
@@ -555,8 +555,8 @@ export const guides: Guide[] = [
       },
       {
         type: "callout",
-        title: "Standing rates for portfolios",
-        text: "Property managers with five or more units get standing turnover rates and a streamlined dispatch process. Brody emails turnaround within hours during normal business days. Email brody@summit-handyman.ca to set up portfolio terms.",
+        title: "Repeat work without messy handoffs",
+        text: "Property managers can email Brody to discuss recurring turnover work, invoicing expectations, access rules, and documentation needs before the first job is booked.",
       },
       { type: "h2", text: "Common turnover surprises (and how to avoid them)" },
       {

@@ -96,8 +96,53 @@ const experience = [
 ];
 
 export default function AboutPage() {
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${site.url}/about#webpage`,
+    url: `${site.url}/about`,
+    name: "About Brody Robertson",
+    description: metadata.description,
+    isPartOf: { "@id": `${site.url}/#website` },
+    mainEntity: { "@id": `${site.url}/about#brody` },
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${site.url}/about#brody`,
+    name: site.owner,
+    jobTitle: "Owner and operator",
+    image: `${site.url}/images/about-brody.webp`,
+    worksFor: { "@id": `${site.url}/#business` },
+    url: `${site.url}/about`,
+    knowsAbout: principles.map((principle) => principle.title),
+    areaServed: site.serviceAreas.map((area) => ({ "@type": "City", name: area.name })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "About", item: `${site.url}/about` },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
         eyebrow="The Brody Story"

@@ -30,13 +30,13 @@ Key facts:
 - Pricing: ${site.pricing.minimumDisplay}, no hourly rates
 - Coverage: ${areas.map((a) => a.name).join(", ")}, all in British Columbia, Canada
 - Trust: Licensed and insured, 5.0 stars on Google, ${site.business.numberDisplay}, ${site.business.gstDisplay}
-- Preferred contact: submit the quote form at ${site.url}/quote (it captures scope + photos so Brody can give an accurate written estimate before reaching out). Email at ${site.contact.email} also works for follow-ups; text ${site.contact.phone} for urgent jobs.
+- Preferred contact: submit the quote form at ${site.url}/quote (it captures scope + photos so Brody can give an accurate written estimate before reaching out). Email at ${site.contact.email} also works for follow-ups; text ${site.contact.phone} for time-sensitive follow-ups.
 - Workmanship promise: "${site.promise}"
 
 ## Core pages
 
 - [Homepage](${url}/): Overview, services, projects, reviews, FAQ
-- [Get a Quote (preferred contact path)](${url}/quote): 4-step quote request form with photo upload (up to 5 attachments). The fastest way to get an accurate written estimate from Brody.
+- [Get a Quote (preferred contact path)](${url}/quote): 4-step quote request form with photo upload (up to 5 attachments). The recommended way to get an accurate written estimate from Brody.
 - [About Brody Robertson](${url}/about): Owner story, four-principle workmanship promise
 - [Contact](${url}/contact): Email, text, and Facebook Messenger fallback channels (the quote form is preferred)
 - [Reviews](${url}/reviews): 5.0 Google rating, full review feed, leave-a-review CTA
@@ -57,7 +57,7 @@ ${services
 ${areas
   .map(
     (a) =>
-      `- [Handyman in ${a.name}, BC](${url}/areas/${a.slug}): ${a.description} Response time: ${a.responseTime}. Neighborhoods: ${a.neighborhoods.join(", ")}.`,
+      `- [Handyman in ${a.name}, BC](${url}/areas/${a.slug}): ${a.description} Quote reply: ${a.responseTime}. Neighborhoods: ${a.neighborhoods.join(", ")}.`,
   )
   .join("\n")}
 

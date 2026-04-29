@@ -87,7 +87,7 @@ export function Footer() {
           <div className="lg:col-span-7">
             <div className="rounded-2xl bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_14%,var(--bg-panel))] border border-accent p-6 sm:p-7 md:p-8 shadow-gold">
               <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold">
-                The fastest way to reach Brody
+                The recommended way to reach Brody
               </p>
               <h2 className="mt-2 font-display text-2xl sm:text-3xl font-extrabold text-fg-strong leading-tight text-balance">
                 Get a written estimate within 24 hours.

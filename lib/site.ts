@@ -28,7 +28,7 @@ export const site = {
     minimumLong: "$150 minimum per job. No hidden fees. No hourly games.",
   },
 
-  hours: "By appointment. Email or text for fastest response.",
+  hours: "By appointment. Email or text to start a quote.",
 
   serviceAreas: [
     { slug: "langley", name: "Langley", province: "BC" },

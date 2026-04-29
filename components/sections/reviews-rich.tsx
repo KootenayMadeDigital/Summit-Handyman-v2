@@ -73,7 +73,7 @@ const decisionLenses = [
     Icon: ShieldCheck,
     label: "Trust",
     question: "Can I trust him inside my home?",
-    answer: "The pattern is professional, polite, documented, and owner-operated. That lowers the risk fast.",
+    answer: "The pattern is professional, polite, documented, and owner-operated. That lowers the risk quickly.",
   },
   {
     key: "property",
@@ -173,7 +173,7 @@ export function ReviewsRichPage() {
                     <span className="ml-2 text-3xl sm:text-4xl text-fg-muted">/5</span>
                   </p>
                   <h2 className="mt-6 font-display text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-fg-strong text-balance">
-                    The fastest way to trust a handyman is to hear what happened after he left.
+                    The clearest way to trust a handyman is to hear what happened after he left.
                   </h2>
                   <p className="mt-5 max-w-2xl text-base sm:text-lg leading-relaxed text-fg/85 text-pretty">
                     Reviews answer the doubts ads cannot: did he reply, did he show up, did he protect the home, and would people call him again?
@@ -359,7 +359,7 @@ export function ReviewsRichPage() {
               <AudienceCard
                 Icon={Building2}
                 title="Property managers"
-                body="Managers who need fast response, tenant-ready work, and documentation that keeps the owner thread clean."
+                body="Managers who need clear replies, tenant-ready work, and documentation that keeps the owner thread clean."
                 points={[
                   "Tenant turnovers and punch lists",
                   "Itemized invoicing with photo support",

@@ -154,7 +154,7 @@ export function Header() {
               Submit a Quote Request
             </Button>
             <p className="text-xs text-fg-muted -mt-1 text-center">
-              The fastest way for Brody to give an accurate estimate.
+              The recommended way for Brody to give an accurate estimate.
             </p>
             <Button
               href={`mailto:${site.contact.email}`}

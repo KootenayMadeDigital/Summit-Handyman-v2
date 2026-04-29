@@ -76,8 +76,44 @@ const areaFit = [
 ];
 
 export default function AreasPage() {
+  const areaCollectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${site.url}/areas#webpage`,
+    url: `${site.url}/areas`,
+    name: "Summit Handyman service areas",
+    description: metadata.description,
+    isPartOf: { "@id": `${site.url}/#website` },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: areas.map((area, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: `Handyman in ${area.name}, BC`,
+        url: `${site.url}/areas/${area.slug}`,
+      })),
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "Areas", item: `${site.url}/areas` },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(areaCollectionSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Areas" }]}
         eyebrow="Lower Mainland coverage"

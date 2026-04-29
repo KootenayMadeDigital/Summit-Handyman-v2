@@ -58,6 +58,7 @@ export async function generateMetadata(
       title: `${title} | ${site.name}`,
       description,
       type: "website",
+      images: [{ url: service.hero, width: 1600, height: 1000, alt: title }],
     },
   };
 }
@@ -118,6 +119,16 @@ export default async function ServiceInAreaPage(
       containedInPlace: { "@type": "AdministrativeArea", name: "British Columbia" },
     },
     serviceType: service.name,
+    offers: {
+      "@type": "Offer",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "CAD",
+        minPrice: site.pricing.minimum,
+      },
+      availability: "https://schema.org/InStock",
+      url: `${site.url}/quote?service=${service.slug}&area=${area.slug}`,
+    },
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: aggregateRating.rating.toFixed(1),
@@ -125,33 +136,16 @@ export default async function ServiceInAreaPage(
     },
   };
 
-  const localBusinessSchema = {
+  const webPageSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${site.url}/services/${service.slug}/in/${area.slug}#business`,
-    name: `${site.name} - ${service.name} in ${area.name}`,
-    image: `${site.url}/images/logo.webp`,
+    "@type": "WebPage",
+    "@id": `${site.url}/services/${service.slug}/in/${area.slug}#webpage`,
     url: `${site.url}/services/${service.slug}/in/${area.slug}`,
-    telephone: site.contact.phone,
-    email: site.contact.email,
-    priceRange: "$$",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: area.name,
-      addressRegion: area.province,
-      addressCountry: "CA",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: area.geo.lat,
-      longitude: area.geo.lng,
-    },
-    areaServed: { "@type": "City", name: area.name },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: aggregateRating.rating.toFixed(1),
-      reviewCount: String(aggregateRating.reviewCount),
-    },
+    name: `${service.name} in ${area.name}, BC`,
+    description: `${service.name} for ${area.name} homeowners and property managers, with written estimates and owner-operated service from ${site.owner}.`,
+    isPartOf: { "@id": `${site.url}/#website` },
+    about: { "@id": `${site.url}/services/${service.slug}/in/${area.slug}#service` },
+    mainEntity: { "@id": `${site.url}/services/${service.slug}/in/${area.slug}#service` },
   };
 
   const faqSchema = {
@@ -176,7 +170,7 @@ export default async function ServiceInAreaPage(
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
       <script
         type="application/ld+json"
@@ -225,7 +219,7 @@ export default async function ServiceInAreaPage(
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-6 md:gap-x-6">
             <Stat Icon={HandCoins} label="$150 minimum" sub="No hourly games" />
             <Stat Icon={ShieldCheck} label="Licensed & insured" sub="Comprehensive liability" />
-            <Stat Icon={Clock} label={area.responseTime} sub={`Response in ${area.name}`} />
+            <Stat Icon={Clock} label={area.responseTime} sub={`Quote reply in ${area.name}`} />
             <Stat Icon={MapPin} label={`${area.name} local`} sub="Owner-operated" />
           </div>
         </Container>
@@ -432,7 +426,7 @@ export default async function ServiceInAreaPage(
                 </span>
               </h2>
               <p className="text-base sm:text-lg text-fg/80 max-w-xl mx-auto leading-relaxed">
-                {area.responseTime} response. {site.pricing.minimumDisplay}. Free written estimate.
+                {area.responseTime} quote reply. {site.pricing.minimumDisplay}. Free written estimate.
               </p>
               <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <MagneticCTA

@@ -12,7 +12,7 @@ export function FinalCTA() {
         <Reveal>
           <div className="text-center space-y-6 sm:space-y-7">
             <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-accent font-semibold">
-              The fastest path to a quote
+              The clean path to a quote
             </p>
             <h2 className="font-display text-display-xl font-extrabold tracking-tightest text-fg-strong text-balance leading-[1.05]">
               Submit the quote form. <br />

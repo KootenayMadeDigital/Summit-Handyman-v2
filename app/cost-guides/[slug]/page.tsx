@@ -47,10 +47,16 @@ export default async function GuidePage(
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${site.url}/cost-guides/${g.slug}#article`,
+    mainEntityOfPage: `${site.url}/cost-guides/${g.slug}`,
     headline: g.title,
     description: g.excerpt,
     image: `${site.url}${g.hero}`,
     datePublished: g.date,
+    dateModified: g.date,
+    inLanguage: "en-CA",
+    articleSection: g.area ? `${g.area} handyman cost guide` : "Lower Mainland handyman cost guide",
+    about: ["handyman cost", g.service ?? "home repair", g.area ?? "Lower Mainland"],
     author: { "@type": "Person", name: site.owner, url: `${site.url}/about` },
     publisher: {
       "@type": "Organization",
@@ -59,11 +65,25 @@ export default async function GuidePage(
     },
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "Cost Guides", item: `${site.url}/cost-guides` },
+      { "@type": "ListItem", position: 3, name: g.title, item: `${site.url}/cost-guides/${g.slug}` },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <PageHero
         breadcrumbs={[

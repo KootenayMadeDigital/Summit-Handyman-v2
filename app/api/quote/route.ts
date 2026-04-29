@@ -38,7 +38,7 @@ const ALLOWED_MIME = new Set([
 function humanizeTiming(t: string): string {
   return (
     {
-      urgent: "Urgent (today or tomorrow)",
+      "time-sensitive": "Time-sensitive (sooner is better)",
       "this-week": "This week",
       "two-weeks": "Within 2 weeks",
       "no-rush": "No rush",

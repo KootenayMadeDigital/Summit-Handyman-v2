@@ -36,7 +36,7 @@ export default function PrivacyPage() {
               What we do with it
             </h2>
             <p>
-              We use it to respond to your request. that's it. Your info is forwarded to Brody's
+              We use it to respond to your request. That's it. Your info is forwarded to Brody's
               email at {site.contact.email}. We don't sell, rent, or share your information with
               third parties.
             </p>

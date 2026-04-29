@@ -12,6 +12,7 @@ import { ServiceIcon } from "@/components/ui/service-icon";
 import { services, getService } from "@/lib/services";
 import { areas } from "@/lib/areas";
 import { site } from "@/lib/site";
+import { aggregateRating } from "@/lib/reviews";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -26,12 +27,13 @@ export async function generateMetadata(
   const cityList = "Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale";
   return {
     title: `${service.name} in Langley, Surrey & Lower Mainland BC`,
-    description: `${service.name}: ${service.tagline} Serving ${cityList}. ${site.pricing.minimumDisplay}. Licensed and insured. Email Brody for a 24-hour reply.`,
+    description: `${service.name}: ${service.tagline} Serving ${cityList}. ${site.pricing.minimumDisplay}. Licensed and insured. Written estimates within 24 hours.`,
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
       title: `${service.name} | ${site.name}`,
       description: service.longDescription.slice(0, 200),
       type: "website",
+      images: [{ url: service.hero, width: 1600, height: 1000, alt: service.name }],
     },
   };
 }
@@ -64,7 +66,17 @@ export default async function ServicePage(
     provider: { "@type": "HomeAndConstructionBusiness", name: site.name, "@id": `${site.url}/#business` },
     serviceType: service.name,
     areaServed: areas.map((a) => ({ "@type": "City", name: a.name })),
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "5" },
+    offers: {
+      "@type": "Offer",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "CAD",
+        minPrice: site.pricing.minimum,
+      },
+      availability: "https://schema.org/InStock",
+      url: `${site.url}/quote?service=${service.slug}`,
+    },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: aggregateRating.rating.toFixed(1), reviewCount: String(aggregateRating.reviewCount) },
   };
 
   const faqSchema = service.faqs.length > 0 ? {
@@ -206,7 +218,7 @@ export default async function ServicePage(
                 </span>
               </>
             }
-            description={`Click your city for ${service.name.toLowerCase()} pricing, response times, and local job examples.`}
+            description={`Click your city for ${service.name.toLowerCase()} pricing, scope, and local quote guidance.`}
           />
           <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             {areas.map((a) => (

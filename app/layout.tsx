@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Top-rated handyman in Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. 5.0 on Google. Licensed and insured. $150 minimum per job. Email Brody for a 24-hour reply.",
+    "Owner-operated handyman service for Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. Licensed and insured. $150 minimum per job. Written estimates within 24 hours.",
   keywords: [
     "handyman Langley",
     "handyman Surrey",
@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     "handyman Cloverdale",
     "handyman near me Langley",
     "handyman near me Surrey",
+    "owner operated handyman Langley",
+    "licensed handyman Langley",
+    "insured handyman Surrey",
     "Lower Mainland handyman",
     "drywall repair Langley",
     "drywall repair Surrey",

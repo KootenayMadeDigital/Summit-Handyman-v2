@@ -21,6 +21,7 @@ import { Container, Section, SectionTitle } from "@/components/ui/section";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { guides, type Guide } from "@/lib/guides";
+import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -214,8 +215,44 @@ function TrackSection({ track, index }: { track: Track; index: number }) {
 }
 
 export default function CostGuidesPage() {
+  const guideCollectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${site.url}/cost-guides#webpage`,
+    url: `${site.url}/cost-guides`,
+    name: "Lower Mainland handyman cost guides",
+    description: metadata.description,
+    isPartOf: { "@id": `${site.url}/#website` },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: guides.map((guide, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: guide.title,
+        url: `${site.url}/cost-guides/${guide.slug}`,
+      })),
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "Cost Guides", item: `${site.url}/cost-guides` },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(guideCollectionSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageHero
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Cost Guides" }]}
         eyebrow="Resources"

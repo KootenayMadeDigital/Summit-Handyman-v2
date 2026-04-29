@@ -33,7 +33,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Handyman Services in Langley, Surrey & Lower Mainland BC",
   description:
-    "11 handyman services across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. Owner-operated. $150 minimum per job. Licensed and insured. Free written estimates within 24 hours.",
+    "Owner-operated handyman services across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. 11 repair categories, $150 minimum per job, licensed and insured.",
   alternates: { canonical: "/services" },
 };
 
@@ -51,8 +51,8 @@ const personas = [
     Icon: Building2,
     label: "Property managers",
     headline: "Documented turnovers, on time.",
-    body: "Tenant turnover, common-area repairs, emergency mobilization. Itemized invoices with photos before/after. Brody's been the go-to for several Lower Mainland portfolios.",
-    bullet: "Standing rates available for portfolios of 5+ units. Email for terms.",
+    body: "Tenant turnover, common-area repairs, and time-sensitive coordination. Itemized invoices with photos before and after. Built for clean handoffs and documented follow-through.",
+    bullet: "Repeat property work can be scoped by email when you need documentation across multiple units.",
   },
   {
     Icon: HeartHandshake,
@@ -137,8 +137,44 @@ const reassurances = [
 ];
 
 export default function ServicesPage() {
+  const serviceCollectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${site.url}/services#webpage`,
+    url: `${site.url}/services`,
+    name: "Handyman services in Langley, Surrey, and the Lower Mainland",
+    description: metadata.description,
+    isPartOf: { "@id": `${site.url}/#website` },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: services.map((service, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: service.name,
+        url: `${site.url}/services/${service.slug}`,
+      })),
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${site.url}/services` },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceCollectionSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* === HERO === */}
       <PageHero
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
@@ -450,22 +486,22 @@ export default function ServicesPage() {
                 For property managers
               </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-display-lg font-extrabold tracking-tightest text-fg-strong leading-[1.05] text-balance">
-                Tenant turnovers, common-area repairs, emergency mobilization.{" "}
+                Tenant turnovers, common-area repairs, time-sensitive coordination.{" "}
                 <span className="font-serif italic font-normal text-gradient-gold">
                   Documented every step.
                 </span>
               </h2>
               <p className="text-base sm:text-lg text-fg/85 leading-relaxed">
-                Brody runs every property-management job with itemized invoicing, before/after photo documentation, and dedicated email threads per property. Property managers across Surrey, Langley, and Abbotsford use Summit Handyman as their go-to for portfolios.
+                Brody runs property-management work with itemized invoicing, photo documentation when useful, and clear email threads per property. Summit is a strong fit when managers need clean handoffs, direct communication, and repairs that do not create a second problem.
               </p>
               <ul className="grid sm:grid-cols-2 gap-3 pt-2">
                 {[
                   "Tenant turnover punch lists",
                   "Common-area repairs",
-                  "Emergency mobilization",
+                  "Time-sensitive repair coordination",
                   "Detailed itemized invoicing",
                   "Before/after photo docs",
-                  "Standing rates for 5+ unit portfolios",
+                  "Repeat documentation process",
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-sm text-fg/85">
                     <Check
@@ -550,7 +586,7 @@ export default function ServicesPage() {
                 },
                 {
                   q: "What if I have a long list of small things?",
-                  a: "Bundle them. The $150 minimum covers a single visit, so 3-5 small jobs in one trip is the best value. Most homeowners save 30-50% by batching their list instead of booking separate visits.",
+                  a: "Bundle them. The $150 minimum covers a single visit, so a grouped repair list is usually more practical than booking separate visits for every small fix.",
                 },
                 {
                   q: "Is this safe? I've never hired a handyman before.",
@@ -558,7 +594,7 @@ export default function ServicesPage() {
                 },
                 {
                   q: "Do you work with property managers?",
-                  a: "Yes. Property managers across Surrey, Langley, and Abbotsford use Summit Handyman regularly for tenant turnovers, common-area repairs, and emergency mobilization. Standing rates are available for portfolios of 5+ units. Email Brody to set up portfolio terms.",
+                  a: "Yes. Summit Handyman is built for tenant turnovers, common-area repairs, documented punch lists, and clear invoicing. Email Brody with the property details, access notes, and repair list to set up the right process.",
                 },
                 {
                   q: "What does 'come back free' mean exactly?",

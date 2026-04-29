@@ -40,7 +40,7 @@ export function AreasSection() {
                   {a.description}
                 </p>
                 <div className="mt-5 pt-5 border-t border-divider flex items-center justify-between gap-3 text-xs">
-                  <span className="text-fg-faint flex-shrink-0">Response</span>
+                  <span className="text-fg-faint flex-shrink-0">Quote reply</span>
                   <span className="text-accent font-semibold text-right">{a.responseTime}</span>
                 </div>
               </Link>

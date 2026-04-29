@@ -22,7 +22,7 @@ import { areas } from "@/lib/areas";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-type Timing = "urgent" | "this-week" | "two-weeks" | "no-rush";
+type Timing = "time-sensitive" | "this-week" | "two-weeks" | "no-rush";
 
 type FormState = {
   service: string;
@@ -47,7 +47,7 @@ const initialState: FormState = {
 };
 
 const timingOptions: { value: Timing; label: string; description: string; Icon: typeof Flame }[] = [
-  { value: "urgent", label: "Urgent", description: "Today or tomorrow", Icon: Flame },
+  { value: "time-sensitive", label: "Time-sensitive", description: "Sooner is better", Icon: Flame },
   { value: "this-week", label: "This week", description: "Within 7 days", Icon: CalendarClock },
   { value: "two-weeks", label: "Within 2 weeks", description: "Some flexibility", Icon: Clock3 },
   { value: "no-rush", label: "No rush", description: "Whenever works", Icon: Leaf },
@@ -203,7 +203,7 @@ export function QuoteForm() {
             Your details {photos.length > 0 ? `and ${photos.length} photo${photos.length > 1 ? "s" : ""} ` : ""}have been sent to Brody. He'll review the job and reply within 24 hours with questions or a written estimate.
           </p>
         <p className="mt-4 text-xs text-fg-muted">
-          Need it faster? Text{" "}
+          Need to add context? Text{" "}
           <a
             href={`sms:${site.contact.phoneTel}`}
             className="text-accent font-semibold underline-offset-4 hover:underline"
@@ -508,7 +508,7 @@ export function QuoteForm() {
                 How can Brody reach you?
               </h2>
               <p className="text-sm sm:text-base text-fg-muted">
-                Email is preferred and gets the fastest reply. Text or phone work too.
+                Email is preferred and keeps the reply organized. Text or phone work too.
               </p>
             </div>
 
