@@ -154,20 +154,20 @@ export const services: Service[] = [
     slug: "electrical",
     name: "Electrical Work",
     category: "interior",
-    keywords: ["light fixture install", "ceiling fan install", "smart switch", "dimmer install", "smart home"],
-    tagline: "Clean fixture swaps and smart installs.",
-    shortDescription: "Lights, fans, dimmers, doorbells, and smart devices installed cleanly.",
+    keywords: ["light fixture install", "ceiling fan install", "dimmer install", "under-cabinet lighting", "outlet replacement"],
+    tagline: "Clean fixture swaps and lighting upgrades.",
+    shortDescription: "Lights, fans, dimmers, outlets, and exterior fixtures installed cleanly.",
     longDescription:
-      "Light fixtures, dimmers, smart switches, and ceiling fans. Permitted electrical or anything beyond the homeowner-allowed scope is referred to a licensed electrician, but for swap-and-install work in Lower Mainland homes, Brody gets it done clean. Smart locks, doorbell cameras, smart thermostats, and under-cabinet lighting all part of the regular install menu.",
+      "Light fixtures, dimmers, ceiling fans, and under-cabinet lighting. Permitted electrical or anything beyond the homeowner-allowed scope is referred to a licensed electrician, but for swap-and-install fixture work in Lower Mainland homes, Brody gets it done clean. (Smart-home devices like cameras, locks, thermostats, and doorbells have their own dedicated service.)",
     includes: [
       "Light fixture replacement",
-      "Dimmer and smart switch install",
+      "Dimmer switch install",
       "Ceiling fan installation",
-      "Smart home device setup (locks, doorbells, thermostats)",
-      "Under-cabinet lighting",
+      "Under-cabinet and accent lighting",
       "Exterior light replacement",
       "Outlet and switch plate replacement",
       "Hardwired smoke and CO detector swap",
+      "Light timer and motion-sensor installs",
     ],
     faqs: [
       {
@@ -175,8 +175,8 @@ export const services: Service[] = [
         a: "Brody handles homeowner-allowed scope (fixture swaps, smart switches with neutral wires, ceiling fan installs into existing boxes). Anything that requires a permit or new wiring is referred to a licensed electrician.",
       },
       {
-        q: "Do smart switches work with my existing wiring?",
-        a: "Many modern smart switches need a neutral wire. Brody confirms your wiring before quoting. Older Lower Mainland homes sometimes need a small workaround, like a battery switch or hub.",
+        q: "Can you install dimmer switches in older homes?",
+        a: "Often yes. Brody confirms your wiring (especially the neutral situation) before quoting. Older Lower Mainland homes sometimes need a small workaround like a battery switch or compatible LED-rated dimmer.",
       },
       {
         q: "How is pricing handled?",
@@ -184,6 +184,60 @@ export const services: Service[] = [
       },
     ],
     icon: "Zap",
+    hero: "/images/service-electrical.webp",
+  },
+  {
+    slug: "smart-home",
+    name: "Smart Home Devices",
+    category: "interior",
+    keywords: [
+      "smart home install",
+      "doorbell camera install",
+      "smart thermostat install",
+      "smart lock install",
+      "security camera install",
+      "Ring install",
+      "Nest install",
+      "Ecobee install",
+      "smart switch install",
+    ],
+    tagline: "Set up once. Works the way it should.",
+    shortDescription: "Doorbells, locks, thermostats, security cameras, and smart switches installed, paired, and tested.",
+    longDescription:
+      "Smart-home devices that look easy in the box almost always come with a wiring quirk, an app handoff, or a pairing detail that turns a 30-minute job into a Saturday. Brody handles the install end-to-end: mount it, wire it, pair it to your phone, confirm it actually works, and walk you through it. Smart-home installs across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. The most common bookings are doorbell cameras, smart thermostats, smart locks, and indoor / outdoor security cameras, but anything with a manual and a power source is on the table.",
+    includes: [
+      "Video doorbell install (Ring, Nest, Eufy, Arlo)",
+      "Smart thermostat install (Nest, Ecobee, Honeywell)",
+      "Smart lock and deadbolt install (Schlage Encode, Yale Assure, August)",
+      "Indoor and outdoor security camera install",
+      "Smart switches and dimmers (with neutral-wire confirmation)",
+      "Smart smoke and CO detector swap",
+      "Smart garage door opener install",
+      "App pairing, network setup, and walk-through after install",
+    ],
+    faqs: [
+      {
+        q: "Will my old wiring work with a smart doorbell or thermostat?",
+        a: "Usually yes, but it depends. Smart doorbells need a transformer and chime that can handle the device. Smart thermostats need a C-wire (or a compatible workaround). Brody confirms compatibility before quoting, and if the existing wiring needs an adapter or transformer upgrade, it gets called out in writing up front.",
+      },
+      {
+        q: "Do you handle the app setup and pairing too?",
+        a: "Yes. The install isn't done until the device is paired to your phone, the test alert / video / unlock works, and you've watched it happen once. Brody walks through the basics so you don't end up with a $300 paperweight.",
+      },
+      {
+        q: "Can you swap a regular deadbolt for a smart lock?",
+        a: "Yes. Most modern smart deadbolts (Schlage Encode, Yale Assure, August) drop into a standard prep door with the existing strike plate. If the door is older or the latch backset is unusual, Brody confirms fit from a photo before booking.",
+      },
+      {
+        q: "Will outdoor cameras need an electrician?",
+        a: "If the camera is battery or plug-in (extension cord through a soffit), no. If it's a hardwired PoE or 120V install with new wire runs, that part goes to a licensed electrician and Brody handles the mounting and configuration once power is in.",
+      },
+      {
+        q: "What happens if a device stops working a month later?",
+        a: "Reach out. Most smart-home issues are firmware updates, network changes, or app re-pairing, and Brody can usually walk you through the fix without a return visit. If the install itself failed, the workmanship promise covers it.",
+      },
+    ],
+    icon: "Wifi",
     hero: "/images/service-electrical.webp",
   },
   {

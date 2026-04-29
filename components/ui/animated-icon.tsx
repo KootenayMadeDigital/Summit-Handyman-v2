@@ -20,7 +20,8 @@ type IconName =
   | "rain"
   | "fence"
   | "house"
-  | "shield";
+  | "shield"
+  | "wifi";
 
 const SIZE = 32;
 
@@ -163,6 +164,36 @@ const variants: Record<IconName, React.ReactNode> = {
       <path d="M11 16l3 3 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
     </g>
   ),
+  wifi: (
+    <g className="ai-wifi">
+      {/* Three signal arcs cascade outward, dot pulses at the centre. */}
+      <path
+        className="ai-wifi-arc ai-wifi-arc-3"
+        d="M3 13c7-7 19-7 26 0"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        className="ai-wifi-arc ai-wifi-arc-2"
+        d="M8 18c4-4 12-4 16 0"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        className="ai-wifi-arc ai-wifi-arc-1"
+        d="M12 23c2-2 6-2 8 0"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <circle className="ai-wifi-dot" cx="16" cy="27" r="1.5" fill="currentColor" />
+    </g>
+  ),
 };
 
 const lucideToAnimated: Record<string, IconName> = {
@@ -177,6 +208,7 @@ const lucideToAnimated: Record<string, IconName> = {
   Fence: "fence",
   Home: "house",
   Shield: "shield",
+  Wifi: "wifi",
 };
 
 export function AnimatedIcon({

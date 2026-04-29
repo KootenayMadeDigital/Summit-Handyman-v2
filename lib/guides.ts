@@ -313,7 +313,7 @@ export const guides: Guide[] = [
     title: "Smart Home Setup for BC Homes: Detectors, Locks & Lighting",
     excerpt:
       "What's actually worth installing and what to skip. Practical recommendations from real installs across the Lower Mainland.",
-    service: "electrical",
+    service: "smart-home",
     date: "2026-03-15",
     readingMinutes: 6,
     hero: "/images/guide-smart-home.webp",
