@@ -129,16 +129,16 @@ export function Hero() {
           initial={reduce ? { opacity: 0 } : { opacity: 0, x: 24 }}
           animate={reduce ? { opacity: 1 } : { opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="hidden lg:block lg:col-span-4"
+          className="hidden lg:block lg:col-span-4 lg:self-start lg:pt-16 xl:pt-[4.5rem]"
         >
-          <Parallax strength={0.06}>
-            <div className="summit-photo-motion photo-grade relative aspect-[4/5] w-full max-w-sm ml-auto summit-scan-accent rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg group">
+          <Parallax strength={0.04}>
+            <div className="summit-photo-motion photo-grade relative aspect-[4/5] w-full lg:max-w-[22rem] xl:max-w-[25rem] 2xl:max-w-[27rem] ml-auto summit-scan-accent rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg group">
               <Image
                 src="/images/about-brody.webp"
                 alt={`${site.owner}, owner of ${site.name}`}
                 fill
                 priority
-                sizes="(max-width: 1024px) 0px, 384px"
+                sizes="(max-width: 1024px) 0px, (max-width: 1280px) 352px, (max-width: 1536px) 400px, 432px"
                 className="object-cover transition-transform duration-1000 ease-editorial group-hover:scale-105"
               />
               <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-summit-black via-summit-black/85 to-transparent">
