@@ -2,11 +2,16 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ArrowRight,
+  Camera,
+  CheckCircle2,
+  ClipboardCheck,
   Facebook,
   FileText,
+  Home,
   Instagram,
   Mail,
   MessageSquare,
+  ShieldCheck,
   Sparkles,
   Wrench,
 } from "lucide-react";
@@ -25,49 +30,63 @@ export const metadata: Metadata = {
 };
 
 const proofStats = [
-  { label: "Owner-operated", value: "1", detail: "Brody handles the visit personally." },
-  { label: "Google rating", value: "5.0", detail: "Verified local trust, not sales theatre." },
-  { label: "Minimum", value: "$150", detail: "Predictable start. Written estimate first." },
+  { label: "Owner-operated", value: "1", detail: "The same person quotes, shows up, and stands behind the work." },
+  { label: "Google rating", value: "5.0", detail: "Local trust earned one finished repair at a time." },
+  { label: "Minimum", value: "$150", detail: "Clear starting point. Written estimate before work begins." },
 ];
 
 const principles = [
   {
     Icon: Mail,
-    title: "Clear communication",
-    body: "Email confirmations, realistic timing, and plain-English scope. You know what is happening before tools come out.",
+    title: "Answers before assumptions",
+    body: "Brody reviews the scope, photos, timing, and location first, so the reply is useful instead of vague.",
   },
   {
     Icon: Sparkles,
-    title: "Clean work",
-    body: "Drop cloths down. Dust controlled. Tools off the floor. The space should feel calmer when Brody leaves.",
+    title: "Clean work is part of the job",
+    body: "Drop cloths, dust control, careful staging, and cleanup are not bonuses. They are the baseline.",
   },
   {
     Icon: Wrench,
-    title: "Repairs that last",
-    body: "Three coats when three coats are needed. Anchored into studs. Fixed like someone may inspect it years from now.",
+    title: "Fixes should stay fixed",
+    body: "The repair is built for the next season, the next tenant, and the next inspection, not just the next photo.",
   },
   {
     Icon: FileText,
-    title: "Documented like a pro",
-    body: "Photos, itemized notes, and invoices property managers can actually file without chasing for missing details.",
+    title: "Documentation removes doubt",
+    body: "Photos, itemized notes, and plain invoices make life easier for homeowners, sellers, strata, and property managers.",
   },
+];
+
+const friction = [
+  "You do not know if the handyman will reply",
+  "You do not know if the quote is real",
+  "You do not know who will actually show up",
+  "You do not know if the repair will last",
+];
+
+const antidote = [
+  "Direct email or text with Brody",
+  "Free written estimate after scope review",
+  "Owner-operated visits, not rotating crews",
+  "Come-back-free workmanship promise",
 ];
 
 const experience = [
   {
     step: "01",
-    title: "You send the details",
-    body: "The quote form captures the job, timing, photos, and city so Brody can answer with context instead of guessing on the phone.",
+    title: "You send the real picture",
+    body: "The quote form captures the service, city, timing, description, and photos so Brody starts with context.",
   },
   {
     step: "02",
-    title: "Brody reviews it himself",
-    body: "No dispatcher, no rotating subcontractor. The person pricing the work is the person showing up to do it.",
+    title: "Brody reviews the work himself",
+    body: "No dispatcher translation. No mystery subcontractor. The person thinking through the job is the person doing the job.",
   },
   {
     step: "03",
-    title: "The work is done cleanly",
-    body: "Protection first, repair second, cleanup before leaving. The standard is quiet competence, not chaos in work boots.",
+    title: "The house is protected first",
+    body: "Drop cloths, controlled dust, careful staging, and straight cleanup come before anyone calls the job finished.",
   },
   {
     step: "04",
@@ -84,13 +103,13 @@ export default function AboutPage() {
         eyebrow="The Brody Story"
         title={
           <>
-            The handyman you call when it has to be{" "}
+            Built for people who are tired of chasing{" "}
             <span className="font-serif italic font-normal text-gradient-gold">
-              done right.
+              unreliable trades.
             </span>
           </>
         }
-        description="Summit Handyman exists for homeowners and property managers who are tired of ghosting, guesswork, and repairs that need repairing. One owner. One standard. One direct line."
+        description="Summit Handyman is owner-operated by Brody Robertson for homeowners and property managers who want the small-job experience to feel professional, predictable, and clean from the first message."
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href="/quote" size="lg">
@@ -107,12 +126,14 @@ export default function AboutPage() {
         </div>
       </PageHero>
 
-      <Section size="lg" className="bg-surface">
+      <Section size="lg" className="relative overflow-hidden bg-surface">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" />
+        <div className="absolute left-0 top-24 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
         <Container>
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <Reveal className="lg:col-span-5">
               <div className="lg:sticky lg:top-32 space-y-6">
-                <div className="photo-grade relative aspect-[4/5] rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg group">
+                <div className="photo-grade relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-divider-strong shadow-panel-lg group">
                   <Image
                     src="/images/about-brody.webp"
                     alt={`${site.owner}, owner of ${site.name}`}
@@ -132,7 +153,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="rounded-2xl bg-surface-panel border border-divider-strong p-6 shadow-panel">
+                <div className="rounded-[2rem] bg-surface-panel border border-divider-strong p-6 shadow-panel">
                   <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
                     Direct line
                   </p>
@@ -175,25 +196,26 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal className="lg:col-span-7 space-y-10" delay={0.1}>
-              <div className="rounded-3xl border border-accent/35 bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] p-6 sm:p-8 md:p-10 shadow-panel-lg">
-                <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-5">
-                  Why Summit exists
-                </p>
-                <p className="font-serif text-2xl md:text-4xl leading-snug text-fg-strong text-pretty text-balance">
-                  “{site.about}”
-                </p>
-                <div className="mt-7 space-y-5 text-fg-strong/85 leading-relaxed text-base sm:text-lg">
-                  <p>
-                    Summit Handyman is owner-operated by design. When you email or text, you reach
-                    Brody directly: not a dispatcher, not a call centre, and not a service manager
-                    handing the work to whoever is available.
+              <div className="relative overflow-hidden rounded-[2rem] border border-accent/35 bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] p-6 sm:p-8 md:p-10 shadow-panel-lg">
+                <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-accent/10 blur-3xl" />
+                <div className="relative">
+                  <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-5">
+                    Why Summit exists
                   </p>
-                  <p>
-                    The business was built for the gap between the cheap quick fix and the full
-                    contractor circus. Small and medium repairs still deserve clean communication,
-                    protected floors, straight lines, and work that does not quietly fail six months
-                    later.
+                  <blockquote className="font-serif text-3xl md:text-5xl leading-[1.08] text-fg-strong text-pretty text-balance">
+                    “Most people do not need a bigger contractor. They need one reliable person who answers, protects the home, fixes it properly, and leaves nothing loose behind.”
+                  </blockquote>
+                  <p className="mt-6 text-sm uppercase tracking-[0.16em] text-fg-muted font-semibold">
+                    Brody Robertson, founder
                   </p>
+                  <div className="mt-8 space-y-5 text-fg-strong/85 leading-relaxed text-base sm:text-lg">
+                    <p>
+                      The handyman category has a trust problem. People expect delays, vague prices, rushed work, and a mess left behind. Summit Handyman was built to make that experience feel completely different.
+                    </p>
+                    <p>
+                      Brody brings a property-manager mindset to small and medium repairs: clear scope, clean execution, practical documentation, and workmanship that still makes sense after the invoice is paid.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -201,7 +223,7 @@ export default function AboutPage() {
                 {proofStats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="rounded-2xl border border-divider-strong bg-surface-panel p-5"
+                    className="rounded-2xl border border-divider-strong bg-surface-panel p-5 transition-colors hover:border-accent-soft"
                   >
                     <p className="font-display text-4xl font-extrabold text-fg-strong leading-none">
                       {stat.value}
@@ -214,61 +236,131 @@ export default function AboutPage() {
                 ))}
               </div>
 
-              <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-6">
-                  Four principles. Every job.
-                </p>
-                <RevealStagger className="grid sm:grid-cols-2 gap-5">
-                  {principles.map((p) => (
-                    <RevealItem key={p.title}>
-                      <div className="h-full p-5 sm:p-6 rounded-2xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-colors">
-                        <div className="h-11 w-11 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center mb-5">
-                          <p.Icon className="h-5 w-5 text-accent" strokeWidth={1.6} aria-hidden />
-                        </div>
-                        <h3 className="font-display text-lg font-bold text-fg-strong mb-2">
-                          {p.title}
-                        </h3>
-                        <p className="text-sm text-fg-muted leading-relaxed">{p.body}</p>
-                      </div>
-                    </RevealItem>
-                  ))}
-                </RevealStagger>
+              <div className="grid md:grid-cols-2 gap-5">
+                <div className="rounded-[2rem] border border-red-500/20 bg-red-500/5 p-6">
+                  <p className="text-xs uppercase tracking-[0.18em] text-red-300 font-semibold">
+                    What people fear
+                  </p>
+                  <div className="mt-5 space-y-3">
+                    {friction.map((item) => (
+                      <p key={item} className="flex gap-3 text-sm text-fg-muted leading-relaxed">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-red-300 flex-shrink-0" />
+                        {item}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+                <div className="rounded-[2rem] border border-accent/30 bg-accent-soft p-6">
+                  <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
+                    How Summit answers
+                  </p>
+                  <div className="mt-5 space-y-3">
+                    {antidote.map((item) => (
+                      <p key={item} className="flex gap-3 text-sm text-fg-strong leading-relaxed">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 text-accent flex-shrink-0" />
+                        {item}
+                      </p>
+                    ))}
+                  </div>
+                </div>
               </div>
             </Reveal>
           </div>
         </Container>
       </Section>
 
-      <Section size="lg" className="bg-surface-panel border-y border-divider">
-        <Container>
+      <Section size="lg" className="relative overflow-hidden bg-surface-panel border-y border-divider">
+        <div className="absolute inset-0 opacity-[0.16] [background-image:linear-gradient(var(--border)_1px,transparent_1px),linear-gradient(90deg,var(--border)_1px,transparent_1px)] [background-size:64px_64px]" />
+        <Container className="relative">
           <SectionTitle
-            eyebrow="What working with Brody feels like"
+            eyebrow="The Summit standard"
             title={
               <>
-                Predictable from the first email to the{" "}
+                Small repairs should still feel{" "}
                 <span className="font-serif italic font-normal text-gradient-gold">
-                  final sweep.
+                  premium.
                 </span>
               </>
             }
-            description="The experience is the product as much as the repair. Clear scope, clean execution, and no wondering whether the handyman is coming back."
+            description="Premium does not mean overbuilt. It means the experience is calm, the work is clean, and the result does not create a new problem later."
             className="mb-10 sm:mb-12"
           />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {experience.map((item) => (
-              <Reveal key={item.step}>
-                <article className="h-full rounded-2xl border border-divider-strong bg-surface p-6 hover:border-accent-soft transition-colors">
-                  <p className="font-display text-4xl font-extrabold text-accent/70 leading-none">
-                    {item.step}
-                  </p>
-                  <h3 className="mt-5 font-display text-xl font-bold text-fg-strong leading-tight">
-                    {item.title}
+          <RevealStagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerDelay={0.05}>
+            {principles.map((p) => (
+              <RevealItem key={p.title}>
+                <div className="h-full p-5 sm:p-6 rounded-[1.5rem] bg-surface border border-divider-strong hover:border-accent-soft hover:-translate-y-0.5 transition-all duration-300">
+                  <div className="h-11 w-11 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center mb-5">
+                    <p.Icon className="h-5 w-5 text-accent" strokeWidth={1.6} aria-hidden />
+                  </div>
+                  <h3 className="font-display text-lg font-bold text-fg-strong mb-2">
+                    {p.title}
                   </h3>
-                  <p className="mt-3 text-sm text-fg-muted leading-relaxed">{item.body}</p>
-                </article>
-              </Reveal>
+                  <p className="text-sm text-fg-muted leading-relaxed">{p.body}</p>
+                </div>
+              </RevealItem>
             ))}
+          </RevealStagger>
+        </Container>
+      </Section>
+
+      <Section size="lg" className="bg-surface">
+        <Container>
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-12 items-center">
+            <Reveal>
+              <div className="photo-grade relative min-h-[26rem] overflow-hidden rounded-[2rem] border border-divider-strong shadow-panel-lg">
+                <Image
+                  src="/images/hands-workmanship.webp"
+                  alt="Craftsman's hands measuring freshly-installed trim"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-summit-black/80 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-summit-black/65 p-5 backdrop-blur">
+                  <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
+                    The detail layer
+                  </p>
+                  <p className="mt-2 font-display text-2xl font-bold text-summit-mist leading-tight">
+                    Measured twice is not a slogan. It is the business model.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <SectionTitle
+                eyebrow="What working with Brody feels like"
+                title={
+                  <>
+                    Predictable from the first email to the{" "}
+                    <span className="font-serif italic font-normal text-gradient-gold">
+                      final sweep.
+                    </span>
+                  </>
+                }
+                description="The experience is the product as much as the repair. Clear scope, clean execution, and no wondering whether the handyman is coming back."
+                className="mb-8"
+              />
+              <div className="space-y-4">
+                {experience.map((item) => (
+                  <article
+                    key={item.step}
+                    className="group grid grid-cols-[4rem_1fr] gap-4 rounded-2xl border border-divider-strong bg-surface-panel p-5 transition-all duration-300 hover:border-accent-soft hover:-translate-y-0.5"
+                  >
+                    <p className="font-display text-3xl font-extrabold text-accent/70 leading-none">
+                      {item.step}
+                    </p>
+                    <div>
+                      <h3 className="font-display text-xl font-bold text-fg-strong leading-tight group-hover:text-accent transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-fg-muted leading-relaxed">{item.body}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </Reveal>
           </div>
         </Container>
       </Section>
@@ -276,17 +368,17 @@ export default function AboutPage() {
       <Section size="lg" className="grainient-promise relative overflow-hidden">
         <Container>
           <Reveal>
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center rounded-3xl border border-accent/35 bg-surface-panel/70 p-6 sm:p-8 md:p-10 shadow-panel-lg backdrop-blur">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center rounded-[2rem] border border-accent/35 bg-surface-panel/75 p-6 sm:p-8 md:p-10 shadow-panel-lg backdrop-blur">
               <div className="lg:col-span-8 space-y-5">
-                <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
+                <div className="inline-flex items-center gap-2 rounded-full border border-accent/35 bg-accent-soft px-4 py-2 text-xs uppercase tracking-[0.16em] text-accent font-semibold">
+                  <ShieldCheck className="h-4 w-4" />
                   The Brody Promise
-                </p>
+                </div>
                 <h2 className="font-display text-display-lg font-extrabold tracking-tightest text-fg-strong text-balance leading-[1.05]">
-                  If it is not done right, Brody comes back and fixes it.
+                  The job is not finished until Brody is willing to put his name on it.
                 </h2>
                 <p className="text-base sm:text-lg text-fg/85 max-w-2xl leading-relaxed">
-                  No charge. No questions. That promise is simple because the standard is simple:
-                  the job is not finished until it is something Brody is willing to put his name on.
+                  If it is not done right, he comes back and fixes it. No charge. No questions. That is not fine print. It is the standard.
                 </p>
               </div>
               <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 lg:items-stretch">

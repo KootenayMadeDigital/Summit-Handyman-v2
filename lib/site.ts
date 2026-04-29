@@ -43,7 +43,7 @@ export const site = {
     "If it's not done right, I come back and fix it. No charge. No questions.",
 
   about:
-    "I'm Brody Robertson. I started Summit Handyman to bridge the gap between the 'quick fix' and premium service. In an industry known for ghosting and cutting corners, I bring a property manager's mindset to every job: clear communication, cleanliness, and repairs that last.",
+    "Most people do not need a bigger contractor. They need one reliable person who answers, protects the home, fixes it properly, and leaves nothing loose behind.",
 
   trust: {
     licensed: true,
