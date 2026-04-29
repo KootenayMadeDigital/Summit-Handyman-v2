@@ -30,10 +30,10 @@ export default function HomePage() {
     <>
       <Hero />
       <ServicesSection />
-      <SectionDivider variant="mark" />
+      <SectionDivider variant="measure" />
       <ProjectsSection />
       <BentoSection />
-      <SectionDivider variant="mark" />
+      <SectionDivider variant="ridge" />
       <AreasSection />
       <ReviewsSection />
       <AboutSection />

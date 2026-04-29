@@ -215,6 +215,131 @@ body {
   background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
 }
 
+/* === SECTION ATMOSPHERE SYSTEM === */
+.summit-section-shell {
+  isolation: isolate;
+}
+
+.summit-section-atmosphere {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.summit-section-shell > :not(.summit-section-atmosphere) {
+  position: relative;
+  z-index: 1;
+}
+
+.summit-section-glow,
+.summit-section-pattern,
+.summit-section-edge {
+  pointer-events: none;
+  position: absolute;
+}
+
+.summit-section-glow {
+  width: clamp(16rem, 32vw, 34rem);
+  height: clamp(16rem, 32vw, 34rem);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  filter: blur(72px);
+  opacity: 0.34;
+}
+
+.summit-section-glow-a {
+  left: max(-12rem, -8vw);
+  top: 8%;
+}
+
+.summit-section-glow-b {
+  right: max(-14rem, -10vw);
+  bottom: -12rem;
+  background: color-mix(in srgb, var(--summit-forest) 28%, transparent);
+  opacity: 0.2;
+}
+
+.summit-section-pattern {
+  inset: 0;
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
+  background-position: center;
+}
+
+.summit-section-edge {
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 40%, var(--border-strong)), transparent);
+  opacity: 0.65;
+}
+
+.summit-section-pattern[data-pattern="workbench"],
+.summit-section-pattern[data-pattern="service"] {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--accent) 18%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 12%, transparent) 1px, transparent 1px),
+    radial-gradient(circle at 18% 22%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 28%);
+  background-size: 72px 72px, 72px 72px, 100% 100%;
+}
+
+.summit-section-pattern[data-pattern="panel"],
+.summit-section-pattern[data-pattern="proof"] {
+  opacity: 0.14;
+  background-image:
+    radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--accent) 35%, transparent) 1px, transparent 0),
+    linear-gradient(135deg, transparent 0 48%, color-mix(in srgb, var(--fg) 10%, transparent) 49% 51%, transparent 52% 100%);
+  background-size: 22px 22px, 96px 96px;
+}
+
+.summit-section-pattern[data-pattern="area"] {
+  opacity: 0.24;
+  background-image:
+    repeating-radial-gradient(ellipse at 78% 24%, transparent 0 28px, color-mix(in srgb, var(--accent) 17%, transparent) 29px 30px, transparent 31px 56px),
+    linear-gradient(120deg, transparent 0 42%, color-mix(in srgb, var(--accent) 18%, transparent) 43% 44%, transparent 45% 100%);
+  background-size: 640px 380px, 100% 100%;
+  background-position: right top, center;
+}
+
+.summit-section-pattern[data-pattern="paper"] {
+  opacity: 0.16;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--fg) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 14%, transparent) 1px, transparent 1px),
+    radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 26%);
+  background-size: 100% 2rem, 7rem 100%, 100% 100%;
+}
+
+.summit-section-pattern[data-pattern="cta"] {
+  opacity: 0.28;
+  background-image:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 32%),
+    linear-gradient(135deg, transparent 0 47%, color-mix(in srgb, var(--accent) 18%, transparent) 48% 49%, transparent 50% 100%);
+  background-size: 100% 100%, 96px 96px;
+}
+
+[data-theme="light"] .summit-section-pattern {
+  mix-blend-mode: multiply;
+  opacity: 0.1;
+}
+
+[data-theme="light"] .summit-section-glow {
+  opacity: 0.18;
+}
+
+@media (max-width: 767px) {
+  .summit-section-glow {
+    opacity: 0.22;
+    filter: blur(58px);
+  }
+
+  .summit-section-pattern {
+    opacity: 0.12;
+  }
+}
+
 /* === TYPOGRAPHY UTILITIES === */
 .font-display {
   font-family: "Cabinet Grotesk", ui-sans-serif, system-ui, sans-serif;

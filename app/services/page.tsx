@@ -273,7 +273,7 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <SectionDivider variant="mark" />
+      <SectionDivider variant="measure" />
 
       {/* === FULL SERVICE CATALOG ===
           For each category, a clean header followed by service cards that
@@ -382,7 +382,7 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <SectionDivider variant="mark" />
+      <SectionDivider variant="ridge" />
 
       {/* === PROCESS TIMELINE ===
           Linda needs to see what hiring Brody actually looks like. Mark
@@ -475,7 +475,7 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <SectionDivider variant="mark" />
+      <SectionDivider variant="measure" />
 
       {/* === PROPERTY MANAGER LANE ===
           Mark needs explicit reassurance that Brody understands portfolio
@@ -626,7 +626,7 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <SectionDivider variant="mark" />
+      <SectionDivider variant="ridge" />
 
       {/* === SOCIAL PROOF + WORKMANSHIP PROMISE ===
           Final confidence stack before the close. Single review pull

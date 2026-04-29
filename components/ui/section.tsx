@@ -1,16 +1,42 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
+type SectionAtmosphere = "auto" | "none" | "workbench" | "panel" | "service" | "area" | "proof" | "paper" | "cta";
+
 type SectionProps = React.HTMLAttributes<HTMLElement> & {
   as?: "section" | "div" | "article";
   size?: "sm" | "md" | "lg";
+  atmosphere?: SectionAtmosphere;
 };
+
+function resolveAtmosphere({
+  atmosphere,
+  className,
+  id,
+}: {
+  atmosphere: SectionAtmosphere;
+  className?: string;
+  id?: string;
+}): Exclude<SectionAtmosphere, "auto"> {
+  if (atmosphere !== "auto") return atmosphere;
+
+  const classes = className ?? "";
+  if (classes.includes("grainient-promise")) return "cta";
+  if (id === "areas" || id === "map" || classes.includes("motion-area")) return "area";
+  if (id === "services" || classes.includes("motion-service")) return "service";
+  if (id === "reviews" || classes.includes("motion-review")) return "proof";
+  if (id === "faq" || classes.includes("prose")) return "paper";
+  if (classes.includes("bg-surface-panel")) return "panel";
+
+  return "workbench";
+}
 
 export function Section({
   as: As = "section",
   size = "md",
   className,
   children,
+  atmosphere = "auto",
   ...rest
 }: SectionProps) {
   const sizeMap = {
@@ -19,13 +45,36 @@ export function Section({
     lg: "py-section-lg",
   } as const;
 
+  const atmosphereKind = resolveAtmosphere({
+    atmosphere,
+    className: typeof className === "string" ? className : undefined,
+    id: typeof rest.id === "string" ? rest.id : undefined,
+  });
+
   return (
     <As
-      className={cn("relative w-full", sizeMap[size], className)}
+      className={cn("summit-section-shell relative w-full", sizeMap[size], className)}
+      data-atmosphere={atmosphereKind === "none" ? undefined : atmosphereKind}
       {...rest}
     >
+      {atmosphereKind !== "none" && <SectionAtmosphereLayer kind={atmosphereKind} />}
       {children}
     </As>
+  );
+}
+
+function SectionAtmosphereLayer({
+  kind,
+}: {
+  kind: Exclude<SectionAtmosphere, "auto" | "none">;
+}) {
+  return (
+    <div className="summit-section-atmosphere" aria-hidden="true">
+      <span className="summit-section-glow summit-section-glow-a" />
+      <span className="summit-section-glow summit-section-glow-b" />
+      <span className="summit-section-pattern" data-pattern={kind} />
+      <span className="summit-section-edge" />
+    </div>
   );
 }
 

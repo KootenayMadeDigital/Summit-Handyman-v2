@@ -5,13 +5,15 @@ import { cn } from "@/lib/utils";
  * Variants:
  *  - line: a centered gold-accent line (default)
  *  - dot: a centered gold dot with hairlines
- *  - mark: small Summit "S" peak SVG between two hairlines
+ *  - mark: small Summit peak SVG between two hairlines
+ *  - measure: small measurement ticks for process and service transitions
+ *  - ridge: layered mountain line for major chapter breaks
  */
 export function SectionDivider({
   variant = "line",
   className,
 }: {
-  variant?: "line" | "dot" | "mark";
+  variant?: "line" | "dot" | "mark" | "measure" | "ridge";
   className?: string;
 }) {
   if (variant === "dot") {
@@ -40,6 +42,31 @@ export function SectionDivider({
           <path d="M2 20 L11 6 L17 14 L22 9 L30 20 Z" />
         </svg>
         <span aria-hidden className="h-px flex-1 bg-[var(--border)]" />
+      </div>
+    );
+  }
+  if (variant === "measure") {
+    return (
+      <div className={cn("relative mx-auto flex w-full max-w-5xl items-center px-6", className)} aria-hidden>
+        <span className="h-px flex-1 bg-[linear-gradient(90deg,transparent,var(--border-strong),var(--accent),var(--border-strong),transparent)]" />
+        <span className="mx-4 flex items-end gap-1.5">
+          {[10, 16, 24, 16, 10].map((height, index) => (
+            <span key={index} className="w-px bg-[var(--accent)] opacity-70" style={{ height }} />
+          ))}
+        </span>
+        <span className="h-px flex-1 bg-[linear-gradient(90deg,transparent,var(--border-strong),var(--accent),var(--border-strong),transparent)]" />
+      </div>
+    );
+  }
+  if (variant === "ridge") {
+    return (
+      <div className={cn("relative mx-auto flex w-full max-w-6xl items-center px-6", className)} aria-hidden>
+        <span className="h-px flex-1 bg-[linear-gradient(90deg,transparent,var(--border-strong),var(--accent))]" />
+        <svg viewBox="0 0 160 28" className="mx-5 h-7 w-40 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round">
+          <path opacity="0.55" d="M4 23 L28 10 L44 18 L61 5 L84 23 L102 13 L121 22 L140 9 L156 23" />
+          <path d="M18 24 L39 12 L54 20 L74 7 L98 24 L118 15 L142 24" />
+        </svg>
+        <span className="h-px flex-1 bg-[linear-gradient(90deg,var(--accent),var(--border-strong),transparent)]" />
       </div>
     );
   }
