@@ -66,8 +66,13 @@ export default function TermsPage() {
               licensed trades — that work is governed by their separate contracts.
             </p>
 
-            <h2 className="font-display text-2xl font-bold text-summit-mist mt-10">Governing law</h2>
+            <h2 className="font-display text-2xl font-bold text-fg-strong mt-10">Governing law</h2>
             <p>These terms are governed by the laws of the Province of British Columbia.</p>
+
+            <h2 className="font-display text-2xl font-bold text-fg-strong mt-10">Business identifiers</h2>
+            <p>
+              {site.legalName} · Business # {site.business.number} · GST # {site.business.gst}.
+            </p>
           </div>
         </Container>
       </Section>

@@ -9,6 +9,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { FinalCTA } from "@/components/sections/final-cta";
+import { SectionDivider } from "@/components/ui/section-divider";
 import { guides, getGuide } from "@/lib/guides";
 import { site } from "@/lib/site";
 
@@ -142,7 +143,7 @@ export default async function GuidePage(
                           key={j}
                           className="flex items-start gap-3 text-fg-strong/85 leading-relaxed"
                         >
-                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-summit-gold flex-shrink-0" />
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -153,7 +154,7 @@ export default async function GuidePage(
                   return (
                     <aside
                       key={i}
-                      className="my-10 p-6 md:p-7 rounded-2xl bg-gradient-to-br from-summit-panel via-summit-panel to-summit-gold/5 border border-accent/40"
+                      className="my-10 p-6 md:p-7 rounded-2xl bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] border border-accent/40"
                     >
                       <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-2">
                         {block.title}
@@ -255,6 +256,10 @@ export default async function GuidePage(
           </Container>
         </Section>
       )}
+
+      <SectionDivider variant="mark" />
+
+      <FinalCTA />
     </>
   );
 }

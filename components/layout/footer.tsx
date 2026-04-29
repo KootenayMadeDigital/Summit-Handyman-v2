@@ -127,8 +127,17 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Business numbers strip */}
+        <div className="mt-12 pt-6 border-t border-divider flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2 text-[11px] uppercase tracking-wider text-fg-faint">
+          <span>{site.business.numberDisplay}</span>
+          <span aria-hidden className="text-fg-faint/50">·</span>
+          <span>{site.business.gstDisplay}</span>
+          <span aria-hidden className="text-fg-faint/50">·</span>
+          <span>Licensed & Insured</span>
+        </div>
+
         {/* Bottom bar */}
-        <div className="mt-14 pt-8 border-t border-divider flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
+        <div className="mt-6 pt-6 border-t border-divider flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
           <p className="text-xs text-fg-muted">
             © {year} {site.legalName}. All rights reserved.
           </p>

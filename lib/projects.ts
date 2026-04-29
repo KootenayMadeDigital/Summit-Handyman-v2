@@ -11,97 +11,110 @@ export type Project = {
   galleryImages?: string[];
   duration: string;
   date: string;
+  /** True when the photo + caption pair is a curated representative sample, not a job-specific case study. */
+  isSample?: boolean;
 };
 
 /**
- * Recent Summits — projects pulled from V1 photo set.
- * Each entry pairs the same image as before/after for now since V1 only shipped single
- * images per project; replace beforeImage with a real "before" shot when Brody supplies one.
+ * Recent Summits — sample project cards.
+ *
+ * Until Brody supplies job-specific photo + caption pairs, these tiles are
+ * intentionally generic: a photo from his V1 portfolio, paired with the
+ * service category and city, with no fabricated job-specific story.
+ *
+ * The detail page surfaces an honest "sample" disclosure so visitors aren't
+ * misled about specifics that haven't been verified.
  */
 export const projects: Project[] = [
   {
-    slug: "langley-drywall-skim",
-    title: "Smooth-Finish Skim Coat",
-    category: "drywall",
-    serviceSlug: "drywall-repair",
+    slug: "langley-interior-sample",
+    title: "Interior Repair · Langley",
+    category: "interior",
+    serviceSlug: "general-repairs",
     area: "Langley",
-    shortStory: "Textured ceiling skimmed flat, taped, sanded, and ready for paint.",
+    shortStory: "Interior repair work — sample from Brody's portfolio.",
     longStory:
-      "Stipple ceiling that the homeowner had hated for a decade. Three skim coats, sanded between each, primed, and finished. The room reads taller and the light bounces clean.",
+      "A representative interior repair completed in Langley. Real captions and full project details will be added as Brody documents new jobs.",
     beforeImage: "/images/project-1.webp",
     afterImage: "/images/project-1.webp",
-    duration: "2 days",
+    duration: "Same day",
     date: "2026-01",
+    isSample: true,
   },
   {
-    slug: "surrey-faucet-vanity-swap",
-    title: "Vanity & Faucet Refresh",
+    slug: "surrey-fixture-sample",
+    title: "Fixture & Hardware · Surrey",
     category: "interior",
     serviceSlug: "general-repairs",
     area: "Surrey",
-    shortStory: "New vanity dropped in, faucet swapped, drain reseated.",
+    shortStory: "Fixture and hardware update — sample from Brody's portfolio.",
     longStory:
-      "Tenant turnover for a Surrey property manager. Old vanity out, new one set level, faucet cartridge install, drain reseated and tested. Quick turnaround so the unit could re-list.",
+      "Sample fixture and hardware work completed in Surrey. Real job-specific details will be added as Brody documents new visits.",
     beforeImage: "/images/project-2.webp",
     afterImage: "/images/project-2.webp",
     duration: "Half day",
     date: "2026-01",
+    isSample: true,
   },
   {
-    slug: "white-rock-tile-backsplash",
-    title: "Kitchen Backsplash Tile",
+    slug: "white-rock-tile-sample",
+    title: "Tile Work · White Rock",
     category: "tile",
     serviceSlug: "tile-flooring",
     area: "White Rock",
-    shortStory: "Subway tile install, grout and seal finish.",
+    shortStory: "Tile installation — sample from Brody's portfolio.",
     longStory:
-      "Subway tile backsplash, full kitchen run with outlet cuts and a window return. Grouted, sealed, caulked at the counter line. Clean lines, no buildup.",
+      "A representative tile job completed in White Rock. Real captions and full project details will be added as Brody documents new work.",
     beforeImage: "/images/project-3.webp",
     afterImage: "/images/project-3.webp",
-    duration: "1.5 days",
+    duration: "1–2 days",
     date: "2026-01",
+    isSample: true,
   },
   {
-    slug: "abbotsford-deck-refinish",
-    title: "Deck Refinish",
+    slug: "abbotsford-exterior-sample",
+    title: "Exterior Work · Abbotsford",
     category: "exterior-deck",
     serviceSlug: "fence-deck",
     area: "Abbotsford",
-    shortStory: "Deck washed, sanded, sealed, and re-stained.",
+    shortStory: "Exterior maintenance — sample from Brody's portfolio.",
     longStory:
-      "Pressure washed, sanded the worst boards, two coats of premium semi-transparent stain. Ready for another five years of BC weather.",
+      "Representative exterior maintenance completed in Abbotsford. Real captions and full project details will be added as Brody documents new jobs.",
     beforeImage: "/images/project-4.webp",
     afterImage: "/images/project-4.webp",
     duration: "1 day",
     date: "2026-01",
+    isSample: true,
   },
   {
-    slug: "cloverdale-interior-paint",
-    title: "Living Room Repaint",
+    slug: "cloverdale-paint-sample",
+    title: "Painting · Cloverdale",
     category: "painting",
     serviceSlug: "painting",
     area: "Cloverdale",
-    shortStory: "Walls, trim, and ceiling — full repaint with premium paint.",
+    shortStory: "Painting work — sample from Brody's portfolio.",
     longStory:
-      "Full living room repaint. Caulked baseboards, filled nail holes, primed where needed, two coats of Benjamin Moore Regal. Trim cut clean, no roller halo on the ceiling.",
+      "A representative painting job completed in Cloverdale. Real captions and full project details will be added as Brody documents new work.",
     beforeImage: "/images/project-5.webp",
     afterImage: "/images/project-5.webp",
-    duration: "2 days",
+    duration: "1–2 days",
     date: "2026-01",
+    isSample: true,
   },
   {
-    slug: "langley-tv-mount",
-    title: "Heavy TV Mount + Cable Hide",
+    slug: "langley-mounting-sample",
+    title: "Mounting & Assembly · Langley",
     category: "interior",
     serviceSlug: "assembly-mounting",
     area: "Langley",
-    shortStory: "75\" TV mounted, in-wall cable run, no visible cords.",
+    shortStory: "Mounting and assembly — sample from Brody's portfolio.",
     longStory:
-      "75-inch TV anchored into studs, articulating mount, in-wall cable kit so HDMI and power run behind the drywall. No exposed cords, no surface raceway.",
+      "Representative mounting and assembly work completed in Langley. Real captions and full project details will be added as Brody documents new jobs.",
     beforeImage: "/images/project-6.webp",
     afterImage: "/images/project-6.webp",
     duration: "Half day",
     date: "2026-01",
+    isSample: true,
   },
 ];
 

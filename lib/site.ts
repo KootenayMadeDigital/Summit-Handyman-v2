@@ -53,6 +53,13 @@ export const site = {
     reviewCount: null as number | null, // populated from Trustindex API at runtime
   },
 
+  business: {
+    number: "79853 7957",
+    numberDisplay: "Business # 79853 7957",
+    gst: "79853 7957 RT0001",
+    gstDisplay: "GST # 79853 7957 RT0001",
+  },
+
   social: {
     facebook: { handle: "brodythehandyman", url: "https://facebook.com/brodythehandyman" },
     instagram: { handle: "brodythehandyman", url: "https://instagram.com/brodythehandyman" },

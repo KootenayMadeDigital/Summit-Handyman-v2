@@ -11,7 +11,6 @@ import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 const nav = [
   { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
   { label: "Areas", href: "/areas" },
   { label: "Reviews", href: "/reviews" },
   { label: "About", href: "/about" },
@@ -47,28 +46,29 @@ export function Header() {
         )}
       >
         <div className="mx-auto max-w-[88rem] px-4 sm:px-6 lg:px-12">
-          <div className="flex h-16 md:h-20 items-center justify-between gap-3 sm:gap-6 min-w-0">
+          <div className="flex h-20 md:h-24 items-center justify-between gap-3 sm:gap-6 min-w-0">
             <Link
               href="/"
-              className="flex items-center gap-2 sm:gap-3 group min-w-0"
+              className="flex items-center gap-3 sm:gap-4 group min-w-0"
               aria-label="Summit Handyman home"
             >
               <Image
                 src="/images/logo.webp"
                 alt=""
-                width={40}
-                height={40}
+                width={64}
+                height={64}
                 priority
-                className="rounded-md flex-shrink-0 h-9 w-9 sm:h-10 sm:w-10"
+                className="rounded-md flex-shrink-0 h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16"
               />
-              <span className="font-display text-base sm:text-lg font-bold tracking-tight text-fg-strong truncate">
-                Summit
+              <span className="font-display text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight text-fg-strong leading-none truncate">
+                Summit{" "}
+                <span className="hidden sm:inline">Handyman</span>
                 <span className="text-accent">.</span>
               </span>
             </Link>
 
             <nav
-              className="hidden lg:flex items-center gap-7 text-sm font-medium"
+              className="hidden lg:flex items-center gap-6 xl:gap-8 text-[15px] font-medium"
               aria-label="Primary"
             >
               {nav.map((item) => (

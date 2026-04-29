@@ -6,6 +6,7 @@ import { Container, Section } from "@/components/ui/section";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { ServiceIcon } from "@/components/ui/service-icon";
 import { FinalCTA } from "@/components/sections/final-cta";
+import { SectionDivider } from "@/components/ui/section-divider";
 import { services, serviceCategories, type ServiceCategory } from "@/lib/services";
 import { cn } from "@/lib/utils";
 
@@ -35,7 +36,7 @@ export default function ServicesPage() {
         description="From a leaky faucet to a deck refinish, every service below is handled by Brody himself — never subbed out. $150 minimum per job, no hourly games."
       />
 
-      <Section size="lg">
+      <Section size="lg" className="bg-surface">
         <Container>
           <div className="space-y-20">
             {order.map((cat) => {
@@ -73,7 +74,7 @@ export default function ServicesPage() {
                           )}
                         >
                           <div className="flex items-start justify-between gap-4">
-                            <div className="h-12 w-12 rounded-xl bg-summit-gold/10 border border-accent/20 flex items-center justify-center group-hover:bg-summit-gold/20 transition-colors">
+                            <div className="h-12 w-12 rounded-xl bg-accent-soft border border-accent/20 flex items-center justify-center group-hover:bg-accent-soft transition-colors">
                               <ServiceIcon name={s.icon} className="h-6 w-6" />
                             </div>
                             <ArrowUpRight className="h-5 w-5 text-fg-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
@@ -94,6 +95,8 @@ export default function ServicesPage() {
           </div>
         </Container>
       </Section>
+
+      <SectionDivider variant="mark" />
 
       <FinalCTA />
     </>

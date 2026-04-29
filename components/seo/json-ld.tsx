@@ -17,6 +17,8 @@ export function JsonLd() {
         telephone: site.contact.phone,
         email: site.contact.email,
         priceRange: "$$",
+        taxID: site.business.gst,
+        identifier: site.business.number,
         founder: { "@type": "Person", name: site.owner },
         address: {
           "@type": "PostalAddress",

@@ -9,7 +9,8 @@ import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { ServiceIcon } from "@/components/ui/service-icon";
-import { BeforeAfterSlider } from "@/components/ui/before-after-slider";
+import { ProjectCard } from "@/components/ui/project-card";
+import { SectionDivider } from "@/components/ui/section-divider";
 import { FinalCTA } from "@/components/sections/final-cta";
 import { services, getService } from "@/lib/services";
 import { projects } from "@/lib/projects";
@@ -83,7 +84,7 @@ export default async function ServicePage(
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <div className="lg:sticky lg:top-32">
-                <div className="h-14 w-14 rounded-xl bg-summit-gold/10 border border-accent/40 flex items-center justify-center mb-6">
+                <div className="h-14 w-14 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center mb-6">
                   <ServiceIcon name={service.icon} className="h-7 w-7" />
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-fg-strong mb-5 text-balance">
@@ -106,7 +107,7 @@ export default async function ServicePage(
                     key={item}
                     className="flex items-start gap-4 p-5 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent/50 transition-colors"
                   >
-                    <span className="mt-0.5 h-6 w-6 rounded-full bg-summit-gold/15 border border-accent/40 flex items-center justify-center flex-shrink-0">
+                    <span className="mt-0.5 h-6 w-6 rounded-full bg-accent-soft border border-accent/40 flex items-center justify-center flex-shrink-0">
                       <Check className="h-3.5 w-3.5 text-accent" strokeWidth={3} />
                     </span>
                     <span className="text-fg-strong leading-snug">{item}</span>
@@ -150,7 +151,7 @@ export default async function ServicePage(
 
       {/* Related projects */}
       {relevantProjects.length > 0 && (
-        <Section size="lg">
+        <Section size="lg" className="bg-surface">
           <Container>
             <SectionTitle
               eyebrow="Recent work"
@@ -164,23 +165,7 @@ export default async function ServicePage(
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relevantProjects.slice(0, 3).map((p) => (
                 <Reveal key={p.slug}>
-                  <article>
-                    <BeforeAfterSlider
-                      beforeSrc={p.beforeImage}
-                      afterSrc={p.afterImage}
-                      beforeAlt={`${p.title} before`}
-                      afterAlt={`${p.title} after`}
-                      className="aspect-[4/3]"
-                    />
-                    <Link href={`/projects/${p.slug}`} className="mt-4 block group">
-                      <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
-                        {p.area} · {p.duration}
-                      </p>
-                      <h3 className="mt-1 font-display text-lg font-bold text-fg-strong group-hover:text-accent transition-colors">
-                        {p.title}
-                      </h3>
-                    </Link>
-                  </article>
+                  <ProjectCard project={p} />
                 </Reveal>
               ))}
             </div>
@@ -216,6 +201,8 @@ export default async function ServicePage(
           </Container>
         </Section>
       )}
+
+      <SectionDivider variant="mark" />
 
       <FinalCTA />
     </>

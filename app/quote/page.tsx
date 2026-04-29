@@ -6,7 +6,7 @@ import { Container, Section } from "@/components/ui/section";
 export const metadata: Metadata = {
   title: "Get a Free Quote",
   description:
-    "Tell Brody about your project. Most quotes back within 24 hours via email. Photo upload supported.",
+    "Tell Brody about your project. Hit send to open a pre-filled email — most quotes returned within 24 hours.",
   alternates: { canonical: "/quote" },
 };
 
@@ -24,7 +24,7 @@ export default function QuotePage() {
             </span>
           </>
         }
-        description="Tell Brody what you need. Photos help. He'll email you back with a clear, written estimate — usually same-day."
+        description="Tell Brody what you need. Hit send to open a pre-filled email — he'll reply with a written estimate within 24 hours."
       />
 
       <Section size="lg" className="-mt-10">

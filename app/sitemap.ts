@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 import { areas } from "@/lib/areas";
-import { projects } from "@/lib/projects";
 import { guides } from "@/lib/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -13,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/services",
     "/areas",
-    "/projects",
     "/about",
     "/contact",
     "/quote",
@@ -42,13 +40,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const projectRoutes = projects.map((p) => ({
-    url: `${base}/projects/${p.slug}`,
-    lastModified: new Date(p.date + "-01"),
-    changeFrequency: "yearly" as const,
-    priority: 0.5,
-  }));
-
   const guideRoutes = guides.map((g) => ({
     url: `${base}/cost-guides/${g.slug}`,
     lastModified: new Date(g.date),
@@ -56,5 +47,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...areaRoutes, ...projectRoutes, ...guideRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...areaRoutes, ...guideRoutes];
 }

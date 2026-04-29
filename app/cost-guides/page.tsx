@@ -6,6 +6,7 @@ import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section } from "@/components/ui/section";
 import { RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { FinalCTA } from "@/components/sections/final-cta";
+import { SectionDivider } from "@/components/ui/section-divider";
 import { guides } from "@/lib/guides";
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export default function CostGuidesPage() {
         description="Practical guidance from a working handyman — what jobs really cost, how to spot when a quote is too low, and which repairs save thousands later."
       />
 
-      <Section size="lg">
+      <Section size="lg" className="bg-surface">
         <Container>
           <RevealStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {guides.map((g) => (
@@ -80,6 +81,8 @@ export default function CostGuidesPage() {
           </RevealStagger>
         </Container>
       </Section>
+
+      <SectionDivider variant="mark" />
 
       <FinalCTA />
     </>

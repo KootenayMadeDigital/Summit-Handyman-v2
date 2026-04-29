@@ -4,6 +4,7 @@ import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section } from "@/components/ui/section";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { FinalCTA } from "@/components/sections/final-cta";
+import { SectionDivider } from "@/components/ui/section-divider";
 import { placeholderReviews, aggregateRating } from "@/lib/reviews";
 
 export const metadata: Metadata = {
@@ -49,14 +50,14 @@ export default function ReviewsPage() {
         </div>
       </PageHero>
 
-      <Section size="lg">
+      <Section size="lg" className="bg-surface">
         <Container>
           <Reveal>
-            <div className="rounded-2xl bg-gradient-to-br from-summit-panel via-summit-panel to-summit-gold/10 border border-accent/40 p-6 sm:p-8 md:p-10 mb-12 flex flex-col md:flex-row items-start gap-6 md:gap-10 justify-between">
+            <div className="rounded-2xl bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_12%,var(--bg-panel))] border border-accent/40 p-6 sm:p-8 md:p-10 mb-12 flex flex-col md:flex-row items-start gap-6 md:gap-10 justify-between">
               <div className="min-w-0">
                 <div className="flex items-center gap-1.5 text-accent mb-2">
                   {[0, 1, 2, 3, 4].map((i) => (
-                    <Star key={i} className="h-5 w-5 sm:h-6 sm:w-6 fill-summit-gold" strokeWidth={0} />
+                    <Star key={i} className="h-5 w-5 sm:h-6 sm:w-6 fill-current" strokeWidth={0} />
                   ))}
                 </div>
                 <p className="font-display text-4xl sm:text-5xl font-extrabold text-fg-strong leading-none">
@@ -81,7 +82,7 @@ export default function ReviewsPage() {
                     {[0, 1, 2, 3, 4].map((i) => (
                       <Star
                         key={i}
-                        className={i < r.rating ? "h-4 w-4 fill-summit-gold" : "h-4 w-4 opacity-20"}
+                        className={i < r.rating ? "h-4 w-4 fill-current" : "h-4 w-4 opacity-20"}
                         strokeWidth={0}
                       />
                     ))}
@@ -107,6 +108,8 @@ export default function ReviewsPage() {
           </RevealStagger>
         </Container>
       </Section>
+
+      <SectionDivider variant="mark" />
 
       <FinalCTA />
     </>

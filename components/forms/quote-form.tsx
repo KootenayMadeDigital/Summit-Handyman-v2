@@ -144,7 +144,7 @@ export function QuoteForm() {
   if (submitted) {
     return (
       <div className="rounded-2xl bg-surface-panel border border-accent/40 p-8 md:p-14 text-center shadow-gold-lg">
-        <div className="mx-auto h-16 w-16 rounded-full bg-summit-gold/15 border border-accent/50 flex items-center justify-center mb-6">
+        <div className="mx-auto h-16 w-16 rounded-full bg-accent-soft border border-accent/50 flex items-center justify-center mb-6">
           <Check className="h-8 w-8 text-accent" strokeWidth={2.5} />
         </div>
         <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-fg-strong mb-4 text-balance">
@@ -201,9 +201,9 @@ export function QuoteForm() {
               className={cn(
                 "flex-shrink-0 h-8 w-8 rounded-full grid place-items-center text-xs font-bold transition-colors",
                 i < step
-                  ? "bg-summit-gold text-summit-black"
+                  ? "bg-accent text-summit-black"
                   : i === step
-                    ? "bg-summit-gold/20 border border-accent text-accent"
+                    ? "bg-accent-soft border border-accent text-accent"
                     : "bg-surface-elevated/80 border border-divider-strong text-fg-muted",
               )}
             >
@@ -221,7 +221,7 @@ export function QuoteForm() {
               <div
                 className={cn(
                   "flex-1 h-px transition-colors min-w-[8px]",
-                  i < step ? "bg-summit-gold" : "bg-summit-slate",
+                  i < step ? "bg-accent" : "bg-summit-slate",
                 )}
               />
             )}
@@ -248,7 +248,7 @@ export function QuoteForm() {
                   className={cn(
                     "p-3 sm:p-4 rounded-xl border text-left transition-all duration-200 min-w-0",
                     state.service === s.slug
-                      ? "border-accent bg-summit-gold/10 text-fg-strong"
+                      ? "border-accent bg-accent-soft text-fg-strong"
                       : "border-divider-strong bg-surface-elevated/60 text-fg-strong/85 hover:border-accent/50 hover:bg-surface-elevated",
                   )}
                 >
@@ -266,7 +266,7 @@ export function QuoteForm() {
                 className={cn(
                   "p-3 sm:p-4 rounded-xl border text-left transition-all duration-200",
                   state.service === "other"
-                    ? "border-accent bg-summit-gold/10 text-fg-strong"
+                    ? "border-accent bg-accent-soft text-fg-strong"
                     : "border-divider-strong bg-surface-elevated/60 text-fg-strong/85 hover:border-accent/50 hover:bg-surface-elevated",
                 )}
               >
@@ -298,7 +298,7 @@ export function QuoteForm() {
                     className={cn(
                       "p-3 sm:p-4 rounded-xl border text-left transition-all min-w-0",
                       state.timing === t.value
-                        ? "border-accent bg-summit-gold/10"
+                        ? "border-accent bg-accent-soft"
                         : "border-divider-strong bg-surface-elevated/60 hover:border-accent/50",
                     )}
                   >
@@ -327,7 +327,7 @@ export function QuoteForm() {
                     className={cn(
                       "p-2.5 sm:p-3 rounded-xl border text-sm font-semibold transition-all min-w-0 truncate",
                       state.area === a.slug
-                        ? "border-accent bg-summit-gold/10 text-fg-strong"
+                        ? "border-accent bg-accent-soft text-fg-strong"
                         : "border-divider-strong bg-surface-elevated/60 text-fg-strong/85 hover:border-accent/50",
                     )}
                   >
@@ -431,7 +431,7 @@ export function QuoteForm() {
                     className={cn(
                       "py-2.5 px-2 sm:px-3 rounded-xl border text-xs sm:text-sm font-semibold capitalize transition-all min-w-0 truncate",
                       state.preferredContact === p
-                        ? "border-accent bg-summit-gold/10 text-fg-strong"
+                        ? "border-accent bg-accent-soft text-fg-strong"
                         : "border-divider-strong bg-surface-elevated/60 text-fg-strong/85 hover:border-accent/50",
                     )}
                   >

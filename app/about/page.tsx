@@ -5,6 +5,7 @@ import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section, SectionTitle } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { FinalCTA } from "@/components/sections/final-cta";
+import { SectionDivider } from "@/components/ui/section-divider";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -50,7 +51,7 @@ export default function AboutPage() {
         description="The why behind Summit Handyman, in Brody's words."
       />
 
-      <Section size="lg">
+      <Section size="lg" className="bg-surface">
         <Container>
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <Reveal className="lg:col-span-5">
@@ -160,6 +161,8 @@ export default function AboutPage() {
           </div>
         </Container>
       </Section>
+
+      <SectionDivider variant="mark" />
 
       <FinalCTA />
     </>

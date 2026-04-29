@@ -8,7 +8,8 @@ import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { ServiceIcon } from "@/components/ui/service-icon";
-import { BeforeAfterSlider } from "@/components/ui/before-after-slider";
+import { ProjectCard } from "@/components/ui/project-card";
+import { SectionDivider } from "@/components/ui/section-divider";
 import { FinalCTA } from "@/components/sections/final-cta";
 import { areas, getArea } from "@/lib/areas";
 import { services } from "@/lib/services";
@@ -187,23 +188,7 @@ export default async function AreaPage(
             <RevealStagger className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {localProjects.slice(0, 6).map((p) => (
                 <RevealItem key={p.slug}>
-                  <article>
-                    <BeforeAfterSlider
-                      beforeSrc={p.beforeImage}
-                      afterSrc={p.afterImage}
-                      beforeAlt={`${p.title} before`}
-                      afterAlt={`${p.title} after`}
-                      className="aspect-[4/3]"
-                    />
-                    <Link href={`/projects/${p.slug}`} className="mt-4 block group">
-                      <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
-                        {p.area} · {p.duration}
-                      </p>
-                      <h3 className="mt-1 font-display text-lg font-bold text-fg-strong group-hover:text-accent transition-colors">
-                        {p.title}
-                      </h3>
-                    </Link>
-                  </article>
+                  <ProjectCard project={p} />
                 </RevealItem>
               ))}
             </RevealStagger>
@@ -263,6 +248,8 @@ export default async function AreaPage(
           </div>
         </Container>
       </Section>
+
+      <SectionDivider variant="mark" />
 
       <FinalCTA />
     </>

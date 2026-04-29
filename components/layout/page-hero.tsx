@@ -25,7 +25,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "grainient-promise relative isolate overflow-hidden pt-28 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-24",
+        "grainient-promise relative isolate overflow-hidden pt-32 sm:pt-36 md:pt-44 pb-12 sm:pb-16 md:pb-24",
         className,
       )}
     >

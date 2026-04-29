@@ -20,7 +20,7 @@ export function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="grainient-hero relative isolate overflow-hidden pt-24 sm:pt-28 md:pt-36 pb-16 sm:pb-20 md:pb-28 min-h-[92vh] flex items-center">
+    <section className="grainient-hero relative isolate overflow-hidden pt-28 sm:pt-32 md:pt-40 pb-16 sm:pb-20 md:pb-28 min-h-[92vh] flex items-center">
       <div className="absolute inset-0 -z-10">
         <picture>
           <source srcSet="/images/hero-desktop.webp" media="(min-width: 768px)" />
