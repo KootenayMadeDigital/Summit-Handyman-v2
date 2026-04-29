@@ -22,7 +22,7 @@ export function MobileStickyBar() {
           aria-label="Submit a quote request"
         >
           <FileText className="h-4 w-4" />
-          Submit a Quote
+          Get a Quote
         </Link>
         <a
           href={`mailto:${site.contact.email}`}

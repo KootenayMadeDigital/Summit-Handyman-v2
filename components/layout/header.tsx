@@ -94,7 +94,7 @@ export function Header() {
               </a>
               <ThemeToggle />
               <Button href="/quote" size="sm" className="hidden sm:inline-flex">
-                Submit a Quote
+                Get a Quote
               </Button>
               <button
                 type="button"

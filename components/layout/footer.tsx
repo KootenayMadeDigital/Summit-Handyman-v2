@@ -83,7 +83,7 @@ export function Footer() {
               className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-accent text-white font-semibold text-sm hover:bg-accent-hot transition-colors w-fit"
             >
               <FileText className="h-4 w-4" />
-              Submit a Quote
+              Get a Quote
             </Link>
             <p className="text-xs text-fg-muted -mt-1">
               The fastest way to a written estimate.

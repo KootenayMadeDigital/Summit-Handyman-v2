@@ -14,7 +14,7 @@ export default function QuotePage() {
   return (
     <>
       <PageHero
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Submit a Quote" }]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Get a Quote" }]}
         eyebrow="Recommended way to reach Brody"
         title={
           <>
