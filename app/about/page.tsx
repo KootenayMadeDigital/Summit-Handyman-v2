@@ -185,7 +185,7 @@ export default function AboutPage() {
                 <div className="mt-7 space-y-5 text-fg-strong/85 leading-relaxed text-base sm:text-lg">
                   <p>
                     Summit Handyman is owner-operated by design. When you email or text, you reach
-                    Brody directly — not a dispatcher, not a call centre, and not a service manager
+                    Brody directly: not a dispatcher, not a call centre, and not a service manager
                     handing the work to whoever is available.
                   </p>
                   <p>

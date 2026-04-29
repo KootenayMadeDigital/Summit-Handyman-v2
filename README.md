@@ -1,6 +1,6 @@
 # Summit Handyman V2
 
-Premium handyman services website for Summit Handyman — owner Brody Robertson, serving Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale, BC.
+Premium handyman services website for Summit Handyman: owner Brody Robertson, serving Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale, BC.
 
 V2 rebuild of [summit-handyman.ca](https://summit-handyman.ca/), built by [Kootenay Made Digital](https://kootenaymade.ca).
 
@@ -9,7 +9,7 @@ V2 rebuild of [summit-handyman.ca](https://summit-handyman.ca/), built by [Koote
 - **Framework:** Next.js 15 (App Router) + TypeScript
 - **Styling:** Tailwind CSS v4
 - **Hosting:** Vercel
-- **Fonts:** Inter + (display TBD — Fraunces / Editorial New candidate)
+- **Fonts:** Inter + (display TBD: Fraunces / Editorial New candidate)
 - **Icons:** Lucide React
 
 ## Local Development

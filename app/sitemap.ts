@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  // Service x area combo pages — top SEO priority for "[service] in [city]" intent.
+  // Service x area combo pages: top SEO priority for "[service] in [city]" intent.
   const comboRoutes = services.flatMap((s) =>
     areas.map((a) => ({
       url: `${base}/services/${s.slug}/in/${a.slug}`,

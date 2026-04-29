@@ -204,7 +204,7 @@ export default async function AreaPage(
       </Section>
 
       {/* Local projects */}
-      {/* About this city — long-form rich content for SEO */}
+      {/* About this city: long-form rich content for SEO */}
       <Section size="lg" className="bg-surface">
         <Container size="narrow">
           <SectionTitle

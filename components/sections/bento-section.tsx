@@ -56,7 +56,7 @@ export function BentoSection() {
                 "{site.promise}"
               </p>
               <p className="mt-3 sm:mt-4 text-sm text-summit-mist/70">
-                — {site.owner}, founder
+                {site.owner}, founder
               </p>
             </div>
           </RevealItem>

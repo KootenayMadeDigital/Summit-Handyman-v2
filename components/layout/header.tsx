@@ -128,7 +128,7 @@ export function Header() {
             open ? "translate-x-0" : "translate-x-full",
           )}
         >
-          {/* Theme toggle row — moved here from the main header bar so the
+          {/* Theme toggle row: moved here from the main header bar so the
               brand wordmark has space at small viewports. */}
           <div className="flex items-center justify-between gap-3 mb-6 pb-5 border-b border-divider">
             <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">

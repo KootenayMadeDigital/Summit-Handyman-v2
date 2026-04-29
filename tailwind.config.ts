@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Summit brand palette — sourced verbatim from summit-handyman.ca V1
+        // Summit brand palette: sourced verbatim from summit-handyman.ca V1
         summit: {
           black: "#0F1115",      // V1 --summit-dark
           panel: "#181B21",      // V1 --summit-panel
@@ -22,7 +22,7 @@ const config: Config = {
           gold: "#D97706",       // V1 --summit-gold (amber-600)
           "gold-hot": "#F59E0B", // amber-500
           "gold-deep": "#B45309",// V1 --summit-gold-hover
-          "gold-soft": "#FCD34D",// amber-300 — for light-mode accents
+          "gold-soft": "#FCD34D",// amber-300: for light-mode accents
           forest: "#1F3A2E",
         },
       },
