@@ -53,7 +53,7 @@ export function ReviewsSection() {
                 in the Lower Mainland.
               </>
             }
-            description={`${data.aggregate.rating.toFixed(1)} stars across ${data.aggregate.reviewCount}+ verified reviews. ${isLive ? "Pulled live from Trustindex" : "Pulled from Google and Trustindex"} — no cherry-picking.`}
+            description={`${data.aggregate.rating.toFixed(1)} stars on Google. ${isLive ? "Pulled live from Trustindex" : "Read more on Google or Trustindex"} — no cherry-picking.`}
           />
           <Reveal>
             <div className="flex flex-col gap-3">
@@ -84,7 +84,7 @@ export function ReviewsSection() {
         <RevealStagger className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {featured.map((r) => (
             <RevealItem key={r.author + r.date}>
-              <article className="h-full p-7 rounded-2xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 transition-colors duration-300 flex flex-col">
+              <article className="h-full p-5 sm:p-6 md:p-7 rounded-2xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 transition-colors duration-300 flex flex-col min-w-0">
                 <div
                   className="flex items-center gap-1 text-summit-gold mb-4"
                   aria-label={`${r.rating} out of 5 stars`}
@@ -98,17 +98,18 @@ export function ReviewsSection() {
                     />
                   ))}
                 </div>
-                <p className="text-summit-mist leading-relaxed font-serif text-lg flex-1 text-pretty">
+                <p className="text-summit-mist leading-relaxed font-serif text-base sm:text-lg flex-1 text-pretty">
                   "{r.body}"
                 </p>
-                <div className="mt-6 pt-5 border-t border-summit-slate/40 flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-summit-mist text-sm">{r.author}</p>
-                    <p className="text-xs text-summit-stone">
-                      {r.city} · {r.service ?? "Verified review"}
+                <div className="mt-6 pt-5 border-t border-summit-slate/40 flex items-center justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <p className="font-semibold text-summit-mist text-sm truncate">{r.author}</p>
+                    <p className="text-xs text-summit-stone truncate">
+                      {r.city}
+                      {r.service ? ` · ${r.service}` : ""}
                     </p>
                   </div>
-                  <span className="text-[10px] uppercase tracking-wider font-semibold text-summit-stone/60">
+                  <span className="text-[10px] uppercase tracking-wider font-semibold text-summit-stone/60 flex-shrink-0">
                     {r.source}
                   </span>
                 </div>

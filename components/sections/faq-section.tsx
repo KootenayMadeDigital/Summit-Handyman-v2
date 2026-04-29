@@ -38,9 +38,9 @@ export function FAQSection() {
                     onClick={() => setOpen(isOpen ? null : i)}
                     aria-expanded={isOpen}
                     aria-controls={`faq-${i}`}
-                    className="w-full text-left py-6 flex items-center justify-between gap-6 group"
+                    className="w-full text-left py-5 sm:py-6 flex items-center justify-between gap-4 sm:gap-6 group"
                   >
-                    <span className="font-display text-lg md:text-xl font-bold text-summit-mist group-hover:text-summit-gold transition-colors">
+                    <span className="font-display text-base sm:text-lg md:text-xl font-bold text-summit-mist group-hover:text-summit-gold transition-colors text-balance min-w-0 flex-1">
                       {f.q}
                     </span>
                     <span

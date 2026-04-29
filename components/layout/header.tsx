@@ -46,11 +46,11 @@ export function Header() {
             : "bg-transparent border-b border-transparent",
         )}
       >
-        <div className="mx-auto max-w-[88rem] px-6 sm:px-8 lg:px-12">
-          <div className="flex h-16 md:h-20 items-center justify-between gap-6">
+        <div className="mx-auto max-w-[88rem] px-4 sm:px-6 lg:px-12">
+          <div className="flex h-16 md:h-20 items-center justify-between gap-3 sm:gap-6 min-w-0">
             <Link
               href="/"
-              className="flex items-center gap-3 group"
+              className="flex items-center gap-2 sm:gap-3 group min-w-0"
               aria-label="Summit Handyman home"
             >
               <Image
@@ -59,9 +59,9 @@ export function Header() {
                 width={40}
                 height={40}
                 priority
-                className="rounded-md"
+                className="rounded-md flex-shrink-0 h-9 w-9 sm:h-10 sm:w-10"
               />
-              <span className="font-display text-lg font-bold tracking-tight text-summit-mist">
+              <span className="font-display text-base sm:text-lg font-bold tracking-tight text-summit-mist truncate">
                 Summit
                 <span className="text-summit-gold">.</span>
               </span>
@@ -82,15 +82,15 @@ export function Header() {
               ))}
             </nav>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
               <a
                 href={`mailto:${site.contact.email}`}
-                className="hidden md:inline-flex items-center gap-2 text-sm text-summit-mist/80 hover:text-summit-gold transition-colors"
+                className="hidden lg:inline-flex items-center gap-2 text-sm text-summit-mist/80 hover:text-summit-gold transition-colors"
                 aria-label={`Email Brody at ${site.contact.email}`}
               >
                 <Mail className="h-4 w-4" />
-                <span className="hidden xl:inline">{site.contact.email}</span>
-                <span className="xl:hidden">Email</span>
+                <span className="hidden 2xl:inline">{site.contact.email}</span>
+                <span className="2xl:hidden">Email</span>
               </a>
               <ThemeToggle />
               <Button href="/quote" size="sm" className="hidden sm:inline-flex">

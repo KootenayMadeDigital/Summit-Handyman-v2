@@ -93,8 +93,8 @@ export default async function ProjectPage(
 
             <Reveal className="lg:col-span-5" delay={0.1}>
               <dl className="rounded-2xl bg-summit-panel border border-summit-slate/60 divide-y divide-summit-slate/40">
-                <div className="flex items-center justify-between p-5">
-                  <dt className="flex items-center gap-2 text-sm text-summit-stone">
+                <div className="flex items-center justify-between gap-3 p-5">
+                  <dt className="flex items-center gap-2 text-sm text-summit-stone flex-shrink-0">
                     <MapPin className="h-4 w-4 text-summit-gold" />
                     Location
                   </dt>
@@ -107,15 +107,15 @@ export default async function ProjectPage(
                     </Link>
                   </dd>
                 </div>
-                <div className="flex items-center justify-between p-5">
-                  <dt className="flex items-center gap-2 text-sm text-summit-stone">
+                <div className="flex items-center justify-between gap-3 p-5">
+                  <dt className="flex items-center gap-2 text-sm text-summit-stone flex-shrink-0">
                     <Clock className="h-4 w-4 text-summit-gold" />
                     Duration
                   </dt>
                   <dd className="text-summit-mist font-semibold">{project.duration}</dd>
                 </div>
-                <div className="flex items-center justify-between p-5">
-                  <dt className="flex items-center gap-2 text-sm text-summit-stone">
+                <div className="flex items-center justify-between gap-3 p-5">
+                  <dt className="flex items-center gap-2 text-sm text-summit-stone flex-shrink-0">
                     <Calendar className="h-4 w-4 text-summit-gold" />
                     Completed
                   </dt>

@@ -25,25 +25,25 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "grainient-promise relative isolate overflow-hidden pt-32 md:pt-40 pb-16 md:pb-24",
+        "grainient-promise relative isolate overflow-hidden pt-28 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-24",
         className,
       )}
     >
       <Container>
-        <div className={cn("max-w-4xl space-y-6", align === "center" && "mx-auto text-center")}>
+        <div className={cn("max-w-4xl space-y-5 sm:space-y-6 min-w-0", align === "center" && "mx-auto text-center")}>
           {breadcrumbs && breadcrumbs.length > 0 && (
-            <nav aria-label="Breadcrumb">
-              <ol className="flex items-center gap-1.5 text-xs uppercase tracking-wider text-summit-stone">
+            <nav aria-label="Breadcrumb" className="overflow-x-auto -mx-1 px-1">
+              <ol className="flex items-center gap-1.5 text-[10px] sm:text-xs uppercase tracking-wider text-summit-stone whitespace-nowrap">
                 {breadcrumbs.map((c, i) => (
-                  <li key={i} className="flex items-center gap-1.5">
+                  <li key={i} className="flex items-center gap-1.5 flex-shrink-0">
                     {c.href ? (
                       <Link href={c.href} className="hover:text-summit-gold transition-colors">
                         {c.label}
                       </Link>
                     ) : (
-                      <span className="text-summit-mist">{c.label}</span>
+                      <span className="text-summit-mist truncate max-w-[160px] sm:max-w-none">{c.label}</span>
                     )}
-                    {i < breadcrumbs.length - 1 && <ChevronRight className="h-3 w-3" />}
+                    {i < breadcrumbs.length - 1 && <ChevronRight className="h-3 w-3 flex-shrink-0" />}
                   </li>
                 ))}
               </ol>
@@ -54,7 +54,7 @@ export function PageHero({
               {eyebrow}
             </p>
           )}
-          <h1 className="font-display text-display-xl font-extrabold tracking-tightest text-summit-mist text-balance leading-[1]">
+          <h1 className="font-display text-display-xl font-extrabold tracking-tightest text-summit-mist text-balance leading-[1.05] hyphens-none">
             {title}
           </h1>
           {description && (

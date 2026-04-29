@@ -12,7 +12,7 @@ export function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="grainient-hero relative isolate overflow-hidden pt-28 md:pt-36 pb-20 md:pb-28 min-h-[92vh] flex items-center">
+    <section className="grainient-hero relative isolate overflow-hidden pt-24 sm:pt-28 md:pt-36 pb-16 sm:pb-20 md:pb-28 min-h-[92vh] flex items-center">
       {/* Background photo with grade */}
       <div className="absolute inset-0 -z-10">
         <picture>
@@ -29,8 +29,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-summit-black/70 via-summit-black/85 to-summit-black" />
       </div>
 
-      <div className="mx-auto max-w-[88rem] w-full px-6 sm:px-8 lg:px-12 grid lg:grid-cols-12 gap-10 items-center relative">
-        <div className="lg:col-span-8 space-y-8 max-w-3xl">
+      <div className="mx-auto max-w-[88rem] w-full px-5 sm:px-8 lg:px-12 grid lg:grid-cols-12 gap-10 items-center relative">
+        <div className="lg:col-span-8 space-y-6 sm:space-y-8 max-w-3xl min-w-0">
           {/* Eyebrow trust strip */}
           <motion.div
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 12 }}
@@ -43,11 +43,11 @@ export function Hero() {
                 <Star key={i} className="h-3.5 w-3.5 fill-summit-gold" strokeWidth={0} />
               ))}
             </span>
-            <span className="font-semibold text-summit-mist">5.0 on Google</span>
+            <span className="font-semibold text-summit-mist whitespace-nowrap">5.0 on Google</span>
             <span className="hidden sm:inline text-summit-stone">·</span>
-            <span className="hidden sm:inline text-summit-mist/80">Licensed & Insured</span>
+            <span className="hidden sm:inline text-summit-mist/80 whitespace-nowrap">Licensed & Insured</span>
             <span className="hidden md:inline text-summit-stone">·</span>
-            <span className="hidden md:inline text-summit-mist/80">Lower Mainland, BC</span>
+            <span className="hidden md:inline text-summit-mist/80 whitespace-nowrap">Lower Mainland, BC</span>
           </motion.div>
 
           {/* Headline */}
@@ -55,12 +55,12 @@ export function Hero() {
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24 }}
             animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display text-display-2xl font-extrabold tracking-tightest text-summit-mist text-balance leading-[0.95]"
+            className="font-display text-display-2xl font-extrabold tracking-tightest text-summit-mist text-balance leading-[0.95] hyphens-none"
           >
             Reliability
-            <br />
+            <br className="hidden sm:inline" />{" "}
             Reaching{" "}
-            <span className="font-serif italic font-normal text-gradient-gold">
+            <span className="font-serif italic font-normal text-gradient-gold whitespace-nowrap">
               New Heights.
             </span>
           </motion.h1>

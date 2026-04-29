@@ -82,10 +82,10 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${site.contact.email}`}
-                  className="flex items-center gap-2 text-summit-mist/80 hover:text-summit-gold transition-colors"
+                  className="flex items-start gap-2 text-summit-mist/80 hover:text-summit-gold transition-colors break-all"
                 >
-                  <Mail className="h-4 w-4 text-summit-gold" />
-                  {site.contact.email}
+                  <Mail className="h-4 w-4 text-summit-gold mt-0.5 flex-shrink-0" />
+                  <span>{site.contact.email}</span>
                 </a>
               </li>
               <li>

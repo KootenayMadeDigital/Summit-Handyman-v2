@@ -8,8 +8,7 @@ import {
   HandCoins,
 } from "lucide-react";
 import { Container, Section, SectionTitle } from "@/components/ui/section";
-import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
-import { CountUp } from "@/components/ui/count-up";
+import { RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { areas } from "@/lib/areas";
 import { site } from "@/lib/site";
 
@@ -33,9 +32,9 @@ export function BentoSection() {
           className="mb-14"
         />
 
-        <RevealStagger className="grid grid-cols-2 lg:grid-cols-4 grid-flow-row-dense gap-4 md:gap-5 auto-rows-[12rem] md:auto-rows-[14rem]">
+        <RevealStagger className="grid grid-cols-2 lg:grid-cols-4 grid-flow-row-dense gap-4 md:gap-5 auto-rows-[minmax(11rem,auto)] md:auto-rows-[minmax(13rem,auto)]">
           {/* HERO TILE — promise + portrait — spans 2x2 */}
-          <RevealItem className="col-span-2 row-span-2 relative overflow-hidden rounded-2xl border border-summit-gold/30 bg-summit-panel group">
+          <RevealItem className="col-span-2 row-span-2 relative overflow-hidden rounded-2xl border border-summit-gold/30 bg-summit-panel group min-w-0 min-h-[22rem]">
             <Image
               src="/images/about-brody.webp"
               alt={`${site.owner}, owner of ${site.name}`}
@@ -44,42 +43,42 @@ export function BentoSection() {
               className="object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-summit-black via-summit-black/70 to-transparent" />
-            <div className="relative h-full flex flex-col justify-end p-6 md:p-8">
-              <p className="text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold mb-3">
+            <div className="relative h-full flex flex-col justify-end p-5 sm:p-6 md:p-8">
+              <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold mb-3">
                 The Brody Promise
               </p>
-              <p className="font-serif text-2xl md:text-3xl text-summit-mist leading-snug max-w-md text-balance">
+              <p className="font-serif text-xl sm:text-2xl md:text-3xl text-summit-mist leading-snug max-w-md text-balance text-pretty">
                 "{site.promise}"
               </p>
-              <p className="mt-4 text-sm text-summit-mist/70">
+              <p className="mt-3 sm:mt-4 text-sm text-summit-mist/70">
                 — {site.owner}, founder
               </p>
             </div>
           </RevealItem>
 
           {/* RATING TILE */}
-          <RevealItem className="relative overflow-hidden rounded-2xl border border-summit-slate/60 bg-summit-panel p-6 md:p-7 flex flex-col justify-between group hover:border-summit-gold/60 transition-colors">
+          <RevealItem className="relative overflow-hidden rounded-2xl border border-summit-slate/60 bg-summit-panel p-5 sm:p-6 md:p-7 flex flex-col justify-between group hover:border-summit-gold/60 transition-colors min-w-0">
             <div className="flex items-center gap-1.5 text-summit-gold">
               {[0, 1, 2, 3, 4].map((i) => (
                 <Star key={i} className="h-4 w-4 fill-summit-gold" strokeWidth={0} />
               ))}
             </div>
             <div>
-              <p className="font-display text-5xl md:text-6xl font-extrabold text-summit-mist">
-                <CountUp end={5.0} decimals={1} />
+              <p className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-summit-mist leading-none">
+                5.0
               </p>
-              <p className="mt-2 text-sm text-summit-stone">on Google · live count</p>
+              <p className="mt-2 text-sm text-summit-stone">on Google</p>
             </div>
           </RevealItem>
 
           {/* PRICING TILE */}
-          <RevealItem className="relative overflow-hidden rounded-2xl border border-summit-slate/60 bg-summit-panel p-6 md:p-7 flex flex-col justify-between group hover:border-summit-gold/60 transition-colors">
+          <RevealItem className="relative overflow-hidden rounded-2xl border border-summit-slate/60 bg-summit-panel p-5 sm:p-6 md:p-7 flex flex-col justify-between group hover:border-summit-gold/60 transition-colors min-w-0">
             <HandCoins className="h-7 w-7 text-summit-gold" strokeWidth={1.5} />
             <div>
-              <p className="font-display text-3xl md:text-4xl font-extrabold text-summit-mist">
+              <p className="font-display text-3xl sm:text-4xl font-extrabold text-summit-mist leading-none">
                 $150
               </p>
-              <p className="mt-1 text-sm text-summit-stone leading-snug">
+              <p className="mt-2 text-xs sm:text-sm text-summit-stone leading-snug">
                 Minimum per job. <br />
                 <span className="text-summit-mist/70">No hourly games.</span>
               </p>
@@ -87,40 +86,40 @@ export function BentoSection() {
           </RevealItem>
 
           {/* LICENSED TILE */}
-          <RevealItem className="relative overflow-hidden rounded-2xl border border-summit-slate/60 bg-summit-panel p-6 md:p-7 flex flex-col justify-between group hover:border-summit-gold/60 transition-colors">
+          <RevealItem className="relative overflow-hidden rounded-2xl border border-summit-slate/60 bg-summit-panel p-5 sm:p-6 md:p-7 flex flex-col justify-between group hover:border-summit-gold/60 transition-colors min-w-0">
             <ShieldCheck className="h-7 w-7 text-summit-gold" strokeWidth={1.5} />
             <div>
-              <p className="font-display text-xl md:text-2xl font-bold text-summit-mist leading-tight">
+              <p className="font-display text-lg sm:text-xl md:text-2xl font-bold text-summit-mist leading-tight">
                 Licensed.
                 <br />
                 Insured.
               </p>
-              <p className="mt-1 text-sm text-summit-stone">Full liability coverage.</p>
+              <p className="mt-1 text-xs sm:text-sm text-summit-stone leading-snug">Full liability coverage.</p>
             </div>
           </RevealItem>
 
           {/* RESPONSE TIME TILE */}
-          <RevealItem className="relative overflow-hidden rounded-2xl border border-summit-slate/60 bg-summit-panel p-6 md:p-7 flex flex-col justify-between group hover:border-summit-gold/60 transition-colors">
+          <RevealItem className="relative overflow-hidden rounded-2xl border border-summit-slate/60 bg-summit-panel p-6 md:p-7 flex flex-col justify-between group hover:border-summit-gold/60 transition-colors min-w-0">
             <Clock className="h-7 w-7 text-summit-gold" strokeWidth={1.5} />
             <div>
-              <p className="font-display text-3xl md:text-4xl font-extrabold text-summit-mist">
-                {"<"} <CountUp end={24} /> hr
+              <p className="font-display text-2xl md:text-3xl font-extrabold text-summit-mist leading-tight">
+                Fast<br />response
               </p>
-              <p className="mt-1 text-sm text-summit-stone">Typical email response</p>
+              <p className="mt-1 text-sm text-summit-stone">Email or text — same day on most days.</p>
             </div>
           </RevealItem>
 
           {/* SERVICE AREAS TILE — spans 2 cols */}
-          <RevealItem className="col-span-2 relative overflow-hidden rounded-2xl border border-summit-slate/60 bg-summit-panel p-6 md:p-7 flex flex-col justify-between group hover:border-summit-gold/60 transition-colors">
+          <RevealItem className="col-span-2 relative overflow-hidden rounded-2xl border border-summit-slate/60 bg-summit-panel p-5 sm:p-6 md:p-7 flex flex-col justify-between group hover:border-summit-gold/60 transition-colors min-w-0">
             <MapPin className="h-7 w-7 text-summit-gold" strokeWidth={1.5} />
             <div>
-              <p className="font-display text-xl md:text-2xl font-bold text-summit-mist mb-3">
+              <p className="font-display text-lg sm:text-xl md:text-2xl font-bold text-summit-mist mb-3 leading-tight">
                 {areas.length} cities served
               </p>
-              <ul className="flex flex-wrap gap-x-3 gap-y-1.5 text-sm text-summit-mist/80">
+              <ul className="flex flex-wrap gap-x-3 gap-y-1.5 text-xs sm:text-sm text-summit-mist/80">
                 {areas.map((a) => (
-                  <li key={a.slug} className="flex items-center gap-1.5">
-                    <span className="h-1 w-1 rounded-full bg-summit-gold" />
+                  <li key={a.slug} className="flex items-center gap-1.5 whitespace-nowrap">
+                    <span className="h-1 w-1 rounded-full bg-summit-gold flex-shrink-0" />
                     {a.name}
                   </li>
                 ))}
@@ -129,15 +128,15 @@ export function BentoSection() {
           </RevealItem>
 
           {/* EMAIL FIRST TILE — spans 2 cols */}
-          <RevealItem className="col-span-2 relative overflow-hidden rounded-2xl border border-summit-gold/40 bg-gradient-to-br from-summit-panel via-summit-panel to-summit-gold/10 p-6 md:p-7 flex flex-col justify-between group hover:border-summit-gold transition-colors">
+          <RevealItem className="col-span-2 relative overflow-hidden rounded-2xl border border-summit-gold/40 bg-gradient-to-br from-summit-panel via-summit-panel to-summit-gold/10 p-5 sm:p-6 md:p-7 flex flex-col justify-between group hover:border-summit-gold transition-colors min-w-0">
             <Mail className="h-7 w-7 text-summit-gold" strokeWidth={1.5} />
-            <div>
-              <p className="font-display text-xl md:text-2xl font-bold text-summit-mist mb-1">
+            <div className="min-w-0">
+              <p className="font-display text-lg sm:text-xl md:text-2xl font-bold text-summit-mist mb-1 leading-tight">
                 Email-first contact
               </p>
               <a
                 href={`mailto:${site.contact.email}`}
-                className="text-sm text-summit-gold hover:text-summit-gold-hot transition-colors font-semibold underline-offset-4 hover:underline"
+                className="text-xs sm:text-sm text-summit-gold hover:text-summit-gold-hot transition-colors font-semibold underline-offset-4 hover:underline break-all"
               >
                 {site.contact.email}
               </a>

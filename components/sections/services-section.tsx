@@ -32,12 +32,12 @@ export function ServicesSection() {
             return (
               <div key={cat}>
                 <Reveal>
-                  <div className="flex items-end justify-between gap-4 mb-8 border-b border-summit-slate/40 pb-4">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold mb-1">
+                  <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 md:gap-4 mb-8 border-b border-summit-slate/40 pb-4">
+                    <div className="min-w-0">
+                      <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold mb-1">
                         Category
                       </p>
-                      <h3 className="font-display text-2xl md:text-3xl font-bold text-summit-mist">
+                      <h3 className="font-display text-2xl md:text-3xl font-bold text-summit-mist leading-tight">
                         {meta.name}
                       </h3>
                     </div>

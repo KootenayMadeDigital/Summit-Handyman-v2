@@ -31,12 +31,12 @@ const config: Config = {
         mono: ['"JetBrains Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
       },
       fontSize: {
-        // Fluid typography (clamp-based)
-        "display-2xl": ["clamp(3.5rem, 8vw, 7rem)", { lineHeight: "0.95", letterSpacing: "-0.03em" }],
-        "display-xl": ["clamp(2.75rem, 6vw, 5.25rem)", { lineHeight: "1", letterSpacing: "-0.025em" }],
-        "display-lg": ["clamp(2.25rem, 5vw, 4rem)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
-        "display-md": ["clamp(1.875rem, 3.5vw, 3rem)", { lineHeight: "1.1", letterSpacing: "-0.015em" }],
-        "display-sm": ["clamp(1.5rem, 2.5vw, 2.25rem)", { lineHeight: "1.15", letterSpacing: "-0.01em" }],
+        // Fluid typography (clamp-based) — minimums tightened so display text never overflows narrow viewports.
+        "display-2xl": ["clamp(2.5rem, 8vw, 7rem)", { lineHeight: "1", letterSpacing: "-0.03em" }],
+        "display-xl": ["clamp(2.125rem, 6vw, 5.25rem)", { lineHeight: "1.02", letterSpacing: "-0.025em" }],
+        "display-lg": ["clamp(1.875rem, 5vw, 4rem)", { lineHeight: "1.08", letterSpacing: "-0.02em" }],
+        "display-md": ["clamp(1.625rem, 3.5vw, 3rem)", { lineHeight: "1.12", letterSpacing: "-0.015em" }],
+        "display-sm": ["clamp(1.375rem, 2.5vw, 2.25rem)", { lineHeight: "1.18", letterSpacing: "-0.01em" }],
       },
       letterSpacing: {
         tightest: "-0.04em",

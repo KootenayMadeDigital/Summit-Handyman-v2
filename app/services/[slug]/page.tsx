@@ -201,15 +201,15 @@ export default async function ServicePage(
                 <Link
                   key={r.slug}
                   href={`/services/${r.slug}`}
-                  className="group flex items-center justify-between gap-4 p-5 rounded-xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 hover:bg-summit-panel/80 transition-all"
+                  className="group flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 hover:bg-summit-panel/80 transition-all min-w-0"
                 >
-                  <div className="flex items-center gap-3">
-                    <ServiceIcon name={r.icon} className="h-5 w-5" />
-                    <span className="font-display font-bold text-summit-mist group-hover:text-summit-gold transition-colors">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <ServiceIcon name={r.icon} className="h-5 w-5 flex-shrink-0" />
+                    <span className="font-display font-bold text-summit-mist group-hover:text-summit-gold transition-colors truncate">
                       {r.name}
                     </span>
                   </div>
-                  <ArrowUpRight className="h-4 w-4 text-summit-stone group-hover:text-summit-gold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  <ArrowUpRight className="h-4 w-4 text-summit-stone group-hover:text-summit-gold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0" />
                 </Link>
               ))}
             </div>

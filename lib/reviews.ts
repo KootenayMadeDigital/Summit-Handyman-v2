@@ -1,6 +1,6 @@
 /**
- * Reviews — placeholder static set used until live Trustindex/Google API is wired in.
- * Replace at runtime via /api/reviews route.
+ * Reviews — placeholders matching the live summit-handyman.ca V1 site verbatim.
+ * These are kept until a real Google / Trustindex feed is wired in.
  */
 
 export type Review = {
@@ -15,52 +15,36 @@ export type Review = {
 
 export const placeholderReviews: Review[] = [
   {
-    author: "Sarah J.",
-    city: "Langley",
+    author: "Sarah Jenkins",
+    city: "Vancouver, BC",
     rating: 5,
-    date: "2026-01-08",
+    date: "2026-01",
     body: "Brody was incredibly professional. He fixed our drywall and installed new fixtures. The work was clean, on time, and exactly what we asked for. Will absolutely call him again.",
-    service: "Drywall Repair",
     source: "google",
   },
   {
     author: "Mike T.",
-    city: "Surrey",
+    city: "North Vancouver",
     rating: 5,
-    date: "2026-01-04",
-    body: "Summit Handyman is now my go-to for our property management portfolio. Fast response, excellent documentation, and the units come back in better shape than we left them.",
-    service: "Property Management",
+    date: "2026-01",
+    body: "Summit Handyman is now my go-to. Fast response, excellent documentation, and the work always comes back better than I expected.",
     source: "google",
   },
   {
     author: "David L.",
-    city: "White Rock",
+    city: "Burnaby",
     rating: 5,
-    date: "2025-12-28",
-    body: "Punctual, polite, and did exactly what was promised. The quality of the finish on the trim was better than the original builder's work.",
-    service: "Painting",
-    source: "google",
-  },
-  {
-    author: "Jenna R.",
-    city: "Abbotsford",
-    rating: 5,
-    date: "2025-12-20",
-    body: "Replaced our kitchen faucet and fixed two doors that had been driving me crazy for months. Fair price and explained everything as he went.",
-    service: "General Repairs",
-    source: "google",
-  },
-  {
-    author: "Tom & Lisa",
-    city: "Cloverdale",
-    rating: 5,
-    date: "2025-12-12",
-    body: "We had a long list. He worked through it methodically over two days and the place feels new again. Cleanup was perfect.",
-    service: "Multiple",
+    date: "2025-12",
+    body: "Punctual, polite, and did exactly what was promised. The quality of the finish was better than the original builder's work.",
     source: "google",
   },
 ];
 
+/**
+ * Aggregate rating shown on home + reviews page. Soft until live Trustindex feed
+ * provides a real number — keep the rating qualitative (5.0 is from V1) and avoid
+ * fabricating a count.
+ */
 export const aggregateRating = {
   rating: 5.0,
   reviewCount: placeholderReviews.length,

@@ -17,7 +17,7 @@ export function MobileStickyBar() {
           aria-label="Email Brody"
         >
           <Mail className="h-5 w-5 text-summit-gold" />
-          <span className="text-[11px] font-semibold uppercase tracking-wider">Email</span>
+          <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider">Email</span>
         </a>
         <a
           href={`sms:${site.contact.phoneTel}`}
@@ -25,7 +25,7 @@ export function MobileStickyBar() {
           aria-label="Text Brody"
         >
           <MessageSquare className="h-5 w-5 text-summit-gold" />
-          <span className="text-[11px] font-semibold uppercase tracking-wider">Text</span>
+          <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider">Text</span>
         </a>
         <a
           href={site.contact.messenger}
@@ -35,7 +35,7 @@ export function MobileStickyBar() {
           aria-label="Message Brody on Facebook"
         >
           <MessageCircle className="h-5 w-5 text-summit-gold" />
-          <span className="text-[11px] font-semibold uppercase tracking-wider">Message</span>
+          <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider">Message</span>
         </a>
       </div>
     </div>

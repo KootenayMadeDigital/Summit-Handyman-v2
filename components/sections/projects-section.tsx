@@ -44,16 +44,16 @@ export function ProjectsSection() {
                 />
                 <Link
                   href={`/projects/${p.slug}`}
-                  className="mt-4 flex items-start justify-between gap-4 group/link"
+                  className="mt-4 flex items-start justify-between gap-3 group/link"
                 >
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold">
+                  <div className="min-w-0">
+                    <p className="text-[11px] sm:text-xs uppercase tracking-wider text-summit-gold font-semibold">
                       {p.area} · {p.duration}
                     </p>
-                    <h3 className="mt-1 font-display text-lg font-bold text-summit-mist group-hover/link:text-summit-gold transition-colors">
+                    <h3 className="mt-1 font-display text-lg font-bold text-summit-mist group-hover/link:text-summit-gold transition-colors text-balance">
                       {p.title}
                     </h3>
-                    <p className="mt-1 text-sm text-summit-stone leading-snug">
+                    <p className="mt-1 text-sm text-summit-stone leading-snug text-pretty">
                       {p.shortStory}
                     </p>
                   </div>

@@ -65,20 +65,20 @@ export default function ContactPage() {
                   href={c.href}
                   target={c.href.startsWith("http") ? "_blank" : undefined}
                   rel={c.href.startsWith("http") ? "noopener" : undefined}
-                  className="group block h-full p-7 rounded-2xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 hover:shadow-gold transition-all duration-300 hover:-translate-y-0.5"
+                  className="group block h-full p-5 sm:p-6 md:p-7 rounded-2xl bg-summit-panel border border-summit-slate/60 hover:border-summit-gold/60 hover:shadow-gold transition-all duration-300 hover:-translate-y-0.5 min-w-0"
                 >
                   <div className="h-12 w-12 rounded-xl bg-summit-gold/10 border border-summit-gold/20 flex items-center justify-center mb-5 group-hover:bg-summit-gold/20 transition-colors">
                     <c.Icon className="h-6 w-6 text-summit-gold" strokeWidth={1.5} />
                   </div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold">
+                  <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold">
                     {c.label}
                   </p>
-                  <p className="mt-2 font-display text-lg font-bold text-summit-mist break-all">
+                  <p className="mt-2 font-display text-base sm:text-lg font-bold text-summit-mist break-all leading-snug">
                     {c.value}
                   </p>
-                  <p className="mt-3 text-sm text-summit-stone leading-relaxed">{c.note}</p>
+                  <p className="mt-3 text-sm text-summit-stone leading-relaxed text-pretty">{c.note}</p>
                   {c.badge && (
-                    <p className="mt-4 inline-block text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-summit-gold/15 text-summit-gold font-semibold">
+                    <p className="mt-4 inline-block text-[10px] sm:text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-summit-gold/15 text-summit-gold font-semibold">
                       {c.badge}
                     </p>
                   )}

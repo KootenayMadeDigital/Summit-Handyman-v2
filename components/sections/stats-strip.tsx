@@ -1,12 +1,32 @@
+import { Star, ShieldCheck, Mail, HandCoins } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
-import { CountUp } from "@/components/ui/count-up";
 import { Container, Section } from "@/components/ui/section";
 
 const stats = [
-  { value: 200, suffix: "+", label: "Jobs completed in the Lower Mainland" },
-  { value: 5.0, suffix: " ★", label: "Average rating on Google", decimals: 1 },
-  { value: 24, suffix: " hr", label: "Typical email response time", prefix: "< " },
-  { value: 100, suffix: "%", label: "Satisfaction guaranteed" },
+  {
+    Icon: Star,
+    headline: "5.0",
+    label: "rating",
+    sub: "on Google",
+  },
+  {
+    Icon: HandCoins,
+    headline: "$150",
+    label: "minimum",
+    sub: "per job",
+  },
+  {
+    Icon: ShieldCheck,
+    headline: "Licensed",
+    label: "& Insured",
+    sub: "Comprehensive liability",
+  },
+  {
+    Icon: Mail,
+    headline: "24-hr",
+    label: "response",
+    sub: "Email-first",
+  },
 ];
 
 export function StatsStrip() {
@@ -14,23 +34,27 @@ export function StatsStrip() {
     <Section size="sm" className="border-y border-summit-slate/40 bg-summit-panel/40">
       <Container>
         <Reveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-x-8">
+          <ul className="grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gap-x-6">
             {stats.map((s) => (
-              <div key={s.label} className="text-center md:text-left">
-                <p className="font-display text-4xl md:text-5xl font-extrabold tracking-tighter text-summit-gold">
-                  <CountUp
-                    end={s.value}
-                    prefix={s.prefix ?? ""}
-                    suffix={s.suffix}
-                    decimals={s.decimals ?? 0}
-                  />
+              <li
+                key={s.headline + s.label}
+                className="flex flex-col items-center md:items-start text-center md:text-left min-w-0 px-2"
+              >
+                <s.Icon
+                  className="h-5 w-5 text-summit-gold mb-3"
+                  strokeWidth={1.6}
+                  aria-hidden
+                />
+                <p className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-summit-mist leading-none">
+                  {s.headline}
                 </p>
-                <p className="mt-2 text-sm text-summit-stone leading-snug max-w-[18ch] mx-auto md:mx-0">
+                <p className="mt-1 font-display text-sm sm:text-base font-semibold text-summit-gold">
                   {s.label}
                 </p>
-              </div>
+                <p className="mt-1 text-xs text-summit-stone leading-snug">{s.sub}</p>
+              </li>
             ))}
-          </div>
+          </ul>
         </Reveal>
       </Container>
     </Section>
