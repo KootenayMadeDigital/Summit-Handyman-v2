@@ -36,7 +36,7 @@ const channels = [
     value: site.contact.phone,
     href: `sms:${site.contact.phoneTel}`,
     Icon: MessageSquare,
-    note: "Best for urgent or same-day work after the form has been sent.",
+    note: "Best for time-sensitive follow-ups after the form has been sent.",
   },
   {
     label: "Facebook Messenger",
@@ -68,7 +68,7 @@ export default function ContactPage() {
       <Section size="lg" className="bg-surface">
         <Container size="narrow">
           <Reveal>
-            <div className="rounded-2xl bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_14%,var(--bg-panel))] border border-accent p-8 md:p-12 text-center shadow-gold-lg">
+            <div className="summit-card-motion motion-cta rounded-2xl bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_14%,var(--bg-panel))] border border-accent p-8 md:p-12 text-center shadow-gold-lg">
               <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-3">
                 Recommended
               </p>
@@ -80,25 +80,25 @@ export default function ContactPage() {
               </p>
 
               <ul className="grid sm:grid-cols-3 gap-3 sm:gap-4 mb-8 max-w-2xl mx-auto text-left">
-                <li className="flex items-start gap-3 p-3 rounded-xl bg-surface/60 border border-divider">
+                <li className="summit-card-motion motion-trust flex items-start gap-3 p-3 rounded-xl bg-surface/60 border border-divider">
                   <FileText className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
                   <div>
                     <p className="font-display font-bold text-sm text-fg-strong leading-tight">Documented</p>
                     <p className="text-xs text-fg-muted mt-0.5">Details on file before the call.</p>
                   </div>
                 </li>
-                <li className="flex items-start gap-3 p-3 rounded-xl bg-surface/60 border border-divider">
+                <li className="summit-card-motion motion-trust flex items-start gap-3 p-3 rounded-xl bg-surface/60 border border-divider">
                   <Camera className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
                   <div>
                     <p className="font-display font-bold text-sm text-fg-strong leading-tight">Photos help</p>
                     <p className="text-xs text-fg-muted mt-0.5">Up to 5 attachments.</p>
                   </div>
                 </li>
-                <li className="flex items-start gap-3 p-3 rounded-xl bg-surface/60 border border-divider">
+                <li className="summit-card-motion motion-trust flex items-start gap-3 p-3 rounded-xl bg-surface/60 border border-divider">
                   <Clock className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
                   <div>
                     <p className="font-display font-bold text-sm text-fg-strong leading-tight">24-hour reply</p>
-                    <p className="text-xs text-fg-muted mt-0.5">Same-day on most days.</p>
+                    <p className="text-xs text-fg-muted mt-0.5">Reviewed within 24 hours.</p>
                   </div>
                 </li>
               </ul>
@@ -133,9 +133,9 @@ export default function ContactPage() {
                   href={c.href}
                   target={c.href.startsWith("http") ? "_blank" : undefined}
                   rel={c.href.startsWith("http") ? "noopener" : undefined}
-                  className="group block h-full p-5 sm:p-6 rounded-2xl bg-surface border border-divider-strong hover:border-accent-soft hover:shadow-gold transition-all duration-300 hover:-translate-y-0.5 min-w-0"
+                  className="summit-card-motion motion-service group block h-full p-5 sm:p-6 rounded-2xl bg-surface border border-divider-strong hover:border-accent-soft hover:shadow-gold transition-all duration-300 min-w-0"
                 >
-                  <div className="h-10 w-10 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center mb-4 group-hover:bg-accent-soft transition-colors">
+                  <div className="summit-icon-box h-10 w-10 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center mb-4 group-hover:bg-accent-soft transition-colors">
                     <c.Icon className="h-5 w-5 text-accent" strokeWidth={1.5} />
                   </div>
                   <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold">
@@ -158,7 +158,7 @@ export default function ContactPage() {
       <Section size="md" className="bg-surface">
         <Container>
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-            <div className="p-6 sm:p-7 rounded-2xl bg-surface-panel border border-divider-strong">
+            <div className="summit-card-motion motion-trust p-6 sm:p-7 rounded-2xl bg-surface-panel border border-divider-strong">
               <Clock className="h-6 w-6 text-accent mb-3" strokeWidth={1.5} />
               <h3 className="font-display text-xl font-bold text-fg-strong mb-2">Hours</h3>
               <p className="text-fg/85 leading-relaxed text-sm">{site.hours}</p>
@@ -166,7 +166,7 @@ export default function ContactPage() {
                 Email is checked throughout the day. Most quote requests get a reply within 24 hours.
               </p>
             </div>
-            <div className="p-6 sm:p-7 rounded-2xl bg-surface-panel border border-divider-strong">
+            <div className="summit-card-motion motion-trust p-6 sm:p-7 rounded-2xl bg-surface-panel border border-divider-strong">
               <MapPin className="h-6 w-6 text-accent mb-3" strokeWidth={1.5} />
               <h3 className="font-display text-xl font-bold text-fg-strong mb-2">Service areas</h3>
               <p className="text-fg/85 leading-relaxed text-sm">

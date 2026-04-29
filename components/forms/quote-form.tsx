@@ -190,10 +190,10 @@ export function QuoteForm() {
 
   if (submitted) {
     return (
-      <div className="relative overflow-hidden rounded-[2rem] bg-surface-panel border border-accent/40 p-8 md:p-14 text-center shadow-gold-lg">
+      <div className="summit-card-motion motion-cta relative overflow-hidden rounded-[2rem] bg-surface-panel border border-accent/40 p-8 md:p-14 text-center shadow-gold-lg">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,color-mix(in_srgb,var(--accent)_18%,transparent),transparent_55%)]" />
         <div className="relative">
-          <div className="mx-auto h-20 w-20 rounded-full bg-accent-soft border border-accent/50 flex items-center justify-center mb-6 shadow-gold">
+          <div className="summit-icon-box mx-auto h-20 w-20 rounded-full bg-accent-soft border border-accent/50 flex items-center justify-center mb-6 shadow-gold">
             <Check className="h-10 w-10 text-accent" strokeWidth={2.5} />
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-fg-strong mb-4 text-balance">
@@ -235,7 +235,7 @@ export function QuoteForm() {
   }
 
   return (
-    <div className="relative overflow-hidden rounded-[2rem] bg-surface-panel border border-divider-strong shadow-panel-lg">
+    <div className="summit-card-motion motion-cta relative overflow-hidden rounded-[2rem] bg-surface-panel border border-divider-strong shadow-panel-lg">
       <div className="absolute inset-x-0 top-0 h-1 bg-surface-elevated">
         <div
           className="h-full bg-gradient-to-r from-accent to-accent-hot transition-all duration-500 ease-editorial"
@@ -253,7 +253,7 @@ export function QuoteForm() {
               {STEPS[step]}
             </h2>
           </div>
-          <div className="rounded-2xl border border-divider-strong bg-surface/70 p-4">
+          <div className="summit-card-motion motion-trust rounded-2xl border border-divider-strong bg-surface/70 p-4">
             <p className="text-[11px] uppercase tracking-[0.16em] text-fg-muted font-semibold">
               Current scope
             </p>
@@ -296,7 +296,7 @@ export function QuoteForm() {
                   type="button"
                   onClick={() => update("service", s.slug)}
                   className={cn(
-                    "group relative overflow-hidden p-4 rounded-2xl border text-left transition-all duration-300 min-w-0 hover:-translate-y-0.5",
+                    "summit-card-motion motion-service group relative overflow-hidden p-4 rounded-2xl border text-left transition-all duration-300 min-w-0",
                     state.service === s.slug
                       ? "border-accent bg-accent-soft text-fg-strong shadow-gold"
                       : "border-divider-strong bg-surface-elevated/60 text-fg/85 hover:border-accent-soft hover:bg-surface-elevated",
@@ -317,7 +317,7 @@ export function QuoteForm() {
                 type="button"
                 onClick={() => update("service", "other")}
                 className={cn(
-                  "p-4 rounded-2xl border text-left transition-all duration-300 hover:-translate-y-0.5",
+                  "summit-card-motion motion-service p-4 rounded-2xl border text-left transition-all duration-300",
                   state.service === "other"
                     ? "border-accent bg-accent-soft text-fg-strong"
                     : "border-divider-strong bg-surface-elevated/60 text-fg/85 hover:border-accent-soft hover:bg-surface-elevated",
@@ -350,13 +350,13 @@ export function QuoteForm() {
                     type="button"
                     onClick={() => update("timing", t.value)}
                     className={cn(
-                      "p-3 sm:p-4 rounded-xl border text-left transition-all min-w-0",
+                      "summit-card-motion motion-service p-3 sm:p-4 rounded-xl border text-left transition-all min-w-0",
                       state.timing === t.value
                         ? "border-accent bg-accent-soft"
                         : "border-divider-strong bg-surface-elevated/60 hover:border-accent-soft",
                     )}
                   >
-                    <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl border border-accent/35 bg-accent-soft" aria-hidden>
+                    <span className="summit-icon-box mb-3 flex h-10 w-10 items-center justify-center rounded-xl border border-accent/35 bg-accent-soft" aria-hidden>
                       <t.Icon className="h-5 w-5 text-accent" strokeWidth={1.7} />
                     </span>
                     <span className="block font-display font-bold text-sm sm:text-base text-fg-strong leading-tight">
@@ -382,7 +382,7 @@ export function QuoteForm() {
                     type="button"
                     onClick={() => update("area", a.slug)}
                     className={cn(
-                      "p-3 rounded-xl border text-sm font-semibold transition-all min-w-0 truncate",
+                      "summit-card-motion motion-area p-3 rounded-xl border text-sm font-semibold transition-all min-w-0 truncate",
                       state.area === a.slug
                         ? "border-accent bg-accent-soft text-fg-strong"
                         : "border-divider-strong bg-surface-elevated/60 text-fg/85 hover:border-accent-soft",
@@ -441,9 +441,9 @@ export function QuoteForm() {
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="group w-full p-5 rounded-xl border-2 border-dashed border-divider-strong bg-surface-elevated/40 hover:border-accent hover:bg-accent-soft/30 transition-colors text-left flex items-center gap-4"
+                  className="summit-card-motion motion-cta group w-full p-5 rounded-xl border-2 border-dashed border-divider-strong bg-surface-elevated/40 hover:border-accent hover:bg-accent-soft/30 transition-colors text-left flex items-center gap-4"
                 >
-                  <span className="h-10 w-10 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center flex-shrink-0">
+                  <span className="summit-icon-box h-10 w-10 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center flex-shrink-0">
                     <Upload className="h-5 w-5 text-accent" strokeWidth={1.6} />
                   </span>
                   <span className="min-w-0">
@@ -474,7 +474,7 @@ export function QuoteForm() {
                   {photos.map((p, i) => (
                     <li
                       key={i}
-                      className="relative aspect-square rounded-xl overflow-hidden border border-divider-strong bg-surface-elevated"
+                      className="summit-photo-motion summit-scan-accent relative aspect-square rounded-xl overflow-hidden border border-divider-strong bg-surface-elevated"
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img

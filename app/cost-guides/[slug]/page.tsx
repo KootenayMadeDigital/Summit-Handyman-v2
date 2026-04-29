@@ -90,7 +90,7 @@ export default async function GuidePage(
 
       <Section size="md">
         <Container size="narrow">
-          <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-divider-strong mb-12 shadow-panel-lg">
+          <div className="summit-photo-motion summit-scan-accent relative aspect-[16/10] rounded-2xl overflow-hidden border border-divider-strong mb-12 shadow-panel-lg">
             <Image
               src={g.hero}
               alt=""
@@ -153,7 +153,7 @@ export default async function GuidePage(
                   return (
                     <aside
                       key={i}
-                      className="my-10 p-6 md:p-7 rounded-2xl bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] border border-accent/40"
+                      className="summit-card-motion motion-trust my-10 p-6 md:p-7 rounded-2xl bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] border border-accent/40"
                     >
                       <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-2">
                         {block.title}
@@ -168,7 +168,7 @@ export default async function GuidePage(
           </article>
 
           {/* Mid/end CTA */}
-          <div className="mt-14 rounded-2xl bg-surface-panel border border-accent/40 p-7 md:p-8 text-center">
+          <div className="summit-card-motion motion-cta mt-14 rounded-2xl bg-surface-panel border border-accent/40 p-7 md:p-8 text-center">
             <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-2">
               Need this done?
             </p>

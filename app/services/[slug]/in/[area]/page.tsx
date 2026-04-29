@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { ServiceIcon } from "@/components/ui/service-icon";
 import { services, getService } from "@/lib/services";
+import { aggregateRating } from "@/lib/reviews";
 import { areas, getArea } from "@/lib/areas";
 import { site } from "@/lib/site";
 
@@ -119,8 +120,8 @@ export default async function ServiceInAreaPage(
     serviceType: service.name,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "5",
+      ratingValue: aggregateRating.rating.toFixed(1),
+      reviewCount: String(aggregateRating.reviewCount),
     },
   };
 
@@ -148,8 +149,8 @@ export default async function ServiceInAreaPage(
     areaServed: { "@type": "City", name: area.name },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "5",
+      ratingValue: aggregateRating.rating.toFixed(1),
+      reviewCount: String(aggregateRating.reviewCount),
     },
   };
 
@@ -236,7 +237,7 @@ export default async function ServiceInAreaPage(
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <div className="lg:sticky lg:top-32">
-                <div className="h-14 w-14 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center mb-6">
+                <div className="summit-icon-box h-14 w-14 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center mb-6">
                   <ServiceIcon name={service.icon} className="h-7 w-7" />
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-fg-strong mb-5 text-balance">
@@ -259,7 +260,7 @@ export default async function ServiceInAreaPage(
                 {service.includes.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-4 p-4 sm:p-5 rounded-xl bg-surface-panel border border-divider-strong"
+                    className="summit-card-motion motion-trust flex items-start gap-4 p-4 sm:p-5 rounded-xl bg-surface-panel border border-divider-strong"
                   >
                     <span className="mt-0.5 h-6 w-6 rounded-full bg-accent-soft border border-accent/40 flex items-center justify-center flex-shrink-0">
                       <Check className="h-3.5 w-3.5 text-accent" strokeWidth={3} />
@@ -290,7 +291,7 @@ export default async function ServiceInAreaPage(
             className="mb-8"
           />
           <Reveal>
-            <div className="rounded-2xl bg-surface border border-divider-strong p-6 sm:p-8">
+            <div className="summit-card-motion motion-trust rounded-2xl bg-surface border border-divider-strong p-6 sm:p-8">
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={2.5} />
@@ -344,7 +345,7 @@ export default async function ServiceInAreaPage(
                 {service.faqs.map((f, i) => (
                   <li
                     key={i}
-                    className="rounded-2xl bg-surface-panel border border-divider-strong p-6"
+                    className="summit-card-motion motion-review rounded-2xl bg-surface-panel border border-divider-strong p-6"
                   >
                     <h3 className="font-display text-lg font-bold text-fg-strong mb-2">
                       {f.q}
@@ -370,7 +371,7 @@ export default async function ServiceInAreaPage(
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}/in/${area.slug}`}
-                className="group flex items-center gap-3 p-4 rounded-xl bg-surface border border-divider-strong hover:border-accent-soft transition-all min-w-0"
+                className="summit-card-motion motion-service group flex items-center gap-3 p-4 rounded-xl bg-surface border border-divider-strong hover:border-accent-soft transition-all min-w-0"
               >
                 <ServiceIcon name={s.icon} className="h-5 w-5 flex-shrink-0" />
                 <span className="text-sm font-semibold text-fg-strong group-hover:text-accent transition-colors truncate">
@@ -404,7 +405,7 @@ export default async function ServiceInAreaPage(
               <Link
                 key={a.slug}
                 href={`/services/${service.slug}/in/${a.slug}`}
-                className="group flex items-center justify-between gap-2 p-4 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-all"
+                className="summit-card-motion motion-area group flex items-center justify-between gap-2 p-4 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-all"
               >
                 <span className="text-sm font-semibold text-fg-strong group-hover:text-accent transition-colors">
                   {a.name}
@@ -420,7 +421,7 @@ export default async function ServiceInAreaPage(
       <Section size="lg" className="grainient-promise relative overflow-hidden">
         <Container size="narrow">
           <Reveal>
-            <div className="text-center space-y-5">
+            <div className="summit-card-motion motion-cta text-center space-y-5 rounded-[2rem] border border-accent/30 bg-surface-panel/55 p-6 sm:p-8 shadow-panel-lg">
               <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-accent font-semibold">
                 Ready in {area.name}?
               </p>
@@ -470,7 +471,7 @@ function Stat({
   sub: string;
 }) {
   return (
-    <div className="flex items-start gap-3 min-w-0">
+    <div className="summit-card-motion motion-trust flex items-start gap-3 min-w-0 rounded-2xl border border-divider-strong bg-surface/55 p-4">
       <Icon className="h-5 w-5 text-accent mt-1 flex-shrink-0" strokeWidth={1.6} />
       <div className="min-w-0">
         <p className="font-display text-base sm:text-lg font-bold text-fg-strong leading-tight">

@@ -27,7 +27,7 @@ const prep = [
   {
     Icon: Clock,
     title: "24-hour reply",
-    body: "Most requests get a practical answer the same day, always with next steps in writing.",
+    body: "Most requests get a practical answer within 24 hours, always with next steps in writing.",
   },
   {
     Icon: ShieldCheck,
@@ -69,8 +69,8 @@ export default function QuotePage() {
           <RevealStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" staggerDelay={0.05}>
             {prep.map((item) => (
               <RevealItem key={item.title}>
-                <div className="h-full rounded-2xl border border-divider-strong bg-surface/70 p-5 shadow-panel backdrop-blur">
-                  <div className="h-11 w-11 rounded-xl border border-accent/40 bg-accent-soft flex items-center justify-center">
+                <div className="summit-card-motion motion-trust h-full rounded-2xl border border-divider-strong bg-surface/70 p-5 shadow-panel backdrop-blur">
+                  <div className="summit-icon-box h-11 w-11 rounded-xl border border-accent/40 bg-accent-soft flex items-center justify-center">
                     <item.Icon className="h-5 w-5 text-accent" strokeWidth={1.7} />
                   </div>
                   <h2 className="mt-4 font-display text-lg font-bold text-fg-strong">
@@ -89,7 +89,7 @@ export default function QuotePage() {
         <Container>
           <div className="grid lg:grid-cols-[0.35fr_0.65fr] gap-6 lg:gap-8 items-start">
             <Reveal>
-              <aside className="lg:sticky lg:top-28 rounded-[2rem] border border-accent/35 bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] p-6 sm:p-7 shadow-panel-lg">
+              <aside className="summit-card-motion motion-trust lg:sticky lg:top-28 rounded-[2rem] border border-accent/35 bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_10%,var(--bg-panel))] p-6 sm:p-7 shadow-panel-lg">
                 <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
                   Before you start
                 </p>
@@ -106,7 +106,7 @@ export default function QuotePage() {
                     "Mention access issues or timing pressure",
                     "Bundle small jobs into one visit when possible",
                   ].map((item) => (
-                    <div key={item} className="flex gap-3 rounded-2xl border border-divider-strong bg-surface/60 p-3 text-sm text-fg-strong">
+                    <div key={item} className="summit-card-motion motion-process flex gap-3 rounded-2xl border border-divider-strong bg-surface/60 p-3 text-sm text-fg-strong">
                       <span className="mt-1 h-2 w-2 rounded-full bg-accent flex-shrink-0" />
                       <span>{item}</span>
                     </div>
