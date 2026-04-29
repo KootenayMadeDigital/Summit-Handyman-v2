@@ -150,6 +150,40 @@ export function QuoteForm() {
   const selectedTiming = timingOptions.find((t) => t.value === state.timing);
   const progress = ((step + 1) / STEPS.length) * 100;
 
+  const mailtoHref = React.useMemo(() => {
+    const serviceLabel = selectedService?.name ?? (state.service === "other" ? "Something else" : "Not selected");
+    const areaLabel = selectedArea?.name ?? (state.area || "Not selected");
+    const timingLabel = selectedTiming?.label ?? (state.timing || "Not selected");
+    const subjectName = state.name.trim() || "Website visitor";
+    const body = [
+      "Hi Brody,",
+      "",
+      "I'm looking for help with a project.",
+      "",
+      `Name: ${state.name.trim() || "Not provided"}`,
+      `Contact: ${state.contact.trim() || "Not provided"}`,
+      `Preferred contact: ${state.preferredContact}`,
+      `Service: ${serviceLabel}`,
+      `Timing: ${timingLabel}`,
+      `Area: ${areaLabel}`,
+      `Postal code: ${state.postalCode.trim() || "Not provided"}`,
+      `Photos: ${photos.length > 0 ? `${photos.length} selected. I will attach them to this email.` : "None"}`,
+      "",
+      "What needs doing:",
+      state.description.trim() || "Not provided",
+      "",
+      "Sent from summit-handyman.ca",
+    ].join("\n");
+
+    return `mailto:${site.contact.email}?subject=${encodeURIComponent(`Quote request from ${subjectName}`)}&body=${encodeURIComponent(body)}`;
+  }, [photos.length, selectedArea?.name, selectedService?.name, selectedTiming?.label, state]);
+
+  const openMailtoFallback = () => {
+    if (typeof window !== "undefined") {
+      window.location.href = mailtoHref;
+    }
+  };
+
   const submit = async () => {
     setSubmitting(true);
     setError(null);
@@ -182,7 +216,12 @@ export function QuoteForm() {
         localStorage.removeItem("summit-quote-draft");
       } catch {}
     } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Submission failed.");
+      openMailtoFallback();
+      setError(
+        e instanceof Error
+          ? e.message
+          : "Submission failed. Your email app should open with the quote details addressed to Brody.",
+      );
     } finally {
       setSubmitting(false);
     }
@@ -575,13 +614,30 @@ export function QuoteForm() {
               By submitting, you agree to be contacted by Brody at Summit Handyman regarding your project. Your info is never shared.
             </p>
 
+            <div className="rounded-xl border border-divider-strong bg-surface-elevated/60 px-4 py-3 text-sm text-fg-muted">
+              Prefer your email app? This opens a prefilled message to Brody with the form details.
+              {photos.length > 0 ? " Attach your selected photos before sending." : ""}
+              <a
+                href={mailtoHref}
+                className="mt-2 inline-flex min-h-11 items-center rounded-xl text-accent font-semibold underline-offset-4 hover:underline"
+              >
+                Open email to Brody
+              </a>
+            </div>
+
             {error && (
-              <p
+              <div
                 role="alert"
                 className="rounded-xl border border-red-500/40 bg-red-500/10 text-red-300 text-sm px-4 py-3"
               >
-                {error}
-              </p>
+                <p>{error}</p>
+                <a
+                  href={mailtoHref}
+                  className="mt-2 inline-flex min-h-11 items-center font-semibold underline-offset-4 hover:underline"
+                >
+                  Open prefilled email instead
+                </a>
+              </div>
             )}
           </div>
         )}
