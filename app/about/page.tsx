@@ -105,7 +105,7 @@ export default function AboutPage() {
           <>
             Built for people who are tired of chasing{" "}
             <span className="font-serif italic font-normal text-gradient-gold">
-              unreliable trades.
+              contractors who ghost.
             </span>
           </>
         }
@@ -310,8 +310,8 @@ export default function AboutPage() {
             <Reveal>
               <div className="photo-grade relative min-h-[26rem] overflow-hidden rounded-[2rem] border border-divider-strong shadow-panel-lg">
                 <Image
-                  src="/images/hands-workmanship.webp"
-                  alt="Craftsman's hands measuring freshly-installed trim"
+                  src="/images/about-workmanship-detail.webp"
+                  alt="Craftsmanship tools arranged beside a clean finished trim corner"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover"
@@ -322,7 +322,7 @@ export default function AboutPage() {
                     The detail layer
                   </p>
                   <p className="mt-2 font-display text-2xl font-bold text-summit-mist leading-tight">
-                    Measured twice is not a slogan. It is the business model.
+                    Clean details are not a slogan. They are the business model.
                   </p>
                 </div>
               </div>

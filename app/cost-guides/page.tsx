@@ -335,7 +335,7 @@ export default function CostGuidesPage() {
             <div className="grid gap-8 rounded-[2rem] border border-accent/35 bg-surface-panel/75 p-6 shadow-panel-lg backdrop-blur sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-10 lg:items-center">
               <div className="relative min-h-[18rem] overflow-hidden rounded-3xl border border-divider-strong photo-grade">
                 <Image
-                  src="/images/guide-accurate-quote.webp"
+                  src="/images/page-hero-fallback.webp"
                   alt=""
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
