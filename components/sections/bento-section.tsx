@@ -110,10 +110,10 @@ export function BentoSection() {
             <Clock className="h-7 w-7 text-accent" strokeWidth={1.5} />
             <div>
               <p className="font-display text-2xl md:text-3xl font-extrabold text-fg-strong leading-tight">
-                Fast<br />response
+                Written<br />reply
               </p>
               <p className="mt-1 text-xs sm:text-sm text-fg-muted">
-                Email or text. Written replies within 24 hours.
+                Email or text. Useful next steps within 24 hours.
               </p>
             </div>
           </BentoTile>

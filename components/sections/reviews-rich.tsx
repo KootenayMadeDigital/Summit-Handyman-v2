@@ -59,7 +59,7 @@ const decisionLenses = [
     Icon: Clock,
     label: "Response",
     question: "Will he actually get back to me?",
-    answer: "Reviews repeatedly mention fast replies, punctuality, and clear communication before the work starts.",
+    answer: "Reviews repeatedly mention prompt replies, punctuality, and clear communication before the work starts.",
   },
   {
     key: "finish",
@@ -214,11 +214,11 @@ export function ReviewsRichPage() {
             eyebrow="Review wall"
             title={
               <>
-                Every review should be easy to skim, compare, and
-                <span className="font-serif italic font-normal text-gradient-gold"> believe.</span>
+                Read the proof before you invite someone into your
+                <span className="font-serif italic font-normal text-gradient-gold"> home.</span>
               </>
             }
-            description={`${reviews.length} public reviews loaded into the page, with the newest proof first. No tiny testimonial strip pretending to be a credibility page.`}
+            description={`${reviews.length} public reviews loaded into the page, with the newest proof first and enough detail to spot the pattern.`}
             align="center"
             className="mb-12 sm:mb-14"
           />

@@ -62,7 +62,21 @@ export default function ContactPage() {
           </>
         }
         description="Submit the quote form. It takes about 90 seconds, includes photos, and lets Brody come back to you with answers, not more questions."
-      />
+      >
+        <div className="flex flex-col gap-3 pt-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <MagneticCTA href="/quote" size="lg">
+            Start the quote form
+            <ArrowRight className="h-5 w-5" />
+          </MagneticCTA>
+          <a
+            href={`mailto:${site.contact.email}`}
+            className="inline-flex items-center gap-2 text-sm text-fg-muted hover:text-accent transition-colors"
+          >
+            <Mail className="h-4 w-4" />
+            email Brody directly
+          </a>
+        </div>
+      </PageHero>
 
       {/* PRIMARY: quote form CTA panel */}
       <Section size="lg" className="bg-surface">
@@ -73,18 +87,18 @@ export default function ContactPage() {
                 Recommended
               </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-fg-strong mb-4 text-balance leading-[1.05]">
-                Submit a quote request
+                Start the quote with useful details
               </h2>
               <p className="text-base sm:text-lg text-fg/85 max-w-xl mx-auto mb-8 leading-relaxed">
-                Brody can give you a much better answer when he has the project details and photos in hand. The form takes about 90 seconds.
+                Brody can give you a sharper answer when he has the project details and photos in hand. The form takes about 90 seconds and keeps the scope in writing.
               </p>
 
               <ul className="grid sm:grid-cols-3 gap-3 sm:gap-4 mb-8 max-w-2xl mx-auto text-left">
                 <li className="summit-card-motion motion-trust flex items-start gap-3 p-3 rounded-xl bg-surface/60 border border-divider">
                   <FileText className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
                   <div>
-                    <p className="font-display font-bold text-sm text-fg-strong leading-tight">Documented</p>
-                    <p className="text-xs text-fg-muted mt-0.5">Details on file before the call.</p>
+                    <p className="font-display font-bold text-sm text-fg-strong leading-tight">Scope saved</p>
+                    <p className="text-xs text-fg-muted mt-0.5">Details on file before the reply.</p>
                   </div>
                 </li>
                 <li className="summit-card-motion motion-trust flex items-start gap-3 p-3 rounded-xl bg-surface/60 border border-divider">

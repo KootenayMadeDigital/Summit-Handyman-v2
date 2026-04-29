@@ -158,7 +158,7 @@ export default function AboutPage() {
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href="/quote" size="lg">
-            Submit a Quote Request
+            Start Quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
           <a

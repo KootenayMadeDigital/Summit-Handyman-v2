@@ -414,13 +414,13 @@ export function QuoteForm() {
                 Tell Brody what's going on.
               </h2>
               <p className="text-sm sm:text-base text-fg-muted mb-3">
-                The more detail here, the more accurate Brody's estimate. He'll review everything before reaching out.
+                A rough list is fine. Helpful details: what changed, rough size, access issues, tenant timing, and what a clean finished result should look like.
               </p>
               <textarea
                 value={state.description}
                 onChange={(e) => update("description", e.target.value)}
                 rows={6}
-                placeholder="Describe the project. Size, scope, anything Brody should know."
+                placeholder="Example: hallway drywall patch about the size of a dinner plate, needs texture match and paint touch-up. Photos attached."
                 className="w-full px-4 py-3 rounded-xl bg-surface-elevated/80 border border-divider-strong text-fg-strong placeholder:text-fg-faint focus-visible:border-accent focus-visible:outline-none resize-none"
               />
               <p className="mt-1 text-xs text-fg-muted">
@@ -434,7 +434,7 @@ export function QuoteForm() {
                 Add photos (optional, up to {MAX_PHOTOS})
               </p>
               <p className="text-sm text-fg-muted mb-3">
-                Photos let Brody quote accurately and show up with the right tools. JPG, PNG, WEBP, or HEIC. 5MB each.
+                Photos reduce guesswork and help Brody spot materials, damage, access, and finish details before he replies. JPG, PNG, WEBP, or HEIC. 5MB each.
               </p>
 
               {photos.length < MAX_PHOTOS && (

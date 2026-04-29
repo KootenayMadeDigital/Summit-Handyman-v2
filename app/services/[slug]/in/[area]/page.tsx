@@ -200,7 +200,7 @@ export default async function ServiceInAreaPage(
             href={`/quote?service=${service.slug}&area=${area.slug}`}
             size="lg"
           >
-            Submit a Quote Request
+            Start this local quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
           <a
@@ -380,7 +380,7 @@ export default async function ServiceInAreaPage(
                 href={`/areas/${area.slug}`}
                 className="text-accent font-semibold underline-offset-4 hover:underline"
               >
-                See everything in {area.name} →
+                See everything in {area.name}
               </Link>
             </p>
           </Reveal>
@@ -392,7 +392,7 @@ export default async function ServiceInAreaPage(
         <Container>
           <SectionTitle
             eyebrow={`${service.name} elsewhere`}
-            title={`${service.name} available across the Lower Mainland.`}
+            title={`${service.name} is available across the Lower Mainland.`}
           />
           <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
             {sameServiceOtherCities.map((a) => (
@@ -426,14 +426,14 @@ export default async function ServiceInAreaPage(
                 </span>
               </h2>
               <p className="text-base sm:text-lg text-fg/80 max-w-xl mx-auto leading-relaxed">
-                {area.responseTime} quote reply. {site.pricing.minimumDisplay}. Free written estimate.
+                {area.responseTime} quote reply. {site.pricing.minimumDisplay}. Free written estimate before work begins.
               </p>
               <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <MagneticCTA
                   href={`/quote?service=${service.slug}&area=${area.slug}`}
                   size="lg"
                 >
-                  Submit a quote request
+                  Start this local quote
                   <ArrowRight className="h-5 w-5" />
                 </MagneticCTA>
               </div>

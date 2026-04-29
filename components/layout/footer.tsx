@@ -102,7 +102,7 @@ export function Footer() {
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-accent text-white font-display font-bold text-sm hover:bg-accent-hot transition-colors shadow-gold"
                 >
                   <FileText className="h-4 w-4" />
-                  Get a Quote
+                  Start Quote
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
@@ -230,7 +230,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/quote" className="text-fg/80 hover:text-accent transition-colors">
-                  Get a Quote
+                  Start Quote
                 </Link>
               </li>
             </ul>

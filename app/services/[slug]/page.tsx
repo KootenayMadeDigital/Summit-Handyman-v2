@@ -118,7 +118,7 @@ export default async function ServicePage(
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href={`/quote?service=${service.slug}`} size="lg">
-            Submit a Quote Request
+            Start Quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
           <a
@@ -181,6 +181,38 @@ export default async function ServicePage(
         </Container>
       </Section>
 
+      {service.faqs.length > 0 && (
+        <Section size="lg" className="bg-surface-panel border-y border-divider">
+          <Container size="narrow">
+            <SectionTitle
+              eyebrow="Common buyer questions"
+              title={
+                <>
+                  What people ask before booking {service.name.toLowerCase()}.
+                  <span className="block font-serif italic font-normal text-gradient-gold">
+                    Clear answers before anyone commits.
+                  </span>
+                </>
+              }
+              align="center"
+              className="mb-10 sm:mb-12"
+            />
+            <Reveal>
+              <ul className="space-y-3">
+                {service.faqs.map((faq) => (
+                  <li key={faq.q} className="summit-card-motion motion-review rounded-2xl border border-divider-strong bg-surface p-6">
+                    <h3 className="font-display text-lg font-bold text-fg-strong mb-2">
+                      {faq.q}
+                    </h3>
+                    <p className="text-fg/85 leading-relaxed">{faq.a}</p>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </Container>
+        </Section>
+      )}
+
       {/* Related services inline */}
       <Section size="md" className="bg-surface-panel border-y border-divider">
         <Container>
@@ -233,6 +265,40 @@ export default async function ServicePage(
               </Link>
             ))}
           </div>
+        </Container>
+      </Section>
+
+      <Section size="lg" className="grainient-promise relative overflow-hidden">
+        <Container>
+          <Reveal>
+            <div className="summit-card-motion motion-cta grid gap-8 rounded-[2rem] border border-accent/35 bg-surface-panel/75 p-6 shadow-panel-lg backdrop-blur sm:p-8 md:p-10 lg:grid-cols-[1fr_0.4fr] lg:items-center">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
+                  Not sure where this fits?
+                </p>
+                <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight text-fg-strong text-balance sm:text-4xl md:text-5xl">
+                  Send the photos. Brody will sort the scope.
+                </h2>
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-fg/85 sm:text-lg">
+                  Pick this service if it is close. The quote form gives Brody enough context to confirm the right scope, catch missing details, and reply with a written estimate.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-fg-muted">
+                  <span className="rounded-full border border-divider-strong bg-surface/70 px-3 py-1.5">Owner reviewed</span>
+                  <span className="rounded-full border border-divider-strong bg-surface/70 px-3 py-1.5">Written estimate first</span>
+                  <span className="rounded-full border border-divider-strong bg-surface/70 px-3 py-1.5">{site.pricing.minimumDisplay}</span>
+                </div>
+              </div>
+              <div className="flex flex-col gap-3">
+                <MagneticCTA href={`/quote?service=${service.slug}`} size="lg">
+                  Start this quote
+                  <ArrowRight className="h-5 w-5" />
+                </MagneticCTA>
+                <Button href="/reviews" variant="secondary" size="lg" withArrow>
+                  Read reviews
+                </Button>
+              </div>
+            </div>
+          </Reveal>
         </Container>
       </Section>
     </>

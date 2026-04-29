@@ -172,13 +172,13 @@ export default function AreasPage() {
               eyebrow="Choose your area"
               title={
                 <>
-                  Local pages should answer one question first.
+                  Your city page should answer one question first.
                   <span className="block font-serif italic font-normal text-gradient-gold">
                     Does Brody serve my place?
                   </span>
                 </>
               }
-              description="Fast comparison for city coverage, neighbourhoods, common home types, and the same quote response expectation across the service area."
+              description="Clear comparison for city coverage, neighbourhoods, common home types, and the same quote reply expectation across the service area."
               className="mb-0"
             />
             <Reveal delay={0.1}>

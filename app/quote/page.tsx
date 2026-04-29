@@ -7,7 +7,7 @@ import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 
 export const metadata: Metadata = {
-  title: "Submit a Quote Request",
+  title: "Start a Quote Request",
   description:
     "The recommended way to get a written estimate from Brody. Tell him what's going on, attach photos, and he'll review the job before reaching out within 24 hours.",
   alternates: { canonical: "/quote" },
@@ -40,7 +40,7 @@ export default function QuotePage() {
   return (
     <>
       <PageHero
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Get a Quote" }]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Start Quote" }]}
         eyebrow="Recommended way to reach Brody"
         title={
           <>
@@ -97,13 +97,13 @@ export default function QuotePage() {
                   Good details make better estimates.
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-fg-muted">
-                  Brody is not trying to trap you in a phone call. This form gives him enough context to reply with useful answers, not vague contractor talk.
+                  You do not need perfect details. A rough list, a few photos, and the city are enough for Brody to reply with useful next steps instead of vague contractor talk.
                 </p>
                 <div className="mt-6 space-y-3">
                   {[
                     "Use the closest service match",
                     "Add photos if the repair is visible",
-                    "Mention access issues or timing pressure",
+                    "Mention access issues, tenants, pets, or timing pressure",
                     "Bundle small jobs into one visit when possible",
                   ].map((item) => (
                     <div key={item} className="summit-card-motion motion-process flex gap-3 rounded-2xl border border-divider-strong bg-surface/60 p-3 text-sm text-fg-strong">

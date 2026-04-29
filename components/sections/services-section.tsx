@@ -26,7 +26,7 @@ export function ServicesSection() {
               </span>
             </>
           }
-          description="Welcome to Summit Handyman, where quality craftsmanship meets exceptional service. From everyday fixes to weekend overhauls. one trusted pro for the whole list."
+          description="Find the closest match for the repair list, then send the details once. Brody handles the scope personally, so the job starts with clarity instead of contractor fog."
           className="mb-14 sm:mb-16"
         />
 

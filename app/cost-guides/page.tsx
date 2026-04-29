@@ -381,7 +381,7 @@ export default function CostGuidesPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-summit-black/75 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-summit-black/65 p-4 backdrop-blur">
                   <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
-                    Fastest path
+                    Clean path
                   </p>
                   <p className="mt-1 font-display text-xl font-bold text-summit-mist">
                     Photos plus scope equals a better quote.
@@ -397,7 +397,7 @@ export default function CostGuidesPage() {
                   Reading is useful. A written estimate is better.
                 </h2>
                 <p className="text-base sm:text-lg text-fg/85 max-w-2xl leading-relaxed text-pretty">
-                  Send the photos, the city, and the timing. Brody reviews the scope before replying, so the first answer is practical instead of vague.
+                  If the guide helped you understand the repair, the quote form turns that context into next steps. Send the photos, the city, and the timing so Brody can reply with something practical.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-3">
                   {[

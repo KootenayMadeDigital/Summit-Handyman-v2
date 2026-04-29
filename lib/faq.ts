@@ -3,7 +3,7 @@ export type FAQ = { q: string; a: string };
 export const faqs: FAQ[] = [
   {
     q: "What areas do you serve?",
-    a: "I proudly serve Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale.",
+    a: "Summit Handyman serves Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale.",
   },
   {
     q: "What is your minimum charge?",
@@ -23,7 +23,7 @@ export const faqs: FAQ[] = [
   },
   {
     q: "Do you offer free estimates?",
-    a: "Yes, I provide free, no-obligation estimates for all projects. You can request one directly through the website, by email, or by text.",
+    a: "Yes. Submit the quote form with the service, city, description, and photos if available. Brody reviews the scope and replies with a written estimate or clear next steps.",
   },
   {
     q: "Do I need to buy materials first?",

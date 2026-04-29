@@ -192,15 +192,18 @@ export default async function GuidePage(
             <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-2">
               Need this done?
             </p>
-            <p className="font-display text-2xl md:text-3xl font-bold text-fg-strong mb-5 text-balance">
-              Get a free, written estimate from Brody.
+            <p className="font-display text-2xl md:text-3xl font-bold text-fg-strong mb-3 text-balance">
+              If this guide sounds like your repair, send Brody the scope.
+            </p>
+            <p className="mx-auto mb-5 max-w-xl text-sm leading-relaxed text-fg-muted">
+              The quote form turns what you just learned into photos, location, timing, and a written estimate path.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <MagneticCTA
                 href={g.service ? `/quote?service=${g.service}` : "/quote"}
                 size="md"
               >
-                Get a Quote
+                Start the quote
                 <ArrowRight className="h-4 w-4" />
               </MagneticCTA>
               <Button

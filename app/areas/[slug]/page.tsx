@@ -339,7 +339,7 @@ export default async function AreaPage(
                   </span>
                 </>
               }
-              description="The page can rank for local search, but the job still needs to be simple for a real homeowner to start."
+              description="A local page is only useful if it makes the next step simple: pick the job, send the details, and get a written reply from Brody."
               className="mb-0"
             />
             <RevealStagger className="grid gap-4" staggerDelay={0.05}>
@@ -368,9 +368,9 @@ export default async function AreaPage(
             eyebrow={`Services in ${area.name}`}
             title={
               <>
-                Local service pages for every Summit repair category.
+                Pick the exact repair path for {area.name}.
                 <span className="block font-serif italic font-normal text-gradient-gold">
-                  Built for search. Useful for humans.
+                  Same Brody, clearer scope.
                 </span>
               </>
             }
@@ -404,12 +404,12 @@ export default async function AreaPage(
       <Section size="lg" className="bg-surface">
         <Container size="narrow">
           <SectionTitle
-            eyebrow={`${area.name} SEO details`}
+            eyebrow={`${area.name} coverage details`}
             title={
               <>
-                What Summit serves in {area.name}.
+                Where Summit fits in {area.name}.
                 <span className="block font-serif italic font-normal text-gradient-gold">
-                  The useful local version.
+                  Neighbourhoods, home types, and service context.
                 </span>
               </>
             }

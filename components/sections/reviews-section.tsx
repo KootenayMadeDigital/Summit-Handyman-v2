@@ -51,7 +51,7 @@ export function ReviewsSection() {
                 in the Lower Mainland.
               </>
             }
-            description={`${data.aggregate.rating.toFixed(1)} stars on Google. ${isLive ? "Pulled live from Trustindex" : "Read more on Google or Trustindex"}. no cherry-picking.`}
+            description={`${data.aggregate.rating.toFixed(1)} stars on Google. ${isLive ? "Pulled live from Trustindex" : "Read more on Google or Trustindex"}. The full review wall is there for anyone doing due diligence.`}
           />
           <Reveal>
             <div className="flex flex-col gap-3">

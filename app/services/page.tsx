@@ -28,6 +28,7 @@ import { Button } from "@/components/ui/button";
 import { SectionDivider } from "@/components/ui/section-divider";
 import { services, serviceCategories, type ServiceCategory } from "@/lib/services";
 import { site } from "@/lib/site";
+import { placeholderReviews } from "@/lib/reviews";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -44,13 +45,13 @@ const personas = [
     Icon: ListChecks,
     label: "The fix-it list",
     headline: "One pro for the whole list.",
-    body: "You've been adding to a list for months: a faucet that drips, a door that catches, a fence post leaning, three picture mounts. Brody handles all of it in one visit.",
-    bullet: "Bundle 3+ small jobs into one trip and the $150 minimum covers them all.",
+    body: "You've been adding to a list for months: a faucet that drips, a door that catches, a fence post leaning, three picture mounts. Brody turns the scattered list into one written scope.",
+    bullet: "Grouped small jobs are usually cleaner than booking separate visits for every fix.",
   },
   {
     Icon: Building2,
     label: "Property managers",
-    headline: "Documented turnovers, on time.",
+    headline: "Documented turnovers, calm owners.",
     body: "Tenant turnover, common-area repairs, and time-sensitive coordination. Itemized invoices with photos before and after. Built for clean handoffs and documented follow-through.",
     bullet: "Repeat property work can be scoped by email when you need documentation across multiple units.",
   },
@@ -77,7 +78,7 @@ const trustSignals = [
   {
     Icon: FileText,
     label: "Free written estimates",
-    sub: "Reviewed and quoted in 24 hours.",
+    sub: "Reviewed and answered within 24 hours.",
   },
   {
     Icon: Star,
@@ -90,7 +91,7 @@ const processSteps = [
   {
     step: "01",
     Icon: FileText,
-    title: "Submit a quote request",
+    title: "Start with the repair list",
     body: "Pick the service, area, and timing. Add photos so Brody can review the scope before reaching out. About 90 seconds.",
   },
   {
@@ -137,6 +138,8 @@ const reassurances = [
 ];
 
 export default function ServicesPage() {
+  const servicesPageReview = placeholderReviews.find((review) => review.author === "Katrina S") ?? placeholderReviews[0];
+
   const serviceCollectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -191,7 +194,7 @@ export default function ServicesPage() {
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href="/quote" size="lg">
-            Submit a Quote Request
+            Start Quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
           <a
@@ -385,7 +388,7 @@ export default function ServicesPage() {
       {/* === PROCESS TIMELINE ===
           Linda needs to see what hiring Brody actually looks like. Mark
           wants to confirm there's a documented flow. Sarah benefits from
-          knowing the email-first process is fast. */}
+          knowing the email-first process is clear. */}
       <Section size="lg" className="bg-surface-panel border-y border-divider">
         <Container>
           <SectionTitle
@@ -601,7 +604,7 @@ export default function ServicesPage() {
                   a: 'It means: if a repair Brody completed fails due to installation error, he comes back and fixes it without charge. This is workmanship coverage on every job, not a sales pitch. The exact wording: "If it\'s not done right, I come back and fix it. No charge. No questions."',
                 },
                 {
-                  q: "How fast can you start?",
+                  q: "How soon can you start?",
                   a: "Quote requests are reviewed within 24 hours. Once you confirm scope and timing, scheduling depends on the work required, access, materials, and Brody's current calendar.",
                 },
                 {
@@ -628,7 +631,7 @@ export default function ServicesPage() {
 
       {/* === SOCIAL PROOF + WORKMANSHIP PROMISE ===
           Final confidence stack before the close. Single review pull
-          quote (real V1 verbatim) + Brody promise + ratings line. */}
+          quote from the real public fallback set + Brody promise + ratings line. */}
       <Section size="lg" className="grainient-promise relative overflow-hidden">
         <Container size="narrow">
           <Reveal>
@@ -642,10 +645,10 @@ export default function ServicesPage() {
                 What clients consistently say
               </p>
               <blockquote className="font-serif text-2xl sm:text-3xl md:text-4xl text-fg-strong leading-snug text-balance text-pretty max-w-3xl mx-auto">
-                "Punctual, polite, and did exactly what was promised. The quality of the finish was better than the original builder's work."
+                "{servicesPageReview.body}"
               </blockquote>
               <p className="text-sm text-fg-muted">
-                David L., White Rock · via Google
+                {servicesPageReview.author}, {servicesPageReview.city} · via {servicesPageReview.source}
               </p>
               <div className="pt-6 border-t border-divider max-w-2xl mx-auto">
                 <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold mb-3">
@@ -691,7 +694,7 @@ export default function ServicesPage() {
               </p>
               <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <MagneticCTA href="/quote" size="lg">
-                  Get a Quote
+                  Start Quote
                   <ArrowRight className="h-5 w-5" />
                 </MagneticCTA>
                 <a

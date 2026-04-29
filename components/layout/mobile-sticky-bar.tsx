@@ -94,10 +94,10 @@ export function MobileStickyBar() {
         <Link
           href="/quote"
           className="col-span-3 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-accent text-white font-display font-bold text-sm transition-colors active:bg-accent-hot shadow-gold"
-          aria-label="Get a quote"
+          aria-label="Start a quote"
         >
           <FileText className="h-4 w-4" />
-          Get a Quote
+          Start Quote
         </Link>
         <a
           href={`mailto:${site.contact.email}`}

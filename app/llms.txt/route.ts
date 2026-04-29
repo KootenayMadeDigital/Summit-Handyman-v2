@@ -36,7 +36,7 @@ Key facts:
 ## Core pages
 
 - [Homepage](${url}/): Overview, services, projects, reviews, FAQ
-- [Get a Quote (preferred contact path)](${url}/quote): 4-step quote request form with photo upload (up to 5 attachments). The recommended way to get an accurate written estimate from Brody.
+- [Start Quote (preferred contact path)](${url}/quote): 4-step quote request form with photo upload (up to 5 attachments). The recommended way to get an accurate written estimate from Brody.
 - [About Brody Robertson](${url}/about): Owner story, four-principle workmanship promise
 - [Contact](${url}/contact): Email, text, and Facebook Messenger fallback channels (the quote form is preferred)
 - [Reviews](${url}/reviews): 5.0 Google rating, full review feed, leave-a-review CTA

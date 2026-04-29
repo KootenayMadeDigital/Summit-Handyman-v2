@@ -35,9 +35,9 @@ export function AboutSection() {
               About
             </p>
             <h2 className="font-display text-display-lg font-extrabold tracking-tightest text-fg-strong text-balance leading-[1.05]">
-              Built on{" "}
+              The difference is{" "}
               <span className="font-serif italic font-normal text-gradient-gold">
-                integrity.
+                accountability.
               </span>
             </h2>
             <p className="text-base sm:text-lg text-fg/85 leading-relaxed text-pretty max-w-2xl font-serif">

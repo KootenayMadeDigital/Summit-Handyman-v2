@@ -63,11 +63,11 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="font-display text-display-2xl font-extrabold tracking-tightest text-fg-strong text-balance leading-[0.95] hyphens-none"
           >
-            Reliability
+            Handyman repairs
             <br className="hidden sm:inline" />{" "}
-            Reaching{" "}
+            without the{" "}
             <span className="font-serif italic font-normal text-gradient-gold whitespace-nowrap">
-              New Heights.
+              chase.
             </span>
           </motion.h1>
 
@@ -77,11 +77,11 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg sm:text-xl text-fg/85 leading-relaxed text-pretty max-w-2xl"
           >
-            Premium handyman repairs for property managers and families across{" "}
+            One owner-operated handyman for families and property managers across{" "}
             <span className="text-fg-strong font-semibold">
               Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale
             </span>
-            . Done right the first time. Or I come back free.
+            . Clear scope, clean work, written estimates, and the promise to come back free if it is not done right.
           </motion.p>
 
           <motion.div
@@ -91,7 +91,7 @@ export function Hero() {
             className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-2"
           >
             <MagneticCTA href="/quote" size="lg">
-              Submit a Quote Request
+              Start Quote
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
             </MagneticCTA>
             <a
@@ -109,7 +109,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.6 }}
             className="text-sm text-fg-muted pt-3 sm:pt-4 leading-relaxed max-w-xl"
           >
-            <span className="text-fg/90">The quote form takes about 90 seconds</span> and lets Brody review the job (with photos) before reaching out. He replies within 24 hours.
+            <span className="text-fg/90">Start with the repair list</span>, add photos if you have them, and Brody replies with useful next steps within 24 hours.
           </motion.p>
           <motion.p
             initial={reduce ? { opacity: 0 } : { opacity: 0 }}

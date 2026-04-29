@@ -457,7 +457,7 @@ export const guides: Guide[] = [
       },
       {
         type: "callout",
-        title: "Get a quote that won't surprise you",
+        title: "Start with a quote that won't surprise you",
         text: "Submit photos and a description through the quote form. Brody emails a written estimate within 24 hours. The price is the price.",
       },
     ],
@@ -465,16 +465,16 @@ export const guides: Guide[] = [
 
   {
     slug: "how-to-get-an-accurate-handyman-quote",
-    title: "How to Get an Accurate Handyman Quote in 60 Seconds",
+    title: "How to Get an Accurate Handyman Quote Without Back-and-Forth",
     excerpt:
-      "What information actually helps a handyman quote your job accurately. Skip the back-and-forth and get a real number on the first reply.",
+      "What information actually helps a handyman quote your job accurately. Skip the back-and-forth and get a clearer first reply.",
     date: "2026-04-12",
     readingMinutes: 4,
     hero: "/images/guide-accurate-quote.webp",
     body: [
       {
         type: "p",
-        text: "The quotes that come back fast and accurate share something in common: the customer gave the handyman everything needed to think the job through. Here's the short version of what helps.",
+        text: "The clearest quotes share something in common: the customer gave the handyman enough context to think the job through before replying. Here's the short version of what helps.",
       },
       { type: "h2", text: "1. A few photos beats a thousand words" },
       {
@@ -571,7 +571,7 @@ export const guides: Guide[] = [
       {
         type: "callout",
         title: "Need a turnover handled this week?",
-        text: "Submit a quote request with the unit address and as many photos as you can. Brody confirms scope and timing within 24 hours for active turnovers.",
+        text: "Start the quote with the unit address, access notes, and as many photos as you can. Brody confirms scope and timing within 24 hours for active turnovers.",
       },
     ],
   },

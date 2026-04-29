@@ -21,7 +21,7 @@ export function FinalCTA() {
               </span>
             </h2>
             <p className="text-base sm:text-lg text-fg/85 max-w-xl mx-auto leading-relaxed">
-              The form takes about 90 seconds and lets Brody review the scope, photos, and timing before reaching out. That way the first reply already has the answers you need.
+              Send the list, the location, and any photos. Brody reviews the scope before replying, so the first answer is practical instead of vague.
             </p>
 
             {/* Why the form */}
@@ -29,8 +29,8 @@ export function FinalCTA() {
               <li className="summit-card-motion motion-trust flex items-start gap-3 p-4 rounded-xl bg-surface-panel border border-divider">
                 <FileText className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
                 <div>
-                  <p className="font-display font-bold text-sm text-fg-strong leading-tight">Documented</p>
-                  <p className="text-xs text-fg-muted mt-0.5">Brody has all the details on hand for the call.</p>
+                  <p className="font-display font-bold text-sm text-fg-strong leading-tight">Scope saved</p>
+                  <p className="text-xs text-fg-muted mt-0.5">The repair list is clear before the reply.</p>
                 </div>
               </li>
               <li className="summit-card-motion motion-trust flex items-start gap-3 p-4 rounded-xl bg-surface-panel border border-divider">
@@ -51,7 +51,7 @@ export function FinalCTA() {
 
             <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
               <MagneticCTA href="/quote" size="lg">
-                Submit a quote request
+                Start Quote
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
               </MagneticCTA>
             </div>
