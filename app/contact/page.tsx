@@ -6,13 +6,12 @@ import {
   Clock,
   MapPin,
   ArrowRight,
-  FileText,
-  Camera,
 } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
+import { QuoteForm } from "@/components/forms/quote-form";
 import { site } from "@/lib/site";
 import { areas } from "@/lib/areas";
 
@@ -64,7 +63,7 @@ export default function ContactPage() {
         description="Submit the quote form first when you can. It captures the details Brody needs before the reply."
       >
         <div className="flex flex-col gap-3 pt-3 sm:flex-row sm:flex-wrap sm:items-center">
-          <MagneticCTA href="/quote" size="lg">
+          <MagneticCTA href="#contact-form" size="lg">
             Start My Quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
@@ -78,50 +77,24 @@ export default function ContactPage() {
         </div>
       </PageHero>
 
-      {/* PRIMARY: quote form CTA panel */}
-      <Section size="lg" className="bg-surface">
+      {/* PRIMARY: contact and quote form */}
+      <Section id="contact-form" size="lg" className="bg-surface scroll-mt-28">
         <Container size="narrow">
           <Reveal>
-            <div className="summit-card-motion motion-cta rounded-2xl bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_14%,var(--bg-panel))] border border-accent p-8 md:p-12 text-center shadow-gold-lg">
+            <div className="mb-8 text-center">
               <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-3">
                 Recommended
               </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-fg-strong mb-4 text-balance leading-[1.05]">
-                Start with the details Brody actually needs
+                Send the details straight to Brody
               </h2>
-              <p className="text-base sm:text-lg text-fg/85 max-w-xl mx-auto mb-8 leading-relaxed">
-                Brody can reply with a clearer next step when the scope, photos, and city are already in front of him.
+              <p className="text-base sm:text-lg text-fg/85 max-w-xl mx-auto leading-relaxed">
+                This contact form sends the scope, photos, city, and reply details directly to {site.contact.email}.
               </p>
-
-              <ul className="grid sm:grid-cols-3 gap-3 sm:gap-4 mb-8 max-w-2xl mx-auto text-left">
-                <li className="summit-card-motion motion-trust flex items-start gap-3 p-3 rounded-xl bg-surface/60 border border-divider">
-                  <FileText className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
-                  <div>
-                    <p className="font-display font-bold text-sm text-fg-strong leading-tight">Scope saved</p>
-                    <p className="text-xs text-fg-muted mt-0.5">Details on file before the reply.</p>
-                  </div>
-                </li>
-                <li className="summit-card-motion motion-trust flex items-start gap-3 p-3 rounded-xl bg-surface/60 border border-divider">
-                  <Camera className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
-                  <div>
-                    <p className="font-display font-bold text-sm text-fg-strong leading-tight">Photos help</p>
-                    <p className="text-xs text-fg-muted mt-0.5">Up to 5 attachments.</p>
-                  </div>
-                </li>
-                <li className="summit-card-motion motion-trust flex items-start gap-3 p-3 rounded-xl bg-surface/60 border border-divider">
-                  <Clock className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
-                  <div>
-                    <p className="font-display font-bold text-sm text-fg-strong leading-tight">24-hour reply</p>
-                    <p className="text-xs text-fg-muted mt-0.5">Reviewed within 24 hours.</p>
-                  </div>
-                </li>
-              </ul>
-
-              <MagneticCTA href="/quote" size="lg">
-                Start your quote
-                <ArrowRight className="h-5 w-5" />
-              </MagneticCTA>
             </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <QuoteForm />
           </Reveal>
         </Container>
       </Section>

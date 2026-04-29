@@ -12,12 +12,12 @@ import { getArea } from "@/lib/areas";
  * to give an accurate estimate before reaching out.
  *
  * Env vars:
- *   RESEND_API_KEY (required for production email delivery)
+ *   RESEND_API_KEY (required for email delivery)
  *   QUOTE_FROM_EMAIL (optional, defaults to Summit Handyman <quote@summit-handyman.ca>)
  *
- * If RESEND_API_KEY is missing the route still returns 200 so the form
- * doesn't break; the submission is logged server-side and the user is told
- * to email Brody directly as a fallback.
+ * If RESEND_API_KEY is missing, the route returns an error instead of silently
+ * accepting the form. Quote requests must either reach Brody or tell the user
+ * to email him directly.
  */
 
 export const runtime = "nodejs";
@@ -65,14 +65,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true });
     }
 
-    const service = String(formData.get("service") ?? "");
-    const timing = String(formData.get("timing") ?? "");
-    const area = String(formData.get("area") ?? "");
-    const description = String(formData.get("description") ?? "");
-    const name = String(formData.get("name") ?? "");
-    const contact = String(formData.get("contact") ?? "");
-    const preferredContact = String(formData.get("preferredContact") ?? "email");
-    const postalCode = String(formData.get("postalCode") ?? "");
+    const service = String(formData.get("service") ?? "").trim();
+    const timing = String(formData.get("timing") ?? "").trim();
+    const area = String(formData.get("area") ?? "").trim();
+    const description = String(formData.get("description") ?? "").trim();
+    const name = String(formData.get("name") ?? "").trim();
+    const contact = String(formData.get("contact") ?? "").trim();
+    const preferredContact = String(formData.get("preferredContact") ?? "email").trim();
+    const postalCode = String(formData.get("postalCode") ?? "").trim();
 
     if (!name || name.trim().length < 2) {
       return NextResponse.json({ error: "Please tell Brody your name." }, { status: 400 });
@@ -85,6 +85,15 @@ export async function POST(req: NextRequest) {
         { error: "Please describe the job (10 characters minimum)." },
         { status: 400 },
       );
+    }
+    if (!service) {
+      return NextResponse.json({ error: "Please choose the closest service." }, { status: 400 });
+    }
+    if (!timing) {
+      return NextResponse.json({ error: "Please choose a timing option." }, { status: 400 });
+    }
+    if (!area) {
+      return NextResponse.json({ error: "Please choose your city." }, { status: 400 });
     }
 
     const photoEntries = formData.getAll("photos").filter((f): f is File => f instanceof File);
@@ -143,48 +152,48 @@ export async function POST(req: NextRequest) {
     const fromAddress =
       process.env.QUOTE_FROM_EMAIL ?? "Summit Handyman <quote@summit-handyman.ca>";
 
-    if (resendKey) {
-      const attachments = await Promise.all(
-        photoEntries.map(async (p) => ({
-          filename: p.name || `photo-${Date.now()}.jpg`,
-          content: Buffer.from(await p.arrayBuffer()).toString("base64"),
-        })),
+    if (!resendKey) {
+      console.error("Quote email delivery is not configured: RESEND_API_KEY is missing.");
+      return NextResponse.json(
+        { error: "Email delivery is not configured. Please email Brody directly at " + site.contact.email },
+        { status: 503 },
       );
+    }
 
-      const resp = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${resendKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          from: fromAddress,
-          to: [site.contact.email],
-          reply_to: contact.includes("@") ? contact : undefined,
-          subject,
-          html,
-          text,
-          attachments: attachments.length ? attachments : undefined,
-        }),
-      });
+    const attachments = await Promise.all(
+      photoEntries.map(async (p) => ({
+        filename: p.name || `photo-${Date.now()}.jpg`,
+        content: Buffer.from(await p.arrayBuffer()).toString("base64"),
+      })),
+    );
 
-      if (!resp.ok) {
-        const errorBody = await resp.text();
-        console.error("Resend delivery failed", { status: resp.status, body: errorBody });
-        return NextResponse.json(
-          {
-            error:
-              "Email delivery failed. Try again, or email Brody directly at " + site.contact.email,
-          },
-          { status: 502 },
-        );
-      }
-    } else {
-      // Dev / unconfigured fallback. Log so the operator can see what would have been sent.
-      console.log("[QUOTE submission] RESEND_API_KEY not set. Submission contents:", {
+    const resp = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${resendKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: fromAddress,
+        to: [site.contact.email],
+        reply_to: contact.includes("@") ? contact : undefined,
         subject,
-        ...fields,
-      });
+        html,
+        text,
+        attachments: attachments.length ? attachments : undefined,
+      }),
+    });
+
+    if (!resp.ok) {
+      const errorBody = await resp.text();
+      console.error("Resend delivery failed", { status: resp.status, body: errorBody });
+      return NextResponse.json(
+        {
+          error:
+            "Email delivery failed. Try again, or email Brody directly at " + site.contact.email,
+        },
+        { status: 502 },
+      );
     }
 
     return NextResponse.json({ ok: true });
