@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, MapPin, Mail, Clock, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Mail, Clock } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section, SectionTitle } from "@/components/ui/section";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
@@ -9,8 +9,6 @@ import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { ServiceIcon } from "@/components/ui/service-icon";
 import { ProjectCard } from "@/components/ui/project-card";
-import { SectionDivider } from "@/components/ui/section-divider";
-import { FinalCTA } from "@/components/sections/final-cta";
 import { areas, getArea } from "@/lib/areas";
 import { services } from "@/lib/services";
 import { projects } from "@/lib/projects";
@@ -43,7 +41,6 @@ export default async function AreaPage(
   const localProjects = projects.filter(
     (p) => p.area.toLowerCase() === area.name.toLowerCase(),
   );
-  const otherAreas = areas.filter((a) => a.slug !== area.slug);
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -111,62 +108,57 @@ export default async function AreaPage(
         </div>
       </PageHero>
 
-      {/* Quick info */}
-      <Section size="md">
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="p-6 rounded-2xl bg-surface-panel border border-divider-strong">
-              <Clock className="h-6 w-6 text-accent mb-3" strokeWidth={1.5} />
-              <p className="text-xs uppercase tracking-wider text-fg-muted font-semibold mb-1">
-                Response time
-              </p>
-              <p className="font-display text-xl font-bold text-fg-strong">{area.responseTime}</p>
-            </div>
-            <div className="p-6 rounded-2xl bg-surface-panel border border-divider-strong">
-              <MapPin className="h-6 w-6 text-accent mb-3" strokeWidth={1.5} />
-              <p className="text-xs uppercase tracking-wider text-fg-muted font-semibold mb-1">
-                Postal codes
-              </p>
-              <p className="font-display text-xl font-bold text-fg-strong">
-                {area.postalCodePrefixes.join(" · ")}
-              </p>
-            </div>
-            <div className="p-6 rounded-2xl bg-surface-panel border border-accent/40">
-              <Mail className="h-6 w-6 text-accent mb-3" strokeWidth={1.5} />
-              <p className="text-xs uppercase tracking-wider text-accent font-semibold mb-1">
-                Email-first contact
-              </p>
-              <a
-                href={`mailto:${site.contact.email}`}
-                className="font-display text-lg font-bold text-fg-strong hover:text-accent transition-colors"
-              >
-                {site.contact.email}
-              </a>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Neighborhoods */}
+      {/* Quick info — combined response + neighborhoods */}
       <Section size="md" className="bg-surface-panel border-y border-divider">
         <Container>
-          <SectionTitle
-            eyebrow="Neighborhoods"
-            title={`Areas covered in ${area.name}`}
-            description={`If your neighborhood isn't listed, email Brody — odds are it's covered.`}
-          />
-          <Reveal>
-            <ul className="mt-10 flex flex-wrap gap-3">
-              {area.neighborhoods.map((n) => (
-                <li
-                  key={n}
-                  className="px-4 py-2 rounded-full bg-surface-panel border border-divider-strong text-sm text-fg-strong hover:border-accent-soft transition-colors"
-                >
-                  {n}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
+            <Reveal className="lg:col-span-4 space-y-5">
+              <div className="flex items-start gap-3">
+                <Clock className="h-5 w-5 text-accent mt-1 flex-shrink-0" strokeWidth={1.6} />
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-fg-muted font-semibold">
+                    Response time
+                  </p>
+                  <p className="font-display text-lg font-bold text-fg-strong">
+                    {area.responseTime}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Mail className="h-5 w-5 text-accent mt-1 flex-shrink-0" strokeWidth={1.6} />
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-fg-muted font-semibold">
+                    Email Brody
+                  </p>
+                  <a
+                    href={`mailto:${site.contact.email}?subject=${encodeURIComponent(`Quote in ${area.name}`)}`}
+                    className="font-display text-base font-bold text-fg-strong hover:text-accent transition-colors break-all"
+                  >
+                    {site.contact.email}
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal className="lg:col-span-8" delay={0.1}>
+              <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold mb-3">
+                Neighborhoods covered
+              </p>
+              <ul className="flex flex-wrap gap-2.5">
+                {area.neighborhoods.map((n) => (
+                  <li
+                    key={n}
+                    className="px-3.5 py-1.5 rounded-full bg-surface border border-divider-strong text-sm text-fg-strong"
+                  >
+                    {n}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-sm text-fg-muted">
+                If your neighborhood isn't listed but you're nearby, just ask — odds are it's covered.
+              </p>
+            </Reveal>
+          </div>
         </Container>
       </Section>
 
@@ -210,12 +202,12 @@ export default async function AreaPage(
               </>
             }
           />
-          <RevealStagger className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {services.map((s) => (
+          <RevealStagger className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-3">
+            {services.slice(0, 6).map((s) => (
               <RevealItem key={s.slug}>
                 <Link
                   href={`/services/${s.slug}`}
-                  className="group flex items-center gap-3 p-4 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-all"
+                  className="group flex items-center gap-3 p-4 rounded-xl bg-surface border border-divider-strong hover:border-accent-soft transition-all"
                 >
                   <ServiceIcon name={s.icon} className="h-5 w-5 flex-shrink-0" />
                   <span className="text-sm font-semibold text-fg-strong group-hover:text-accent transition-colors">
@@ -225,33 +217,18 @@ export default async function AreaPage(
               </RevealItem>
             ))}
           </RevealStagger>
-        </Container>
-      </Section>
-
-      {/* Other areas */}
-      <Section size="md">
-        <Container>
-          <SectionTitle eyebrow="Also serving" title="Nearby areas" />
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
-            {otherAreas.map((a) => (
+          <Reveal>
+            <p className="mt-8 text-sm text-fg-muted">
               <Link
-                key={a.slug}
-                href={`/areas/${a.slug}`}
-                className="group flex items-center justify-between gap-2 p-4 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-all"
+                href="/services"
+                className="text-accent font-semibold underline-offset-4 hover:underline"
               >
-                <span className="text-sm font-semibold text-fg-strong group-hover:text-accent transition-colors">
-                  {a.name}
-                </span>
-                <ArrowUpRight className="h-4 w-4 text-fg-muted group-hover:text-accent transition-colors" />
+                See all services →
               </Link>
-            ))}
-          </div>
+            </p>
+          </Reveal>
         </Container>
       </Section>
-
-      <SectionDivider variant="mark" />
-
-      <FinalCTA />
     </>
   );
 }

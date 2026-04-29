@@ -3,10 +3,6 @@ import { Mail, MessageSquare, MessageCircle, Clock, MapPin, Facebook, Instagram 
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
-import { Button } from "@/components/ui/button";
-import { MagneticCTA } from "@/components/ui/magnetic-cta";
-import { SectionDivider } from "@/components/ui/section-divider";
-import { FinalCTA } from "@/components/sections/final-cta";
 import { site } from "@/lib/site";
 import { areas } from "@/lib/areas";
 
@@ -89,26 +85,8 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <Reveal className="mt-12">
-            <div className="rounded-2xl bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_12%,var(--bg-panel))] border border-accent/40 p-8 md:p-10 text-center">
-              <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-3">
-                Need a written quote?
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-fg-strong mb-3 text-balance">
-                Use the multi-step quote form for the fastest turnaround.
-              </h2>
-              <p className="text-fg/80 max-w-xl mx-auto mb-6">
-                Walk through four short steps and Brody will email an estimate within 24 hours.
-              </p>
-              <MagneticCTA href="/quote" size="lg">
-                Start your quote
-              </MagneticCTA>
-            </div>
-          </Reveal>
         </Container>
       </Section>
-
-      <SectionDivider variant="mark" />
 
       {/* Hours + areas */}
       <Section size="md" className="bg-surface-panel border-y border-divider">

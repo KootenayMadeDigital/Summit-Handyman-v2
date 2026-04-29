@@ -4,8 +4,6 @@ import { Facebook, Instagram, Mail, MessageSquare } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section, SectionTitle } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
-import { FinalCTA } from "@/components/sections/final-cta";
-import { SectionDivider } from "@/components/ui/section-divider";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -162,9 +160,6 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <SectionDivider variant="mark" />
-
-      <FinalCTA />
     </>
   );
 }

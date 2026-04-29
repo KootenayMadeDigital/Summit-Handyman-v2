@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, Mail, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Check, Mail } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section, SectionTitle } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
@@ -10,8 +9,6 @@ import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { ServiceIcon } from "@/components/ui/service-icon";
 import { ProjectCard } from "@/components/ui/project-card";
-import { SectionDivider } from "@/components/ui/section-divider";
-import { FinalCTA } from "@/components/sections/final-cta";
 import { services, getService } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
@@ -32,13 +29,6 @@ export async function generateMetadata(
     alternates: { canonical: `/services/${service.slug}` },
   };
 }
-
-const process = [
-  { step: "01", title: "Email or text", body: "Send a few details. Photos help. Brody reads everything personally." },
-  { step: "02", title: "Quick assessment", body: "I'll ask any clarifying questions and confirm scope." },
-  { step: "03", title: "Estimate within 24hr", body: "A clear, written estimate by email — no pressure." },
-  { step: "04", title: "Job done right", body: "Booked, completed, cleaned up. Followed by an invoice and warranty." },
-];
 
 export default async function ServicePage(
   { params }: { params: Promise<{ slug: string }> },
@@ -119,92 +109,50 @@ export default async function ServicePage(
         </Container>
       </Section>
 
-      {/* Process */}
+      {/* Recent work + inline related — combined section */}
       <Section size="lg" className="bg-surface-panel border-y border-divider">
         <Container>
-          <SectionTitle
-            eyebrow="How it works"
-            title={
-              <>
-                A simple, predictable{" "}
-                <span className="font-serif italic font-normal text-gradient-gold">process.</span>
-              </>
-            }
-            align="center"
-            className="mb-14"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {process.map((p, i) => (
-              <Reveal key={p.step} delay={i * 0.05}>
-                <div className="relative p-6 rounded-2xl bg-surface-panel border border-divider-strong h-full">
-                  <p className="font-display text-5xl font-extrabold text-gradient-gold mb-3">
-                    {p.step}
-                  </p>
-                  <h3 className="font-display text-xl font-bold text-fg-strong mb-2">{p.title}</h3>
-                  <p className="text-sm text-fg-muted leading-relaxed">{p.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          {relevantProjects.length > 0 && (
+            <>
+              <SectionTitle
+                eyebrow="Recent work"
+                title={
+                  <>
+                    Recent {service.name.toLowerCase()}{" "}
+                    <span className="font-serif italic font-normal text-gradient-gold">jobs.</span>
+                  </>
+                }
+              />
+              <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {relevantProjects.slice(0, 3).map((p) => (
+                  <Reveal key={p.slug}>
+                    <ProjectCard project={p} />
+                  </Reveal>
+                ))}
+              </div>
+            </>
+          )}
+
+          {related.length > 0 && (
+            <Reveal>
+              <p className="mt-12 text-sm text-fg-muted">
+                Related:{" "}
+                {related.map((r, i) => (
+                  <span key={r.slug}>
+                    <Link
+                      href={`/services/${r.slug}`}
+                      className="text-accent font-semibold underline-offset-4 hover:underline"
+                    >
+                      {r.name}
+                    </Link>
+                    {i < related.length - 1 ? " · " : ""}
+                  </span>
+                ))}
+              </p>
+            </Reveal>
+          )}
         </Container>
       </Section>
-
-      {/* Related projects */}
-      {relevantProjects.length > 0 && (
-        <Section size="lg" className="bg-surface">
-          <Container>
-            <SectionTitle
-              eyebrow="Recent work"
-              title={
-                <>
-                  Recent {service.name.toLowerCase()}{" "}
-                  <span className="font-serif italic font-normal text-gradient-gold">jobs.</span>
-                </>
-              }
-            />
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {relevantProjects.slice(0, 3).map((p) => (
-                <Reveal key={p.slug}>
-                  <ProjectCard project={p} />
-                </Reveal>
-              ))}
-            </div>
-          </Container>
-        </Section>
-      )}
-
-      {/* Related services */}
-      {related.length > 0 && (
-        <Section size="md" className="bg-surface-panel border-y border-divider">
-          <Container>
-            <SectionTitle
-              eyebrow="Related"
-              title="Other services in this category"
-            />
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5">
-              {related.map((r) => (
-                <Link
-                  key={r.slug}
-                  href={`/services/${r.slug}`}
-                  className="group flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl bg-surface-panel border border-divider-strong hover:border-accent-soft hover:bg-surface-elevated transition-all min-w-0"
-                >
-                  <div className="flex items-center gap-3 min-w-0">
-                    <ServiceIcon name={r.icon} className="h-5 w-5 flex-shrink-0" />
-                    <span className="font-display font-bold text-fg-strong group-hover:text-accent transition-colors truncate">
-                      {r.name}
-                    </span>
-                  </div>
-                  <ArrowUpRight className="h-4 w-4 text-fg-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0" />
-                </Link>
-              ))}
-            </div>
-          </Container>
-        </Section>
-      )}
-
-      <SectionDivider variant="mark" />
-
-      <FinalCTA />
     </>
   );
 }

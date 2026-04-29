@@ -4,9 +4,7 @@ import { ArrowUpRight, MapPin } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section } from "@/components/ui/section";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
-import { FinalCTA } from "@/components/sections/final-cta";
 import { ServiceAreaMapSection } from "@/components/sections/service-area-map";
-import { SectionDivider } from "@/components/ui/section-divider";
 import { areas } from "@/lib/areas";
 
 export const metadata: Metadata = {
@@ -75,10 +73,6 @@ export default function AreasPage() {
       </Section>
 
       <ServiceAreaMapSection />
-
-      <SectionDivider variant="mark" />
-
-      <FinalCTA />
     </>
   );
 }

@@ -5,8 +5,6 @@ import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section } from "@/components/ui/section";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { ServiceIcon } from "@/components/ui/service-icon";
-import { FinalCTA } from "@/components/sections/final-cta";
-import { SectionDivider } from "@/components/ui/section-divider";
 import { services, serviceCategories, type ServiceCategory } from "@/lib/services";
 import { cn } from "@/lib/utils";
 
@@ -96,9 +94,6 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <SectionDivider variant="mark" />
-
-      <FinalCTA />
     </>
   );
 }

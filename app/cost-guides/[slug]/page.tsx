@@ -8,8 +8,6 @@ import { Container, Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
-import { FinalCTA } from "@/components/sections/final-cta";
-import { SectionDivider } from "@/components/ui/section-divider";
 import { guides, getGuide } from "@/lib/guides";
 import { site } from "@/lib/site";
 
@@ -257,9 +255,6 @@ export default async function GuidePage(
         </Section>
       )}
 
-      <SectionDivider variant="mark" />
-
-      <FinalCTA />
     </>
   );
 }

@@ -7,8 +7,9 @@ import { Reveal } from "@/components/ui/reveal";
 import { faqs } from "@/lib/faq";
 import { cn } from "@/lib/utils";
 
-export function FAQSection() {
+export function FAQSection({ limit }: { limit?: number } = {}) {
   const [open, setOpen] = React.useState<number | null>(0);
+  const items = limit ? faqs.slice(0, limit) : faqs;
 
   return (
     <Section id="faq" size="lg" className="bg-surface-panel border-y border-divider">
@@ -29,7 +30,7 @@ export function FAQSection() {
 
         <Reveal>
           <ul className="divide-y divide-[var(--border)] border-y border-divider">
-            {faqs.map((f, i) => {
+            {items.map((f, i) => {
               const isOpen = open === i;
               return (
                 <li key={f.q}>

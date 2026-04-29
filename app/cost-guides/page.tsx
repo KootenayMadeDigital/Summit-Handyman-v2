@@ -5,8 +5,6 @@ import { Clock, ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section } from "@/components/ui/section";
 import { RevealStagger, RevealItem } from "@/components/ui/reveal";
-import { FinalCTA } from "@/components/sections/final-cta";
-import { SectionDivider } from "@/components/ui/section-divider";
 import { guides } from "@/lib/guides";
 
 export const metadata: Metadata = {
@@ -82,9 +80,6 @@ export default function CostGuidesPage() {
         </Container>
       </Section>
 
-      <SectionDivider variant="mark" />
-
-      <FinalCTA />
     </>
   );
 }

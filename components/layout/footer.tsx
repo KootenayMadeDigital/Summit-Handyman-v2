@@ -73,53 +73,45 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact column */}
+          {/* Contact column — compressed */}
           <div className="col-span-2 md:col-span-3 space-y-4">
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-              Get in Touch
+              Reach Brody
             </h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a
-                  href={`mailto:${site.contact.email}`}
-                  className="flex items-start gap-2 text-fg/80 hover:text-accent transition-colors break-all"
-                >
-                  <Mail className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
-                  <span>{site.contact.email}</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`sms:${site.contact.phoneTel}`}
-                  className="flex items-center gap-2 text-fg/80 hover:text-accent transition-colors"
-                >
-                  <MessageSquare className="h-4 w-4 text-accent" />
-                  Text {site.contact.phone}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.social.facebook.url}
-                  target="_blank"
-                  rel="noopener"
-                  className="flex items-center gap-2 text-fg/80 hover:text-accent transition-colors"
-                >
-                  <Facebook className="h-4 w-4 text-accent" />
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.social.instagram.url}
-                  target="_blank"
-                  rel="noopener"
-                  className="flex items-center gap-2 text-fg/80 hover:text-accent transition-colors"
-                >
-                  <Instagram className="h-4 w-4 text-accent" />
-                  Instagram
-                </a>
-              </li>
-            </ul>
+            <a
+              href={`mailto:${site.contact.email}`}
+              className="flex items-start gap-2 text-fg/85 hover:text-accent transition-colors break-all text-sm"
+            >
+              <Mail className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+              <span>{site.contact.email}</span>
+            </a>
+            <a
+              href={`sms:${site.contact.phoneTel}`}
+              className="flex items-center gap-2 text-fg/85 hover:text-accent transition-colors text-sm"
+            >
+              <MessageSquare className="h-4 w-4 text-accent" />
+              {site.contact.phone}
+            </a>
+            <div className="flex items-center gap-3 pt-2">
+              <a
+                href={site.social.facebook.url}
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+                className="grid h-9 w-9 place-items-center rounded-full border border-divider-strong text-fg/85 hover:border-accent hover:text-accent transition-colors"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href={site.social.instagram.url}
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+                className="grid h-9 w-9 place-items-center rounded-full border border-divider-strong text-fg/85 hover:border-accent hover:text-accent transition-colors"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+            </div>
             <div className="pt-2 text-xs text-fg-faint">
               <p className="text-fg-strong font-semibold">{site.pricing.minimumDisplay}</p>
               <p className="mt-1">Licensed & insured · Lower Mainland, BC</p>
