@@ -64,7 +64,7 @@ export default function QuotePage() {
         </div>
       </PageHero>
 
-      <Section size="sm" className="relative overflow-hidden bg-surface-panel border-y border-divider !py-8 sm:!py-10 md:!py-12">
+      <Section size="sm" className="relative overflow-hidden bg-surface-panel border-y border-divider !pt-8 sm:!pt-10 md:!pt-12 !pb-6 sm:!pb-7 md:!pb-8">
         <div className="absolute inset-0 opacity-[0.14] [background-image:linear-gradient(var(--border)_1px,transparent_1px),linear-gradient(90deg,var(--border)_1px,transparent_1px)] [background-size:56px_56px]" />
         <Container className="relative">
           <RevealStagger className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" staggerDelay={0.05}>
@@ -85,8 +85,8 @@ export default function QuotePage() {
         </Container>
       </Section>
 
-      <Section id="quote-form" size="lg" className="relative overflow-hidden bg-surface !pt-8 sm:!pt-10 md:!pt-14 !pb-16 sm:!pb-20 md:!pb-section-lg">
-        <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
+      <Section id="quote-form" size="lg" className="relative overflow-hidden bg-surface !pt-4 sm:!pt-6 md:!pt-8 !pb-16 sm:!pb-20 md:!pb-section-lg">
+        <div className="absolute left-1/2 -top-16 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
         <Container>
           <div className="grid lg:grid-cols-[0.35fr_0.65fr] gap-6 lg:gap-8 items-start">
             <Reveal>

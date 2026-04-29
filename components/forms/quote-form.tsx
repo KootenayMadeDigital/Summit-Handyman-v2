@@ -31,7 +31,7 @@ type FormState = {
   description: string;
   name: string;
   contact: string;
-  preferredContact: "email" | "text" | "either";
+  preferredContact: "email" | "text" | "call" | "either";
   postalCode: string;
 };
 
@@ -149,34 +149,6 @@ export function QuoteForm() {
   const selectedArea = areas.find((a) => a.slug === state.area);
   const selectedTiming = timingOptions.find((t) => t.value === state.timing);
   const progress = ((step + 1) / STEPS.length) * 100;
-
-  const mailtoHref = React.useMemo(() => {
-    const serviceLabel = selectedService?.name ?? (state.service === "other" ? "Something else" : "Not selected");
-    const areaLabel = selectedArea?.name ?? (state.area || "Not selected");
-    const timingLabel = selectedTiming?.label ?? (state.timing || "Not selected");
-    const subjectName = state.name.trim() || "Website visitor";
-    const body = [
-      "Hi Brody,",
-      "",
-      "I'm looking for help with a project.",
-      "",
-      `Name: ${state.name.trim() || "Not provided"}`,
-      `Contact: ${state.contact.trim() || "Not provided"}`,
-      `Preferred contact: ${state.preferredContact}`,
-      `Service: ${serviceLabel}`,
-      `Timing: ${timingLabel}`,
-      `Area: ${areaLabel}`,
-      `Postal code: ${state.postalCode.trim() || "Not provided"}`,
-      `Photos: ${photos.length > 0 ? `${photos.length} selected. I will attach them to this email.` : "None"}`,
-      "",
-      "What needs doing:",
-      state.description.trim() || "Not provided",
-      "",
-      "Sent from summit-handyman.ca",
-    ].join("\n");
-
-    return `mailto:${site.contact.email}?subject=${encodeURIComponent(`Quote request from ${subjectName}`)}&body=${encodeURIComponent(body)}`;
-  }, [photos.length, selectedArea?.name, selectedService?.name, selectedTiming?.label, state]);
 
   const submit = async () => {
     setSubmitting(true);
@@ -574,8 +546,13 @@ export function QuoteForm() {
 
             <fieldset>
               <legend className="text-sm text-fg-muted mb-2">Preferred contact method</legend>
-              <div className="grid grid-cols-3 gap-2">
-                {(["email", "text", "either"] as const).map((p) => (
+              {/*
+                Brody is fine calling people who came through the form, but does
+                not take blind cold calls, so "Call" only appears as an option
+                AFTER the customer has filled out the scope.
+              */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {(["email", "text", "call", "either"] as const).map((p) => (
                   <button
                     key={p}
                     type="button"
@@ -607,29 +584,12 @@ export function QuoteForm() {
               By submitting, you agree to be contacted by Brody at Summit Handyman regarding your project. Your info is never shared.
             </p>
 
-            <div className="rounded-xl border border-divider-strong bg-surface-elevated/60 px-4 py-3 text-sm text-fg-muted">
-              Prefer your email app? This opens a prefilled message to Brody with the form details.
-              {photos.length > 0 ? " Attach your selected photos before sending." : ""}
-              <a
-                href={mailtoHref}
-                className="mt-2 inline-flex min-h-11 items-center rounded-xl text-accent font-semibold underline-offset-4 hover:underline"
-              >
-                Open email to Brody
-              </a>
-            </div>
-
             {error && (
               <div
                 role="alert"
                 className="rounded-xl border border-red-500/40 bg-red-500/10 text-red-300 text-sm px-4 py-3"
               >
                 <p>{error}</p>
-                <a
-                  href={mailtoHref}
-                  className="mt-2 inline-flex min-h-11 items-center font-semibold underline-offset-4 hover:underline"
-                >
-                  Open prefilled email instead
-                </a>
               </div>
             )}
           </div>

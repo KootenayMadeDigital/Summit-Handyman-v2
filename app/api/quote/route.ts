@@ -49,6 +49,17 @@ function humanizeTiming(t: string): string {
   );
 }
 
+function humanizePreferredContact(p: string): string {
+  return (
+    {
+      email: "Email",
+      text: "Text message",
+      call: "Phone call",
+      either: "Either is fine",
+    }[p] ?? p
+  );
+}
+
 function escapeHtml(s: string): string {
   return s
     .replace(/&/g, "&amp;")
@@ -143,7 +154,7 @@ export async function POST(req: NextRequest) {
     const fields = {
       name,
       contact,
-      preferredContact,
+      preferredContact: humanizePreferredContact(preferredContact),
       service: serviceObj?.name ?? service,
       timing: humanizeTiming(timing),
       area: areaObj?.name ?? area,
