@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   Mail,
-  MessageSquare,
   Facebook,
   Instagram,
   FileText,
@@ -253,15 +252,6 @@ export function Footer() {
                 className="grid h-9 w-9 place-items-center rounded-full border border-divider-strong text-fg/85 hover:border-accent hover:text-accent transition-colors"
               >
                 <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href={site.contact.messenger}
-                target="_blank"
-                rel="noopener"
-                aria-label="Message Brody on Facebook Messenger"
-                className="grid h-9 w-9 place-items-center rounded-full border border-divider-strong text-fg/85 hover:border-accent hover:text-accent transition-colors"
-              >
-                <MessageSquare className="h-4 w-4" />
               </a>
             </div>
           </div>
