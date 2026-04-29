@@ -50,25 +50,25 @@ export const guides: Guide[] = [
           "Whether the texture needs matching (knockdown is harder than smooth)",
           "Ceiling vs wall (ceilings are slower and harder)",
           "Access and prep (move furniture, dust control, paint after?)",
-          "Number of coats (a fast one-coat patch will telegraph through paint, always)",
+          "Number of coats, because rushed one-coat patches often show through paint later",
           "Whether paint matching is needed after the repair",
-          "Time pressure (rush jobs versus a relaxed schedule)",
+          "Timing pressure, especially selling, turnover, or access windows",
         ],
       },
       {
         type: "callout",
         title: "Summit Handyman: $150 minimum per job",
-        text: "Every visit has a $150 minimum charge to cover tools, insurance, travel, and craftsmanship. Bundle multiple small repairs into one visit and the minimum covers them all. Final pricing for any job is always quoted in writing before work begins.",
+        text: "Every job has a $150 minimum charge to cover tools, insurance, travel, and craftsmanship. Bundle related small repairs into one scope and the minimum covers the job. Final pricing is quoted in writing before work begins.",
       },
-      { type: "h2", text: "Why one-coat patches always come back" },
+      { type: "h2", text: "Why one-coat patches often show later" },
       {
         type: "p",
-        text: "A common shortcut, including by some handymen, is one coat of mud, sand, paint. The patch will look fine for a few weeks. Then humidity changes, the framing shifts slightly, and a halo appears around the patch. That halo is permanent until you redo it. Three coats, sanded between each, primed, then painted, is the only way the repair stays invisible.",
+        text: "A common shortcut is one coat of mud, a quick sand, then paint. It can look fine at first, then humidity, light, and surface movement reveal a halo around the patch. Layered compound, proper sanding, primer, and paint are what keep the repair from announcing itself later.",
       },
       { type: "h2", text: "Texture matching: the make-or-break detail" },
       {
         type: "p",
-        text: "Most older Langley homes have knockdown or stipple ceilings. Matching this texture is more art than science. Brody uses spray-on knockdown for ceilings and a sponge-stipple roller for walls. Done right, you can't see the patch. Done wrong, you'll always see it.",
+        text: "Many older Langley homes have knockdown or stipple ceilings. Matching texture takes patience, testing, and the right method for the surface. Brody uses spray-on knockdown for ceilings and sponge-stipple techniques for walls so the patch blends as closely as the existing finish allows.",
       },
       { type: "h2", text: "How to get an accurate quote" },
       {
@@ -134,7 +134,7 @@ export const guides: Guide[] = [
     slug: "pre-winter-checklist-surrey-white-rock",
     title: "Pre-Winter Home Checklist for Surrey & White Rock Homes",
     excerpt:
-      "The Pacific Northwest fall arrives fast. Run through this checklist in October to avoid the most common winter damage in Surrey, White Rock, and South Surrey homes.",
+      "The Pacific Northwest fall turns quickly. Run through this checklist in October to catch the common winter weak spots in Surrey, White Rock, and South Surrey homes.",
     area: "Surrey",
     date: "2026-02-15",
     readingMinutes: 5,
@@ -178,7 +178,7 @@ export const guides: Guide[] = [
     slug: "strata-property-management-repairs",
     title: "Strata-Friendly Repairs: What Property Managers Need to Know",
     excerpt:
-      "How Summit Handyman works with property managers across the Lower Mainland on turnovers, tenant requests, time-sensitive repairs, and detailed invoicing.",
+      "How Summit Handyman works with property managers across the Lower Mainland on turnovers, tenant requests, access notes, and detailed invoicing.",
     date: "2026-02-22",
     readingMinutes: 5,
     hero: "/images/guide-strata-property-management.webp",
@@ -207,7 +207,7 @@ export const guides: Guide[] = [
       {
         type: "callout",
         title: "Have a portfolio of properties?",
-        text: "Email Brody at brody@summit-handyman.ca to set up a recurring relationship. Include unit count, access rules, invoicing needs, and the kinds of repairs you expect most often.",
+        text: "Email Brody at brody@summit-handyman.ca to talk through recurring work. Include property type, access rules, invoicing needs, and the kinds of repairs you expect often.",
       },
     ],
   },
@@ -215,7 +215,7 @@ export const guides: Guide[] = [
     slug: "what-makes-a-paint-job-last-abbotsford",
     title: "What Makes a Paint Job Actually Last in Abbotsford",
     excerpt:
-      "What separates a paint job that holds up for years from one that shows it within six months. Prep, paint quality, and the steps most quotes skip.",
+      "What separates a paint job that still looks intentional later from one that starts showing shortcuts. Prep, paint quality, and the steps thin quotes skip.",
     area: "Abbotsford",
     service: "painting",
     date: "2026-03-01",
@@ -224,7 +224,7 @@ export const guides: Guide[] = [
     body: [
       {
         type: "p",
-        text: "A 'cheap paint job' usually shows it within six months: drips, roller marks on the ceiling, ceilings cut sloppy, trim with brush marks. The difference between a paint job that lasts and one that doesn't is almost entirely in the prep. Here's what a real job involves.",
+        text: "A cheap paint job usually reveals itself in the details: drips, roller marks near the ceiling, sloppy cut lines, and trim with brush marks. The difference between a finish that holds up and one that disappoints is mostly prep. Here is what a proper job involves.",
       },
       { type: "h2", text: "What a proper paint job includes" },
       {
@@ -254,52 +254,52 @@ export const guides: Guide[] = [
       {
         type: "callout",
         title: "How to get an accurate paint quote",
-        text: "Submit photos of every room you want painted, plus rough dimensions, through the quote form. Brody emails a written estimate within 24 hours. The $150 minimum applies to every visit.",
+        text: "Submit photos of every room you want painted, plus rough dimensions, through the quote form. Brody emails a written estimate within 24 hours. The $150 minimum applies to the job.",
       },
       {
         type: "callout",
         title: "Why builder-grade paint costs more in the long run",
-        text: "Builder-grade paint covers in two coats less reliably and yellows faster. Premium paint costs more per gallon up front but lasts much longer before needing a refresh, so the total cost over a decade is lower.",
+        text: "Builder-grade paint can need more coats and show wear sooner. Better paint costs more per gallon up front, but it can reduce repainting and touch-up work over the life of the room.",
       },
     ],
   },
   {
     slug: "small-repairs-that-save-thousands",
-    title: "5 Small Repairs That Save You Thousands Later",
+    title: "5 Small Repairs That Prevent Bigger Bills",
     excerpt:
-      "The minor home repairs that, if ignored, turn into expensive damage. Here's the short list every Lower Mainland homeowner should know about.",
+      "Small repairs that protect the house before moisture, movement, or wear turns into a bigger invoice.",
     date: "2026-03-08",
     readingMinutes: 5,
     hero: "/images/guide-small-repairs.webp",
     body: [
       {
         type: "p",
-        text: "These are the repairs that look minor but become expensive if you wait. None of them require a major intervention. All of them get worse, sometimes dramatically, when ignored.",
+        text: "These are the repairs that look minor until water, movement, or wear gets involved. Catching them early usually keeps the work smaller and cleaner.",
       },
       { type: "h2", text: "1. Caulk around tubs, showers, and sinks" },
       {
         type: "p",
-        text: "When the seal fails, water gets behind the tile. The visible problem is mold. The invisible problem is rotting subfloor and drywall, which is a vastly larger repair to undo. Recaulking is one of the easiest preventative jobs.",
+        text: "When the seal fails, water can get behind the tile. The visible problem is mold. The hidden problem is softened drywall, swollen trim, or a subfloor issue that takes more work to undo. Recaulking is one of the simplest prevention jobs.",
       },
       { type: "h2", text: "2. Faucet drips" },
       {
         type: "p",
-        text: "A constant drip is usually a worn cartridge, a quick fix. Left alone, the drip warps the vanity, mineral-stains the basin, and occasionally turns into an overnight flood when the supply line finally fails.",
+        text: "A constant drip is often a worn cartridge or seal. Left alone, it can stain the basin, damage a vanity, or hide a larger supply-line issue until it becomes harder to control.",
       },
       { type: "h2", text: "3. Gutter blockages" },
       {
         type: "p",
-        text: "Lower Mainland rain doesn't forgive blocked gutters. Water pools at the foundation, soaks into fascia, and freezes into ice dams in winter. An annual cleaning prevents foundation water damage that costs many multiples more.",
+        text: "Lower Mainland rain does not forgive blocked gutters. Water can pool near the foundation, soak fascia, and freeze into winter ice buildup. Regular cleaning is cheap compared with repairing water damage later.",
       },
       { type: "h2", text: "4. Loose toilet base" },
       {
         type: "p",
-        text: "A wobbling toilet means the wax ring is shot. Water seeps out at the base every flush. The subfloor under the toilet rots, and the problem is usually only discovered when it caves through to the ceiling below.",
+        text: "A wobbling toilet often means the seal or flange needs attention. If water escapes at the base, the subfloor can soften before the damage is obvious from above.",
       },
       { type: "h2", text: "5. Cracked driveway sealing" },
       {
         type: "p",
-        text: "Water freezes in cracks, expands, widens them every winter. After a few cycles, the driveway needs full repaving instead of crack-fill and seal. Sealing every few years is the difference between a maintenance job and a repaving job.",
+        text: "Water freezes in cracks, expands, and widens them through winter. Sealing cracks early keeps the driveway in maintenance territory instead of letting the surface break down faster.",
       },
       {
         type: "callout",
@@ -334,7 +334,7 @@ export const guides: Guide[] = [
         type: "ul",
         items: [
           "Smart bulbs in every fixture, overcomplicated and expensive at scale",
-          "Smart blinds, most still feel beta, wait another year",
+          "Smart blinds, still early for many homes, wait unless you have a specific use case",
           "Voice-controlled everything, battery-powered ones drain fast",
           "Cheap no-name brand smart switches, they break early",
         ],
@@ -342,7 +342,7 @@ export const guides: Guide[] = [
       {
         type: "callout",
         title: "Permitting note",
-        text: "Most smart device swaps stay within homeowner-allowed scope (replacing existing fixtures with same-power fixtures). Anything new beyond that goes to a licensed electrician. Brody refers out when needed.",
+        text: "Many smart device swaps stay within homeowner-allowed scope, such as replacing an existing fixture with a same-power fixture. Anything new beyond that goes to a licensed electrician. Brody refers out when needed.",
       },
     ],
   },
@@ -358,7 +358,7 @@ export const guides: Guide[] = [
     body: [
       {
         type: "p",
-        text: "Spring is the only sane time to refinish a deck in BC. Late April to early June is the sweet spot: dry enough to stain, warm enough to cure, and far enough from summer that it'll be ready for the first BBQ.",
+        text: "Spring is often the best window to refinish a deck in BC. Late April to early June usually gives enough warmth and dry weather to prep, stain, cure, and enjoy the deck before summer gets busy.",
       },
       { type: "h2", text: "What deck refinishing involves" },
       {
@@ -366,7 +366,7 @@ export const guides: Guide[] = [
         items: [
           "Pressure wash to strip mildew and old finish",
           "Sand rough boards (especially railings, splinters)",
-          "Replace any rotten boards before staining (don't paint over them, it never lasts)",
+          "Replace rotten boards before staining, because finish cannot save failed wood",
           "Two coats of premium semi-transparent stain (Sansin, Behr Premium)",
           "Allow proper cure between coats and before furniture goes back",
         ],
@@ -378,14 +378,14 @@ export const guides: Guide[] = [
           "Deck size (square footage of boards plus railings)",
           "Number of rotten boards needing replacement",
           "Condition of existing finish (full strip vs light prep)",
-          "Stain choice (premium semi-transparent costs more, lasts much longer)",
+          "Stain choice, because better products cost more but usually hold up longer",
           "Access (ground-level vs raised second-storey)",
         ],
       },
       {
         type: "callout",
         title: "How to get an accurate deck quote",
-        text: "Send photos of every angle of the deck through the quote form, plus rough dimensions and any visible damage. Brody emails a written estimate within 24 hours. The $150 minimum applies to every visit.",
+        text: "Send photos of every angle of the deck through the quote form, plus rough dimensions and any visible damage. Brody emails a written estimate within 24 hours. The $150 minimum applies to the job.",
       },
       {
         type: "callout",
@@ -404,19 +404,19 @@ export const guides: Guide[] = [
     slug: "red-flags-handyman-quote",
     title: "Red Flags to Watch For in a Handyman Quote",
     excerpt:
-      "How to spot a quote that's about to go sideways. The five warning signs of overpriced, underprepared, or scammy handyman estimates. Trust your gut, but check these first.",
+      "How to spot a handyman quote that is too loose, too rushed, or missing the details that protect your home.",
     date: "2026-04-05",
     readingMinutes: 6,
     hero: "/images/guide-red-flags-quote.webp",
     body: [
       {
         type: "p",
-        text: "Most Lower Mainland handymen are honest. A few aren't. The difference is usually visible in the quote itself, before any work happens. This guide walks through the red flags that mean you should keep shopping.",
+        text: "Many Lower Mainland handymen are honest. The risky ones usually reveal themselves in the quote before any work happens. This guide walks through the red flags that mean you should keep shopping.",
       },
       { type: "h2", text: "1. The quote is verbal only" },
       {
         type: "p",
-        text: "If you can't get the price in writing, you don't have a price. A verbal quote turns into 'well, the job was bigger than I thought' the moment they show up. Every legitimate handyman puts the estimate in email or a written form before any work starts. No exceptions.",
+        text: "If you cannot get the price in writing, you do not really have a price. A verbal quote can turn into “the job was bigger than I thought” once the work starts. A serious handyman should be willing to put the estimate in email or a written form before the job begins.",
       },
       { type: "h2", text: "2. Cash-only with a discount for paying upfront" },
       {
@@ -426,39 +426,39 @@ export const guides: Guide[] = [
       { type: "h2", text: "3. No license number, no insurance proof" },
       {
         type: "p",
-        text: "Every legitimate Lower Mainland tradesperson has a business license number and carries comprehensive liability insurance. Both should be on the invoice. If you ask and they hesitate, that's the answer.",
+        text: "A legitimate Lower Mainland tradesperson should be able to share a business license number and insurance details. If you ask and they hesitate, that tells you something.",
       },
       { type: "h2", text: "4. The price is way under the others" },
       {
         type: "p",
-        text: "If three handymen quote you in a similar range and one is half that, the cheap one is either skipping prep work, using cheap materials, or planning to charge change orders later. Drywall patches that don't get three coats. Paint that's a single coat over old. Tile that doesn't get sealed. These shortcuts show up in 6-12 months.",
+        text: "If three handymen quote in a similar range and one number is far below the rest, ask what is missing. It may be prep, materials, cleanup, or the part of the job that gets added later as a change order.",
       },
       { type: "h2", text: "5. They can't explain what they'd actually do" },
       {
         type: "p",
-        text: "Ask any handyman to describe the steps. A real one will walk you through prep, materials, the actual work, cleanup. Someone who answers 'I'll take care of it' without specifics either doesn't know the work or doesn't want you to know what they're skipping.",
+        text: "Ask the handyman to describe the steps. A prepared one can walk you through prep, materials, the actual work, and cleanup. “I will take care of it” is not enough detail for a repair you are paying for.",
       },
       {
         type: "callout",
         title: "Green flags to look for instead",
-        text: "Written estimate before work starts. Visible business license + insurance info. Itemized invoice on completion. Photos before/after. A clearly stated workmanship promise. Easy to find on Google with verified reviews.",
+        text: "Written estimate before work starts. Business license and insurance information. Itemized invoice on completion. Photos when documentation matters. A clearly stated workmanship promise. Easy to find on Google with verified reviews.",
       },
       { type: "h2", text: "What Summit Handyman gives you upfront" },
       {
         type: "ul",
         items: [
-          "Free written estimate by email after photos and details, within 24 hours",
+          "Free written estimate by email after photos and details are reviewed",
           "Business # 79853 7957 and GST # 79853 7957 RT0001 on every invoice",
-          "Comprehensive liability insurance, owner-operated by Brody",
-          "$150 minimum per visit, no hourly meter games",
+          "Liability insurance, owner-operated by Brody",
+          "$150 minimum per job, no hourly meter games",
           "Itemized invoice with materials and labor broken out",
-          "Come-back-free workmanship promise on every job",
+          "Come-back-free workmanship promise attached to the repair",
         ],
       },
       {
         type: "callout",
         title: "Start with a quote that won't surprise you",
-        text: "Submit photos and a description through the quote form. Brody emails a written estimate within 24 hours. The price is the price.",
+        text: "Submit photos and a description through the quote form. Brody reviews the scope and replies in writing within 24 hours.",
       },
     ],
   },
@@ -479,7 +479,7 @@ export const guides: Guide[] = [
       { type: "h2", text: "1. A few photos beats a thousand words" },
       {
         type: "p",
-        text: "Three to five photos showing the area from different angles tells a handyman more than a paragraph of description ever could. Step back for the wide shot, get close for the detail. Show the surroundings (floor type, baseboards, ceiling) because those affect prep time.",
+        text: "A few photos from different angles tell a handyman more than a paragraph of description ever could. Step back for the wide shot, get close for the detail, and show the surroundings because floors, baseboards, ceilings, and access affect prep time.",
       },
       { type: "h2", text: "2. Rough measurements are gold" },
       {
@@ -489,7 +489,7 @@ export const guides: Guide[] = [
       { type: "h2", text: "3. Mention what you've already tried" },
       {
         type: "p",
-        text: "Did you already buy paint? Try to fix it yourself? Have a contractor look at it? All of this is useful context. It saves the handyman time and helps them quote a real number instead of a wide range.",
+        text: "Did you already buy paint, try the repair yourself, or have someone else look at it? That context saves time and helps Brody quote from the real situation instead of a wide range.",
       },
       { type: "h2", text: "4. Be honest about timing" },
       {
@@ -504,7 +504,7 @@ export const guides: Guide[] = [
       {
         type: "callout",
         title: "The quote form is built around all five",
-        text: "The Summit Handyman quote form walks you through service type, area, timing, photos, and details in about 90 seconds. Brody reviews everything before reaching out, so the first reply already has answers.",
+        text: "The Summit Handyman quote form walks you through service type, area, timing, photos, and details. Brody reviews everything before replying, so the first answer can be specific.",
       },
     ],
   },
@@ -520,7 +520,7 @@ export const guides: Guide[] = [
     body: [
       {
         type: "p",
-        text: "Tenant turnovers move fast. The unit needs to be ready to re-list in days, not weeks. The punch list is the difference between a smooth turnover and a delayed re-rental. Here's what a thorough one looks like, and how Brody handles them across Surrey, Langley, Cloverdale, and Abbotsford.",
+        text: "Tenant turnovers move fast. The punch list is the difference between a smooth handoff and a delayed re-rental. Here is what a thorough one looks like, and how Brody handles them across Surrey, Langley, Cloverdale, and Abbotsford.",
       },
       { type: "h2", text: "Standard turnover scope" },
       {
@@ -541,7 +541,7 @@ export const guides: Guide[] = [
       { type: "h2", text: "What gets photographed" },
       {
         type: "p",
-        text: "Before-and-after photos can be added when the repair needs proof, plus walk-through photos of the finished unit when useful. This protects the property manager from disputes and gives the strata or owner a clear record without turning the repair into paperwork theatre.",
+        text: "Before and after photos can be added when the repair needs proof, plus walk-through photos of the finished unit when helpful. This gives the strata or owner a clear record without turning the repair into a paperwork project.",
       },
       { type: "h2", text: "What gets billed" },
       {
@@ -570,15 +570,15 @@ export const guides: Guide[] = [
       },
       {
         type: "callout",
-        title: "Need a turnover handled this week?",
-        text: "Start the quote with the unit address, access notes, and as many photos as you can. Brody confirms scope and timing within 24 hours for active turnovers.",
+        title: "Need a turnover quoted?",
+        text: "Start the quote with the unit address, access notes, and as many photos as you can. Brody reviews the scope and timing before replying in writing.",
       },
     ],
   },
 
   {
     slug: "tv-mounting-done-right",
-    title: "TV Mounting Done Right: 7 Things Most Handymen Skip",
+    title: "TV Mounting Done Right: 7 Details That Separate Clean From Crooked",
     excerpt:
       "Hidden cables, level mount, anchored into studs, no warping over time. The details that separate a clean TV install from a wobbly disaster.",
     service: "assembly-mounting",
@@ -588,27 +588,27 @@ export const guides: Guide[] = [
     body: [
       {
         type: "p",
-        text: "TV mounting looks easy. Drill, screw, mount, done. The reality is the difference between a TV that sits perfectly level for a decade and one that lists slightly to the right because someone hit one stud and toggle-bolted the other. Here's what separates a real install.",
+        text: "TV mounting looks simple until the screen sits crooked, the cables hang loose, or the mount misses proper structure. Here is what separates a clean install from one you notice for the wrong reasons.",
       },
       { type: "h2", text: "1. Two studs, every time" },
       {
         type: "p",
-        text: "A TV mount needs to anchor into two studs minimum. Single-stud mounts work for small TVs but fail on anything 55 inches or larger when someone leans on the screen. Toggle bolts are not a substitute for studs. They will eventually loosen.",
+        text: "A TV mount should anchor into proper structure, usually two studs for larger screens. Toggle bolts have their place, but they are not a casual substitute for structure on a heavy mount.",
       },
       { type: "h2", text: "2. Stud finder verified, not assumed" },
       {
         type: "p",
-        text: "Stud finders give a rough location. The real test is a small pilot hole. If the bit hits wood, you're good. If it hits drywall, you adjust. Skipping the pilot hole is how you end up with the mount three quarters of an inch off-stud.",
+        text: "Stud finders give a rough location. A small pilot hole confirms the structure before the mount goes up. That extra check is what keeps the install from drifting off-stud.",
       },
       { type: "h2", text: "3. Level matters more than you think" },
       {
         type: "p",
-        text: "A TV that's three degrees off looks fine until the news scroll runs along the bottom. Then it looks broken. Brody uses a 4-foot bubble level on the mount before any screws go in, then a digital level on the TV after.",
+        text: "A slightly crooked TV may not bother you on day one, but it becomes obvious every time a straight line appears on screen. Brody levels the mount before any screws go in, then checks the TV after it is seated.",
       },
       { type: "h2", text: "4. In-wall cable hide" },
       {
         type: "p",
-        text: "Cables snaking down the wall ruin the install. An in-wall cable kit costs about thirty dollars, takes 20 extra minutes, and makes the TV look factory-installed. HDMI runs in a behind-the-wall conduit, power runs in a code-compliant kit (the cheap version pulls power directly through drywall, which violates code in most jurisdictions).",
+        text: "Cables snaking down the wall ruin the install. An in-wall cable kit keeps HDMI and power paths organized, cleaner, and safer than improvised cord runs.",
       },
       { type: "h2", text: "5. Mount choice matters" },
       {
@@ -618,7 +618,7 @@ export const guides: Guide[] = [
       { type: "h2", text: "6. Anti-loosening lock washers" },
       {
         type: "p",
-        text: "Stud-anchored mounts can still loosen over time from the weight + vibration cycle. Lock washers cost pennies and prevent this. Most installs skip them. Real ones include them.",
+        text: "Even a stud-anchored mount depends on the right washers and fasteners. Small hardware details help the mount stay tight over time.",
       },
       { type: "h2", text: "7. Above-fireplace heat consideration" },
       {
@@ -637,16 +637,16 @@ export const guides: Guide[] = [
     slug: "pre-listing-repair-checklist-lower-mainland",
     title: "The Pre-Listing Repair Checklist for Lower Mainland Sellers",
     excerpt:
-      "The repairs that move the needle on listing photos and inspection reports. What to fix, what to skip, and how to maximize your sale price without overspending.",
+      "The repairs that matter before photos, showings, and inspection reports. What to fix, what to skip, and where a handyman makes the home feel cared for.",
     date: "2026-05-03",
     readingMinutes: 7,
     hero: "/images/guide-pre-listing-repairs.webp",
     body: [
       {
         type: "p",
-        text: "Pre-listing repairs are about return on investment. Spend on the things that show up in listing photos or inspection reports. Skip the things buyers will redo anyway. Here's how to think about each category, with specific recommendations for Lower Mainland homes.",
+        text: "Pre-listing repairs are about removing buyer doubt. Spend on the things that show up in listing photos, walkthroughs, or inspection reports. Skip the things buyers will likely redo anyway. Here is how to think about each category for Lower Mainland homes.",
       },
-      { type: "h2", text: "High-ROI: do these" },
+      { type: "h2", text: "High-impact: do these" },
       {
         type: "ul",
         items: [
@@ -659,12 +659,12 @@ export const guides: Guide[] = [
           "Tighten and clean every hinge, knob, and pull (small stuff but feels loved)",
         ],
       },
-      { type: "h2", text: "Medium-ROI: do if budget allows" },
+      { type: "h2", text: "Worth considering if budget allows" },
       {
         type: "ul",
         items: [
           "Cabinet refinishing or hardware swap (cheap kitchen refresh)",
-          "Refinish or restain the deck (huge for backyard photos in spring/summer)",
+          "Refinish or restain the deck, especially before spring or summer photos",
           "Gutter clean + repair (matters for inspection reports)",
           "Smart thermostat install (small detail, signals 'modern home')",
           "Touch up exterior paint on trim and front door",
@@ -688,12 +688,12 @@ export const guides: Guide[] = [
       { type: "h2", text: "How long does this take?" },
       {
         type: "p",
-        text: "A typical pre-listing punch list across a 3-bedroom home is 2 to 5 days of handyman work. Bundling all the small jobs into one engagement saves significantly versus booking each separately, and lets a single person own the consistency of finish.",
+        text: "Pre-listing punch lists vary by home, but bundling the small jobs into one scope keeps the finish more consistent and avoids re-explaining the house to multiple trades.",
       },
       {
         type: "callout",
         title: "Selling soon? Send the list to Brody",
-        text: "The quote form lets you describe the scope and attach photos of every room. Brody returns a written estimate within 24 hours so you can budget the work into your listing timeline.",
+        text: "The quote form lets you describe the scope and attach photos of each room. Brody reviews the list and replies in writing within 24 hours so you can plan around the listing timeline.",
       },
     ],
   },
@@ -702,7 +702,7 @@ export const guides: Guide[] = [
     slug: "aging-in-place-bathroom-safety",
     title: "Aging in Place: Bathroom Safety Upgrades That Actually Help",
     excerpt:
-      "The five bathroom upgrades that prevent the falls that send Lower Mainland seniors to the hospital. Quick, affordable, and life-changing.",
+      "Bathroom upgrades that make daily routines steadier for seniors and aging-in-place homeowners.",
     service: "home-safety",
     date: "2026-05-10",
     readingMinutes: 5,
@@ -710,17 +710,17 @@ export const guides: Guide[] = [
     body: [
       {
         type: "p",
-        text: "More than 80 percent of senior falls happen in the bathroom. Wet floor, slippery tub, no grab bars to catch a stumble. Most of these are preventable with a handful of inexpensive upgrades. This guide is for adult children helping parents stay independent, or for homeowners thinking ahead about their own home.",
+        text: "Bathrooms are one of the highest-risk rooms for aging homeowners: wet floors, slippery tubs, awkward thresholds, and nowhere solid to grab during a stumble. This guide is for adult children helping parents stay independent, or homeowners thinking ahead about their own home.",
       },
       { type: "h2", text: "1. Grab bars in the right places" },
       {
         type: "p",
-        text: "Two grab bars matter most: one inside the shower or tub at hip height (for steadying while showering) and one beside the toilet (for sitting and standing). Both must be anchored into studs or with proper toggle anchors rated for the load. The decorative ones from the hardware store that screw into drywall alone will pull out exactly when they're needed most.",
+        text: "Two grab bars matter most: one inside the shower or tub for steadying while showering, and one beside the toilet for sitting and standing. Both need proper anchoring. Decorative bars screwed into drywall alone are not safety equipment.",
       },
       { type: "h2", text: "2. Non-slip surface in the tub or shower" },
       {
         type: "p",
-        text: "A non-slip mat with suction cups or a peel-and-stick textured strip on the tub floor takes 10 minutes to install and dramatically reduces fall risk. The slip resistance of a wet enamel tub is roughly that of an ice rink.",
+        text: "A non-slip mat with suction cups or a peel-and-stick textured strip gives the tub or shower floor more grip when wet. It is a small upgrade, but it removes one of the most common bathroom hazards.",
       },
       { type: "h2", text: "3. Higher toilet seat" },
       {
@@ -735,12 +735,12 @@ export const guides: Guide[] = [
       { type: "h2", text: "5. Lever-style faucet handles" },
       {
         type: "p",
-        text: "Round knob faucets are surprisingly hard for arthritic hands. Lever handles are easier to operate without grip strength. Most modern faucets are already levers, but older bathrooms may have round knobs that are worth swapping.",
+        text: "Round knob faucets are surprisingly hard for arthritic hands. Lever handles are easier to operate without grip strength, and older bathrooms often still have round knobs worth swapping.",
       },
       {
         type: "callout",
-        title: "All five together",
-        text: "Done together as one Summit Handyman visit, all five upgrades typically take half a day to a full day depending on access. The $150 minimum applies to the visit, not per item, so bundling makes sense.",
+        title: "Bundle the safety list",
+        text: "Handled together, these upgrades are easier to plan, quote, and document. The $150 minimum applies to the job, not each item, so bundling related repairs can make sense.",
       },
       {
         type: "callout",
@@ -754,7 +754,7 @@ export const guides: Guide[] = [
     slug: "premium-paint-cheaper-long-term",
     title: "Why Premium Paint Is Actually Cheaper in the Long Run",
     excerpt:
-      "Builder-grade paint costs less per gallon. Premium paint costs less per decade. Here's the math, plus what to look for in a quality interior paint.",
+      "Builder-grade paint costs less per gallon. Better paint often costs less over the life of the room. Here is what to look for in a quality interior finish.",
     service: "painting",
     date: "2026-05-17",
     readingMinutes: 5,
@@ -762,22 +762,22 @@ export const guides: Guide[] = [
     body: [
       {
         type: "p",
-        text: "The cheapest paint at the hardware store and the premium tier from Benjamin Moore look nearly identical when freshly rolled. Three years later they look completely different. Here's why premium paint is the better deal even though the gallon costs more.",
+        text: "Cheap paint and better paint can look similar when freshly rolled. The difference shows up later in coverage, scuff resistance, washability, and how soon the room needs attention again.",
       },
       { type: "h2", text: "Coverage" },
       {
         type: "p",
-        text: "Premium paint covers reliably in two coats over most existing paint colors. Builder-grade often needs three coats to look even, especially when going light over dark. Three coats means more time, more material, and more cost overall, even though each gallon was cheaper.",
+        text: "Better paint usually covers more reliably in two coats over many existing colours. Builder-grade paint often needs extra coats to look even, especially when going light over dark. Extra coats mean more time, more material, and more total cost.",
       },
       { type: "h2", text: "Longevity" },
       {
         type: "p",
-        text: "Premium interior paints are formulated to resist yellowing, fading, and scuff marks for many years. Builder-grade paint can start showing wear within 18 months in high-traffic areas. The repaint timeline is the biggest hidden cost.",
+        text: "Better interior paints are formulated to resist yellowing, fading, and scuff marks longer than builder-grade paint. The repaint timeline is often the hidden cost.",
       },
       { type: "h2", text: "Washability" },
       {
         type: "p",
-        text: "Premium paint can be wiped clean without removing the finish. Cheap paint either can't be wiped (the dirt sets in) or wipes off the paint along with the dirt. For kitchens, bathrooms, and homes with kids or pets, this matters every day.",
+        text: "Better paint can usually be wiped clean without damaging the finish. Lower-grade paint can hold dirt or burnish when scrubbed, which matters in kitchens, bathrooms, and homes with kids or pets.",
       },
       { type: "h2", text: "What to look for" },
       {
@@ -793,12 +793,12 @@ export const guides: Guide[] = [
       {
         type: "callout",
         title: "What about color matching?",
-        text: "Any of the premium brands can match any color from any other brand. Bring a chip, a paint can lid, or even a scuff from your wall. Color is not a reason to switch brands.",
+        text: "Most major paint brands can match colours from another brand. Bring a chip, a paint can lid, or even a sample from your wall if you have one.",
       },
       {
         type: "callout",
-        title: "Brody supplies premium by default",
-        text: "Summit Handyman uses Benjamin Moore Regal or Sherwin-Williams Emerald on every paint job unless you specifically request something else. Either bring your own paint or Brody picks it up at cost plus a small handling fee.",
+        title: "Brody quotes better paint by default",
+        text: "Summit Handyman often quotes Benjamin Moore Regal or Sherwin-Williams Emerald for interior painting unless the scope calls for something else. You can supply paint or Brody can pick it up at cost plus a small handling fee.",
       },
     ],
   },

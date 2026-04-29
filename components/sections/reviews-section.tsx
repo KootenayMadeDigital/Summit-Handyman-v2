@@ -44,14 +44,14 @@ export function ReviewsSection() {
             eyebrow="What Locals Say"
             title={
               <>
-                Real reviews from{" "}
+                The pattern behind{" "}
                 <span className="font-serif italic font-normal text-gradient-gold">
-                  real homes
+                  5-star trust
                 </span>{" "}
-                in the Lower Mainland.
+                across the Lower Mainland.
               </>
             }
-            description={`${data.aggregate.rating.toFixed(1)} stars on Google. ${isLive ? "Pulled live from Trustindex" : "Read more on Google or Trustindex"}. The full review wall is there for anyone doing due diligence.`}
+            description={`${data.aggregate.rating.toFixed(1)} stars on Google. ${isLive ? "Pulled live from Trustindex" : "Read more on Google or Trustindex"}. The full review wall is there for anyone checking the risk before they invite someone in.`}
           />
           <Reveal>
             <div className="flex flex-col gap-3">

@@ -27,7 +27,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Cost Guides & Resources",
   description:
-    "Educational guides for Lower Mainland homeowners and property managers. What drives handyman costs, how to spot a bad quote, when to DIY versus hire, and which repairs save thousands later.",
+    "Educational guides for Lower Mainland homeowners and property managers. What drives handyman costs, how to spot a bad quote, when to DIY versus hire, and which repairs prevent bigger bills later.",
   alternates: { canonical: "/cost-guides" },
 };
 
@@ -45,7 +45,7 @@ const tracks: Track[] = [
     label: "Hiring smarter",
     kicker: "Before the first email",
     description:
-      "Know what drives cost, what a trustworthy quote looks like, and when a professional saves more than he costs.",
+      "Know what drives cost, what a trustworthy quote looks like, and when hiring out saves the weekend.",
     Icon: Compass,
     accent: "from-amber-500/20 via-amber-500/5 to-transparent",
     slugs: [
@@ -264,7 +264,7 @@ export default function CostGuidesPage() {
             </span>
           </>
         }
-        description="No fake price tables. No vague contractor talk. Just clear, local guidance from an owner-operated handyman who knows what fails, what lasts, and what is worth hiring out."
+        description="No fake price tables. No contractor filler. Just local guidance from an owner-operated handyman who knows what fails, what lasts, and what is worth hiring out."
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href="/quote" size="lg">
@@ -348,13 +348,13 @@ export default function CostGuidesPage() {
             eyebrow="Pick your route"
             title={
               <>
-                Every guide has a job. Every route has a{" "}
+                Each guide has a job. Each route has a{" "}
                 <span className="font-serif italic font-normal text-gradient-gold">
                   purpose.
                 </span>
               </>
             }
-            description="The library is organized around the decision you are trying to make, not a lazy pile of articles. Start with the route that matches your situation."
+            description="The library is organized around the decision you are trying to make, not a content dump. Start with the route that matches your situation."
             className="mb-10 sm:mb-12"
           />
 
@@ -394,14 +394,14 @@ export default function CostGuidesPage() {
                   Ready to act
                 </div>
                 <h2 className="font-display text-display-lg font-extrabold tracking-tightest text-fg-strong text-balance leading-[1.05]">
-                  Reading is useful. A written estimate is better.
+                  Use the guide, then get the scope in writing.
                 </h2>
                 <p className="text-base sm:text-lg text-fg/85 max-w-2xl leading-relaxed text-pretty">
-                  If the guide helped you understand the repair, the quote form turns that context into next steps. Send the photos, the city, and the timing so Brody can reply with something practical.
+                  If the guide helped you understand the repair, send the photos, city, and timing. Brody turns that context into a practical written next step.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-3">
                   {[
-                    "Photos help",
+                    "Photos reduce guessing",
                     "24-hour reply",
                     "No hourly games",
                   ].map((item) => (

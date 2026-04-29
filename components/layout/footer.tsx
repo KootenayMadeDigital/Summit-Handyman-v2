@@ -87,13 +87,13 @@ export function Footer() {
           <div className="lg:col-span-7">
             <div className="rounded-2xl bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_14%,var(--bg-panel))] border border-accent p-6 sm:p-7 md:p-8 shadow-gold">
               <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold">
-                The recommended way to reach Brody
+                The best first step
               </p>
               <h2 className="mt-2 font-display text-2xl sm:text-3xl font-extrabold text-fg-strong leading-tight text-balance">
-                Get a written estimate within 24 hours.
+                Get the scope in writing within 24 hours.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-fg/85 leading-relaxed">
-                The quote form takes about 90 seconds and lets Brody review the scope and photos before reaching out.
+                The quote form gives Brody the repair list, photos, and location before he replies.
               </p>
               <div className="mt-5 flex flex-col sm:flex-row gap-3">
                 <Link
@@ -102,7 +102,7 @@ export function Footer() {
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-accent text-white font-display font-bold text-sm hover:bg-accent-hot transition-colors shadow-gold"
                 >
                   <FileText className="h-4 w-4" />
-                  Start Quote
+                  Start My Quote
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
@@ -230,7 +230,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/quote" className="text-fg/80 hover:text-accent transition-colors">
-                  Start Quote
+                  Start My Quote
                 </Link>
               </li>
             </ul>

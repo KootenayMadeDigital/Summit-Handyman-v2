@@ -59,7 +59,7 @@ const personas = [
     Icon: HeartHandshake,
     label: "First-time hire",
     headline: "Honest, gentle, and clear.",
-    body: "First handyman? Brody walks you through what's involved before he starts. No upsell, no pressure. Free written estimate so there are no surprises.",
+    body: "First handyman? Brody explains what he sees before work starts. Written estimate first, plain language throughout, no surprise add-ons slipped in later.",
     bullet: "Always licensed, insured, and tidy. Comes back free if anything fails.",
   },
 ];
@@ -98,7 +98,7 @@ const processSteps = [
     step: "02",
     Icon: Mail,
     title: "Brody emails back within 24 hours",
-    body: "He'll either send a written estimate, or ask any clarifying questions. No phone tag. No pressure to commit.",
+    body: "He either sends a written estimate or asks the missing question before anyone wastes a visit.",
   },
   {
     step: "03",
@@ -128,12 +128,12 @@ const reassurances = [
   {
     Icon: Wrench,
     title: "The come-back-free promise",
-    body: '"If it\'s not done right, I come back and fix it. No charge. No questions." That\'s how every job ends.',
+    body: '"If it\'s not done right, I come back and fix it. No charge. No questions." Clear promise, no fine-print games.',
   },
   {
     Icon: HeartHandshake,
     title: "One pro, every job",
-    body: "Brody Robertson handles every visit personally. No dispatcher, no rotating subcontractors. The same standards every time.",
+    body: "Brody Robertson reviews the scope and handles the work personally. No dispatcher, no rotating subcontractors, no handoff drift.",
   },
 ];
 
@@ -181,7 +181,7 @@ export default function ServicesPage() {
       {/* === HERO === */}
       <PageHero
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
-        eyebrow="Full Service Capabilities"
+        eyebrow="Repair list, meet owner"
         title={
           <>
             One handyman.{" "}
@@ -190,11 +190,11 @@ export default function ServicesPage() {
             </span>
           </>
         }
-        description="Eleven services across the Lower Mainland, all handled personally by Brody Robertson. Licensed, insured, $150 minimum per job, no hourly surprises. The recommended way to start: submit a quote request so Brody has the details before reaching out."
+        description={`${services.length} service categories across the Lower Mainland, all handled personally by Brody Robertson. Licensed, insured, $150 minimum per job, and written estimates before work begins.`}
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href="/quote" size="lg">
-            Start Quote
+            Start My Quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
           <a
@@ -274,24 +274,22 @@ export default function ServicesPage() {
 
       <SectionDivider variant="mark" />
 
-      {/* === FULL SERVICE CATALOG WITH PRICING ===
+      {/* === FULL SERVICE CATALOG ===
           For each category, a clean header followed by service cards that
-          now expose "starting at" pricing and a what's-included preview.
-          This is where Linda gets her cost transparency, Sarah confirms
-          everything she needs is here, and Mark scans the breadth quickly. */}
+          preview the scope without inventing prices. */}
       <Section size="lg" className="bg-surface">
         <Container>
           <SectionTitle
             eyebrow="Full service catalog"
             title={
               <>
-                Eleven services.{" "}
+                {services.length} service categories.{" "}
                 <span className="font-serif italic font-normal text-gradient-gold">
-                  One trusted pro.
+                  One accountable owner.
                 </span>
               </>
             }
-            description="Every service Brody offers, all handled personally. Pricing is by quote on every job, with a $150 minimum per visit. Submit photos and a description through the quote form and Brody emails a written estimate within 24 hours."
+            description="Every service Brody offers, handled personally. Pricing is quoted in writing, with a $150 minimum per job. Send photos and a description so the estimate starts from the real scope."
             className="mb-12 sm:mb-14"
           />
 
@@ -401,7 +399,7 @@ export default function ServicesPage() {
                 </span>
               </>
             }
-            description="Predictable, documented, and easy. No phone tag, no surprise charges, no pressure to commit before you've seen a written number."
+            description="Simple, documented, and calm. The written estimate comes before the commitment, so you are not guessing at price or scope."
             align="center"
             className="mb-12 sm:mb-14"
           />
@@ -430,7 +428,7 @@ export default function ServicesPage() {
                 <ArrowRight className="h-5 w-5" />
               </MagneticCTA>
               <p className="text-sm text-fg-muted">
-                Most quotes are reviewed and answered within 24 hours.
+                Quote requests are reviewed within 24 hours.
               </p>
             </div>
           </Reveal>
@@ -455,7 +453,7 @@ export default function ServicesPage() {
                 </span>
               </h2>
               <p className="mt-5 text-base sm:text-lg text-fg/85 leading-relaxed text-pretty">
-                Hiring a handyman should feel like a relief, not a risk. Brody's structure is built around making the decision easy: licensed, insured, predictable pricing, written estimates, and a workmanship promise that never expires.
+                Hiring a handyman should feel like a relief, not a risk. Brody makes the decision easier with licensing, insurance, written estimates, clear pricing rules, and a workmanship promise attached to the repair.
               </p>
             </Reveal>
 
@@ -489,13 +487,13 @@ export default function ServicesPage() {
                 For property managers
               </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-display-lg font-extrabold tracking-tightest text-fg-strong leading-[1.05] text-balance">
-                Tenant turnovers, common-area repairs, time-sensitive coordination.{" "}
+                Tenant turnovers, common-area repairs, access notes, and owner updates.{" "}
                 <span className="font-serif italic font-normal text-gradient-gold">
-                  Documented every step.
+                  Documented where it counts.
                 </span>
               </h2>
               <p className="text-base sm:text-lg text-fg/85 leading-relaxed">
-                Brody runs property-management work with itemized invoicing, photo documentation when useful, and clear email threads per property. Summit is a strong fit when managers need clean handoffs, direct communication, and repairs that do not create a second problem.
+                Brody runs property-management work with itemized invoicing, photo documentation when it helps, and clear email threads per property. Summit is a strong fit when managers need clean handoffs, direct communication, and repairs that do not create a second problem.
               </p>
               <ul className="grid sm:grid-cols-2 gap-3 pt-2">
                 {[
@@ -503,7 +501,7 @@ export default function ServicesPage() {
                   "Common-area repairs",
                   "Time-sensitive repair coordination",
                   "Detailed itemized invoicing",
-                  "Before/after photo docs",
+                  "Before and after photos when useful",
                   "Repeat documentation process",
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-sm text-fg/85">
@@ -536,7 +534,7 @@ export default function ServicesPage() {
             <Reveal className="lg:col-span-5" delay={0.1}>
               <div className="rounded-2xl bg-surface border border-accent/40 p-6 sm:p-7 shadow-gold">
                 <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold mb-3">
-                  What you'll get with every job
+                  What managers can expect
                 </p>
                 <ul className="space-y-3.5">
                   {[
@@ -576,7 +574,7 @@ export default function ServicesPage() {
                 </span>
               </>
             }
-            description="Hiring a handyman should be easy. Here are the answers to what most first-time customers wonder about."
+            description="The best copy is a straight answer. These are the questions customers usually need settled before sending the form."
             align="center"
             className="mb-10 sm:mb-12"
           />
@@ -593,7 +591,7 @@ export default function ServicesPage() {
                 },
                 {
                   q: "Is this safe? I've never hired a handyman before.",
-                  a: "Brody is fully licensed (Business # 79853 7957) and carries comprehensive liability insurance. He's owner-operated, so the same person you email is the one who shows up. Always tidy, always respectful, and the workmanship promise means he comes back free if anything fails.",
+                  a: "Brody is licensed (Business # 79853 7957) and carries comprehensive liability insurance. He is owner-operated, so the same person reviewing the quote is the person responsible for the work. The workmanship promise means he comes back free if the repair fails due to his work.",
                 },
                 {
                   q: "Do you work with property managers?",
@@ -690,11 +688,11 @@ export default function ServicesPage() {
                 </span>
               </h2>
               <p className="text-base sm:text-lg text-fg/85 max-w-xl mx-auto leading-relaxed">
-                Add details, attach photos, hit send. Brody reviews everything before reaching out, so the first reply already has the answers you need.
+                Add details, attach photos, and send the list. Brody reviews the scope before replying, so the first answer can be specific.
               </p>
               <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <MagneticCTA href="/quote" size="lg">
-                  Start Quote
+                  Start My Quote
                   <ArrowRight className="h-5 w-5" />
                 </MagneticCTA>
                 <a

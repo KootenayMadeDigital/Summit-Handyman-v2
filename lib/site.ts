@@ -8,9 +8,9 @@ export const site = {
   legalName: "Summit Handyman Services",
   owner: "Brody Robertson",
   tagline: "Reliability Reaching New Heights",
-  taglineAlt: "The view is always better from a home that works.",
+  taglineAlt: "Life gets lighter when the house works.",
   description:
-    "Premium handyman repairs for property managers and families across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale.",
+    "Owner-operated handyman repairs for families and property managers across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale.",
   url: "https://summit-handyman.ca",
 
   contact: {
@@ -43,7 +43,7 @@ export const site = {
     "If it's not done right, I come back and fix it. No charge. No questions.",
 
   about:
-    "Most people do not need a bigger contractor. They need one reliable person who answers, protects the home, fixes it properly, and leaves nothing loose behind.",
+    "Most people do not need a bigger contractor. They need one reliable person who answers clearly, protects the home, fixes the problem properly, and leaves nothing loose behind.",
 
   trust: {
     licensed: true,

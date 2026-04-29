@@ -73,7 +73,7 @@ const decisionLenses = [
     Icon: ShieldCheck,
     label: "Trust",
     question: "Can I trust him inside my home?",
-    answer: "The pattern is professional, polite, documented, and owner-operated. That lowers the risk quickly.",
+    answer: "The pattern is clear communication, clean work, and owner accountability. That lowers the risk quickly.",
   },
   {
     key: "property",
@@ -93,7 +93,7 @@ const proofPattern = [
   {
     Icon: Clock,
     title: "The timing is respected",
-    body: "People remember punctuality because most small-job contractors make it painful.",
+    body: "People remember punctuality because small-job hiring often makes it painful.",
   },
   {
     Icon: Sparkles,
@@ -103,7 +103,7 @@ const proofPattern = [
   {
     Icon: FileText,
     title: "The process is documented",
-    body: "Especially useful for property managers, turnovers, and anyone who needs proof the work was handled.",
+    body: "Especially helpful for property managers, turnovers, and anyone who needs proof the work was handled.",
   },
 ];
 
@@ -246,7 +246,7 @@ export function ReviewsRichPage() {
                 </span>
               </>
             }
-            description="Most visitors are not just checking stars. They are checking risk. These are the doubts the reviews need to settle."
+            description="Visitors are not just checking stars. They are checking risk. These are the doubts the reviews need to settle."
             className="mb-10 sm:mb-12"
           />
 
@@ -304,7 +304,7 @@ export function ReviewsRichPage() {
                 </span>
               </>
             }
-            description="A single nice review is useful. A repeated pattern is a buying signal."
+            description="A single nice review helps. A repeated pattern is the buying signal."
             align="center"
             className="mb-12 sm:mb-14"
           />

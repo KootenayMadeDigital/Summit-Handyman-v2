@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
  *     ALREADY has a quote CTA in the viewport, the sticky bar's identical
  *     ask is noise and dampens conversion.
  *   - When the user has scrolled past the inline CTA (or hasn't reached one
- *     yet), the sticky bar guarantees the path back. Just-in-time visibility.
+ *     yet), the sticky bar keeps the path back visible. Just-in-time visibility.
  *   - Net effect: exactly ONE primary CTA visible at any scroll position.
  *     Same pattern Stripe, Linear, and Shopify use on mobile.
  *
@@ -97,7 +97,7 @@ export function MobileStickyBar() {
           aria-label="Start a quote"
         >
           <FileText className="h-4 w-4" />
-          Start Quote
+          Start My Quote
         </Link>
         <a
           href={`mailto:${site.contact.email}`}

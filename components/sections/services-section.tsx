@@ -17,16 +17,16 @@ export function ServicesSection() {
     <Section id="services" size="lg" className="bg-surface relative">
       <Container>
         <SectionTitle
-          eyebrow="Full Service Capabilities"
+          eyebrow="Repair list, meet owner"
           title={
             <>
-              Transforming homes with{" "}
+              The list stops{" "}
               <span className="font-serif italic font-normal text-gradient-gold">
-                precision.
+                growing.
               </span>
             </>
           }
-          description="Find the closest match for the repair list, then send the details once. Brody handles the scope personally, so the job starts with clarity instead of contractor fog."
+          description="Find the closest match, send the details once, and let Brody turn the loose repair list into a written scope."
           className="mb-14 sm:mb-16"
         />
 
@@ -88,7 +88,7 @@ export function ServicesSection() {
 
         <Reveal>
           <p className="mt-16 text-center font-serif italic text-base sm:text-lg text-fg-muted">
-            "The view is always better from a home that works."
+            "Life gets lighter when the house works."
           </p>
         </Reveal>
       </Container>

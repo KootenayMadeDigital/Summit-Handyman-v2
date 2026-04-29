@@ -29,15 +29,15 @@ export type Service = {
 export const serviceCategories: Record<ServiceCategory, { name: string; description: string }> = {
   interior: {
     name: "Interior Enhancements",
-    description: "Repairs, finishes, and installations that make the inside of your home work better.",
+    description: "Repairs, finishes, and installs that make daily living easier.",
   },
   exterior: {
     name: "Exterior Upgrades",
-    description: "Curb appeal, weather-proofing, and seasonal maintenance for Lower Mainland homes.",
+    description: "Weather-facing repairs and maintenance before BC rain finds the weak spot.",
   },
   safety: {
-    name: "Safety & Emergency",
-    description: "Detectors, childproofing, and peace-of-mind installs to BC code.",
+    name: "Safety & Prevention",
+    description: "Detectors, childproofing, grab bars, and prevention-focused installs done properly.",
   },
 };
 
@@ -47,8 +47,8 @@ export const services: Service[] = [
     name: "General Repairs",
     category: "interior",
     keywords: ["handyman repairs", "home repairs", "small jobs", "fix-it list", "punch list"],
-    tagline: "Leaky faucets to squeaky doors.",
-    shortDescription: "Leaky faucets to squeaky doors.",
+    tagline: "The small fixes stop piling up.",
+    shortDescription: "Bundle the faucet, door, cabinet, and punch-list fixes into one clean visit.",
     longDescription:
       "The small things that quietly drive you crazy. From a faucet that won't stop dripping to a door that catches on the frame, Brody handles the everyday repairs that homeowners and property managers across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale don't have time to chase. Bundle a list and get it all done in a single visit.",
     includes: [
@@ -68,7 +68,7 @@ export const services: Service[] = [
       },
       {
         q: "How is pricing handled?",
-        a: "Every job gets a free written estimate after Brody reviews your quote submission. The $150 minimum applies to all visits to cover tools, insurance, travel, and craftsmanship. Final pricing is always quoted in writing before any work starts.",
+        a: "Every job gets a free written estimate after Brody reviews your quote submission. The $150 minimum applies to cover tools, insurance, travel, and craftsmanship. Final pricing is quoted in writing before any work starts.",
       },
       {
         q: "Can you handle a tenant turnover punch list?",
@@ -83,17 +83,17 @@ export const services: Service[] = [
     name: "Painting Services",
     category: "interior",
     keywords: ["interior painting", "house painter", "trim painting", "ceiling painting", "cabinet refinishing"],
-    tagline: "High-quality paints for a durable finish.",
-    shortDescription: "High-quality paints for a durable finish.",
+    tagline: "Prep-first painting that looks clean later.",
+    shortDescription: "Clean lines, protected floors, solid prep, and finishes that hold up.",
     longDescription:
-      "Clean lines, no drips on the trim, no roller marks on the ceiling. Brody uses premium paints (Benjamin Moore Regal, Sherwin-Williams Emerald) and the right prep work, including caulking, sanding, and priming, so the finish lasts. Painting service available across the Lower Mainland for single rooms, full home interiors, trim refreshes, and cabinet refinishes.",
+      "Clean lines, no drips on the trim, no roller marks on the ceiling. Brody uses quality paints such as Benjamin Moore Regal or Sherwin-Williams Emerald when the scope calls for them, plus the prep work that makes the finish hold up: caulking, sanding, priming, and protected floors.",
     includes: [
       "Interior wall and ceiling painting",
       "Trim, baseboards, and doors",
       "Cabinet refinishing",
       "Accent walls and feature finishes",
       "Touch-ups and color matching",
-      "Premium paint (Benjamin Moore / Sherwin-Williams)",
+      "Quality paint selection",
       "Caulking, sanding, priming included",
       "Furniture moved or covered, floors fully protected",
     ],
@@ -108,7 +108,7 @@ export const services: Service[] = [
       },
       {
         q: "How is the price determined?",
-        a: "Submit your quote request with photos of the space and Brody will email a written estimate within 24 hours. The $150 minimum applies to every visit.",
+        a: "Submit your quote request with photos of the space and Brody will email a written estimate within 24 hours. The $150 minimum applies to the job.",
       },
     ],
     icon: "Paintbrush",
@@ -119,8 +119,8 @@ export const services: Service[] = [
     name: "Drywall Repair",
     category: "interior",
     keywords: ["drywall patch", "drywall hole", "ceiling repair", "skim coat", "texture matching"],
-    tagline: "Seamless repairs preparing walls for paint.",
-    shortDescription: "Seamless repairs preparing walls for paint.",
+    tagline: "Patches that do not announce themselves later.",
+    shortDescription: "Holes, cracks, texture, sanding, and paint-ready wall repairs.",
     longDescription:
       "Patch a hole. Fix the crack that keeps coming back. Skim a textured ceiling smooth. Brody does drywall the way it should be done: three coats minimum, sanded right, ready for paint with no telltale halo around the patch. Drywall repair across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale, with texture matching for knockdown, orange peel, and smooth finishes.",
     includes: [
@@ -136,11 +136,11 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Why do some patches always show through paint?",
-        a: "One-coat patches telegraph through paint within weeks. Three coats, sanded between each, primed, and re-textured to match is the only way to make it disappear permanently.",
+        a: "One-coat patches telegraph through paint. Layered compound, proper sanding, primer, and matched texture are what keep the repair from flashing later.",
       },
       {
         q: "Can you match my ceiling texture?",
-        a: "Yes. Most older Lower Mainland homes have knockdown or stipple ceilings. Brody uses spray-on knockdown and sponge-stipple rolling to match. Done right, you can't see the patch.",
+        a: "Yes. Many older Lower Mainland homes have knockdown or stipple ceilings. Brody uses spray-on knockdown and sponge-stipple rolling to get the patch as close as the existing texture allows.",
       },
       {
         q: "How is pricing handled?",
@@ -155,8 +155,8 @@ export const services: Service[] = [
     name: "Electrical Work",
     category: "interior",
     keywords: ["light fixture install", "ceiling fan install", "smart switch", "dimmer install", "smart home"],
-    tagline: "Lighting installations to smart home devices.",
-    shortDescription: "Lighting installations to smart home devices.",
+    tagline: "Clean fixture swaps and smart installs.",
+    shortDescription: "Lights, fans, dimmers, doorbells, and smart devices installed cleanly.",
     longDescription:
       "Light fixtures, dimmers, smart switches, and ceiling fans. Permitted electrical or anything beyond the homeowner-allowed scope is referred to a licensed electrician, but for swap-and-install work in Lower Mainland homes, Brody gets it done clean. Smart locks, doorbell cameras, smart thermostats, and under-cabinet lighting all part of the regular install menu.",
     includes: [
@@ -172,15 +172,15 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Are you a licensed electrician?",
-        a: "Brody handles homeowner-allowed scope (fixture swaps, smart switches with neutral wires, ceiling fan installs into existing boxes). Anything that requires a permit or new wiring is referred to a fully licensed electrician.",
+        a: "Brody handles homeowner-allowed scope (fixture swaps, smart switches with neutral wires, ceiling fan installs into existing boxes). Anything that requires a permit or new wiring is referred to a licensed electrician.",
       },
       {
         q: "Do smart switches work with my existing wiring?",
-        a: "Most modern smart switches need a neutral wire. Brody confirms your wiring before quoting. Older Lower Mainland homes sometimes need a small workaround (battery switch or hub).",
+        a: "Many modern smart switches need a neutral wire. Brody confirms your wiring before quoting. Older Lower Mainland homes sometimes need a small workaround, like a battery switch or hub.",
       },
       {
         q: "How is pricing handled?",
-        a: "Every install gets a free written estimate after the quote review. The $150 minimum applies to every visit.",
+        a: "Every install gets a free written estimate after the quote review. The $150 minimum applies to the job.",
       },
     ],
     icon: "Zap",
@@ -191,8 +191,8 @@ export const services: Service[] = [
     name: "Tile & Flooring",
     category: "interior",
     keywords: ["tile install", "backsplash", "bathroom tile", "laminate flooring", "vinyl plank", "hardwood install"],
-    tagline: "Kitchens, bathrooms, hardwood, and laminate.",
-    shortDescription: "Kitchens, bathrooms, hardwood, and laminate.",
+    tagline: "Square lines, tight transitions, clean finish.",
+    shortDescription: "Backsplashes, bathroom tile, plank flooring, grout, and trim details.",
     longDescription:
       "Backsplashes, bathroom tile, laminate planks, and engineered hardwood. Subfloor checked, underlayment laid right, lines kept square, grout finished clean. Tile and flooring installations across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale, from kitchen backsplashes to full bathroom tile jobs and luxury vinyl plank flooring throughout entire homes.",
     includes: [
@@ -216,7 +216,7 @@ export const services: Service[] = [
       },
       {
         q: "What flooring brands do you install?",
-        a: "Most major brands are fine: Mohawk, Shaw, Pergo, Vidaplank. Bring your own materials or Brody picks them up at cost plus handling.",
+        a: "Major brands like Mohawk, Shaw, Pergo, and Vidaplank are usually workable. Bring your own materials or Brody can pick them up at cost plus handling.",
       },
     ],
     icon: "Square",
@@ -227,8 +227,8 @@ export const services: Service[] = [
     name: "Assembly & Mounting",
     category: "interior",
     keywords: ["TV mount install", "furniture assembly", "IKEA assembly", "shelf install", "art hanging"],
-    tagline: "Furniture assembly, art, and mirror hanging.",
-    shortDescription: "Furniture assembly, art, and mirror hanging.",
+    tagline: "Mounted level. Anchored properly.",
+    shortDescription: "TVs, shelves, mirrors, closet systems, and flat-pack furniture secured right.",
     longDescription:
       "TV mounted level. Heavy mirror anchored into studs. Closet system squared and plumb. The last 10 percent of every move-in or renovation, handled. TV mounting, IKEA and flat-pack furniture assembly, heavy art hanging, curtain rods, blinds, and floating shelves across the Lower Mainland.",
     includes: [
@@ -263,8 +263,8 @@ export const services: Service[] = [
     name: "Pressure Washing",
     category: "exterior",
     keywords: ["pressure washing", "driveway cleaning", "deck cleaning", "siding wash", "moss removal"],
-    tagline: "Restore your home's exterior surfaces.",
-    shortDescription: "Restore your home's exterior surfaces.",
+    tagline: "Moss and grime removed without wrecking the surface.",
+    shortDescription: "Driveways, decks, siding, fences, patios, and soft-wash work.",
     longDescription:
       "Driveways, decks, siding, fences. Years of Pacific Northwest moss and grime washed off the right way, no etched concrete, no gouged wood. Pressure washing across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. Spring and fall are peak season, but moss-prone Lower Mainland properties benefit from a wash anytime the rain lets up.",
     includes: [
@@ -280,15 +280,15 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Will pressure washing damage my siding?",
-        a: "Done right, no. Brody uses a soft-wash technique on vinyl, fiber-cement, and stucco at the correct PSI and distance. The aggressive direct-blast that strips paint is the wrong approach for most home exteriors.",
+        a: "With the right approach, no. Brody uses a soft-wash technique on vinyl, fiber-cement, and stucco at the correct PSI and distance. Aggressive direct-blast washing is the wrong approach for many home exteriors.",
       },
       {
         q: "How often should I pressure wash my driveway?",
-        a: "Most Lower Mainland driveways benefit from an annual wash, typically before sealing in spring or after fall leaf drop. Moss-heavy properties may need it twice a year.",
+        a: "Lower Mainland driveways often benefit from an annual wash, typically before sealing in spring or after fall leaf drop. Moss-heavy properties may need more frequent attention.",
       },
       {
         q: "How is pricing handled?",
-        a: "Submit a few photos and the rough scope through the quote form. Brody emails a written estimate within 24 hours. The $150 minimum applies to every visit.",
+        a: "Submit a few photos and the rough scope through the quote form. Brody emails a written estimate within 24 hours. The $150 minimum applies to the job.",
       },
     ],
     icon: "Droplets",
@@ -299,8 +299,8 @@ export const services: Service[] = [
     name: "Gutter Maintenance",
     category: "exterior",
     keywords: ["gutter cleaning", "gutter repair", "downspout flush", "gutter guards"],
-    tagline: "Cleaning and repair.",
-    shortDescription: "Cleaning and repair.",
+    tagline: "Water goes where it should.",
+    shortDescription: "Cleanouts, downspout flushing, loose brackets, seams, and guard installs.",
     longDescription:
       "Lower Mainland rain doesn't forgive blocked gutters. Brody clears debris, flushes downspouts, checks for sealant failures, and re-secures loose brackets so water goes where it should: 1 metre away from the foundation, not pooling against the house. Gutter cleaning and repair across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale, with annual fall service the most common booking.",
     includes: [
@@ -316,15 +316,15 @@ export const services: Service[] = [
     faqs: [
       {
         q: "How often should I clean my gutters in BC?",
-        a: "Twice a year for most Lower Mainland homes, once after fall leaf drop and once in spring. Properties with overhanging trees may need three or four cleanings.",
+        a: "Twice a year is a practical rhythm for many Lower Mainland homes: once after fall leaf drop and once in spring. Properties with overhanging trees may need more frequent cleanouts.",
       },
       {
         q: "Can you install gutter guards?",
-        a: "Yes. Mesh-style gutter guards work well in BC and significantly reduce cleaning frequency. Brody recommends and installs them after the first cleaning.",
+        a: "Yes. Mesh-style gutter guards can reduce how often gutters need attention in BC. Brody recommends and installs them after the first cleaning when they fit the roofline.",
       },
       {
         q: "What if my gutters are sagging?",
-        a: "Brody checks every bracket and re-secures or replaces failed ones. Sagging gutters dump water against the foundation, which causes far more expensive damage than the repair.",
+        a: "Brody checks brackets and re-secures or replaces failed ones. Sagging gutters can dump water against the foundation, so it is worth fixing before the next heavy rain.",
       },
     ],
     icon: "CloudRain",
@@ -335,8 +335,8 @@ export const services: Service[] = [
     name: "Fence & Deck",
     category: "exterior",
     keywords: ["deck staining", "fence repair", "deck refinish", "fence staining", "deck board replace"],
-    tagline: "Staining, sealing, and structural repairs.",
-    shortDescription: "Staining, sealing, and structural repairs.",
+    tagline: "Outdoor wood ready for another season.",
+    shortDescription: "Deck boards, fence panels, gates, stain, sealant, and hardware repairs.",
     longDescription:
       "Refinish a tired deck. Replace rotted boards. Re-stain a fence. Tighten gates that sag. The work that gets your outdoor space ready for another BC summer. Deck and fence service across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. Spring is peak season for refinish work; fall is best for repairs ahead of winter.",
     includes: [
@@ -360,7 +360,7 @@ export const services: Service[] = [
       },
       {
         q: "How long does deck stain last?",
-        a: "Premium semi-transparent stain typically lasts a few years on most Lower Mainland decks. South or west-facing decks fade faster due to UV exposure.",
+        a: "Premium semi-transparent stain usually lasts a few years on Lower Mainland decks. South or west-facing decks can fade faster due to UV exposure.",
       },
     ],
     icon: "Fence",
@@ -371,8 +371,8 @@ export const services: Service[] = [
     name: "Roof & Driveway",
     category: "exterior",
     keywords: ["roof repair", "shingle replace", "driveway sealing", "asphalt repair", "flashing repair"],
-    tagline: "Minor roof repairs and driveway sealing.",
-    shortDescription: "Minor roof repairs and driveway sealing.",
+    tagline: "Small exterior fixes before they become big ones.",
+    shortDescription: "Minor shingles, flashing, driveway sealing, crack filling, and surface repairs.",
     longDescription:
       "Replace cracked shingles. Re-seal a flashing. Crack-fill and seal a driveway. Smaller-scope work that doesn't need a full roofing or paving crew. Roof and driveway service for accessible homes in Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. Anything beyond minor scope is referred to a specialist.",
     includes: [
@@ -392,7 +392,7 @@ export const services: Service[] = [
       },
       {
         q: "When should I seal my driveway?",
-        a: "Asphalt driveways benefit from sealing every few years in BC, depending on sun exposure. Crack-fill any time you see them widening; freeze cycles double crack size each winter.",
+        a: "Asphalt driveways often benefit from sealing every few years in BC, depending on sun exposure and surface condition. Crack-fill when you see gaps widening, especially before freeze-thaw season.",
       },
       {
         q: "Can you do this work in winter?",
@@ -407,10 +407,10 @@ export const services: Service[] = [
     name: "Home Safety Solutions",
     category: "safety",
     keywords: ["smoke detector install", "CO detector install", "childproofing", "home safety", "anti-tip anchor"],
-    tagline: "Detectors, childproofing, and peace-of-mind installs.",
-    shortDescription: "Detectors, childproofing, and peace-of-mind installs.",
+    tagline: "Safety installs that actually hold.",
+    shortDescription: "Detectors, grab bars, gates, anti-tip anchors, locks, and home-safety details.",
     longDescription:
-      "Smoke and carbon monoxide detectors installed and tested to BC code. Childproofing including cabinet locks, outlet covers, and gates installed properly so they actually hold. Furniture anti-tip anchors so a curious toddler doesn't pull a dresser onto themselves. Home safety installs across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale.",
+      "Smoke and carbon monoxide detectors installed and tested to BC code. Childproofing including cabinet locks, outlet covers, and gates installed properly so they actually hold. Furniture anti-tip anchors for dressers, bookshelves, and other tall pieces that need to stay put. Home safety installs across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale.",
     includes: [
       "Smoke detector install (hardwired or battery)",
       "Carbon monoxide detector install",
@@ -432,7 +432,7 @@ export const services: Service[] = [
       },
       {
         q: "Are anti-tip anchors really necessary?",
-        a: "Yes, especially for any furniture over 30 inches with a child in the home. Several preventable child deaths every year in Canada come from tipped furniture. Five-minute install, life-changing protection.",
+        a: "Yes, especially for tall furniture in a home with children. Anti-tip anchoring is a small install that can prevent a serious hazard.",
       },
     ],
     icon: "Shield",

@@ -21,7 +21,7 @@ export function ProjectsSection() {
                 <span className="font-serif italic font-normal text-gradient-gold">see.</span>
               </>
             }
-            description="Recent work across the Lower Mainland. every job handled by Brody himself."
+            description="Recent work across the Lower Mainland, each job handled by Brody himself."
           />
           <Reveal>
             <Button href={site.social.instagram.url} variant="secondary" size="md" withArrow>

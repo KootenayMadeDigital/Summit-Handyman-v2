@@ -39,7 +39,7 @@ const principles = [
   {
     Icon: Mail,
     title: "Answers before assumptions",
-    body: "Brody reviews the scope, photos, timing, and location first, so the reply is useful instead of vague.",
+    body: "Brody reviews the scope, photos, timing, and location first, so the reply starts from facts instead of guesses.",
   },
   {
     Icon: Sparkles,
@@ -154,11 +154,11 @@ export default function AboutPage() {
             </span>
           </>
         }
-        description="Summit Handyman is owner-operated by Brody Robertson for homeowners and property managers who want the small-job experience to feel professional, predictable, and clean from the first message."
+        description="Summit Handyman is owner-operated by Brody Robertson for homeowners and property managers who want small repairs handled with clear scope, clean work, and one accountable person."
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href="/quote" size="lg">
-            Start Quote
+            Start My Quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
           <a
@@ -248,14 +248,14 @@ export default function AboutPage() {
                     Why Summit exists
                   </p>
                   <blockquote className="font-serif text-3xl md:text-5xl leading-[1.08] text-fg-strong text-pretty text-balance">
-                    “Most people do not need a bigger contractor. They need one reliable person who answers, protects the home, fixes it properly, and leaves nothing loose behind.”
+                    “Most people do not need a bigger contractor. They need one reliable person who answers clearly, protects the home, fixes the problem properly, and leaves nothing loose behind.”
                   </blockquote>
                   <p className="mt-6 text-sm uppercase tracking-[0.16em] text-fg-muted font-semibold">
                     Brody Robertson, founder
                   </p>
                   <div className="mt-8 space-y-5 text-fg-strong/85 leading-relaxed text-base sm:text-lg">
                     <p>
-                      The handyman category has a trust problem. People expect delays, vague prices, rushed work, and a mess left behind. Summit Handyman was built to make that experience feel completely different.
+                      The handyman category has a trust problem. People expect delays, unclear prices, rushed work, and a mess left behind. Summit Handyman was built to reverse that pattern.
                     </p>
                     <p>
                       Brody brings a property-manager mindset to small and medium repairs: clear scope, clean execution, practical documentation, and workmanship that still makes sense after the invoice is paid.
@@ -323,11 +323,11 @@ export default function AboutPage() {
               <>
                 Small repairs should still feel{" "}
                 <span className="font-serif italic font-normal text-gradient-gold">
-                  premium.
+                  considered.
                 </span>
               </>
             }
-            description="Premium does not mean overbuilt. It means the experience is calm, the work is clean, and the result does not create a new problem later."
+            description="Good repair work is not just the finished surface. It is the calm process, protected home, clean handoff, and repair that does not create a new problem later."
             className="mb-10 sm:mb-12"
           />
 
@@ -384,7 +384,7 @@ export default function AboutPage() {
                     </span>
                   </>
                 }
-                description="The experience is the product as much as the repair. Clear scope, clean execution, and no wondering whether the handyman is coming back."
+                description="The repair is only part of it. Clear scope, clean execution, and no wondering whether the handyman is coming back."
                 className="mb-8"
               />
               <div className="space-y-4">
@@ -423,7 +423,7 @@ export default function AboutPage() {
                   The job is not finished until Brody is willing to put his name on it.
                 </h2>
                 <p className="text-base sm:text-lg text-fg/85 max-w-2xl leading-relaxed">
-                  If it is not done right, he comes back and fixes it. No charge. No questions. That is not fine print. It is the standard.
+                  If it is not done right, he comes back and fixes it. No charge. No questions. That is not fine print. It is the promise behind the repair.
                 </p>
               </div>
               <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 lg:items-stretch">

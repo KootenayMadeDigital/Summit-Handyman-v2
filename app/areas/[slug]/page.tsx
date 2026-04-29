@@ -51,7 +51,7 @@ const cityProfiles: Record<string, CityProfile> = {
   surrey: {
     intro: "Surrey is dense, varied, and practical: strata towers, townhomes, older detached homes, and rental units all sitting inside one large service area.",
     texture: "From South Surrey and Fleetwood to Guildford, Newton, Whalley, and Panorama Ridge, the work often comes down to clean coordination: access, photos, written scope, and repairs that do not create a second problem.",
-    serviceFit: "Best fit for homeowners, strata units, and property managers who need a professional repair process without chasing a rotating crew.",
+    serviceFit: "Best fit for homeowners, strata units, and property managers who want written scope, direct replies, and no rotating crew.",
     commonJobs: ["Tenant turnover punch lists", "Drywall, paint, and finish repairs", "Fixture, hardware, and door work", "Mounting, assembly, and safety installs"],
     trustAngle: "Surrey jobs benefit from clear communication up front. Send the list, address, and photos so Brody can assess the scope before anything gets booked.",
     accent: "Townhomes, towers, and family homes",
@@ -75,7 +75,7 @@ const cityProfiles: Record<string, CityProfile> = {
   abbotsford: {
     intro: "Abbotsford spans established neighbourhoods, newer master-planned homes, rural properties, townhomes, and rental units that need practical repairs handled cleanly.",
     texture: "From Clearbrook and Abbotsford East to Auguston, Mount Lehman, Matsqui, Bradner, and Sumas Mountain, the work can range from drywall and paint to seasonal exterior maintenance and turnover lists.",
-    serviceFit: "Best fit for homeowners and property managers who want repair lists handled with written scope, photos when useful, and no vague contractor talk.",
+    serviceFit: "Best fit for homeowners and property managers who want repair lists handled with written scope, practical documentation, and clear replies.",
     commonJobs: ["Drywall, paint, and turnover repairs", "Exterior maintenance and small fixes", "Door, trim, and hardware work", "Mounting, assembly, and fixture installs"],
     trustAngle: "Abbotsford bookings work best when the list is clear up front. Photos, access notes, and priorities help Brody quote accurately before the visit.",
     accent: "Established homes, rural properties, and townhomes",
@@ -98,7 +98,7 @@ const processSteps = [
   },
   {
     title: "Brody reviews it",
-    body: "The scope is checked before scheduling so the estimate is based on the actual home and not a vague hourly guess.",
+    body: "The scope is checked before scheduling so the estimate is based on the actual home, not a loose hourly guess.",
     Icon: FileText,
   },
   {
@@ -189,7 +189,7 @@ export default async function AreaPage(
     },
     {
       q: `How quickly does Brody reply to ${area.name} quote requests?`,
-      a: `Most written quote requests are reviewed within 24 hours. Scheduling depends on scope, access, materials, and Brody's current calendar.`,
+      a: `Written quote requests are reviewed within 24 hours. Scheduling depends on scope, access, materials, and Brody's current calendar.`,
     },
     {
       q: `What does a handyman cost in ${area.name}?`,
@@ -335,11 +335,11 @@ export default async function AreaPage(
                 <>
                   A clear process for {area.name} repair lists.
                   <span className="block font-serif italic font-normal text-gradient-gold">
-                    No contractor fog.
+                    No guessing game.
                   </span>
                 </>
               }
-              description="A local page is only useful if it makes the next step simple: pick the job, send the details, and get a written reply from Brody."
+              description="A local page should make the next step obvious: pick the job, send the details, and get a written reply from Brody."
               className="mb-0"
             />
             <RevealStagger className="grid gap-4" staggerDelay={0.05}>

@@ -81,7 +81,7 @@ export function Hero() {
             <span className="text-fg-strong font-semibold">
               Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale
             </span>
-            . Clear scope, clean work, written estimates, and the promise to come back free if it is not done right.
+            . Send the list, get the scope in writing, and know Brody is the one doing the work.
           </motion.p>
 
           <motion.div
@@ -91,7 +91,7 @@ export function Hero() {
             className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-2"
           >
             <MagneticCTA href="/quote" size="lg">
-              Start Quote
+              Start My Quote
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
             </MagneticCTA>
             <a
@@ -109,7 +109,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.6 }}
             className="text-sm text-fg-muted pt-3 sm:pt-4 leading-relaxed max-w-xl"
           >
-            <span className="text-fg/90">Start with the repair list</span>, add photos if you have them, and Brody replies with useful next steps within 24 hours.
+            <span className="text-fg/90">Start with the repair list</span>, add photos if you have them, and Brody replies within 24 hours with next steps in writing.
           </motion.p>
           <motion.p
             initial={reduce ? { opacity: 0 } : { opacity: 0 }}
@@ -147,7 +147,7 @@ export function Hero() {
                 <p className="mt-1 font-display text-xl font-bold text-summit-mist">
                   {site.owner}
                 </p>
-                <p className="text-sm text-summit-mist/70 mt-0.5">Langley, BC · Founder</p>
+                <p className="text-sm text-summit-mist/70 mt-0.5">Langley, BC · Owner on the tools</p>
               </div>
             </div>
           </Parallax>

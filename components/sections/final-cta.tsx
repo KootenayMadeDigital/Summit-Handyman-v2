@@ -12,16 +12,16 @@ export function FinalCTA() {
         <Reveal>
           <div className="text-center space-y-6 sm:space-y-7">
             <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-accent font-semibold">
-              The clean path to a quote
+              The least messy next step
             </p>
             <h2 className="font-display text-display-xl font-extrabold tracking-tightest text-fg-strong text-balance leading-[1.05]">
-              Submit the quote form. <br />
+              Send the repair list. <br />
               <span className="font-serif italic font-normal text-gradient-gold">
                 Brody handles the rest.
               </span>
             </h2>
             <p className="text-base sm:text-lg text-fg/85 max-w-xl mx-auto leading-relaxed">
-              Send the list, the location, and any photos. Brody reviews the scope before replying, so the first answer is practical instead of vague.
+              Send the list, location, and any photos. Brody reviews the scope before replying, so you get a practical next step instead of a loose answer.
             </p>
 
             {/* Why the form */}
@@ -36,7 +36,7 @@ export function FinalCTA() {
               <li className="summit-card-motion motion-trust flex items-start gap-3 p-4 rounded-xl bg-surface-panel border border-divider">
                 <Camera className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
                 <div>
-                  <p className="font-display font-bold text-sm text-fg-strong leading-tight">Photos help</p>
+                  <p className="font-display font-bold text-sm text-fg-strong leading-tight">Photos reduce guessing</p>
                   <p className="text-xs text-fg-muted mt-0.5">Attach up to 5 for a more accurate estimate.</p>
                 </div>
               </li>
@@ -44,14 +44,14 @@ export function FinalCTA() {
                 <Clock className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
                 <div>
                   <p className="font-display font-bold text-sm text-fg-strong leading-tight">24-hour reply</p>
-                  <p className="text-xs text-fg-muted mt-0.5">Most submissions get an answer within 24 hours.</p>
+                  <p className="text-xs text-fg-muted mt-0.5">Quote requests are reviewed within 24 hours.</p>
                 </div>
               </li>
             </ul>
 
             <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
               <MagneticCTA href="/quote" size="lg">
-                Start Quote
+                Start My Quote
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
               </MagneticCTA>
             </div>

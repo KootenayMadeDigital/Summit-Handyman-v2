@@ -9,7 +9,7 @@ import { MagneticCTA } from "@/components/ui/magnetic-cta";
 export const metadata: Metadata = {
   title: "Start a Quote Request",
   description:
-    "The recommended way to get a written estimate from Brody. Tell him what's going on, attach photos, and he'll review the job before reaching out within 24 hours.",
+    "Start with the repair list, photos, and city so Brody can reply with written next steps within 24 hours.",
   alternates: { canonical: "/quote" },
 };
 
@@ -27,7 +27,7 @@ const prep = [
   {
     Icon: Clock,
     title: "24-hour reply",
-    body: "Most requests get a practical answer within 24 hours, always with next steps in writing.",
+    body: "Quote requests are reviewed within 24 hours, with next steps kept in writing.",
   },
   {
     Icon: ShieldCheck,
@@ -40,25 +40,25 @@ export default function QuotePage() {
   return (
     <>
       <PageHero
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Start Quote" }]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Start My Quote" }]}
         eyebrow="Recommended way to reach Brody"
         title={
           <>
-            The cleanest path to a written{" "}
+            The clearest path to a written{" "}
             <span className="font-serif italic font-normal text-gradient-gold">
               estimate.
             </span>
           </>
         }
-        description="Tell Brody what needs fixing, where it is, when you need it, and what the photos show. The first reply gets sharper because the details are already in front of him."
+        description="Tell Brody what needs fixing, where it is, when you need it, and what the photos show. The reply is clearer because the details are already in front of him."
       >
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4 pt-3">
           <MagneticCTA href="#quote-form" size="lg">
-            Start the 90-second quote
+            Start My Quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
           <span className="text-sm text-fg-muted">
-            Owner-reviewed · free written estimate · no hourly games
+            Owner-reviewed · written estimate · no hourly games
           </span>
         </div>
       </PageHero>
@@ -97,7 +97,7 @@ export default function QuotePage() {
                   Good details make better estimates.
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-fg-muted">
-                  You do not need perfect details. A rough list, a few photos, and the city are enough for Brody to reply with useful next steps instead of vague contractor talk.
+                  You do not need perfect details. A rough list, a few photos, and the city are enough for Brody to reply with a clearer next step.
                 </p>
                 <div className="mt-6 space-y-3">
                   {[

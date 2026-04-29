@@ -93,7 +93,7 @@ export function Header() {
               </a>
               <ThemeToggle className="hidden lg:inline-flex" />
               <Button href="/quote" size="sm" className="hidden lg:inline-flex">
-                Start Quote
+                Start My Quote
               </Button>
               <button
                 type="button"
@@ -151,10 +151,10 @@ export function Header() {
           </nav>
           <div className="mt-8 space-y-3">
             <Button href="/quote" size="lg" className="w-full">
-              Start Quote
+              Start My Quote
             </Button>
             <p className="text-xs text-fg-muted -mt-1 text-center">
-              The recommended way for Brody to give an accurate estimate.
+              The best first step when photos and details matter.
             </p>
             <Button
               href={`mailto:${site.contact.email}`}

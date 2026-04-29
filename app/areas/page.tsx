@@ -178,7 +178,7 @@ export default function AreasPage() {
                   </span>
                 </>
               }
-              description="Clear comparison for city coverage, neighbourhoods, common home types, and the same quote reply expectation across the service area."
+              description="Compare city coverage, neighbourhoods, common home types, and the same written-reply expectation across the service area."
               className="mb-0"
             />
             <Reveal delay={0.1}>
@@ -192,7 +192,7 @@ export default function AreasPage() {
                       Same quote process in every city
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-                      Submit the repair list once. Include photos if you have them. Brody reviews the scope and replies with next steps, no area-based guessing game.
+                      Submit the repair list once. Include photos if you have them. Brody reviews the scope and replies directly, without area-based timing games.
                     </p>
                   </div>
                 </div>
@@ -216,7 +216,7 @@ export default function AreasPage() {
             eyebrow="Who this serves"
             title={
               <>
-                Coverage is only useful if the work model fits the client.
+                Coverage only matters if the work model fits the client.
                 <span className="block font-serif italic font-normal text-gradient-gold">
                   Summit is built for repeat trust.
                 </span>

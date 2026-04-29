@@ -29,10 +29,10 @@ export function BentoSection() {
               <span className="font-serif italic font-normal text-gradient-gold">
                 pick Brody
               </span>{" "}
-              for one reason.
+              when trust matters.
             </>
           }
-          description="Reliability. Pricing, quote clarity, clean work, and the warranty all flow from that."
+          description="Reliability is not a slogan here. It shows up in the estimate, the cleanup, the invoice, and the promise behind the repair."
           align="center"
           className="mb-12 sm:mb-14"
         />
@@ -110,10 +110,10 @@ export function BentoSection() {
             <Clock className="h-7 w-7 text-accent" strokeWidth={1.5} />
             <div>
               <p className="font-display text-2xl md:text-3xl font-extrabold text-fg-strong leading-tight">
-                Written<br />reply
+                Written<br />scope
               </p>
               <p className="mt-1 text-xs sm:text-sm text-fg-muted">
-                Email or text. Useful next steps within 24 hours.
+                Reply within 24 hours with the next step in writing.
               </p>
             </div>
           </BentoTile>
@@ -150,7 +150,7 @@ export function BentoSection() {
                 {site.contact.email}
               </a>
               <p className="mt-1 text-xs text-fg-muted">
-                Or text {site.contact.phone} for time-sensitive follow-ups.
+                Text {site.contact.phone} when a submitted quote needs extra context.
               </p>
             </div>
           </RevealItem>

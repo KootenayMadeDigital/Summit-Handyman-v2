@@ -45,7 +45,7 @@ export function AboutSection() {
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Button href="/about" variant="secondary" size="md" withArrow>
-                Read the full story
+                Meet Brody
               </Button>
               <a
                 href={site.social.facebook.url}

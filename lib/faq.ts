@@ -7,11 +7,11 @@ export const faqs: FAQ[] = [
   },
   {
     q: "What is your minimum charge?",
-    a: "My minimum service charge is $150 per job. This covers the tools, insurance, travel, and craftsmanship that go into every visit, regardless of size.",
+    a: "The minimum service charge is $150 per job. It covers the tools, insurance, travel, and craftsmanship that go into a professional visit, even when the repair is small.",
   },
   {
     q: "Do you handle small repairs?",
-    a: "Yes. Whether it's a single drywall patch, a leaky faucet, or hanging art, no job is too small if it requires professional attention.",
+    a: "Yes. A single drywall patch, leaky faucet, sticky door, or art-hanging job is worth doing properly if it has been sitting on your list too long.",
   },
   {
     q: "Are you available for Strata or Property Management work?",
@@ -19,7 +19,7 @@ export const faqs: FAQ[] = [
   },
   {
     q: "Are you licensed and insured?",
-    a: "Yes, Summit Handyman is fully licensed and carries comprehensive liability insurance for your peace of mind and protection.",
+    a: "Yes. Summit Handyman is licensed and carries comprehensive liability insurance for your home and property.",
   },
   {
     q: "Do you offer free estimates?",
@@ -31,10 +31,10 @@ export const faqs: FAQ[] = [
   },
   {
     q: "How quickly can you reply?",
-    a: "Email and text are checked throughout the day. Most quotes are returned within 24 hours. Scheduling depends on the work required, access, materials, and Brody's current calendar.",
+    a: "Quote requests are reviewed within 24 hours. Scheduling depends on the work required, access, materials, and Brody's current calendar.",
   },
   {
     q: "What's the best way to reach you?",
-    a: "Email is preferred: brody@summit-handyman.ca. Texting 604-989-5032 also works well, and Facebook Messenger is fine if that's how you prefer to chat.",
+    a: "Start with the quote form when possible. Email at brody@summit-handyman.ca is best for follow-ups, and text at 604-989-5032 works when you need to add context.",
   },
 ];

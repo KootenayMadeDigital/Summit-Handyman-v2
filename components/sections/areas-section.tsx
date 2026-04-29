@@ -14,7 +14,7 @@ export function AreasSection() {
             <>
               Six cities. One{" "}
               <span className="font-serif italic font-normal text-gradient-gold">
-                trusted pro.
+                known owner.
               </span>
             </>
           }

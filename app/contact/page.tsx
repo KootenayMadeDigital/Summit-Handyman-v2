@@ -19,7 +19,7 @@ import { areas } from "@/lib/areas";
 export const metadata: Metadata = {
   title: "Contact Brody",
   description:
-    "The recommended way to reach Brody is to submit the quote form so he has the photos and details on hand before reaching out. Email, text, and Facebook Messenger also available.",
+    "Start with the quote form so Brody has the repair list, photos, and location before he replies. Email, text, and Facebook Messenger also available.",
   alternates: { canonical: "/contact" },
 };
 
@@ -55,17 +55,17 @@ export default function ContactPage() {
         eyebrow="Get in Touch"
         title={
           <>
-            The cleanest way to{" "}
+            The least messy way to{" "}
             <span className="font-serif italic font-normal text-gradient-gold">
               reach Brody.
             </span>
           </>
         }
-        description="Submit the quote form. It takes about 90 seconds, includes photos, and lets Brody come back to you with answers, not more questions."
+        description="Submit the quote form first when you can. It captures the details Brody needs before the reply."
       >
         <div className="flex flex-col gap-3 pt-3 sm:flex-row sm:flex-wrap sm:items-center">
           <MagneticCTA href="/quote" size="lg">
-            Start the quote form
+            Start My Quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
           <a
@@ -87,10 +87,10 @@ export default function ContactPage() {
                 Recommended
               </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-fg-strong mb-4 text-balance leading-[1.05]">
-                Start the quote with useful details
+                Start with the details Brody actually needs
               </h2>
               <p className="text-base sm:text-lg text-fg/85 max-w-xl mx-auto mb-8 leading-relaxed">
-                Brody can give you a sharper answer when he has the project details and photos in hand. The form takes about 90 seconds and keeps the scope in writing.
+                Brody can reply with a clearer next step when the scope, photos, and city are already in front of him.
               </p>
 
               <ul className="grid sm:grid-cols-3 gap-3 sm:gap-4 mb-8 max-w-2xl mx-auto text-left">
@@ -131,13 +131,13 @@ export default function ContactPage() {
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-10">
             <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-fg-muted font-semibold mb-2">
-              Other ways to reach Brody
+              Other ways to add context
             </p>
             <h2 className="font-display text-2xl sm:text-3xl font-bold text-fg-strong text-balance">
-              Already have what Brody needs?
+              Need to follow up or add detail?
             </h2>
             <p className="mt-2 text-sm sm:text-base text-fg-muted">
-              These work too for follow-ups, quick questions, or details that do not fit neatly into the form.
+              Email, text, or Messenger work well after the quote is started, or when one extra detail does not fit the form.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
@@ -177,7 +177,7 @@ export default function ContactPage() {
               <h3 className="font-display text-xl font-bold text-fg-strong mb-2">Hours</h3>
               <p className="text-fg/85 leading-relaxed text-sm">{site.hours}</p>
               <p className="mt-2 text-xs text-fg-muted">
-                Email is checked throughout the day. Most quote requests get a reply within 24 hours.
+                Quote requests are reviewed within 24 hours. Email is the best place to keep the thread organized.
               </p>
             </div>
             <div className="summit-card-motion motion-trust p-6 sm:p-7 rounded-2xl bg-surface-panel border border-divider-strong">
