@@ -82,7 +82,7 @@ export function ReviewsSection() {
         <RevealStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {featured.map((r) => (
             <RevealItem key={r.author + r.date}>
-              <article className="h-full p-5 sm:p-6 md:p-7 rounded-2xl bg-surface border border-divider hover:border-accent-soft transition-colors duration-300 flex flex-col min-w-0">
+              <article className="summit-card-motion h-full p-5 sm:p-6 md:p-7 rounded-2xl bg-surface border border-divider hover:border-accent-soft transition-colors duration-300 flex flex-col min-w-0">
                 <div
                   className="flex items-center gap-1 text-accent mb-4"
                   aria-label={`${r.rating} out of 5 stars`}

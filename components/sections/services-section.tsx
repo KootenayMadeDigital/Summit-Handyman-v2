@@ -58,7 +58,7 @@ export function ServicesSection() {
                       <Link
                         href={`/services/${s.slug}`}
                         className={cn(
-                          "group relative block h-full p-6 rounded-2xl",
+                          "summit-card-motion group relative block h-full p-6 rounded-2xl",
                           "bg-surface-panel border border-divider",
                           "hover:border-accent-soft hover:bg-surface-elevated",
                           "transition-all duration-300 ease-editorial",
@@ -66,10 +66,10 @@ export function ServicesSection() {
                         )}
                       >
                         <div className="flex items-start justify-between gap-4">
-                          <div className="h-12 w-12 rounded-xl bg-accent-soft border border-accent-soft flex items-center justify-center group-hover:scale-105 transition-transform">
+                          <div className="summit-icon-box h-12 w-12 rounded-xl bg-accent-soft border border-accent-soft flex items-center justify-center group-hover:scale-105 transition-transform">
                             <ServiceIcon name={s.icon} className="h-6 w-6" />
                           </div>
-                          <ArrowUpRight className="h-5 w-5 text-fg-faint group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                          <ArrowUpRight className="summit-arrow h-5 w-5 text-fg-faint group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                         </div>
                         <h4 className="mt-5 font-display text-xl font-bold text-fg-strong">
                           {s.name}

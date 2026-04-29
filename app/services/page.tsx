@@ -211,8 +211,8 @@ export default function ServicesPage() {
           <RevealStagger className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
             {personas.map((p) => (
               <RevealItem key={p.label}>
-                <article className="h-full p-6 sm:p-7 rounded-2xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-colors">
-                  <div className="h-11 w-11 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center mb-5">
+                <article className="summit-card-motion h-full p-6 sm:p-7 rounded-2xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-colors">
+                  <div className="summit-icon-box h-11 w-11 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center mb-5">
                     <p.Icon className="h-5 w-5 text-accent" strokeWidth={1.6} aria-hidden />
                   </div>
                   <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold mb-2">
@@ -284,7 +284,7 @@ export default function ServicesPage() {
                         <Link
                           href={`/services/${s.slug}`}
                           className={cn(
-                            "group relative flex h-full flex-col p-6 rounded-2xl",
+                            "summit-card-motion group relative flex h-full flex-col p-6 rounded-2xl",
                             "bg-surface-panel border border-divider-strong",
                             "hover:border-accent-soft hover:bg-surface-elevated",
                             "transition-all duration-300 ease-editorial",
@@ -292,10 +292,10 @@ export default function ServicesPage() {
                           )}
                         >
                           <div className="flex items-start justify-between gap-4 mb-5">
-                            <div className="h-12 w-12 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center flex-shrink-0">
+                            <div className="summit-icon-box h-12 w-12 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center flex-shrink-0">
                               <ServiceIcon name={s.icon} className="h-6 w-6" />
                             </div>
-                            <ArrowUpRight className="h-5 w-5 text-fg-faint group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                            <ArrowUpRight className="summit-arrow h-5 w-5 text-fg-faint group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                           </div>
 
                           <h4 className="font-display text-xl font-bold text-fg-strong leading-tight">
@@ -370,7 +370,7 @@ export default function ServicesPage() {
           <RevealStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {processSteps.map((p) => (
               <RevealItem key={p.step}>
-                <article className="relative h-full p-6 rounded-2xl bg-surface border border-divider-strong">
+                <article className="summit-card-motion relative h-full p-6 rounded-2xl bg-surface border border-divider-strong">
                   <p className="font-display text-5xl font-extrabold text-gradient-gold mb-4 leading-none">
                     {p.step}
                   </p>
@@ -423,7 +423,7 @@ export default function ServicesPage() {
             <RevealStagger className="lg:col-span-7 grid sm:grid-cols-2 gap-4 sm:gap-5">
               {reassurances.map((r) => (
                 <RevealItem key={r.title}>
-                  <article className="h-full p-6 rounded-2xl bg-surface-panel border border-divider-strong">
+                  <article className="summit-card-motion h-full p-6 rounded-2xl bg-surface-panel border border-divider-strong">
                     <r.Icon className="h-6 w-6 text-accent mb-4" strokeWidth={1.6} aria-hidden />
                     <h3 className="font-display text-lg font-bold text-fg-strong mb-2 leading-tight">
                       {r.title}
@@ -507,7 +507,7 @@ export default function ServicesPage() {
                     { Icon: Clock, label: "Quotes reviewed within 24 hours" },
                   ].map((item) => (
                     <li key={item.label} className="flex items-center gap-3 text-fg-strong">
-                      <span className="h-9 w-9 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center flex-shrink-0">
+                      <span className="summit-icon-box h-9 w-9 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center flex-shrink-0">
                         <item.Icon className="h-4 w-4 text-accent" strokeWidth={1.6} />
                       </span>
                       <span className="font-display font-bold text-sm sm:text-base">

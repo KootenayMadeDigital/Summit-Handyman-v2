@@ -22,7 +22,7 @@ export function ProjectCard({
         className,
       )}
     >
-      <div className="photo-grade relative aspect-[4/3] overflow-hidden">
+      <div className="summit-photo-motion photo-grade relative aspect-[4/3] overflow-hidden">
         <Image
           src={project.afterImage}
           alt={project.title}

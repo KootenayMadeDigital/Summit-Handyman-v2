@@ -641,3 +641,151 @@ body {
     animation: none;
   }
 }
+
+/* === PREMIUM INTERACTION SYSTEM === */
+.summit-card-motion {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  transition:
+    transform 180ms var(--ease-editorial),
+    border-color 180ms var(--ease-editorial),
+    background-color 180ms var(--ease-editorial),
+    box-shadow 180ms var(--ease-editorial);
+}
+
+.summit-card-motion::before,
+.summit-card-motion::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 220ms var(--ease-editorial),
+    transform 420ms var(--ease-editorial);
+}
+
+.summit-card-motion::before {
+  inset: -30% auto -30% -45%;
+  width: 42%;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 22%, transparent), transparent);
+  transform: translate3d(-60%, 0, 0) rotate(12deg);
+  z-index: 2;
+}
+
+.summit-card-motion::after {
+  inset: auto 1rem 0 1rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  transform: scaleX(0.25);
+  z-index: 2;
+}
+
+.summit-card-motion:hover,
+.summit-card-motion:focus-within {
+  transform: translate3d(0, -4px, 0);
+}
+
+.summit-card-motion:hover::before,
+.summit-card-motion:focus-within::before {
+  opacity: 1;
+  transform: translate3d(420%, 0, 0) rotate(12deg);
+}
+
+.summit-card-motion:hover::after,
+.summit-card-motion:focus-within::after {
+  opacity: 0.85;
+  transform: scaleX(1);
+}
+
+.summit-icon-box {
+  transition: transform 180ms var(--ease-snappy), opacity 180ms var(--ease-editorial);
+}
+
+.summit-card-motion:hover .summit-icon-box,
+.summit-card-motion:focus-within .summit-icon-box {
+  transform: translate3d(0, -2px, 0) rotate(-3deg) scale(1.05);
+}
+
+.summit-arrow {
+  transition: transform 180ms var(--ease-editorial), opacity 180ms var(--ease-editorial), color 180ms var(--ease-editorial);
+}
+
+.summit-card-motion:hover .summit-arrow,
+.summit-card-motion:focus-within .summit-arrow {
+  transform: translate3d(3px, -3px, 0);
+  opacity: 1;
+}
+
+.summit-photo-motion img,
+.summit-photo-motion video {
+  transition: transform 700ms var(--ease-editorial), opacity 240ms var(--ease-editorial), filter 240ms var(--ease-editorial);
+}
+
+.summit-photo-motion:hover img,
+.summit-photo-motion:focus-within img,
+.summit-photo-motion:hover video,
+.summit-photo-motion:focus-within video {
+  transform: scale(1.045);
+}
+
+.summit-scan-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.summit-scan-accent::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(115deg, transparent 0%, color-mix(in srgb, var(--accent) 18%, transparent) 45%, transparent 60%);
+  transform: translate3d(-120%, 0, 0);
+  transition: opacity 200ms var(--ease-editorial), transform 650ms var(--ease-editorial);
+  z-index: 2;
+}
+
+.summit-scan-accent:hover::before,
+.summit-scan-accent:focus-within::before {
+  opacity: 1;
+  transform: translate3d(120%, 0, 0);
+}
+
+.summit-soft-pulse {
+  position: relative;
+}
+
+.summit-soft-pulse::after {
+  content: "";
+  position: absolute;
+  inset: -0.45rem;
+  border-radius: inherit;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  opacity: 0;
+  transform: scale(0.96);
+  pointer-events: none;
+}
+
+.summit-soft-pulse:hover::after,
+.summit-soft-pulse:focus-within::after {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 180ms var(--ease-editorial), transform 180ms var(--ease-editorial);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .summit-card-motion,
+  .summit-icon-box,
+  .summit-arrow,
+  .summit-photo-motion img,
+  .summit-photo-motion video,
+  .summit-card-motion::before,
+  .summit-card-motion::after,
+  .summit-scan-accent::before,
+  .summit-soft-pulse::after {
+    transform: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

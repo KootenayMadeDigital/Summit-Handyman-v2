@@ -42,7 +42,7 @@ export function Hero() {
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 12 }}
             animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex flex-wrap items-center gap-2.5 rounded-full border border-accent-soft bg-surface-panel/60 backdrop-blur px-4 py-1.5 text-xs sm:text-sm"
+            className="summit-soft-pulse inline-flex flex-wrap items-center gap-2.5 rounded-full border border-accent-soft bg-surface-panel/60 backdrop-blur px-4 py-1.5 text-xs sm:text-sm"
           >
             <span className="flex items-center gap-0.5 text-accent" aria-hidden>
               {[0, 1, 2, 3, 4].map((i) => (
@@ -132,7 +132,7 @@ export function Hero() {
           className="hidden lg:block lg:col-span-4"
         >
           <Parallax strength={0.06}>
-            <div className="photo-grade relative aspect-[4/5] w-full max-w-sm ml-auto rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg group">
+            <div className="summit-photo-motion photo-grade relative aspect-[4/5] w-full max-w-sm ml-auto summit-scan-accent rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg group">
               <Image
                 src="/images/about-brody.webp"
                 alt={`${site.owner}, owner of ${site.name}`}

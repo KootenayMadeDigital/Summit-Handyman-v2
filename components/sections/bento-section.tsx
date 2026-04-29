@@ -39,7 +39,7 @@ export function BentoSection() {
 
         <RevealStagger className="grid grid-cols-2 lg:grid-cols-4 grid-flow-row-dense gap-4 md:gap-5 auto-rows-[minmax(11rem,auto)] md:auto-rows-[minmax(13rem,auto)]">
           {/* PROMISE. 2x2 */}
-          <RevealItem className="col-span-2 row-span-2 relative overflow-hidden rounded-2xl border border-accent/40 bg-surface-panel group min-w-0 min-h-[22rem]">
+          <RevealItem className="summit-card-motion col-span-2 row-span-2 relative overflow-hidden rounded-2xl border border-accent/40 bg-surface-panel group min-w-0 min-h-[22rem]">
             <Image
               src="/images/promise-bg.webp"
               alt="Craftsman's hands setting a level on a freshly-mudded drywall seam"
@@ -137,7 +137,7 @@ export function BentoSection() {
           </BentoTile>
 
           {/* EMAIL. 2 cols, accent-bordered */}
-          <RevealItem className="col-span-2 relative overflow-hidden rounded-2xl border border-accent bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_14%,var(--bg-panel))] p-5 sm:p-6 md:p-7 flex flex-col justify-between group hover:border-accent-hot transition-colors min-w-0">
+          <RevealItem className="summit-card-motion col-span-2 relative overflow-hidden rounded-2xl border border-accent bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_14%,var(--bg-panel))] p-5 sm:p-6 md:p-7 flex flex-col justify-between group hover:border-accent-hot transition-colors min-w-0">
             <Mail className="h-7 w-7 text-accent" strokeWidth={1.5} />
             <div className="min-w-0">
               <p className="font-display text-lg sm:text-xl md:text-2xl font-bold text-fg-strong mb-1 leading-tight">
@@ -170,7 +170,7 @@ function BentoTile({
   return (
     <RevealItem
       className={
-        "relative overflow-hidden rounded-2xl border border-divider bg-surface-panel p-5 sm:p-6 md:p-7 flex flex-col justify-between group hover:border-accent-soft transition-colors min-w-0 " +
+        "summit-card-motion relative overflow-hidden rounded-2xl border border-divider bg-surface-panel p-5 sm:p-6 md:p-7 flex flex-col justify-between group hover:border-accent-soft transition-colors min-w-0 " +
         (className ?? "")
       }
     >

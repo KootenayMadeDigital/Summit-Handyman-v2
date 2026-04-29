@@ -11,7 +11,7 @@ export function AboutSection() {
       <Container>
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <Reveal className="lg:col-span-5">
-            <div className="photo-grade relative aspect-[4/5] rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg">
+            <div className="summit-photo-motion photo-grade relative aspect-[4/5] summit-scan-accent rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg">
               <Image
                 src="/images/hands-workmanship.webp"
                 alt="Craftsman's hands measuring freshly-installed baseboard trim"

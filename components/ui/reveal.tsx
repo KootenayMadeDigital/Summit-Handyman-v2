@@ -26,7 +26,7 @@ export function Reveal({
       whileInView={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
       viewport={{ once, margin: "-80px" }}
       transition={{
-        duration: 0.7,
+        duration: 0.48,
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}
@@ -41,7 +41,7 @@ export function Reveal({
 export function RevealStagger({
   children,
   className,
-  staggerDelay = 0.08,
+  staggerDelay = 0.05,
   ...rest
 }: HTMLMotionProps<"div"> & { staggerDelay?: number }) {
   const reduce = useReducedMotion();
@@ -82,7 +82,7 @@ export function RevealItem({
           : {
               opacity: 1,
               y: 0,
-              transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+              transition: { duration: 0.46, ease: [0.22, 1, 0.36, 1] },
             },
       }}
       className={className}
