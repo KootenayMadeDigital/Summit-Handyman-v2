@@ -12,7 +12,7 @@ export function ProjectsSection() {
   return (
     <Section id="projects" size="lg" className="bg-surface relative">
       <Container>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 sm:mb-14">
+        <div className="flex flex-col items-center text-center md:flex-row md:items-end md:justify-between md:text-left gap-6 mb-12 sm:mb-14">
           <SectionTitle
             eyebrow="Recent Summits"
             title={
@@ -22,6 +22,7 @@ export function ProjectsSection() {
               </>
             }
             description="Recent work across the Lower Mainland, each job handled by Brody himself."
+            className="mx-auto md:mx-0"
           />
           <Reveal>
             <Button href={site.social.instagram.url} variant="secondary" size="md" withArrow>
