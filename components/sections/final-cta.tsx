@@ -17,7 +17,8 @@ export function FinalCTA() {
             <h2 className="font-display text-display-xl font-extrabold tracking-tightest text-fg-strong text-balance leading-[1.05]">
               Send the repair list. <br />
               <span className="font-serif italic font-normal text-gradient-gold">
-                Brody handles the rest.
+                Brody handles <br />
+                the rest.
               </span>
             </h2>
             <p className="text-base sm:text-lg text-fg/85 max-w-xl mx-auto leading-relaxed">
