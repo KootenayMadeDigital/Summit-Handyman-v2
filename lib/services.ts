@@ -187,16 +187,150 @@ export const services: Service[] = [
     hero: "/images/service-electrical.webp",
   },
   {
+    slug: "cabinets",
+    name: "Cabinets",
+    category: "interior",
+    keywords: [
+      "cabinet install",
+      "cabinet repair",
+      "cabinet refinishing",
+      "cabinet hardware",
+      "kitchen cabinets",
+      "vanity install",
+      "soft close hinges",
+    ],
+    tagline: "Doors aligned, hardware tight, drawers gliding.",
+    shortDescription: "Hang, repair, realign, refinish. Cabinet doors, drawers, hinges, and pulls done right.",
+    longDescription:
+      "Hang new cabinets level and plumb. Realign sagging doors. Replace tired hinges with soft-close upgrades. Swap dated pulls and knobs across an entire kitchen in a single visit. Cabinet work for kitchens, bathrooms, mudrooms, and laundry across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. Custom cabinet fabrication is referred out, but everything from supplied flat-pack kitchens to one-off door repairs is in scope.",
+    includes: [
+      "New cabinet hanging (supplied flat-pack or pre-built boxes)",
+      "Door alignment and hinge replacement",
+      "Drawer slide repair and upgrade",
+      "Soft-close hinge and slide retrofits",
+      "Hardware swaps (pulls, knobs, edge pulls)",
+      "Toe-kick and filler-strip installation",
+      "Vanity install for bathrooms and powder rooms",
+      "Crown moulding and light-rail trim",
+    ],
+    faqs: [
+      {
+        q: "Do you build custom cabinets from scratch?",
+        a: "No. Custom cabinet fabrication goes to a dedicated cabinet shop. Brody installs supplied cabinets (flat-pack or pre-built boxes from IKEA, Home Depot, local cabinet shops, etc.) and handles all repair, hardware, and refinish work on existing cabinets.",
+      },
+      {
+        q: "Can you fix cabinet doors that won't close evenly?",
+        a: "Yes. Door alignment is one of the most common cabinet calls. Brody adjusts the hinges, replaces failed ones, and shims where needed so every door sits flush and closes cleanly.",
+      },
+      {
+        q: "Will soft-close hinges work on my older cabinets?",
+        a: "In most cases yes. Brody confirms the hinge cup size and overlay style first, then swaps in matching soft-close hinges. Older European cabinets sometimes need an adapter plate, which Brody supplies.",
+      },
+    ],
+    icon: "Package",
+    hero: "/images/service-assembly-mounting.webp",
+  },
+  {
+    slug: "countertops",
+    name: "Countertops",
+    category: "interior",
+    keywords: [
+      "countertop install",
+      "butcher block install",
+      "laminate countertop",
+      "prefab quartz install",
+      "kitchen countertop",
+      "bathroom vanity top",
+    ],
+    tagline: "Surfaces that sit flat, seal clean, and stay put.",
+    shortDescription: "Install supplied countertops, seal seams, secure properly. Laminate, butcher block, prefab quartz.",
+    longDescription:
+      "Install supplied countertop slabs, level them, secure them to cabinet boxes, and finish the seams clean. Laminate, butcher block, prefab quartz, and IKEA tops are the regular menu. Custom stone slab fabrication and template work goes to a dedicated counter shop, but if your countertop is on the truck, Brody can usually get it installed. Countertop service across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale.",
+    includes: [
+      "Laminate countertop install",
+      "Butcher block install, oil, and seal",
+      "Prefab quartz and IKEA countertop install",
+      "Bathroom vanity top install",
+      "Sink and faucet hole drilling (where allowed)",
+      "Edge banding and end-cap finishing",
+      "Caulking and seam treatment at backsplash and walls",
+      "Removal and disposal of old countertop",
+    ],
+    faqs: [
+      {
+        q: "Do you fabricate stone or quartz countertops?",
+        a: "No. Custom stone fabrication, templating, and edge profiling goes to a dedicated counter shop with the right CNC and polishing tools. Brody installs prefab quartz, butcher block, laminate, and supplied slabs ready for drop-in.",
+      },
+      {
+        q: "Can you cut a hole for an undermount sink?",
+        a: "On laminate, butcher block, or prefab quartz that allows field cutting, yes. For solid stone slabs, the cut-out is done at the fabrication shop before delivery. Brody confirms the slab type before quoting.",
+      },
+      {
+        q: "Will you remove and dispose of the old countertop?",
+        a: "Yes. Removal, disconnect of plumbing fixtures, and disposal can all be included in the quote. Mention the old material in the form so the right disposal route is priced in.",
+      },
+    ],
+    icon: "Hammer",
+    hero: "/images/service-general-repairs.webp",
+  },
+  {
+    slug: "backsplashes",
+    name: "Backsplashes",
+    category: "interior",
+    keywords: [
+      "backsplash install",
+      "kitchen backsplash",
+      "subway tile backsplash",
+      "mosaic backsplash",
+      "tile specialist",
+      "bathroom backsplash",
+      "stone backsplash",
+    ],
+    tagline: "Brody's specialty. Lines so tight they look poured.",
+    shortDescription: "Brody's specialty. Subway, mosaic, large-format, herringbone, stone. Crisp grout and tight cuts.",
+    longDescription:
+      "Backsplashes are where Brody does his best work. The cuts around outlets stay crisp. The grout lines stay consistent. The miters at inside corners actually meet. Subway, mosaic, picket, herringbone, hexagon, large-format, marble, stone, and pencil-tile accents are all in regular rotation. Kitchen and bathroom backsplash installation across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale, with the kind of finish quality that only happens when the same set of hands prepares the wall, lays out the pattern, and finishes the grout.",
+    includes: [
+      "Kitchen backsplash installation (full wall and partial)",
+      "Bathroom vanity backsplash and accent walls",
+      "Subway, mosaic, herringbone, picket, and large-format tile",
+      "Marble, travertine, and natural stone backsplashes",
+      "Outlet and switch cut-outs kept crisp",
+      "Inside-corner miters and edge-profile finishing",
+      "Schluter trim, bullnose, or pencil-tile edging",
+      "Grout colour matching, sealing, and final detail caulk",
+    ],
+    faqs: [
+      {
+        q: "Why is the backsplash a separate service from tile and flooring?",
+        a: "Because Brody treats it as his craft. Backsplashes live at eye level, in the most photographed room in the house, and small mistakes show forever. Pulling backsplashes into their own service signals that they get the prep time, layout time, and finishing detail they deserve.",
+      },
+      {
+        q: "Do you supply the tile or do I buy it?",
+        a: "Either works. Most homeowners pick out the tile they want at Tileland, Bedrosians, Home Depot, or a specialty shop, then Brody installs. If you want help choosing tile that will install cleanly given the wall layout, send photos through the quote form and Brody can suggest options before you order.",
+      },
+      {
+        q: "How long does a typical kitchen backsplash take?",
+        a: "Most kitchen backsplashes take a couple of working days: one to lay the tile, one for grout and detail caulking once the thinset has set. More complex patterns like herringbone, large-format stone, or full-height accent walls take longer. Every quote includes a working timeline before booking.",
+      },
+      {
+        q: "Will you handle outlet covers and electrical work?",
+        a: "Brody removes outlet covers, sets boxes flush, installs spacer rings if the tile changes the depth, and reinstalls covers. Anything beyond that (relocating outlets, adding new circuits) is referred to a licensed electrician.",
+      },
+    ],
+    icon: "Square",
+    hero: "/images/service-tile-flooring.webp",
+  },
+  {
     slug: "tile-flooring",
     name: "Tile & Flooring",
     category: "interior",
-    keywords: ["tile install", "backsplash", "bathroom tile", "laminate flooring", "vinyl plank", "hardwood install"],
+    keywords: ["tile install", "bathroom tile", "shower tile", "laminate flooring", "vinyl plank", "hardwood install"],
     tagline: "Square lines, tight transitions, clean finish.",
-    shortDescription: "Backsplashes, bathroom tile, plank flooring, grout, and trim details.",
+    shortDescription: "Bathroom tile, plank flooring, grout, transitions, and finishing trim.",
     longDescription:
-      "Backsplashes, bathroom tile, laminate planks, and engineered hardwood. Subfloor checked, underlayment laid right, lines kept square, grout finished clean. Tile and flooring installations across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale, from kitchen backsplashes to full bathroom tile jobs and luxury vinyl plank flooring throughout entire homes.",
+      "Bathroom floors, shower tile, laminate planks, and engineered hardwood. Subfloor checked, underlayment laid right, lines kept square, grout finished clean. Tile and flooring installations across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale, from full bathroom tile jobs to luxury vinyl plank flooring throughout entire homes. (Kitchen backsplashes have their own dedicated service.)",
     includes: [
-      "Kitchen backsplash installation",
       "Bathroom floor and shower tile",
       "Laminate and vinyl plank flooring",
       "Engineered hardwood install",
@@ -204,6 +338,7 @@ export const services: Service[] = [
       "Transition strips and trim",
       "Subfloor inspection and prep",
       "Grout sealing",
+      "Edge profiles and Schluter trim",
     ],
     faqs: [
       {
