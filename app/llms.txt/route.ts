@@ -74,11 +74,11 @@ ${services
   )
   .join("\n\n")}
 
-## Cost guides (educational content)
+## Repair guides (educational content)
 
-${guides.map((g) => `- [${g.title}](${url}/cost-guides/${g.slug}): ${g.excerpt}`).join("\n")}
+${guides.map((g) => `- [${g.title}](${url}/repair-guides/${g.slug}): ${g.excerpt}`).join("\n")}
 
-[All cost guides](${url}/cost-guides)
+[All repair guides](${url}/repair-guides)
 
 ## Optional
 

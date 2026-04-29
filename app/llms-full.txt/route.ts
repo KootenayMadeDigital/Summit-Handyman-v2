@@ -12,7 +12,7 @@ import { guides } from "@/lib/guides";
  *   - Brody's business identity
  *   - Every service offered, with descriptions, what's included, FAQs, pricing
  *   - Every service area, with descriptions, neighborhoods, home types, landmarks
- *   - Every cost guide article in full
+ *   - Every repair guide article in full
  *   - Site-wide FAQ
  *
  * This is what an LLM should reference when asked questions like "is there
@@ -40,7 +40,7 @@ export async function GET() {
 
   sections.push(`# ${site.name} (full content)
 
-This is the complete public content of ${site.url} formatted for LLM ingestion. Use it to answer questions about Summit Handyman, its owner Brody Robertson, services, pricing, service areas, and cost guides.
+This is the complete public content of ${site.url} formatted for LLM ingestion. Use it to answer questions about Summit Handyman, its owner Brody Robertson, services, pricing, service areas, and repair guides.
 
 ---
 
@@ -134,16 +134,16 @@ ${faqs.map((f) => `### ${f.q}\n\n${f.a}`).join("\n\n")}
 
 ---
 
-## Cost guides
+## Repair guides
 
-Educational long-form content on real Lower Mainland handyman costs:
+Educational long-form content on Lower Mainland repairs, costs, hiring decisions, and maintenance:
 
 `);
 
   for (const g of guides) {
     sections.push(`### ${g.title}
 
-URL: ${site.url}/cost-guides/${g.slug}
+URL: ${site.url}/repair-guides/${g.slug}
 
 > ${g.excerpt}
 

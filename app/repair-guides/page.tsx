@@ -25,10 +25,10 @@ import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Cost Guides & Resources",
+  title: "Home Repair Guides & Handyman Resources",
   description:
-    "Educational guides for Lower Mainland homeowners and property managers. What drives handyman costs, how to spot a bad quote, when to DIY versus hire, and which repairs prevent bigger bills later.",
-  alternates: { canonical: "/cost-guides" },
+    "Practical repair guides for Lower Mainland homeowners and property managers. Learn what drives cost, how to spot a bad quote, when to DIY versus hire, and which repairs prevent bigger bills later.",
+  alternates: { canonical: "/repair-guides" },
 };
 
 type Track = {
@@ -117,7 +117,7 @@ function GuideMeta({ guide }: { guide: Guide }) {
 function GuideCard({ guide, featured = false }: { guide: Guide; featured?: boolean }) {
   return (
     <Link
-      href={`/cost-guides/${guide.slug}`}
+      href={`/repair-guides/${guide.slug}`}
       className={cn(
         "group relative block h-full overflow-hidden rounded-3xl border border-divider-strong bg-surface-panel transition-all duration-500 ease-editorial",
         "summit-card-motion motion-service hover:border-accent-soft hover:shadow-gold-lg focus-visible:ring-accent",
@@ -218,9 +218,9 @@ export default function CostGuidesPage() {
   const guideCollectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "@id": `${site.url}/cost-guides#webpage`,
-    url: `${site.url}/cost-guides`,
-    name: "Lower Mainland handyman cost guides",
+    "@id": `${site.url}/repair-guides#webpage`,
+    url: `${site.url}/repair-guides`,
+    name: "Lower Mainland handyman repair guides",
     description: metadata.description,
     isPartOf: { "@id": `${site.url}/#website` },
     mainEntity: {
@@ -229,7 +229,7 @@ export default function CostGuidesPage() {
         "@type": "ListItem",
         position: index + 1,
         name: guide.title,
-        url: `${site.url}/cost-guides/${guide.slug}`,
+        url: `${site.url}/repair-guides/${guide.slug}`,
       })),
     },
   };
@@ -239,7 +239,7 @@ export default function CostGuidesPage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: site.url },
-      { "@type": "ListItem", position: 2, name: "Cost Guides", item: `${site.url}/cost-guides` },
+      { "@type": "ListItem", position: 2, name: "Repair Guides", item: `${site.url}/repair-guides` },
     ],
   };
 
@@ -254,8 +254,8 @@ export default function CostGuidesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <PageHero
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Cost Guides" }]}
-        eyebrow="Resources"
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Repair Guides" }]}
+        eyebrow="Repair Guides"
         title={
           <>
             Field notes for the home repairs that{" "}
@@ -320,7 +320,7 @@ export default function CostGuidesPage() {
                   {latestThree.map((guide) => (
                     <Link
                       key={guide.slug}
-                      href={`/cost-guides/${guide.slug}`}
+                      href={`/repair-guides/${guide.slug}`}
                       className="summit-card-motion motion-service group flex items-center gap-3 rounded-2xl border border-divider-strong bg-surface/70 p-3 transition-colors hover:border-accent-soft"
                     >
                       <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-xl">

@@ -24,7 +24,7 @@ export async function generateMetadata(
   return {
     title: g.title,
     description: g.excerpt,
-    alternates: { canonical: `/cost-guides/${g.slug}` },
+    alternates: { canonical: `/repair-guides/${g.slug}` },
     openGraph: {
       title: g.title,
       description: g.excerpt,
@@ -47,15 +47,15 @@ export default async function GuidePage(
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "@id": `${site.url}/cost-guides/${g.slug}#article`,
-    mainEntityOfPage: `${site.url}/cost-guides/${g.slug}`,
+    "@id": `${site.url}/repair-guides/${g.slug}#article`,
+    mainEntityOfPage: `${site.url}/repair-guides/${g.slug}`,
     headline: g.title,
     description: g.excerpt,
     image: `${site.url}${g.hero}`,
     datePublished: g.date,
     dateModified: g.date,
     inLanguage: "en-CA",
-    articleSection: g.area ? `${g.area} handyman cost guide` : "Lower Mainland handyman cost guide",
+    articleSection: g.area ? `${g.area} handyman repair guide` : "Lower Mainland handyman repair guide",
     about: ["handyman cost", g.service ?? "home repair", g.area ?? "Lower Mainland"],
     author: { "@type": "Person", name: site.owner, url: `${site.url}/about` },
     publisher: {
@@ -70,8 +70,8 @@ export default async function GuidePage(
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: site.url },
-      { "@type": "ListItem", position: 2, name: "Cost Guides", item: `${site.url}/cost-guides` },
-      { "@type": "ListItem", position: 3, name: g.title, item: `${site.url}/cost-guides/${g.slug}` },
+      { "@type": "ListItem", position: 2, name: "Repair Guides", item: `${site.url}/repair-guides` },
+      { "@type": "ListItem", position: 3, name: g.title, item: `${site.url}/repair-guides/${g.slug}` },
     ],
   };
 
@@ -88,10 +88,10 @@ export default async function GuidePage(
       <PageHero
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Cost Guides", href: "/cost-guides" },
+          { label: "Repair Guides", href: "/repair-guides" },
           { label: g.title.length > 40 ? g.title.slice(0, 40) + "…" : g.title },
         ]}
-        eyebrow="Cost Guide"
+        eyebrow="Repair Guide"
         title={g.title}
         description={g.excerpt}
       >
@@ -219,11 +219,11 @@ export default async function GuidePage(
 
           <div className="mt-14 pt-8 border-t border-divider">
             <Link
-              href="/cost-guides"
+              href="/repair-guides"
               className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-fg-muted hover:text-accent transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              All cost guides
+              All repair guides
             </Link>
           </div>
         </Container>
@@ -240,7 +240,7 @@ export default async function GuidePage(
               {related.map((r) => (
                 <Link
                   key={r.slug}
-                  href={`/cost-guides/${r.slug}`}
+                  href={`/repair-guides/${r.slug}`}
                   className="summit-card-motion motion-service group p-5 rounded-2xl bg-surface-panel border border-divider-strong hover:border-accent-soft transition-colors"
                 >
                   <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-2">

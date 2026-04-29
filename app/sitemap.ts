@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/quote",
     "/reviews",
-    "/cost-guides",
+    "/repair-guides",
     "/legal/privacy",
     "/legal/terms",
   ].map((path) => ({
@@ -51,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   const guideRoutes = guides.map((g) => ({
-    url: `${base}/cost-guides/${g.slug}`,
+    url: `${base}/repair-guides/${g.slug}`,
     lastModified: new Date(g.date),
     changeFrequency: "yearly" as const,
     priority: 0.7,

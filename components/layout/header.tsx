@@ -14,7 +14,7 @@ const nav = [
   { label: "Areas", href: "/areas" },
   { label: "Reviews", href: "/reviews" },
   { label: "About", href: "/about" },
-  { label: "Cost Guides", href: "/cost-guides" },
+  { label: "Repair Guides", href: "/repair-guides" },
 ];
 
 export function Header() {

@@ -218,8 +218,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/cost-guides" className="inline-flex min-h-11 items-center text-fg/80 hover:text-accent transition-colors">
-                  Cost Guides
+                <Link href="/repair-guides" className="inline-flex min-h-11 items-center text-fg/80 hover:text-accent transition-colors">
+                  Repair Guides
                 </Link>
               </li>
               <li>

@@ -1,5 +1,5 @@
 /**
- * Cost guides / educational content.
+ * Repair guides / educational content.
  *
  * RULE: NEVER fabricate prices. The only confirmed price on this site is
  * the $150 minimum charge per job. Every other price is by quote.
