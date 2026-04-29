@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { Container, Section, SectionTitle } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { areas } from "@/lib/areas";
@@ -20,8 +21,16 @@ const InteractiveMap = dynamic(() => import("./service-area-map.client"), {
 
 export function ServiceAreaMapSection() {
   return (
-    <Section id="map" size="lg" className="relative bg-surface-panel border-y border-divider">
-      <Container>
+    <Section id="map" size="lg" className="relative overflow-hidden bg-surface-panel border-y border-divider">
+      <Image
+        src="/images/service-map-bg.webp"
+        alt=""
+        fill
+        sizes="100vw"
+        className="pointer-events-none object-cover opacity-20 mix-blend-luminosity"
+      />
+      <div className="absolute inset-0 bg-surface-panel/82" />
+      <Container className="relative">
         <SectionTitle
           eyebrow="Coverage Map"
           title={

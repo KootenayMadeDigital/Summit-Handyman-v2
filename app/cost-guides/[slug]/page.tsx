@@ -30,6 +30,7 @@ export async function generateMetadata(
       description: g.excerpt,
       type: "article",
       publishedTime: g.date,
+      images: [{ url: g.hero, width: 1600, height: 1000, alt: g.title }],
     },
   };
 }

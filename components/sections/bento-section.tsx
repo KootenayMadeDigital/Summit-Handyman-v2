@@ -41,8 +41,8 @@ export function BentoSection() {
           {/* PROMISE. 2x2 */}
           <RevealItem className="col-span-2 row-span-2 relative overflow-hidden rounded-2xl border border-accent/40 bg-surface-panel group min-w-0 min-h-[22rem]">
             <Image
-              src="/images/about-brody.webp"
-              alt={`${site.owner}, owner of ${site.name}`}
+              src="/images/promise-bg.webp"
+              alt="Craftsman's hands setting a level on a freshly-mudded drywall seam"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover opacity-55 group-hover:opacity-65 transition-opacity duration-500"
@@ -56,7 +56,7 @@ export function BentoSection() {
                 "{site.promise}"
               </p>
               <p className="mt-3 sm:mt-4 text-sm text-summit-mist/70">
-               . {site.owner}, founder
+                — {site.owner}, founder
               </p>
             </div>
           </RevealItem>
