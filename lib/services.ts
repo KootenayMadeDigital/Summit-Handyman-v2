@@ -208,7 +208,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "How is the price determined?",
-        a: "Submit photos of the space and a description through the quote form. Brody reviews scope, materials, and access before sending a written estimate, usually same day, always within 24 hours.",
+        a: "Submit photos of the space and a description through the quote form. Brody reviews scope, materials, and access before sending a written estimate, within 24 hours.",
       },
       {
         q: "Do you handle bathroom tile from scratch?",

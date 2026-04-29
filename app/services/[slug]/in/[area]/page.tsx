@@ -47,7 +47,7 @@ export async function generateMetadata(
   if (!service || !area) return {};
 
   const title = `${service.name} in ${area.name}, BC`;
-  const description = `${service.name} in ${area.name}: ${service.tagline} ${site.pricing.minimumDisplay}. Licensed and insured. Free written estimates. Email Brody at Summit Handyman for a same-day reply.`;
+  const description = `${service.name} in ${area.name}: ${service.tagline} ${site.pricing.minimumDisplay}. Licensed and insured. Free written estimates. Email Brody at Summit Handyman for a written estimate.`;
 
   return {
     title,
@@ -301,7 +301,7 @@ export default async function ServiceInAreaPage(
                 <li className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                   <span className="text-fg/85 text-sm sm:text-base">
-                    <strong className="text-fg-strong">Get a written estimate within 24 hours</strong>, often the same day.
+                    <strong className="text-fg-strong">Get a written estimate within 24 hours</strong> after Brody reviews the scope.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">

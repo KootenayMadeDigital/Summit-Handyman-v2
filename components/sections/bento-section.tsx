@@ -113,7 +113,7 @@ export function BentoSection() {
                 Fast<br />response
               </p>
               <p className="mt-1 text-xs sm:text-sm text-fg-muted">
-                Email or text. same day on most days.
+                Email or text. Written replies within 24 hours.
               </p>
             </div>
           </BentoTile>

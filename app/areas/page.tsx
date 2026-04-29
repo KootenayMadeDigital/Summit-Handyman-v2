@@ -5,14 +5,13 @@ import {
   ArrowUpRight,
   Building2,
   CheckCircle2,
+  ClipboardCheck,
   Clock,
   Home,
   Map,
   MapPin,
-  Navigation,
-  Route,
   ShieldCheck,
-  Sparkles,
+  Wrench,
 } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { ServiceAreaMapSection } from "@/components/sections/service-area-map";
@@ -26,28 +25,28 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Service Areas",
   description:
-    "Summit Handyman serves Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale with owner-operated repairs, written estimates, and local response times.",
+    "Summit Handyman serves Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale with owner-operated repairs, written estimates, and clear communication.",
   alternates: { canonical: "/areas" },
 };
 
-const serviceRings = [
+const serviceSignals = [
   {
-    label: "Home base",
-    value: "Langley and Aldergrove",
-    detail: "Best fit for same-day or next-day repair lists, small projects, and quick follow-ups.",
-    Icon: Home,
+    label: "Coverage",
+    value: `${areas.length} Lower Mainland cities`,
+    detail: "Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale are all inside Summit's service area.",
+    Icon: MapPin,
   },
   {
-    label: "Core route",
-    value: "Surrey, Cloverdale, White Rock",
-    detail: "Reliable 24 to 48 hour response for homeowners, strata units, and property managers.",
-    Icon: Route,
+    label: "Quote timing",
+    value: "Replies within 24 hours",
+    detail: "Every city uses the same quote expectation. Send the scope, photos, and address, then Brody replies directly.",
+    Icon: Clock,
   },
   {
-    label: "Planned route",
-    value: "Abbotsford",
-    detail: "Best for bundled jobs, turnovers, exterior maintenance, and planned repair days.",
-    Icon: Navigation,
+    label: "Service model",
+    value: "Owner-operated work",
+    detail: "The location changes. The standard does not. Brody is still the person responsible for the estimate and the repair.",
+    Icon: ShieldCheck,
   },
 ];
 
@@ -72,14 +71,11 @@ const areaFit = [
   {
     title: "Strata and rentals",
     body: "Common repair requests handled cleanly, with a direct line to Brody instead of mystery crews and missed handoffs.",
-    Icon: ShieldCheck,
+    Icon: ClipboardCheck,
   },
 ];
 
 export default function AreasPage() {
-  const sameDayAreas = areas.filter((area) => area.responseTime.toLowerCase().includes("same"));
-  const fastestNames = sameDayAreas.map((area) => area.name).join(" and ");
-
   return (
     <>
       <PageHero
@@ -87,17 +83,17 @@ export default function AreasPage() {
         eyebrow="Lower Mainland coverage"
         title={
           <>
-            Local handyman service with a route map, not a guessing game.
+            Find out if Summit serves your home.
             <span className="block font-serif italic font-normal text-gradient-gold">
-              Find your city. Know the response.
+              Then send the repair list.
             </span>
           </>
         }
-        description={`Summit Handyman serves ${areas.length} Lower Mainland cities from Brody's Langley home base. Same owner, same standard, clear timing, and written estimates before work starts.`}
+        description={`Summit Handyman serves ${areas.length} Lower Mainland cities from Langley to Abbotsford. The quote process is the same everywhere: send the scope, photos, and address, then Brody replies with a clear written estimate.`}
       >
         <div className="flex flex-col gap-3 pt-3 sm:flex-row sm:flex-wrap">
           <MagneticCTA href="/quote" size="lg">
-            Check my project fit
+            Start a local quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
           <Button href="#area-guide" variant="secondary" size="lg">
@@ -111,21 +107,21 @@ export default function AreasPage() {
         <div className="absolute left-1/2 top-12 h-80 w-80 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
         <Container className="relative">
           <div className="grid gap-5 lg:grid-cols-3">
-            {serviceRings.map((ring) => (
-              <Reveal key={ring.label}>
+            {serviceSignals.map((signal) => (
+              <Reveal key={signal.label}>
                 <div className="h-full rounded-[2rem] border border-divider-strong bg-surface-panel p-6 shadow-panel transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-soft hover:shadow-panel-lg">
                   <div className="mb-6 flex items-center justify-between gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/35 bg-accent-soft">
-                      <ring.Icon className="h-5 w-5 text-accent" strokeWidth={1.6} />
+                      <signal.Icon className="h-5 w-5 text-accent" strokeWidth={1.6} />
                     </div>
                     <span className="rounded-full border border-divider bg-surface px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-fg-muted">
-                      {ring.label}
+                      {signal.label}
                     </span>
                   </div>
                   <h2 className="font-display text-2xl font-bold leading-tight text-fg-strong">
-                    {ring.value}
+                    {signal.value}
                   </h2>
-                  <p className="mt-3 text-sm leading-relaxed text-fg-muted">{ring.detail}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-fg-muted">{signal.detail}</p>
                 </div>
               </Reveal>
             ))}
@@ -140,27 +136,27 @@ export default function AreasPage() {
               eyebrow="Choose your area"
               title={
                 <>
-                  Each city has its own repair rhythm.
+                  Local pages should answer one question first.
                   <span className="block font-serif italic font-normal text-gradient-gold">
-                    Brody already knows the pattern.
+                    Does Brody serve my place?
                   </span>
                 </>
               }
-              description="Fast comparison for service fit, neighbourhood coverage, response timing, and the local home types Summit sees most often."
+              description="Fast comparison for city coverage, neighbourhoods, common home types, and the same quote response expectation across the service area."
               className="mb-0"
             />
             <Reveal delay={0.1}>
               <div className="rounded-[2rem] border border-accent/35 bg-surface-panel/80 p-5 shadow-panel-lg backdrop-blur">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl border border-accent/35 bg-accent-soft">
-                    <Sparkles className="h-5 w-5 text-accent" strokeWidth={1.6} />
+                    <Wrench className="h-5 w-5 text-accent" strokeWidth={1.6} />
                   </div>
                   <div>
                     <p className="font-display text-xl font-bold text-fg-strong">
-                      Fastest response: {fastestNames}
+                      Same quote process in every city
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-                      The farther east or west the route goes, the smarter it is to bundle the list. Better planning, fewer visits, cleaner invoice.
+                      Submit the repair list once. Include photos if you have them. Brody reviews the scope and replies with next steps, no area-based guessing game.
                     </p>
                   </div>
                 </div>
@@ -285,7 +281,7 @@ function AreaCard({ area, index }: { area: Area; index: number }) {
         <div className="flex items-center justify-between gap-4 text-sm">
           <span className="inline-flex items-center gap-2 text-fg-muted">
             <Clock className="h-4 w-4 text-accent" />
-            Response
+            Quote reply
           </span>
           <span className="text-right font-semibold text-accent">{area.responseTime}</span>
         </div>

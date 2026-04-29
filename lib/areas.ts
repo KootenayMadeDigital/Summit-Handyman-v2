@@ -21,9 +21,9 @@ export const areas: Area[] = [
     province: "BC",
     postalCodePrefixes: ["V1M", "V2Y", "V2Z", "V3A", "V4W"],
     description:
-      "Home base. Same-day response possible for most jobs in Langley City and Langley Township.",
+      "Serving Langley City and Langley Township with owner-operated repairs, clear estimates, and documented work.",
     longDescription:
-      "Langley is Brody's home base, which means same-day or next-day response is standard for most repairs. Summit Handyman serves both Langley City and Langley Township, from older Walnut Grove single-family homes to newer Willoughby townhouse complexes, established Murrayville bungalows, and the rural acreages around Fort Langley and Brookswood. Whether you're a homeowner with a list of small fixes or a property manager needing tenant turnover work, the response is fast, the work is documented, and the same Brody Robertson handles every job.",
+      "Summit Handyman serves both Langley City and Langley Township, from older Walnut Grove single-family homes to newer Willoughby townhouse complexes, established Murrayville bungalows, and the rural acreages around Fort Langley and Brookswood. Whether you are a homeowner with a list of small fixes or a property manager needing tenant turnover work, the quote process is clear, the work is documented, and the same Brody Robertson handles every job.",
     neighborhoods: [
       "Walnut Grove",
       "Willoughby",
@@ -45,7 +45,7 @@ export const areas: Area[] = [
       "Langley Events Centre",
       "Trinity Western University",
     ],
-    responseTime: "Same day or next day",
+    responseTime: "Within 24 hours",
     geo: { lat: 49.1044, lng: -122.6603 },
   },
   {
@@ -56,7 +56,7 @@ export const areas: Area[] = [
     description:
       "Full service across Surrey, from South Surrey townhomes to Cloverdale family homes and Guildford strata properties.",
     longDescription:
-      "Surrey is Brody's biggest service area outside of Langley. Summit Handyman covers all of Surrey, including South Surrey townhomes near Crescent Beach, Cloverdale family homes, Fleetwood older builds, Guildford strata towers, Newton, North Surrey, and the growing Panorama Ridge neighborhood. Property managers across Surrey use Summit Handyman regularly for tenant turnovers, common-area repairs, and emergency mobilization. Response time is within 24 to 48 hours for most jobs, with same-day possible for urgent issues.",
+      "Surrey is one of Summit Handyman's core service areas. Summit covers South Surrey townhomes near Crescent Beach, Cloverdale family homes, Fleetwood older builds, Guildford strata towers, Newton, North Surrey, and the growing Panorama Ridge neighborhood. Property managers across Surrey can use Summit Handyman for tenant turnovers, common-area repairs, and documented unit work, with the same quote process and owner-operated standard as every other city served.",
     neighborhoods: [
       "South Surrey",
       "Cloverdale",
@@ -79,7 +79,7 @@ export const areas: Area[] = [
       "Surrey Memorial Hospital",
       "SFU Surrey Campus",
     ],
-    responseTime: "Within 24 to 48 hours",
+    responseTime: "Within 24 hours",
     geo: { lat: 49.1913, lng: -122.849 },
   },
   {
@@ -90,7 +90,7 @@ export const areas: Area[] = [
     description:
       "Bluff-side homes, ocean-air weathering, and the maintenance needs of White Rock and South Surrey waterfront properties.",
     longDescription:
-      "White Rock homes face a unique combination of ocean air, salt spray, and steep bluff geography that accelerates exterior wear. Summit Handyman serves White Rock from East Beach through West Beach, Hillside, Five Corners, Centennial Park, and along Marine Drive. Pressure washing, gutter maintenance, fence and deck refinishing, and exterior caulking are some of the most common bookings, since White Rock properties typically need exterior maintenance 30 to 50 percent more often than inland Lower Mainland homes.",
+      "Summit Handyman serves White Rock from East Beach through West Beach, Hillside, Five Corners, Centennial Park, and along Marine Drive. White Rock homes often bring exterior maintenance, gutter work, fence and deck upkeep, pressure washing, and small repair lists shaped by coastal weather and older hillside properties.",
     neighborhoods: [
       "East Beach",
       "West Beach",
@@ -111,7 +111,7 @@ export const areas: Area[] = [
       "White Rock Promenade",
       "Peace Arch Park",
     ],
-    responseTime: "Within 24 to 48 hours",
+    responseTime: "Within 24 hours",
     geo: { lat: 49.0254, lng: -122.8027 },
   },
   {
@@ -122,7 +122,7 @@ export const areas: Area[] = [
     description:
       "Acreage, country properties, and family homes across Aldergrove and the Township of Langley's east side.",
     longDescription:
-      "Aldergrove sits on the east side of Langley Township and includes everything from suburban family homes around the town centre to working acreages and country properties stretching toward the County Line. Summit Handyman covers Aldergrove with same-day or next-day response, since it neighbors Brody's Langley home base. Acreage owners commonly book gutter maintenance, fence and deck staining, and pressure washing, while family homes near Aldergrove Town Centre lean toward interior repairs and painting.",
+      "Aldergrove sits on the east side of Langley Township and includes everything from suburban family homes around the town centre to working acreages and country properties stretching toward the County Line. Acreage owners commonly book gutter maintenance, fence and deck staining, and pressure washing, while family homes near Aldergrove Town Centre lean toward interior repairs and painting.",
     neighborhoods: ["Aldergrove Town Centre", "Otter District", "County Line"],
     homeTypes: [
       "Working acreages",
@@ -135,7 +135,7 @@ export const areas: Area[] = [
       "Greater Vancouver Zoo",
       "Aldergrove Athletic Park",
     ],
-    responseTime: "Same day or next day",
+    responseTime: "Within 24 hours",
     geo: { lat: 49.0563, lng: -122.4711 },
   },
   {
@@ -146,7 +146,7 @@ export const areas: Area[] = [
     description:
       "Serving Abbotsford homeowners and property managers from East Hill to Clearbrook to Auguston.",
     longDescription:
-      "Abbotsford is the eastern edge of Summit Handyman's service area and includes a mix of established neighborhoods (Clearbrook, Abbotsford East / East Hill), newer master-planned communities (Auguston), rural acreages on Sumas Mountain and in Matsqui, and the agricultural Bradner area. Response time is typically within 48 hours, with bundled jobs preferred since the drive is longer than the closer cities. Property managers across Abbotsford regularly book Summit Handyman for tenant turnovers, painting, drywall, and seasonal exterior work.",
+      "Abbotsford is part of Summit Handyman's service area and includes a mix of established neighborhoods like Clearbrook and Abbotsford East, newer master-planned communities like Auguston, rural acreages on Sumas Mountain and in Matsqui, and the agricultural Bradner area. Homeowners and property managers can book Summit for tenant turnovers, painting, drywall, repair lists, and seasonal exterior work.",
     neighborhoods: [
       "Clearbrook",
       "Abbotsford East / East Hill",
@@ -168,7 +168,7 @@ export const areas: Area[] = [
       "Abbotsford Centre",
       "University of the Fraser Valley",
     ],
-    responseTime: "Within 48 hours",
+    responseTime: "Within 24 hours",
     geo: { lat: 49.0504, lng: -122.3045 },
   },
   {
@@ -179,7 +179,7 @@ export const areas: Area[] = [
     description:
       "Cloverdale family homes, townhomes, and rural properties from the historic core to Clayton Heights.",
     longDescription:
-      "Cloverdale blends a historic small-town core with rapidly growing newer neighborhoods like Clayton Heights. Summit Handyman serves all of Cloverdale, including the older detached homes near Cloverdale Town Centre, the dense townhouse complexes through Clayton Heights, West Cloverdale family homes, and the rural Hazelwood properties on the south side. Response time is within 24 to 48 hours, and most Cloverdale bookings are interior repair lists, painting, and seasonal exterior maintenance.",
+      "Cloverdale blends a historic small-town core with rapidly growing newer neighborhoods like Clayton Heights. Summit Handyman serves all of Cloverdale, including the older detached homes near Cloverdale Town Centre, the dense townhouse complexes through Clayton Heights, West Cloverdale family homes, and the rural Hazelwood properties on the south side. Common Cloverdale bookings include interior repair lists, painting, mounting, doors, trim, and seasonal exterior maintenance.",
     neighborhoods: [
       "Cloverdale Town Centre",
       "Clayton Heights",
@@ -198,7 +198,7 @@ export const areas: Area[] = [
       "Surrey Museum",
       "Clayton Heights Athletic Park",
     ],
-    responseTime: "Within 24 to 48 hours",
+    responseTime: "Within 24 hours",
     geo: { lat: 49.105, lng: -122.7227 },
   },
 ];

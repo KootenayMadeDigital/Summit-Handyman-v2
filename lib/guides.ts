@@ -571,7 +571,7 @@ export const guides: Guide[] = [
       {
         type: "callout",
         title: "Need a turnover handled this week?",
-        text: "Submit a quote request with the unit address and as many photos as you can. Brody confirms scope and timing within 24 hours, often the same day for active turnovers.",
+        text: "Submit a quote request with the unit address and as many photos as you can. Brody confirms scope and timing within 24 hours for active turnovers.",
       },
     ],
   },

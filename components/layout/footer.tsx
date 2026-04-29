@@ -90,7 +90,7 @@ export function Footer() {
                 The fastest way to reach Brody
               </p>
               <h2 className="mt-2 font-display text-2xl sm:text-3xl font-extrabold text-fg-strong leading-tight text-balance">
-                Get a written estimate, usually same day.
+                Get a written estimate within 24 hours.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-fg/85 leading-relaxed">
                 The quote form takes about 90 seconds and lets Brody review the scope and photos before reaching out.

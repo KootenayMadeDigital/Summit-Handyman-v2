@@ -18,7 +18,7 @@ export function AreasSection() {
               </span>
             </>
           }
-          description="Same-day or next-day response across the Lower Mainland. Click any city for local jobs, neighborhoods, and response times."
+          description="Serving the Lower Mainland with one owner-operated standard. Click any city for local coverage, neighborhoods, and quote details."
           className="mb-12 sm:mb-14"
         />
 

@@ -391,7 +391,7 @@ export default function ServicesPage() {
                 <ArrowRight className="h-5 w-5" />
               </MagneticCTA>
               <p className="text-sm text-fg-muted">
-                Most quotes are returned same day, always within 24 hours.
+                Most quotes are reviewed and answered within 24 hours.
               </p>
             </div>
           </Reveal>
@@ -504,7 +504,7 @@ export default function ServicesPage() {
                     { Icon: Camera, label: "Before/after photos" },
                     { Icon: FileText, label: "Itemized invoice with GST" },
                     { Icon: ShieldCheck, label: "Comprehensive liability cover" },
-                    { Icon: Clock, label: "Same-day or next-day on most calls" },
+                    { Icon: Clock, label: "Quotes reviewed within 24 hours" },
                   ].map((item) => (
                     <li key={item.label} className="flex items-center gap-3 text-fg-strong">
                       <span className="h-9 w-9 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center flex-shrink-0">
@@ -566,7 +566,7 @@ export default function ServicesPage() {
                 },
                 {
                   q: "How fast can you start?",
-                  a: "Quote requests are reviewed within 24 hours, often the same day. Once you confirm scope and timing, scheduling depends on the area: same-day or next-day in Langley and Aldergrove, 24-48 hours in Surrey, Cloverdale, and White Rock, within 48 hours in Abbotsford.",
+                  a: "Quote requests are reviewed within 24 hours. Once you confirm scope and timing, scheduling depends on the work required, access, materials, and Brody's current calendar.",
                 },
                 {
                   q: "Can you pick up materials, or should I?",

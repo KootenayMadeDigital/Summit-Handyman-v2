@@ -31,7 +31,7 @@ export const faqs: FAQ[] = [
   },
   {
     q: "How fast can you respond?",
-    a: "Email and text are checked throughout the day. Most quotes are returned within 24 hours, often the same day. For urgent jobs in Langley, same-day visits are often possible.",
+    a: "Email and text are checked throughout the day. Most quotes are returned within 24 hours. Scheduling depends on the work required, access, materials, and Brody's current calendar.",
   },
   {
     q: "What's the best way to reach you?",

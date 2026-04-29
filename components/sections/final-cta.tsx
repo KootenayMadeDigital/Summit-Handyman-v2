@@ -44,7 +44,7 @@ export function FinalCTA() {
                 <Clock className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" strokeWidth={1.6} />
                 <div>
                   <p className="font-display font-bold text-sm text-fg-strong leading-tight">24-hour reply</p>
-                  <p className="text-xs text-fg-muted mt-0.5">Most submissions get an answer same day.</p>
+                  <p className="text-xs text-fg-muted mt-0.5">Most submissions get an answer within 24 hours.</p>
                 </div>
               </li>
             </ul>
