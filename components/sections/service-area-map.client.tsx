@@ -104,8 +104,16 @@ export default function ServiceAreaMapClient() {
         ))}
       </MapContainer>
       <style jsx global>{`
-        .leaflet-container {
+        .summit-service-map .leaflet-container {
           font-family: "Switzer", system-ui, sans-serif;
+          z-index: 0 !important;
+        }
+        .summit-service-map .leaflet-pane,
+        .summit-service-map .leaflet-top,
+        .summit-service-map .leaflet-bottom,
+        .summit-service-map .leaflet-control,
+        .summit-service-map .leaflet-popup {
+          z-index: 1 !important;
         }
         .leaflet-popup-content-wrapper {
           background: #f8f6f2;

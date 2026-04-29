@@ -46,7 +46,7 @@ export function ServiceAreaMapSection() {
           className="mb-12"
         />
         <Reveal>
-          <div className="rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg">
+          <div className="summit-service-map relative z-0 isolate rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg">
             <InteractiveMap />
           </div>
         </Reveal>

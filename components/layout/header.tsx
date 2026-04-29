@@ -39,7 +39,7 @@ export function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 inset-x-0 z-40 transition-all duration-300",
+          "fixed top-0 inset-x-0 z-[1000] transition-all duration-300",
           scrolled
             ? "header-scrolled border-b border-divider"
             : "bg-transparent border-b border-transparent",
@@ -112,7 +112,7 @@ export function Header() {
       {/* Mobile menu drawer */}
       <div
         className={cn(
-          "fixed inset-0 z-30 lg:hidden transition-opacity duration-300",
+          "fixed inset-0 z-[990] lg:hidden transition-opacity duration-300",
           open ? "opacity-100" : "opacity-0 pointer-events-none",
         )}
       >
