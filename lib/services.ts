@@ -76,7 +76,7 @@ export const services: Service[] = [
       },
     ],
     icon: "Wrench",
-    hero: "/images/project-1.webp",
+    hero: "/images/service-general-repairs.webp",
   },
   {
     slug: "painting",
@@ -112,7 +112,7 @@ export const services: Service[] = [
       },
     ],
     icon: "Paintbrush",
-    hero: "/images/project-2.webp",
+    hero: "/images/service-painting.webp",
   },
   {
     slug: "drywall-repair",
@@ -148,7 +148,7 @@ export const services: Service[] = [
       },
     ],
     icon: "Hammer",
-    hero: "/images/project-3.webp",
+    hero: "/images/service-drywall-repair.webp",
   },
   {
     slug: "electrical",
@@ -184,7 +184,7 @@ export const services: Service[] = [
       },
     ],
     icon: "Zap",
-    hero: "/images/project-4.webp",
+    hero: "/images/service-electrical.webp",
   },
   {
     slug: "tile-flooring",
@@ -220,7 +220,7 @@ export const services: Service[] = [
       },
     ],
     icon: "Square",
-    hero: "/images/project-5.webp",
+    hero: "/images/service-tile-flooring.webp",
   },
   {
     slug: "assembly-mounting",
@@ -256,7 +256,7 @@ export const services: Service[] = [
       },
     ],
     icon: "Package",
-    hero: "/images/project-6.webp",
+    hero: "/images/service-assembly-mounting.webp",
   },
   {
     slug: "pressure-washing",
@@ -292,7 +292,7 @@ export const services: Service[] = [
       },
     ],
     icon: "Droplets",
-    hero: "/images/project-1.webp",
+    hero: "/images/service-pressure-washing.webp",
   },
   {
     slug: "gutter-maintenance",
@@ -328,7 +328,7 @@ export const services: Service[] = [
       },
     ],
     icon: "CloudRain",
-    hero: "/images/project-2.webp",
+    hero: "/images/service-gutter-maintenance.webp",
   },
   {
     slug: "fence-deck",
@@ -364,7 +364,7 @@ export const services: Service[] = [
       },
     ],
     icon: "Fence",
-    hero: "/images/project-3.webp",
+    hero: "/images/service-fence-deck.webp",
   },
   {
     slug: "roof-driveway",
@@ -400,7 +400,7 @@ export const services: Service[] = [
       },
     ],
     icon: "Home",
-    hero: "/images/project-4.webp",
+    hero: "/images/service-roof-driveway.webp",
   },
   {
     slug: "home-safety",
@@ -436,7 +436,7 @@ export const services: Service[] = [
       },
     ],
     icon: "Shield",
-    hero: "/images/project-5.webp",
+    hero: "/images/service-home-safety.webp",
   },
 ];
 

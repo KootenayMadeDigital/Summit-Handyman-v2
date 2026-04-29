@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, Mail } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
@@ -137,6 +138,15 @@ export default async function ServicePage(
                   <span className="text-accent font-semibold">{site.pricing.minimumDisplay}.</span>{" "}
                   Free written estimates. Licensed & insured.
                 </p>
+                <div className="photo-grade relative mt-8 aspect-[16/10] overflow-hidden rounded-2xl border border-divider-strong shadow-panel-lg">
+                  <Image
+                    src={service.hero}
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </Reveal>
 

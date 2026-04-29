@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/section";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
@@ -30,16 +29,6 @@ export function PageHero({
         className,
       )}
     >
-      <Image
-        src="/images/page-hero-fallback.webp"
-        alt=""
-        fill
-        priority={false}
-        sizes="100vw"
-        className="-z-20 object-cover opacity-30"
-      />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-summit-black via-summit-black/85 to-summit-black/45" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-summit-black via-transparent to-summit-black/70" />
       <Container>
         <div className={cn("max-w-4xl space-y-5 sm:space-y-6 min-w-0", align === "center" && "mx-auto text-center")}>
           {breadcrumbs && breadcrumbs.length > 0 && (

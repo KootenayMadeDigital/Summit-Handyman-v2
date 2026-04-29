@@ -13,18 +13,18 @@ export function AboutSection() {
           <Reveal className="lg:col-span-5">
             <div className="photo-grade relative aspect-[4/5] rounded-2xl overflow-hidden border border-divider-strong shadow-panel-lg">
               <Image
-                src="/images/about-brody.webp"
-                alt={`${site.owner}, owner of ${site.name}`}
+                src="/images/hands-workmanship.webp"
+                alt="Craftsman's hands measuring freshly-installed baseboard trim"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-summit-black via-summit-black/75 to-transparent">
                 <p className="text-xs uppercase tracking-[0.18em] text-summit-gold font-semibold">
-                  Owner & Founder
+                  Workmanship
                 </p>
                 <p className="mt-1 font-display text-2xl font-bold text-summit-mist">
-                  {site.owner}
+                  Measured twice. Fixed once.
                 </p>
               </div>
             </div>
