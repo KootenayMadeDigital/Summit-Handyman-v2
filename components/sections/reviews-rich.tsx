@@ -129,7 +129,6 @@ export function ReviewsRichPage() {
     aggregate: aggregateRating,
     source: "initial",
   });
-  const [activeReview, setActiveReview] = React.useState(0);
   const [activeLens, setActiveLens] = React.useState(decisionLenses[0].key);
 
   React.useEffect(() => {
@@ -147,7 +146,6 @@ export function ReviewsRichPage() {
 
   const isLive = data.source === "trustindex";
   const reviews = data.reviews.length ? data.reviews : placeholderReviews;
-  const spotlight = reviews[Math.min(activeReview, reviews.length - 1)];
   const selectedLens = decisionLenses.find((lens) => lens.key === activeLens) ?? decisionLenses[0];
 
   return (
@@ -210,74 +208,6 @@ export function ReviewsRichPage() {
         </Container>
       </Section>
 
-      <Section size="lg" className="grainient-promise relative overflow-hidden">
-        <Container>
-          <div className="grid gap-6 lg:grid-cols-[0.42fr_0.58fr] lg:items-stretch">
-            <Reveal>
-              <div className="h-full rounded-[2rem] border border-divider-strong bg-surface-panel/80 p-5 sm:p-6 shadow-panel-lg backdrop-blur">
-                <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold">
-                  Browse by reviewer
-                </p>
-                <div className="mt-5 space-y-3">
-                  {reviews.map((review, index) => (
-                    <button
-                      key={`${review.author}-${review.date}`}
-                      type="button"
-                      onClick={() => setActiveReview(index)}
-                      className={cn(
-                        "w-full rounded-2xl border p-4 text-left transition-all duration-300 hover:-translate-y-0.5",
-                        index === activeReview
-                          ? "border-accent bg-accent-soft shadow-gold"
-                          : "border-divider-strong bg-surface/70 hover:border-accent-soft",
-                      )}
-                    >
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
-                          <p className="font-display text-base font-bold text-fg-strong">
-                            {review.author}
-                          </p>
-                          <p className="mt-1 text-xs text-fg-muted">
-                            {review.city}{review.service ? ` · ${review.service}` : ""}
-                          </p>
-                        </div>
-                        <Stars rating={review.rating} size="sm" />
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-
-            {spotlight && (
-              <Reveal delay={0.1}>
-                <article className="relative h-full overflow-hidden rounded-[2rem] border border-accent/40 bg-surface-panel p-6 sm:p-8 md:p-10 shadow-panel-lg">
-                  <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-accent/10 blur-3xl" />
-                  <div className="relative">
-                    <Stars rating={spotlight.rating} />
-                    <blockquote className="mt-6 font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.08] text-fg-strong text-balance text-pretty">
-                      “{spotlight.body}”
-                    </blockquote>
-                    <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-divider pt-6">
-                      <div>
-                        <p className="font-display text-xl font-bold text-fg-strong">
-                          {spotlight.author}
-                        </p>
-                        <p className="mt-1 text-sm text-fg-muted">
-                          {spotlight.city}{spotlight.service ? ` · ${spotlight.service}` : ""}
-                        </p>
-                      </div>
-                      <span className="rounded-full border border-divider-strong bg-surface/70 px-3 py-1.5 text-[10px] uppercase tracking-[0.16em] text-fg-muted font-semibold">
-                        via {spotlight.source}
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              </Reveal>
-            )}
-          </div>
-        </Container>
-      </Section>
-
       <Section size="lg" className="bg-surface border-y border-divider">
         <Container>
           <SectionTitle
@@ -296,7 +226,7 @@ export function ReviewsRichPage() {
           <RevealStagger className="columns-1 md:columns-2 xl:columns-3 gap-5 [column-fill:_balance]" staggerDelay={0.035}>
             {reviews.map((review, index) => (
               <RevealItem key={`${review.author}-${review.date}-wall`} className="mb-5 break-inside-avoid">
-                <ReviewCard review={review} index={index} onSelect={() => setActiveReview(index)} />
+                <ReviewCard review={review} index={index} />
               </RevealItem>
             ))}
           </RevealStagger>
@@ -514,19 +444,12 @@ export function ReviewsRichPage() {
 function ReviewCard({
   review,
   index,
-  onSelect,
 }: {
   review: Review;
   index: number;
-  onSelect: () => void;
 }) {
   return (
-    <button
-      type="button"
-      onClick={onSelect}
-      className="group w-full rounded-[1.5rem] border border-divider-strong bg-surface-panel p-5 text-left shadow-panel transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-soft hover:shadow-panel-lg"
-      aria-label={`Feature review from ${review.author}`}
-    >
+    <article className="group w-full rounded-[1.5rem] border border-divider-strong bg-surface-panel p-5 text-left shadow-panel transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-soft hover:shadow-panel-lg">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="font-display text-lg font-bold text-fg-strong leading-tight">
@@ -548,12 +471,11 @@ function ReviewCard({
       </p>
       <div className="mt-5 flex items-center justify-between gap-3 border-t border-divider pt-4 text-xs text-fg-muted">
         <span>{new Date(`${review.date}T00:00:00`).toLocaleDateString("en-CA", { month: "short", year: "numeric" })}</span>
-        <span className="inline-flex items-center gap-1.5 font-semibold text-accent transition-transform duration-300 group-hover:translate-x-0.5">
-          Spotlight
-          <ArrowRight className="h-3.5 w-3.5" />
+        <span className="inline-flex items-center gap-1.5 font-semibold text-accent">
+          via {review.source}
         </span>
       </div>
-    </button>
+    </article>
   );
 }
 
