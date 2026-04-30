@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/quote",
     "/reviews",
     "/repair-guides",
+    "/sitemap",
     "/legal/privacy",
     "/legal/terms",
   ].map((path) => ({

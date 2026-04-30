@@ -259,7 +259,7 @@ export function Footer() {
             <Link href="/legal/terms" className="inline-flex items-center py-1 hover:text-accent transition-colors">
               Terms
             </Link>
-            <Link href="/sitemap.xml" className="inline-flex items-center py-1 hover:text-accent transition-colors">
+            <Link href="/sitemap" className="inline-flex items-center py-1 hover:text-accent transition-colors">
               Sitemap
             </Link>
           </div>
