@@ -96,7 +96,7 @@ export function Header() {
 
             <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
               <ThemeToggle className="hidden lg:inline-flex" />
-              <Button href="/quote" size="sm" className="hidden lg:inline-flex">
+              <Button href="/quote" size="sm" className="inline-flex px-4 sm:px-5">
                 Start My Quote
               </Button>
               <button
@@ -161,7 +161,7 @@ export function Header() {
             ))}
           </nav>
           <div className="mt-8 space-y-3">
-            <Button href="/quote" size="lg" className="w-full">
+            <Button href="/quote" size="lg" className="w-full" onClick={() => setOpen(false)}>
               Start My Quote
             </Button>
             <p className="text-xs text-fg-muted -mt-1 text-center">

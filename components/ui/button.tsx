@@ -85,7 +85,7 @@ export function Button(props: ButtonProps) {
       );
     }
     return (
-      <Link href={props.href} {...ctaAttr} className={cn("group", classes)}>
+      <Link {...linkRest} href={props.href} {...ctaAttr} className={cn("group", classes)}>
         {content}
       </Link>
     );
