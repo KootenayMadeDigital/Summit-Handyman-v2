@@ -156,7 +156,7 @@ export const guides: Guide[] = [
     area: "Surrey",
     date: "2026-02-15",
     readingMinutes: 5,
-    hero: "/images/guide-small-repairs.webp",
+    hero: "/images/guide-pre-winter-checklist.webp",
     body: [
       {
         type: "p",
@@ -933,7 +933,7 @@ export const guides: Guide[] = [
       "A clear-eyed answer to the most-Googled handyman question in BC. What actually drives the number, why hourly rates can be misleading, and how to scope the conversation so the quote is real.",
     date: "2026-05-24",
     readingMinutes: 7,
-    hero: "/images/guide-accurate-quote.webp",
+    hero: "/images/guide-handyman-cost-bc.webp",
     body: [
       {
         type: "p",
@@ -1001,7 +1001,7 @@ export const guides: Guide[] = [
     service: "backsplashes",
     date: "2026-05-31",
     readingMinutes: 8,
-    hero: "/images/service-tile-flooring.webp",
+    hero: "/images/guide-kitchen-backsplash.webp",
     body: [
       {
         type: "p",
@@ -1073,7 +1073,7 @@ export const guides: Guide[] = [
     service: "cabinets",
     date: "2026-06-07",
     readingMinutes: 6,
-    hero: "/images/service-assembly-mounting.webp",
+    hero: "/images/guide-cabinet-soft-close.webp",
     body: [
       {
         type: "p",
@@ -1137,7 +1137,7 @@ export const guides: Guide[] = [
     service: "smart-home",
     date: "2026-06-14",
     readingMinutes: 6,
-    hero: "/images/guide-smart-home.webp",
+    hero: "/images/guide-smart-lock.webp",
     body: [
       {
         type: "p",
@@ -1198,7 +1198,7 @@ export const guides: Guide[] = [
       "A new homeowner's guide to the repair priorities that protect your first BC home, save money long term, and make the place feel like yours faster.",
     date: "2026-06-21",
     readingMinutes: 7,
-    hero: "/images/guide-pre-listing-repairs.webp",
+    hero: "/images/guide-first-home-repairs.webp",
     body: [
       {
         type: "p",
@@ -1278,7 +1278,7 @@ export const guides: Guide[] = [
       "A clear-eyed take on which trade fits which job. The boundary between handyman work and contractor work, and how knowing the difference saves you money and time.",
     date: "2026-06-28",
     readingMinutes: 5,
-    hero: "/images/guide-diy-vs-handyman.webp",
+    hero: "/images/guide-handyman-vs-contractor.webp",
     body: [
       {
         type: "p",
@@ -1349,7 +1349,7 @@ export const guides: Guide[] = [
       "Failed caulk is the most common cause of hidden water damage in BC bathrooms. A practical guide to recaulking right, plus when DIY is fine and when it is not.",
     date: "2026-07-05",
     readingMinutes: 5,
-    hero: "/images/guide-small-repairs.webp",
+    hero: "/images/guide-bathroom-caulking.webp",
     body: [
       {
         type: "p",
@@ -1410,7 +1410,7 @@ export const guides: Guide[] = [
       "Popcorn ceilings make BC homes feel dated, but removing them requires understanding the asbestos era, prep complexity, and which approach actually delivers a clean result.",
     date: "2026-07-12",
     readingMinutes: 7,
-    hero: "/images/guide-drywall.webp",
+    hero: "/images/guide-popcorn-ceiling.webp",
     body: [
       {
         type: "p",
@@ -1483,7 +1483,7 @@ export const guides: Guide[] = [
       "The Pacific Northwest fall is short and the rain comes hard. This is the September-to-October checklist that catches the small problems before BC winter turns them into emergencies.",
     date: "2026-07-19",
     readingMinutes: 6,
-    hero: "/images/guide-small-repairs.webp",
+    hero: "/images/guide-fall-maintenance.webp",
     body: [
       {
         type: "p",
@@ -1556,7 +1556,7 @@ export const guides: Guide[] = [
       "When the buyer's inspection comes back with a list, the next 48 hours decide whether the deal closes smoothly. A practical guide to which repairs to handle, push back on, or credit out.",
     date: "2026-07-26",
     readingMinutes: 6,
-    hero: "/images/guide-pre-listing-repairs.webp",
+    hero: "/images/guide-home-inspection-repairs.webp",
     body: [
       {
         type: "p",
