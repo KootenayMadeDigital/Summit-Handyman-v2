@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Mail,
   Facebook,
   FileText,
   ArrowRight,
@@ -65,8 +64,8 @@ export function Footer() {
               "{site.taglineAlt}"
             </p>
 
-            {/* Trust micro-row */}
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-2 text-xs text-fg-muted">
+            {/* Trust + social micro-row. Social belongs with the brand block, not the resource nav. */}
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-3 pt-2 text-xs text-fg-muted">
               <span className="inline-flex items-center gap-1.5">
                 <ShieldCheck className="h-3.5 w-3.5 text-accent" />
                 Licensed & insured
@@ -79,6 +78,16 @@ export function Footer() {
                 <span className="text-accent">★ 5.0</span>
                 <span>on Google</span>
               </span>
+              <a
+                href={site.social.facebook.url}
+                target="_blank"
+                rel="noopener"
+                aria-label="Follow Summit Handyman on Facebook"
+                className="inline-flex min-h-10 items-center gap-2 rounded-full border border-divider-strong bg-surface-panel/50 px-3 py-2 text-fg/80 transition-all duration-200 ease-editorial hover:-translate-y-0.5 hover:border-accent-soft hover:bg-accent-soft hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-summit-gold active:translate-y-0"
+              >
+                <Facebook className="h-3.5 w-3.5" />
+                <span>Facebook</span>
+              </a>
             </div>
           </div>
 
@@ -223,20 +232,6 @@ export function Footer() {
               </li>
             </ul>
 
-            <a
-              href={site.social.facebook.url}
-              target="_blank"
-              rel="noopener"
-              aria-label="Follow Summit Handyman on Facebook"
-              className="group mt-4 inline-flex w-full max-w-full min-w-0 items-center gap-2 rounded-full border border-divider-strong bg-surface-panel/60 px-2 py-2 text-sm text-fg/85 shadow-panel transition-all duration-300 ease-editorial hover:-translate-y-0.5 hover:border-accent hover:bg-accent-soft hover:text-accent hover:shadow-gold focus-visible:ring-accent active:translate-y-0 active:scale-[0.98] sm:w-auto sm:gap-3 sm:pr-5"
-            >
-              <span className="grid h-11 w-11 flex-shrink-0 place-items-center rounded-full border border-divider-strong bg-surface text-fg/85 transition-all duration-300 ease-editorial group-hover:rotate-[-6deg] group-hover:scale-105 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
-                <Facebook className="h-4 w-4" />
-              </span>
-              <span className="min-w-0 text-sm font-semibold leading-tight sm:whitespace-nowrap">
-                Follow on Facebook
-              </span>
-            </a>
           </div>
         </div>
 
