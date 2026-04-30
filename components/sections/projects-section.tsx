@@ -21,7 +21,7 @@ export function ProjectsSection() {
                 <span className="font-serif italic font-normal text-gradient-gold">see.</span>
               </>
             }
-            description="Recent work across the Lower Mainland, each job handled by Brody himself."
+            description="Recent work across the Lower Mainland, each job handled by Brody himself. Click any photo to open a larger preview."
             className="mx-auto md:mx-0"
           />
           <Reveal>
@@ -31,6 +31,12 @@ export function ProjectsSection() {
             </Button>
           </Reveal>
         </div>
+
+        <Reveal>
+          <p className="mx-auto -mt-4 mb-6 inline-flex items-center rounded-full border border-accent/25 bg-accent/10 px-4 py-2 text-center text-xs font-bold uppercase tracking-[0.2em] text-accent sm:text-sm">
+            Tap a project photo for the larger view
+          </p>
+        </Reveal>
 
         <RevealStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {featured.map((p) => (
