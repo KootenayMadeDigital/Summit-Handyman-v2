@@ -228,7 +228,7 @@ body {
   overflow: hidden;
 }
 
-.summit-section-shell > :not(.summit-section-atmosphere) {
+.summit-section-shell > :not(.summit-section-atmosphere):not(.absolute) {
   position: relative;
   z-index: 1;
 }
