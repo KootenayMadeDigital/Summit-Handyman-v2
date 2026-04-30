@@ -35,6 +35,6 @@ export const faqs: FAQ[] = [
   },
   {
     q: "What's the best way to reach you?",
-    a: "Start with the quote form when possible. Email at brody@summit-handyman.ca is best for follow-ups, and text at 604-989-5032 works when you need to add context.",
+    a: "Start with the quote form. It sends Brody the scope, photos, location, and reply details in one place so he can answer with a clear written next step.",
   },
 ];

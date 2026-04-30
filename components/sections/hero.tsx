@@ -122,13 +122,9 @@ export function Hero() {
               Start My Quote
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
             </MagneticCTA>
-            <a
-              href={`mailto:${site.contact.email}`}
-              className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
-            >
-              <Mail className="h-4 w-4" />
-              or email Brody directly
-            </a>
+            <p className="text-sm text-fg-muted">
+              Form details go straight to Brody's email.
+            </p>
           </m.div>
 
           <m.p

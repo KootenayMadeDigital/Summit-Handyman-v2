@@ -11,7 +11,7 @@ const stats = [
   { Icon: Star, headline: "5.0", label: "rating", sub: "on Google" },
   { Icon: HandCoins, headline: "$150", label: "minimum", sub: "per job · no hourly" },
   { Icon: ShieldCheck, headline: "Licensed", label: "& Insured", sub: "Comprehensive liability" },
-  { Icon: Mail, headline: "24-hr", label: "reply", sub: "Email-first contact" },
+  { Icon: Mail, headline: "24-hr", label: "reply", sub: "Form-first contact" },
 ];
 
 export function StatsStrip() {

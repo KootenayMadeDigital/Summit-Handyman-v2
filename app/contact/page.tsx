@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Mail,
-  MessageSquare,
-  MessageCircle,
-  Clock,
-  MapPin,
-  ArrowRight,
-} from "lucide-react";
+import { Clock, MapPin, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
@@ -17,7 +10,7 @@ import { ogImage, staticOg } from "@/lib/og";
 
 import { areas } from "@/lib/areas";
 
-const pageOgDescription = "Start with the quote form so Brody has the repair list, photos, and location before he replies. Email, text, and Facebook are also available.";
+const pageOgDescription = "Start with the quote form so Brody has the repair list, photos, and location before he replies. The request goes straight to Brody's email.";
 
 export const metadata: Metadata = {
   title: "Contact Brody",
@@ -37,30 +30,6 @@ export const metadata: Metadata = {
     images: [staticOg("contact")],
   },
 };
-
-const channels = [
-  {
-    label: "Email",
-    value: site.contact.email,
-    href: `mailto:${site.contact.email}`,
-    Icon: Mail,
-    note: "Best for follow-ups or skipping the form. Brody reads everything personally.",
-  },
-  {
-    label: "Text",
-    value: site.contact.phone,
-    href: `sms:${site.contact.phoneTel}`,
-    Icon: MessageSquare,
-    note: "Best for time-sensitive follow-ups after the form has been sent.",
-  },
-  {
-    label: "Facebook Messenger",
-    value: `m.me/${site.social.facebook.handle}`,
-    href: site.contact.messenger,
-    Icon: MessageCircle,
-    note: "If that's where you live online.",
-  },
-];
 
 export default function ContactPage() {
   return (
@@ -83,13 +52,9 @@ export default function ContactPage() {
             Start My Quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
-          <a
-            href={`mailto:${site.contact.email}`}
-            className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
-          >
-            <Mail className="h-4 w-4" />
-            email Brody directly
-          </a>
+          <p className="text-sm text-fg-muted">
+            The form sends the request straight to Brody's email.
+          </p>
         </div>
       </PageHero>
 
@@ -115,44 +80,19 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      {/* SECONDARY: direct contact channels */}
+      {/* SECONDARY: where the form goes */}
       <Section size="md" className="bg-surface-panel border-y border-divider">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="mx-auto max-w-2xl text-center">
             <p className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-fg-muted font-semibold mb-2">
-              Other ways to add context
+              Form-first contact
             </p>
             <h2 className="font-display text-2xl sm:text-3xl font-bold text-fg-strong text-balance">
-              Need to follow up or add detail?
+              Every request starts with the quote form.
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-fg-muted">
-              Email, text, or Messenger work well after the quote is started, or when one extra detail does not fit the form.
+            <p className="mt-3 text-sm sm:text-base text-fg-muted leading-relaxed">
+              The form sends the repair list, photos, city, and reply details to {site.contact.email}. That keeps the scope organized before Brody replies.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
-            {channels.map((c) => (
-              <Reveal key={c.label}>
-                <a
-                  href={c.href}
-                  target={c.href.startsWith("http") ? "_blank" : undefined}
-                  rel={c.href.startsWith("http") ? "noopener" : undefined}
-                  className="summit-card-motion motion-service group block h-full p-5 sm:p-6 rounded-2xl bg-surface border border-divider-strong hover:border-accent-soft hover:shadow-gold transition-all duration-300 min-w-0"
-                >
-                  <div className="summit-icon-box h-10 w-10 rounded-xl bg-accent-soft border border-accent/40 flex items-center justify-center mb-4 group-hover:bg-accent-soft transition-colors">
-                    <c.Icon className="h-5 w-5 text-accent" strokeWidth={1.5} />
-                  </div>
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold">
-                    {c.label}
-                  </p>
-                  <p className="mt-1.5 font-display text-base sm:text-lg font-bold text-fg-strong break-all leading-snug">
-                    {c.value}
-                  </p>
-                  <p className="mt-2 text-sm text-fg-muted leading-relaxed text-pretty">
-                    {c.note}
-                  </p>
-                </a>
-              </Reveal>
-            ))}
           </div>
         </Container>
       </Section>
@@ -166,7 +106,7 @@ export default function ContactPage() {
               <h3 className="font-display text-xl font-bold text-fg-strong mb-2">Hours</h3>
               <p className="text-fg/85 leading-relaxed text-sm">{site.hours}</p>
               <p className="mt-2 text-xs text-fg-muted">
-                Quote requests are reviewed within 24 hours. Email is the best place to keep the thread organized.
+                Quote requests are reviewed within 24 hours. The form keeps the thread organized from the start.
               </p>
             </div>
             <div className="summit-card-motion motion-trust p-6 sm:p-7 rounded-2xl bg-surface-panel border border-divider-strong">

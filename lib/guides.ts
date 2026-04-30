@@ -217,7 +217,7 @@ export const guides: Guide[] = [
       },
       {
         type: "p",
-        text: "Summit Handyman was built around the gap that creates. One handyman, one accountable point of contact, email-first communication, and invoices itemized to the level strata councils and owners actually need. This guide is the short version of how that works in practice.",
+        text: "Summit Handyman was built around the gap that creates. One handyman, one accountable point of contact, form-first communication, and invoices itemized to the level strata councils and owners actually need. This guide is the short version of how that works in practice.",
       },
       { type: "h2", text: "What Brody handles for property managers" },
       {
@@ -253,7 +253,7 @@ export const guides: Guide[] = [
       {
         type: "callout",
         title: "Have a portfolio of properties?",
-        text: "Email Brody at brody@summit-handyman.ca to talk through recurring work. Include property type, access rules, invoicing needs, and the kinds of repairs you expect often. Or start with a single turnover through the quote form at summit-handyman.ca/quote to see the workflow before committing to a recurring relationship.",
+        text: "Start with the quote form at summit-handyman.ca/quote. Include property type, access rules, invoicing needs, and the kinds of repairs you expect often. Brody receives the request by email and can reply with the right next step.",
       },
     ],
   },

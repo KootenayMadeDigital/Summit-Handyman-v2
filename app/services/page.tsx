@@ -214,13 +214,9 @@ export default function ServicesPage() {
             Start My Quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
-          <a
-            href={`mailto:${site.contact.email}`}
-            className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
-          >
-            <Mail className="h-4 w-4" />
-            or email Brody directly
-          </a>
+          <p className="text-sm text-fg-muted">
+            The quote form sends the details straight to Brody.
+          </p>
         </div>
       </PageHero>
 
@@ -403,7 +399,7 @@ export default function ServicesPage() {
       {/* === PROCESS TIMELINE ===
           Linda needs to see what hiring Brody actually looks like. Mark
           wants to confirm there's a documented flow. Sarah benefits from
-          knowing the email-first process is clear. */}
+          knowing the form-first process is clear. */}
       <Section size="lg" className="bg-surface-panel border-y border-divider">
         <Container>
           <SectionTitle
@@ -531,20 +527,13 @@ export default function ServicesPage() {
                 ))}
               </ul>
               <div className="pt-3 flex flex-wrap items-center gap-3">
-                <Button
-                  href={`mailto:${site.contact.email}?subject=${encodeURIComponent("Property management inquiry")}`}
-                  size="md"
-                >
-                  <Mail className="h-4 w-4" />
-                  Email about portfolio work
+                <Button href="/quote" size="md">
+                  <FileText className="h-4 w-4" />
+                  Submit portfolio details
                 </Button>
-                <Link
-                  href="/quote"
-                  className="inline-flex min-h-11 items-center gap-1 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
-                >
-                  or submit a quote request
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </Link>
+                <p className="text-sm text-fg-muted">
+                  The form keeps property details, access notes, and repair lists together.
+                </p>
               </div>
             </Reveal>
 
@@ -612,7 +601,7 @@ export default function ServicesPage() {
                 },
                 {
                   q: "Do you work with property managers?",
-                  a: "Yes. Summit Handyman is built for tenant turnovers, common-area repairs, documented punch lists, and clear invoicing. Email Brody with the property details, access notes, and repair list to set up the right process.",
+                  a: "Yes. Summit Handyman is built for tenant turnovers, common-area repairs, documented punch lists, and clear invoicing. Use the quote form with the property details, access notes, and repair list to set up the right process.",
                 },
                 {
                   q: "What does 'come back free' mean exactly?",
@@ -712,13 +701,9 @@ export default function ServicesPage() {
                   Start My Quote
                   <ArrowRight className="h-5 w-5" />
                 </MagneticCTA>
-                <a
-                  href={`mailto:${site.contact.email}`}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
-                >
-                  <Mail className="h-4 w-4" />
-                  or email Brody directly
-                </a>
+                <p className="text-sm text-fg-muted">
+                  The quote form keeps photos, scope, and location together.
+                </p>
               </div>
               <p className="pt-3 text-sm text-fg-muted">
                 <span className="text-accent font-semibold">$150 minimum per job</span>

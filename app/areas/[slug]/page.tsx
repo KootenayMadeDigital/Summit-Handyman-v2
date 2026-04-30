@@ -9,7 +9,6 @@ import {
   Clock,
   FileText,
   Home,
-  Mail,
   MapPin,
   ShieldCheck,
   Sparkles,
@@ -84,7 +83,7 @@ const cityProfiles: Record<string, CityProfile> = {
   cloverdale: {
     intro: "Cloverdale has a grounded mix of historic homes, Clayton Heights townhomes, family houses, and rural edges that call for practical, careful repair work.",
     texture: "From Cloverdale Town Centre and West Cloverdale to Clayton Heights and Hazelwood, common projects include interior repair lists, mounting, doors, trim, paint prep, exterior upkeep, and rental-ready fixes.",
-    serviceFit: "Best fit for families, strata units, rentals, and property managers who want a direct line to the person doing the work.",
+    serviceFit: "Best fit for families, strata units, rentals, and property managers who want the request reviewed by the person doing the work.",
     commonJobs: ["Interior repair lists", "Door, trim, and hardware fixes", "Painting prep and drywall touch-ups", "Mounting, assembly, and exterior upkeep"],
     trustAngle: "Cloverdale jobs often need the basics done properly. Brody keeps the estimate written, the communication direct, and the finish clean.",
     accent: "Historic core, townhomes, and family houses",
@@ -251,14 +250,9 @@ export default async function AreaPage(
             Get a {area.name} quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
-          <Button
-            href={`mailto:${site.contact.email}?subject=${encodeURIComponent(`Quote in ${area.name}`)}`}
-            variant="secondary"
-            size="lg"
-          >
-            <Mail className="h-5 w-5" />
-            Email Brody
-          </Button>
+          <p className="text-sm text-fg-muted">
+            The form sends your {area.name} request straight to Brody.
+          </p>
         </div>
       </PageHero>
 
@@ -483,10 +477,9 @@ export default async function AreaPage(
                   Start my {area.name} quote
                   <ArrowRight className="h-5 w-5" />
                 </MagneticCTA>
-                <Button href={`mailto:${site.contact.email}?subject=${encodeURIComponent(`Quote in ${area.name}`)}`} variant="secondary" size="lg">
-                  <Mail className="h-5 w-5" />
-                  Email Brody
-                </Button>
+                <p className="text-sm text-fg-muted">
+                  The form keeps the address, photos, and repair list together.
+                </p>
               </div>
             </div>
           </Reveal>

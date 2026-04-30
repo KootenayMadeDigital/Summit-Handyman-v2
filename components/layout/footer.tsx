@@ -103,27 +103,17 @@ export function Footer() {
                   Start My Quote
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-                <a
-                  href={`mailto:${site.contact.email}`}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-divider-strong text-fg-strong font-semibold text-sm hover:border-accent hover:text-accent transition-colors"
-                >
-                  <Mail className="h-4 w-4" />
-                  Email Brody
-                </a>
+                <p className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm text-fg-muted">
+                  Form details go straight to Brody.
+                </p>
               </div>
               <div className="mt-5 pt-5 border-t border-divider grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs sm:text-sm">
-                <a
-                  href={`mailto:${site.contact.email}`}
-                  className="inline-flex items-center py-1 text-fg/85 hover:text-accent transition-colors break-all"
-                >
+                <span className="inline-flex items-center py-1 text-fg/85 break-all">
                   {site.contact.email}
-                </a>
-                <a
-                  href={`sms:${site.contact.phoneTel}`}
-                  className="inline-flex items-center py-1 text-fg/85 hover:text-accent transition-colors"
-                >
+                </span>
+                <span className="inline-flex items-center py-1 text-fg/85">
                   {site.contact.phone}
-                </a>
+                </span>
                 <span className="text-accent font-semibold">{site.pricing.minimumDisplay}</span>
               </div>
             </div>

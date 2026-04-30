@@ -85,7 +85,7 @@ const areaFit = [
   },
   {
     title: "Strata and rentals",
-    body: "Common repair requests handled cleanly, with a direct line to Brody instead of mystery crews and missed handoffs.",
+    body: "Common repair requests handled cleanly, with form details going straight to Brody instead of mystery crews and missed handoffs.",
     Icon: ClipboardCheck,
   },
 ];
@@ -288,9 +288,9 @@ export default function AreasPage() {
                     Start a local quote
                     <ArrowRight className="h-5 w-5" />
                   </MagneticCTA>
-                  <Button href={`mailto:${site.contact.email}`} variant="secondary" size="lg">
-                    Email Brody
-                  </Button>
+                  <p className="text-sm text-fg-muted">
+                    The form sends your local repair list straight to Brody.
+                  </p>
                 </div>
               </div>
             </div>

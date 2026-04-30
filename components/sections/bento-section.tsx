@@ -136,21 +136,18 @@ export function BentoSection() {
             </div>
           </BentoTile>
 
-          {/* EMAIL. 2 cols, accent-bordered */}
+          {/* FORM PATH. 2 cols, accent-bordered */}
           <RevealItem className="summit-card-motion motion-cta col-span-2 relative overflow-hidden rounded-2xl border border-accent bg-gradient-to-br from-[var(--bg-panel)] via-[var(--bg-panel)] to-[color-mix(in_srgb,var(--accent)_14%,var(--bg-panel))] p-5 sm:p-6 md:p-7 flex flex-col justify-between group hover:border-accent-hot transition-colors min-w-0">
             <Mail className="h-7 w-7 text-accent" strokeWidth={1.5} />
             <div className="min-w-0">
               <p className="font-display text-lg sm:text-xl md:text-2xl font-bold text-fg-strong mb-1 leading-tight">
-                Email-first contact
+                Form-first contact
               </p>
-              <a
-                href={`mailto:${site.contact.email}`}
-                className="text-xs sm:text-sm text-accent hover:text-accent-hot transition-colors font-semibold underline-offset-4 hover:underline break-all"
-              >
+              <p className="text-xs sm:text-sm text-accent font-semibold break-all">
                 {site.contact.email}
-              </a>
+              </p>
               <p className="mt-1 text-xs text-fg-muted">
-                Text {site.contact.phone} when a submitted quote needs extra context.
+                The quote form sends the repair list, photos, and reply details to this inbox.
               </p>
             </div>
           </RevealItem>

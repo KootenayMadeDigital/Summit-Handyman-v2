@@ -172,8 +172,7 @@ export function QuoteForm() {
 
       if (!res.ok) {
         throw new Error(
-          data?.error ??
-            "Submission failed. Please try again or email Brody at " + site.contact.email,
+          data?.error ?? "Submission failed. Please try again in a moment.",
         );
       }
 
@@ -185,7 +184,7 @@ export function QuoteForm() {
       setError(
         e instanceof Error
           ? e.message
-          : "Submission failed. Please try again or email Brody directly.",
+          : "Submission failed. Please try again in a moment.",
       );
     } finally {
       setSubmitting(false);
@@ -207,14 +206,7 @@ export function QuoteForm() {
             Your details {photos.length > 0 ? `and ${photos.length} photo${photos.length > 1 ? "s" : ""} ` : ""}have been sent to Brody. He'll review the job and reply within 24 hours with questions or a written estimate.
           </p>
         <p className="mt-4 text-xs text-fg-muted">
-          Need to add context? Text{" "}
-          <a
-            href={`sms:${site.contact.phoneTel}`}
-            className="text-accent font-semibold underline-offset-4 hover:underline"
-          >
-            {site.contact.phone}
-          </a>
-          .
+          Need to add context? Submit another quote note and Brody will see it in the same inbox.
         </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <Button href="/" variant="secondary" size="md">
@@ -516,7 +508,7 @@ export function QuoteForm() {
                 How can Brody reach you?
               </h2>
               <p className="text-sm sm:text-base text-fg-muted">
-                Email is preferred and keeps the reply organized. Text or phone work too.
+                Brody replies using your selected preference after the form is submitted.
               </p>
             </div>
 

@@ -41,7 +41,7 @@ export function ServiceAreaMapSection() {
               </span>
             </>
           }
-          description="Click any pin to jump to that city's page. Same handyman, same standard, same direct line."
+          description="Click any pin to jump to that city's page. Same handyman, same standard, same form-first quote path."
           align="center"
           className="mb-12"
         />

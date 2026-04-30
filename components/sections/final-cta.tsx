@@ -1,9 +1,7 @@
-import { ArrowRight, Mail, Camera, FileText, Clock } from "lucide-react";
+import { ArrowRight, Camera, FileText, Clock } from "lucide-react";
 import { Container, Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
-import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
-import { site } from "@/lib/site";
 
 export function FinalCTA() {
   return (
@@ -58,15 +56,7 @@ export function FinalCTA() {
             </div>
 
             <p className="pt-2 text-sm text-fg-muted">
-              Prefer to skip the form? You can{" "}
-              <a
-                href={`mailto:${site.contact.email}`}
-                className="text-accent font-semibold underline-offset-4 hover:underline inline-flex items-center gap-1"
-              >
-                <Mail className="h-3.5 w-3.5" />
-                email Brody directly
-              </a>
-              {" "}at {site.contact.email}.
+              The form sends the full request straight to Brody's email.
             </p>
           </div>
         </Reveal>

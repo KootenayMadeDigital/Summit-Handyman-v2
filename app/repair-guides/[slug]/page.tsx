@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail, Clock, Calendar, ArrowLeft } from "lucide-react";
+import { ArrowRight, Clock, Calendar, ArrowLeft } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
-import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { guides, getGuide } from "@/lib/guides";
 import { site } from "@/lib/site";
@@ -215,14 +214,9 @@ export default async function GuidePage(
                 Start the quote
                 <ArrowRight className="h-4 w-4" />
               </MagneticCTA>
-              <Button
-                href={`mailto:${site.contact.email}`}
-                variant="secondary"
-                size="md"
-              >
-                <Mail className="h-4 w-4" />
-                Email Brody
-              </Button>
+              <p className="self-center text-sm text-fg-muted">
+                The form sends this context straight to Brody.
+              </p>
             </div>
           </div>
 

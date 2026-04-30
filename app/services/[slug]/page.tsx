@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, Mail } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section, SectionTitle } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
@@ -132,13 +132,9 @@ export default async function ServicePage(
             Start My Quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
-          <a
-            href={`mailto:${site.contact.email}?subject=${encodeURIComponent(`Quote: ${service.name}`)}`}
-            className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
-          >
-            <Mail className="h-4 w-4" />
-            or email Brody directly
-          </a>
+          <p className="text-sm text-fg-muted">
+            The form sends photos, scope, and service details straight to Brody.
+          </p>
         </div>
       </PageHero>
 

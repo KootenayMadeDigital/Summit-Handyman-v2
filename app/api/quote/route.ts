@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
     if (!apiKey) {
       console.error("Summit quote: RESEND_API_KEY is not configured.");
       return NextResponse.json(
-        { error: "Email delivery is not configured. Please email Brody directly at " + site.contact.email },
+        { error: "Quote delivery is not configured. Please try again later." },
         { status: 503 },
       );
     }
@@ -200,7 +200,7 @@ export async function POST(req: NextRequest) {
     if (error) {
       console.error("Summit quote: Resend send failed", error);
       return NextResponse.json(
-        { error: "Email delivery failed. Please call or text Brody at " + site.contact.phone },
+        { error: "Quote delivery failed. Please try again in a moment." },
         { status: 502 },
       );
     }
@@ -209,7 +209,7 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error("Summit quote: unexpected error", err);
     return NextResponse.json(
-      { error: "Email delivery failed. Please call or text Brody at " + site.contact.phone },
+      { error: "Quote delivery failed. Please try again in a moment." },
       { status: 502 },
     );
   }

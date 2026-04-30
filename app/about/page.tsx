@@ -80,7 +80,7 @@ const friction = [
 ];
 
 const antidote = [
-  "Direct email or text with Brody",
+  "Quote form sent straight to Brody",
   "Free written estimate after scope review",
   "Brody on every visit, not rotating crews",
   "Come-back-free workmanship promise",
@@ -175,13 +175,9 @@ export default function AboutPage() {
             Start My Quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
-          <a
-            href={`mailto:${site.contact.email}`}
-            className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
-          >
-            <Mail className="h-4 w-4" />
-            email Brody directly
-          </a>
+          <p className="text-sm text-fg-muted">
+            The quote form sends the details straight to Brody.
+          </p>
         </div>
       </PageHero>
 
@@ -217,20 +213,14 @@ export default function AboutPage() {
                     Direct line
                   </p>
                   <div className="mt-5 flex flex-col gap-3">
-                    <a
-                      href={`mailto:${site.contact.email}`}
-                      className="flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-strong hover:text-accent transition-colors"
-                    >
+                    <div className="flex min-h-11 items-center gap-2 rounded-xl text-sm text-fg-strong">
                       <Mail className="h-4 w-4 text-accent" />
                       {site.contact.email}
-                    </a>
-                    <a
-                      href={`sms:${site.contact.phoneTel}`}
-                      className="flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-strong hover:text-accent transition-colors"
-                    >
+                    </div>
+                    <div className="flex min-h-11 items-center gap-2 rounded-xl text-sm text-fg-strong">
                       <MessageSquare className="h-4 w-4 text-accent" />
-                      Text {site.contact.phone}
-                    </a>
+                      {site.contact.phone}
+                    </div>
                     <a
                       href={site.social.facebook.url}
                       target="_blank"

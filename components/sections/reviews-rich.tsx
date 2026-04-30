@@ -43,7 +43,7 @@ const trustSignals = [
   },
   {
     Icon: Mail,
-    label: "Email-first quotes",
+    label: "Form-first quotes",
     sub: "Written details, saved scope, fewer phone-tag games.",
   },
   {
@@ -421,10 +421,9 @@ export function ReviewsRichPage() {
                   Start your quote
                   <ArrowRight className="h-5 w-5" />
                 </MagneticCTA>
-                <Button href={`mailto:${site.contact.email}`} variant="secondary" size="lg">
-                  <Mail className="h-5 w-5" />
-                  Email Brody
-                </Button>
+                <p className="text-sm text-fg-muted">
+                  The form sends the details straight to Brody's email.
+                </p>
                 <p className="pt-2 text-sm text-fg-muted">
                   <span className="text-accent font-semibold">{site.pricing.minimumDisplay}</span>
                   {" · "}

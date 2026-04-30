@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, Check, Mail, MapPin, Clock, ShieldCheck, HandCoins } from "lucide-react";
+import { ArrowRight, Check, MapPin, Clock, ShieldCheck, HandCoins } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section, SectionTitle } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
@@ -49,7 +49,7 @@ export async function generateMetadata(
   if (!service || !area) return {};
 
   const title = `${service.name} in ${area.name}, BC`;
-  const description = `${service.name} in ${area.name}: ${service.tagline} ${site.pricing.minimumDisplay}. Licensed and insured. Free written estimates. Email Brody at Summit Handyman for a written estimate.`;
+  const description = `${service.name} in ${area.name}: ${service.tagline} ${site.pricing.minimumDisplay}. Licensed and insured. Free written estimates through the quote form.`;
   const image = serviceAreaOg(service.slug, area.slug);
 
   return {
@@ -211,13 +211,9 @@ export default async function ServiceInAreaPage(
             Start this local quote
             <ArrowRight className="h-5 w-5" />
           </MagneticCTA>
-          <a
-            href={`mailto:${site.contact.email}?subject=${encodeURIComponent(`${service.name} quote in ${area.name}`)}`}
-            className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 -mx-2 text-sm text-fg-muted hover:text-accent transition-colors"
-          >
-            <Mail className="h-4 w-4" />
-            or email Brody directly
-          </a>
+          <p className="text-sm text-fg-muted">
+            The form sends the local scope straight to Brody.
+          </p>
         </div>
       </PageHero>
 
@@ -446,14 +442,7 @@ export default async function ServiceInAreaPage(
                 </MagneticCTA>
               </div>
               <p className="pt-2 text-sm text-fg-muted">
-                Prefer to skip the form?{" "}
-                <a
-                  href={`mailto:${site.contact.email}?subject=${encodeURIComponent(`${service.name} in ${area.name}`)}`}
-                  className="text-accent font-semibold underline-offset-4 hover:underline"
-                >
-                  Email Brody directly
-                </a>
-                .
+                The form sends the full request straight to Brody's email.
               </p>
             </div>
           </Reveal>

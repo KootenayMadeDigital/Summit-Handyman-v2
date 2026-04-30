@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Mail, MessageSquare } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -95,15 +95,6 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-              <a
-                href={`mailto:${site.contact.email}`}
-                className="hidden lg:inline-flex items-center gap-2 text-sm text-fg/85 hover:text-accent transition-colors"
-                aria-label={`Email Brody at ${site.contact.email}`}
-              >
-                <Mail className="h-4 w-4" />
-                <span className="hidden 2xl:inline">{site.contact.email}</span>
-                <span className="2xl:hidden">Email</span>
-              </a>
               <ThemeToggle className="hidden lg:inline-flex" />
               <Button href="/quote" size="sm" className="hidden lg:inline-flex">
                 Start My Quote
@@ -176,24 +167,9 @@ export function Header() {
             <p className="text-xs text-fg-muted -mt-1 text-center">
               The best first step when photos and details matter.
             </p>
-            <Button
-              href={`mailto:${site.contact.email}`}
-              variant="secondary"
-              size="md"
-              className="w-full"
-            >
-              <Mail className="h-4 w-4" />
-              Email Brody
-            </Button>
-            <Button
-              href={`sms:${site.contact.phoneTel}`}
-              variant="secondary"
-              size="md"
-              className="w-full"
-            >
-              <MessageSquare className="h-4 w-4" />
-              Text {site.contact.phone}
-            </Button>
+            <p className="text-xs text-fg-muted text-center">
+              The form sends the request straight to Brody's email.
+            </p>
           </div>
         </div>
       </div>
