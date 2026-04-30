@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { site } from "@/lib/site";
+import { ogImage, staticOg } from "@/lib/og";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Header } from "@/components/layout/header";
@@ -65,13 +66,13 @@ export const metadata: Metadata = {
     title: `${site.name}. ${site.tagline}`,
     description: site.description,
     siteName: site.name,
-    images: [{ url: "/og/default.png", width: 1200, height: 630, alt: `${site.name}. ${site.tagline}` }],
+    images: ogImage(staticOg("home"), `${site.name}. ${site.tagline}`),
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name}. ${site.tagline}`,
     description: site.description,
-    images: ["/og/default.png"],
+    images: [staticOg("home")],
   },
   robots: {
     index: true,

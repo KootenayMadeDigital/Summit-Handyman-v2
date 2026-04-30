@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { guides, getGuide } from "@/lib/guides";
 import { site } from "@/lib/site";
+import { guideOg, ogImage } from "@/lib/og";
 
 export function generateStaticParams() {
   return guides.map((g) => ({ slug: g.slug }));
@@ -21,6 +22,8 @@ export async function generateMetadata(
   const { slug } = await params;
   const g = getGuide(slug);
   if (!g) return {};
+  const image = guideOg(g.slug);
+
   return {
     title: g.title,
     description: g.excerpt,
@@ -30,7 +33,13 @@ export async function generateMetadata(
       description: g.excerpt,
       type: "article",
       publishedTime: g.date,
-      images: [{ url: g.hero, width: 1600, height: 1000, alt: g.title }],
+      images: ogImage(image, `${g.title} from ${site.name}`),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: g.title,
+      description: g.excerpt,
+      images: [image],
     },
   };
 }

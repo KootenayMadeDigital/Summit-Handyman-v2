@@ -2,12 +2,27 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section } from "@/components/ui/section";
 import { site } from "@/lib/site";
+import { ogImage, staticOg } from "@/lib/og";
+
+const pageOgDescription = `How ${site.name} collects, uses, and protects your information.`;
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `How ${site.name} collects, uses, and protects your information.`,
   alternates: { canonical: "/legal/privacy" },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: "Summit Handyman privacy policy",
+    description: pageOgDescription,
+    type: "website",
+    images: ogImage(staticOg("privacy"), "Summit Handyman privacy policy"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Summit Handyman privacy policy",
+    description: pageOgDescription,
+    images: [staticOg("privacy")],
+  },
 };
 
 export default function PrivacyPage() {

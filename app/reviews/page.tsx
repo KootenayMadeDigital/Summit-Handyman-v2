@@ -4,12 +4,27 @@ import { PageHero } from "@/components/layout/page-hero";
 import { ReviewsRichPage } from "@/components/sections/reviews-rich";
 import { aggregateRating, placeholderReviews } from "@/lib/reviews";
 import { site } from "@/lib/site";
+import { ogImage, staticOg } from "@/lib/og";
+
+const pageOgDescription = "Read Summit Handyman reviews from homeowners, tenants, and property managers across the Lower Mainland. 5.0 rating, public review wall, and trust signals.";
 
 export const metadata: Metadata = {
   title: "Reviews",
   description:
     "Read Summit Handyman reviews from homeowners, tenants, and property managers across the Lower Mainland. 5.0 rating, public review wall, and trust signals.",
   alternates: { canonical: "/reviews" },
+  openGraph: {
+    title: "Summit Handyman reviews",
+    description: pageOgDescription,
+    type: "website",
+    images: ogImage(staticOg("reviews"), "Summit Handyman reviews"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Summit Handyman reviews",
+    description: pageOgDescription,
+    images: [staticOg("reviews")],
+  },
 };
 
 export default function ReviewsPage() {

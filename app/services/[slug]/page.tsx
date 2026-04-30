@@ -13,6 +13,7 @@ import { services, getService } from "@/lib/services";
 import { areas } from "@/lib/areas";
 import { site } from "@/lib/site";
 import { aggregateRating } from "@/lib/reviews";
+import { ogImage, serviceOg } from "@/lib/og";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -25,15 +26,25 @@ export async function generateMetadata(
   const service = getService(slug);
   if (!service) return {};
   const cityList = "Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale";
+  const title = `${service.name} in Langley, Surrey & Lower Mainland BC`;
+  const description = `${service.name}: ${service.tagline} Serving ${cityList}. ${site.pricing.minimumDisplay}. Licensed and insured. Written estimates within 24 hours.`;
+  const image = serviceOg(service.slug);
+
   return {
-    title: `${service.name} in Langley, Surrey & Lower Mainland BC`,
-    description: `${service.name}: ${service.tagline} Serving ${cityList}. ${site.pricing.minimumDisplay}. Licensed and insured. Written estimates within 24 hours.`,
+    title,
+    description,
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
       title: `${service.name} | ${site.name}`,
-      description: service.longDescription.slice(0, 200),
+      description,
       type: "website",
-      images: [{ url: service.hero, width: 1600, height: 1000, alt: service.name }],
+      images: ogImage(image, `${service.name} from ${site.name}`),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
     },
   };
 }

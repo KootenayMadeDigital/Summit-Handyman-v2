@@ -22,13 +22,29 @@ import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { guides, type Guide } from "@/lib/guides";
 import { site } from "@/lib/site";
+import { ogImage, staticOg } from "@/lib/og";
+
 import { cn } from "@/lib/utils";
+
+const pageOgDescription = "Practical repair guides for Lower Mainland homeowners and property managers. Learn what drives cost, how to spot a bad quote, when to DIY versus hire, and which repairs prevent bigger bills later.";
 
 export const metadata: Metadata = {
   title: "Home Repair Guides & Handyman Resources",
   description:
     "Practical repair guides for Lower Mainland homeowners and property managers. Learn what drives cost, how to spot a bad quote, when to DIY versus hire, and which repairs prevent bigger bills later.",
   alternates: { canonical: "/repair-guides" },
+  openGraph: {
+    title: "Summit Handyman repair guides",
+    description: pageOgDescription,
+    type: "website",
+    images: ogImage(staticOg("repair-guides"), "Summit Handyman repair guides"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Summit Handyman repair guides",
+    description: pageOgDescription,
+    images: [staticOg("repair-guides")],
+  },
 };
 
 type Track = {

@@ -20,12 +20,27 @@ import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
+import { ogImage, staticOg } from "@/lib/og";
+
+const pageOgDescription = "Meet Brody Robertson, the handyman behind Summit Handyman. Reliable repairs, clear communication, clean work, and a come-back-free promise across the Lower Mainland.";
 
 export const metadata: Metadata = {
   title: "About Brody",
   description:
     "Meet Brody Robertson, the handyman behind Summit Handyman. Reliable repairs, clear communication, clean work, and a come-back-free promise across the Lower Mainland.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Brody Robertson at Summit Handyman",
+    description: pageOgDescription,
+    type: "website",
+    images: ogImage(staticOg("about"), "About Brody Robertson at Summit Handyman"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Brody Robertson at Summit Handyman",
+    description: pageOgDescription,
+    images: [staticOg("about")],
+  },
 };
 
 const proofStats = [

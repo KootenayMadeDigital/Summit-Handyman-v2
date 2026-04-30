@@ -5,12 +5,27 @@ import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section } from "@/components/ui/section";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/reveal";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
+import { ogImage, staticOg } from "@/lib/og";
+
+const pageOgDescription = "Start with the repair list, photos, and city so Brody can reply with written next steps within 24 hours.";
 
 export const metadata: Metadata = {
   title: "Start a Quote Request",
   description:
     "Start with the repair list, photos, and city so Brody can reply with written next steps within 24 hours.",
   alternates: { canonical: "/quote" },
+  openGraph: {
+    title: "Summit Handyman quote request",
+    description: pageOgDescription,
+    type: "website",
+    images: ogImage(staticOg("quote"), "Summit Handyman quote request"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Summit Handyman quote request",
+    description: pageOgDescription,
+    images: [staticOg("quote")],
+  },
 };
 
 const prep = [

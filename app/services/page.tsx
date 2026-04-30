@@ -28,14 +28,30 @@ import { Button } from "@/components/ui/button";
 import { SectionDivider } from "@/components/ui/section-divider";
 import { services, serviceCategories, type ServiceCategory } from "@/lib/services";
 import { site } from "@/lib/site";
+import { ogImage, staticOg } from "@/lib/og";
+
 import { placeholderReviews } from "@/lib/reviews";
 import { cn } from "@/lib/utils";
+
+const pageOgDescription = "Brody-led handyman services across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. 11 repair categories, $150 minimum per job, licensed and insured.";
 
 export const metadata: Metadata = {
   title: "Handyman Services in Langley, Surrey & Lower Mainland BC",
   description:
     "Brody-led handyman services across Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale. 11 repair categories, $150 minimum per job, licensed and insured.",
   alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Summit Handyman services",
+    description: pageOgDescription,
+    type: "website",
+    images: ogImage(staticOg("services"), "Summit Handyman services"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Summit Handyman services",
+    description: pageOgDescription,
+    images: [staticOg("services")],
+  },
 };
 
 const order: ServiceCategory[] = ["interior", "exterior", "safety"];

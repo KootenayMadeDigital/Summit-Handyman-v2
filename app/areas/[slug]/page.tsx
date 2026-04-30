@@ -25,6 +25,7 @@ import { areas, getArea, type Area } from "@/lib/areas";
 import { aggregateRating } from "@/lib/reviews";
 import { services } from "@/lib/services";
 import { site } from "@/lib/site";
+import { areaOg, ogImage } from "@/lib/og";
 
 export function generateStaticParams() {
   return areas.map((area) => ({ slug: area.slug }));
@@ -115,14 +116,25 @@ export async function generateMetadata(
   const area = getArea(slug);
   if (!area) return {};
   const profile = cityProfiles[area.slug];
+  const title = `Handyman in ${area.name}, BC`;
+  const description = `Handyman in ${area.name}, BC for homeowners and property managers. ${profile?.accent ?? area.description}. ${site.pricing.minimumDisplay}. Licensed and insured. Written estimates within 24 hours.`;
+  const image = areaOg(area.slug);
+
   return {
-    title: `Handyman in ${area.name}, BC`,
-    description: `Handyman in ${area.name}, BC for homeowners and property managers. ${profile?.accent ?? area.description}. ${site.pricing.minimumDisplay}. Licensed and insured. Written estimates within 24 hours.`,
+    title,
+    description,
     alternates: { canonical: `/areas/${area.slug}` },
     openGraph: {
-      title: `Handyman in ${area.name}, BC | ${site.name}`,
-      description: profile?.intro ?? area.description,
+      title: `${title} | ${site.name}`,
+      description,
       type: "website",
+      images: ogImage(image, `${title} from ${site.name}`),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
     },
   };
 }

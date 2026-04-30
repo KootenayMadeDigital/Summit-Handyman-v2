@@ -12,6 +12,7 @@ import { services, getService } from "@/lib/services";
 import { aggregateRating } from "@/lib/reviews";
 import { areas, getArea } from "@/lib/areas";
 import { site } from "@/lib/site";
+import { ogImage, serviceAreaOg } from "@/lib/og";
 
 /**
  * Combo SEO page: /services/[service]/in/[area]
@@ -49,6 +50,7 @@ export async function generateMetadata(
 
   const title = `${service.name} in ${area.name}, BC`;
   const description = `${service.name} in ${area.name}: ${service.tagline} ${site.pricing.minimumDisplay}. Licensed and insured. Free written estimates. Email Brody at Summit Handyman for a written estimate.`;
+  const image = serviceAreaOg(service.slug, area.slug);
 
   return {
     title,
@@ -58,7 +60,13 @@ export async function generateMetadata(
       title: `${title} | ${site.name}`,
       description,
       type: "website",
-      images: [{ url: service.hero, width: 1600, height: 1000, alt: title }],
+      images: ogImage(image, `${title} from ${site.name}`),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
     },
   };
 }

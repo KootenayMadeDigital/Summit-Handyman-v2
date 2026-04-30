@@ -2,11 +2,26 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/page-hero";
 import { Container, Section } from "@/components/ui/section";
 import { site } from "@/lib/site";
+import { ogImage, staticOg } from "@/lib/og";
+
+const pageOgDescription = `Read ${site.name} terms for estimates, minimum charges, workmanship coverage, materials, cancellations, liability, and BC governing law.`;
 
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: `Read ${site.name} terms for estimates, minimum charges, workmanship coverage, materials, cancellations, liability, and BC governing law.`,
   alternates: { canonical: "/legal/terms" },
+  openGraph: {
+    title: "Summit Handyman terms of service",
+    description: pageOgDescription,
+    type: "website",
+    images: ogImage(staticOg("terms"), "Summit Handyman terms of service"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Summit Handyman terms of service",
+    description: pageOgDescription,
+    images: [staticOg("terms")],
+  },
 };
 
 export default function TermsPage() {

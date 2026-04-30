@@ -13,13 +13,29 @@ import { Reveal } from "@/components/ui/reveal";
 import { MagneticCTA } from "@/components/ui/magnetic-cta";
 import { QuoteForm } from "@/components/forms/quote-form";
 import { site } from "@/lib/site";
+import { ogImage, staticOg } from "@/lib/og";
+
 import { areas } from "@/lib/areas";
+
+const pageOgDescription = "Start with the quote form so Brody has the repair list, photos, and location before he replies. Email, text, and Facebook are also available.";
 
 export const metadata: Metadata = {
   title: "Contact Brody",
   description:
-    "Start with the quote form so Brody has the repair list, photos, and location before he replies. Email, text, and Facebook Messenger also available.",
+    pageOgDescription,
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Summit Handyman",
+    description: pageOgDescription,
+    type: "website",
+    images: ogImage(staticOg("contact"), "Contact Summit Handyman"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Summit Handyman",
+    description: pageOgDescription,
+    images: [staticOg("contact")],
+  },
 };
 
 const channels = [

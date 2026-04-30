@@ -21,12 +21,27 @@ import { Container, Section, SectionTitle } from "@/components/ui/section";
 import { Reveal, RevealItem, RevealStagger } from "@/components/ui/reveal";
 import { areas, type Area } from "@/lib/areas";
 import { site } from "@/lib/site";
+import { ogImage, staticOg } from "@/lib/og";
+
+const pageOgDescription = "Summit Handyman serves Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale with Brody-led repairs, written estimates, and clear communication.";
 
 export const metadata: Metadata = {
   title: "Service Areas",
   description:
     "Summit Handyman serves Langley, Surrey, White Rock, Aldergrove, Abbotsford, and Cloverdale with Brody-led repairs, written estimates, and clear communication.",
   alternates: { canonical: "/areas" },
+  openGraph: {
+    title: "Summit Handyman service areas",
+    description: pageOgDescription,
+    type: "website",
+    images: ogImage(staticOg("areas"), "Summit Handyman service areas"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Summit Handyman service areas",
+    description: pageOgDescription,
+    images: [staticOg("areas")],
+  },
 };
 
 const serviceSignals = [
