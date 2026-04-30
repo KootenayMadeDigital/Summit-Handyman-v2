@@ -238,12 +238,12 @@ export function Footer() {
               target="_blank"
               rel="noopener"
               aria-label="Follow Summit Handyman on Facebook"
-              className="group mt-4 inline-flex items-center gap-3 rounded-full border border-divider-strong bg-surface-panel/60 pr-5 text-sm text-fg/85 hover:border-accent hover:text-accent transition-colors"
+              className="group mt-4 inline-flex w-full max-w-full min-w-0 items-center gap-2 rounded-full border border-divider-strong bg-surface-panel/60 px-2 py-2 text-sm text-fg/85 shadow-panel transition-all duration-300 ease-editorial hover:-translate-y-0.5 hover:border-accent hover:bg-accent-soft hover:text-accent hover:shadow-gold focus-visible:ring-accent active:translate-y-0 active:scale-[0.98] sm:w-auto sm:gap-3 sm:pr-5"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-full border border-divider-strong text-fg/85 group-hover:border-accent group-hover:text-accent transition-colors -ml-px">
+              <span className="grid h-11 w-11 flex-shrink-0 place-items-center rounded-full border border-divider-strong bg-surface text-fg/85 transition-all duration-300 ease-editorial group-hover:rotate-[-6deg] group-hover:scale-105 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
                 <Facebook className="h-4 w-4" />
               </span>
-              <span className="font-semibold whitespace-nowrap">
+              <span className="min-w-0 text-sm font-semibold leading-tight sm:whitespace-nowrap">
                 Follow on Facebook
               </span>
             </a>
