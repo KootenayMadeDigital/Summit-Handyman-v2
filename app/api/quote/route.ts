@@ -25,10 +25,10 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const MAX_PHOTOS = 5;
-const MAX_PHOTO_SIZE_MB = 8;
-const MAX_PHOTO_SIZE = MAX_PHOTO_SIZE_MB * 1024 * 1024; // 8 MB per photo
-const MAX_TOTAL_SIZE_MB = 32;
-const MAX_TOTAL_SIZE = MAX_TOTAL_SIZE_MB * 1024 * 1024; // 32 MB total (Resend caps at 40 MB)
+const MAX_PHOTO_SIZE_KB = 900;
+const MAX_PHOTO_SIZE = MAX_PHOTO_SIZE_KB * 1024; // Photos are compressed client-side before upload
+const MAX_TOTAL_SIZE_MB = 4;
+const MAX_TOTAL_SIZE = MAX_TOTAL_SIZE_MB * 1024 * 1024; // Keep payload under Vercel's request limit
 const ALLOWED_MIME = new Set([
   "image/jpeg",
   "image/jpg",
@@ -132,7 +132,7 @@ export async function POST(req: NextRequest) {
     for (const p of photoEntries) {
       if (p.size > MAX_PHOTO_SIZE) {
         return NextResponse.json(
-          { error: `Each photo must be under ${MAX_PHOTO_SIZE_MB}MB. Try fewer or smaller images.` },
+          { error: "Photo upload was too large. Please try fewer photos or smaller images." },
           { status: 400 },
         );
       }

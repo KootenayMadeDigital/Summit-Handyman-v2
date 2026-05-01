@@ -56,8 +56,52 @@ const timingOptions: { value: Timing; label: string; description: string; Icon: 
 const STEPS = ["Service", "Timing & Area", "Details + Photos", "Contact"] as const;
 
 const MAX_PHOTOS = 5;
-const MAX_PHOTO_SIZE_MB = 8;
-const MAX_PHOTO_SIZE = MAX_PHOTO_SIZE_MB * 1024 * 1024;
+const MAX_ORIGINAL_PHOTO_SIZE_MB = 10;
+const MAX_ORIGINAL_PHOTO_SIZE = MAX_ORIGINAL_PHOTO_SIZE_MB * 1024 * 1024;
+const TARGET_PHOTO_SIZE = 700 * 1024;
+const MAX_COMPRESSED_PHOTO_SIZE = 900 * 1024;
+const MAX_PHOTO_WIDTH = 1600;
+const MAX_PHOTO_HEIGHT = 1600;
+
+async function compressPhotoForUpload(file: File): Promise<File> {
+  if (file.size <= MAX_COMPRESSED_PHOTO_SIZE) return file;
+
+  const bitmap = await createImageBitmap(file);
+  const scale = Math.min(1, MAX_PHOTO_WIDTH / bitmap.width, MAX_PHOTO_HEIGHT / bitmap.height);
+  const width = Math.max(1, Math.round(bitmap.width * scale));
+  const height = Math.max(1, Math.round(bitmap.height * scale));
+  const canvas = document.createElement("canvas");
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) throw new Error("Photo compression is unavailable on this device.");
+  ctx.drawImage(bitmap, 0, 0, width, height);
+  bitmap.close();
+
+  let quality = 0.82;
+  let blob = await canvasToBlob(canvas, quality);
+  while (blob.size > TARGET_PHOTO_SIZE && quality > 0.45) {
+    quality -= 0.08;
+    blob = await canvasToBlob(canvas, quality);
+  }
+
+  if (blob.size > MAX_COMPRESSED_PHOTO_SIZE) {
+    throw new Error(`"${file.name}" is still too large after compression. Try one smaller photo.`);
+  }
+
+  const baseName = file.name.replace(/\.[^.]+$/, "") || "photo";
+  return new File([blob], `${baseName}.jpg`, { type: "image/jpeg", lastModified: Date.now() });
+}
+
+function canvasToBlob(canvas: HTMLCanvasElement, quality: number): Promise<Blob> {
+  return new Promise((resolve, reject) => {
+    canvas.toBlob(
+      (blob) => (blob ? resolve(blob) : reject(new Error("Photo compression failed."))),
+      "image/jpeg",
+      quality,
+    );
+  });
+}
 
 export function QuoteForm() {
   const [step, setStep] = React.useState(0);
@@ -107,7 +151,7 @@ export function QuoteForm() {
     setState((p) => ({ ...p, [key]: value }));
   };
 
-  const handlePhotoSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePhotoSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files ?? []);
     if (!files.length) return;
     setError(null);
@@ -119,11 +163,15 @@ export function QuoteForm() {
         setError("Photos must be images (JPG, PNG, WEBP, or HEIC).");
         continue;
       }
-      if (f.size > MAX_PHOTO_SIZE) {
-        setError(`"${f.name}" is over ${MAX_PHOTO_SIZE_MB}MB. Try a smaller image.`);
+      if (f.size > MAX_ORIGINAL_PHOTO_SIZE) {
+        setError(`"${f.name}" is over ${MAX_ORIGINAL_PHOTO_SIZE_MB}MB. Try a smaller image.`);
         continue;
       }
-      next.push(f);
+      try {
+        next.push(await compressPhotoForUpload(f));
+      } catch (err) {
+        setError(err instanceof Error ? err.message : `"${f.name}" could not be compressed. Try a smaller image.`);
+      }
     }
     if (next.length > 0) setPhotos((p) => [...p, ...next]);
     if (fileInputRef.current) fileInputRef.current.value = "";
@@ -435,7 +483,7 @@ export function QuoteForm() {
                 Add photos (optional, up to {MAX_PHOTOS})
               </p>
               <p className="text-sm text-fg-muted mb-3">
-                Photos reduce guesswork and help Brody spot materials, damage, access, and finish details before he replies. JPG, PNG, WEBP, or HEIC. 8MB each.
+                Photos reduce guesswork and help Brody spot materials, damage, access, and finish details before he replies. JPG, PNG, WEBP, or HEIC up to 10MB each. Large images are compressed before sending.
               </p>
 
               {photos.length < MAX_PHOTOS && (
