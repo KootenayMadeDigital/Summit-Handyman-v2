@@ -56,7 +56,8 @@ const timingOptions: { value: Timing; label: string; description: string; Icon: 
 const STEPS = ["Service", "Timing & Area", "Details + Photos", "Contact"] as const;
 
 const MAX_PHOTOS = 5;
-const MAX_PHOTO_SIZE = 5 * 1024 * 1024;
+const MAX_PHOTO_SIZE_MB = 8;
+const MAX_PHOTO_SIZE = MAX_PHOTO_SIZE_MB * 1024 * 1024;
 
 export function QuoteForm() {
   const [step, setStep] = React.useState(0);
@@ -119,7 +120,7 @@ export function QuoteForm() {
         continue;
       }
       if (f.size > MAX_PHOTO_SIZE) {
-        setError(`"${f.name}" is over 5MB. Try a smaller image.`);
+        setError(`"${f.name}" is over ${MAX_PHOTO_SIZE_MB}MB. Try a smaller image.`);
         continue;
       }
       next.push(f);
@@ -434,7 +435,7 @@ export function QuoteForm() {
                 Add photos (optional, up to {MAX_PHOTOS})
               </p>
               <p className="text-sm text-fg-muted mb-3">
-                Photos reduce guesswork and help Brody spot materials, damage, access, and finish details before he replies. JPG, PNG, WEBP, or HEIC. 5MB each.
+                Photos reduce guesswork and help Brody spot materials, damage, access, and finish details before he replies. JPG, PNG, WEBP, or HEIC. 8MB each.
               </p>
 
               {photos.length < MAX_PHOTOS && (
